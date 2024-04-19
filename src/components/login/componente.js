@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import servicioLogin from '../../services/login'
 function LoginComponent() {
   // Definimos el estado para el nombre de usuario y la contraseña
   const [username, setUsername] = useState('');
@@ -9,6 +9,7 @@ function LoginComponent() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Aquí puedes agregar la lógica para manejar la autenticación
+    servicioLogin({usuario:username,password:password})
     console.log('Nombre de usuario:', username);
     console.log('Contraseña:', password);
     // Puedes realizar llamadas a una API de autenticación aquí

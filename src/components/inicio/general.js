@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Mapa from '../mapas/arg'
 function DarkGreenBackground() {
   const style = {
     backgroundColor: 'darkgreen',
@@ -11,16 +11,14 @@ function DarkGreenBackground() {
   const scrollStyle = {
     height: '100%', // Toma toda la altura del componente padre
     overflowY: 'auto', // Permite desplazamiento vertical
-    padding: '20px', // Margen para el contenido
+    padding: '20px', // Margen para el contenidoim
   };
 
   return (
     <div style={style}>
       <div style={scrollStyle}>
         {/* Aquí puedes agregar el contenido que desees */}
-        <p>Este es un ejemplo de texto </p>
-        <p>Puedes agregar más contenido aquí...</p>
-        <p>Y más...</p>
+        <Mapa/>
         {/* Añade más contenido según sea necesario */}
       </div>
     </div>
