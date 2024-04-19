@@ -17,7 +17,7 @@ function LoginComponent() {
         const user = JSON.parse(loggedUserJSON)
         switch (user.nivel) {
           case 100:
-            navigate('//doneulogio/admin')
+            navigate('/admin/menu')
             break;
         
           default:

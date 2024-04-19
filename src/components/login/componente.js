@@ -14,19 +14,22 @@ function LoginComponent() {
 
 
   // Función que maneja el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Aquí puedes agregar la lógica para manejar la autenticación
-   const user =  servicioLogin.login({usuario:username,password:password})
-    
-    window.localStorage.setItem(
+   const user = await  servicioLogin.login({usuario:username,password:password})
+    console.log(user.nivel)
+  await  window.localStorage.setItem(
       'loggedNoteAppUser', JSON.stringify(user)
     )
 
     switch(user.nivel){
        
-      case 50:navigate('/doneulogio/admin')
-      default: window.localStorage.removeItem('loggedNoteAppUser');
+      case 100:{
+        console.log(100)
+        navigate('/admin/menu')}
+      default: 
+      window.localStorage.removeItem('loggedNoteAppUser');
       break;
 
 
