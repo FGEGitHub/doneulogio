@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
-import './loginComponent.css'; // Asegúrate de crear este archivo para los estilos CSS
+
+import React, { useEffect, useState } from "react";
+
+import { useNavigate, useParams } from "react-router-dom";
+import Login from '../../components/login/componente'
 
 function LoginComponent() {
   // Definimos el estado para el nombre de usuario y la contraseña
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
+
+  useEffect(() => {
+      const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
+      if (loggedUserJSON) {
+        const user = JSON.parse(loggedUserJSON)
+        switch (user.nivel) {
+          case 100:
+            navigate('//doneulogio/admin')
+            break;
+        
+          default:
+            
+            break;
+        }
+      }
+    }, [])
   // Función que maneja el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,34 +36,9 @@ function LoginComponent() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
-        <h2>Inicio de sesión</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Nombre de usuario:</label>
-            <input
-              type="text"
-              id="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Contraseña:</label>
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Iniciar sesión</button>
-        </form>
-      </div>
-    </div>
+    <>
+    <Login/>
+    </>
   );
 }
 
