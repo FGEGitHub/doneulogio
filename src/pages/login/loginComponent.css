@@ -1,0 +1,48 @@
+/* Estilo general para centrar la tarjeta */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    padding: 20px;
+  }
+  
+  /* Estilos para la tarjeta */
+  .login-card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #737272;
+    width: 300px; /* Ancho fijo de la tarjeta */
+    max-width: 90%; /* Máximo ancho del 90% de la pantalla */
+    text-align: center;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilo para el botón de envío */
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,62 +1,30 @@
-import React, { useEffect, useState, } from "react";
-import servicio1 from '../../services/datos';
+import React from 'react';
 
-
-const SimplePage = () => {
-  const [formData, setFormData] = useState();
-  const [estado, setEstado] = useState();
-
-  // Función para manejar cambios en los campos del formulario
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-    console.log(formData)
+function DarkGreenBackground() {
+  const style = {
+    backgroundColor: 'darkgreen',
+    height: '100vh', // Altura total de la pantalla
+    width: '100vw', // Ancho total de la pantalla
+    overflow: 'hidden',
   };
 
-  useEffect(() => {
-    traer()
-}, [])
+  const scrollStyle = {
+    height: '100%', // Toma toda la altura del componente padre
+    overflowY: 'auto', // Permite desplazamiento vertical
+    padding: '20px', // Margen para el contenido
+  };
 
-const traer = async ()=>{
- // await servicio1.probar(formData)
- // const rta = await servicio1.traer(formData)
-
-
-  setEstado("rta")
+  return (
+    <div style={style}>
+      <div style={scrollStyle}>
+        {/* Aquí puedes agregar el contenido que desees */}
+        <p>Este es un ejemplo de texto </p>
+        <p>Puedes agregar más contenido aquí...</p>
+        <p>Y más...</p>
+        {/* Añade más contenido según sea necesario */}
+      </div>
+    </div>
+  );
 }
 
-
-  // Función para manejar el envío del formulario
-  const handleSubmit = async (e) => {
-  
-    e.preventDefault();
-    const rta = await servicio1.crear(formData)
-    alert(rta)
-    // Aquí puedes hacer lo que quieras con los datos del formulario
-   
-  };
-  return (
-   <>
-      <form onSubmit={handleSubmit}>
-      <div>
-        <label>Nombre:</label>
-        <input
-          type="text"
-          name='"question"'
-         
-          onChange={handleInputChange}
-        />
-      </div>
-       
-      <button type="submit">Enviar</button>
-    </form>
-    <br/>      <br/>      <br/>      <br/>      <br/>      <br/>      <br/>      <br/>      <br/>      <br/>
- nombre
-   </>
-  );
-};
-
-export default SimplePage;
+export default DarkGreenBackground;
