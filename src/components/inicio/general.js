@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../navbar'
 import Mapa from '../mapas/arg'
 function DarkGreenBackground() {
   const style = {
@@ -18,6 +19,7 @@ function DarkGreenBackground() {
     <div style={style}>
       <div style={scrollStyle}>
         {/* Aquí puedes agregar el contenido que desees */}
+        <Navbar/>
         <Mapa/>
         {/* Añade más contenido según sea necesario */}
       </div>
