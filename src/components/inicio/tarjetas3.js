@@ -17,15 +17,15 @@ export default function ImgMediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        Agregar enlaces
         </Typography>
         <Typography variant="body2" color="text.secondary">
         agregar desccripcion 3
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Boton 1</Button>
+        <Button size="small">Boton 2</Button>
       </CardActions>
     </Card>
   );
