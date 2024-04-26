@@ -25,6 +25,14 @@ const columns = [
     align: 'superficie',
     format: (value) => value.toLocaleString('en-US'),
   },
+  {
+    id: 'estado',
+    label: 'estado',
+    minWidth: 170,
+    align: 'superficie',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+
 
 ];
 
