@@ -19,9 +19,10 @@ function LoginComponent() {
     // Aquí puedes agregar la lógica para manejar la autenticación
    const user = await  servicioLogin.login({usuario:username,password:password})
     console.log(user.nivel)
-  await  window.localStorage.setItem(
+   await window.localStorage.setItem(
       'loggedNoteAppUser', JSON.stringify(user)
     )
+
 
     switch(user.nivel){
        
@@ -29,6 +30,7 @@ function LoginComponent() {
         console.log(100)
         navigate('/admin/menu')}
       default: 
+     
       window.localStorage.removeItem('loggedNoteAppUser');
       break;
 

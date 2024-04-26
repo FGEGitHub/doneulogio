@@ -2,7 +2,7 @@ import axios from "axios"
 const url =require ('./url')
 
 
-const baseUrl = url.database
+const baseUrl = url.database+"doneu/"
 
 /* 
 
@@ -48,5 +48,11 @@ const enviar= async  (datos) => {
 return data
 }  
 
+const traerlotes= async  (datos) => {
 
- export default { traer,enviar}
+
+  const {data } = await axios.get(baseUrl+"traerlotes",datos)
+
+return data
+}  
+ export default { traer,enviar,traerlotes}

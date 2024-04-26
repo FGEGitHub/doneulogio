@@ -19,7 +19,7 @@ function DarkGreenBackground() {
     <div style={style}>
       <div style={scrollStyle}>
         {/* Aquí puedes agregar el contenido que desees */}
-        <Navbar/>
+
         <Mapa/>
         {/* Añade más contenido según sea necesario */}
       </div>
