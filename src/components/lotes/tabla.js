@@ -20,7 +20,7 @@ const columns = [
   },
   {
     id: 'superficie',
-    label: 'Size\u00a0(km\u00b2)',
+    label: 'superficie',
     minWidth: 170,
     align: 'superficie',
     format: (value) => value.toLocaleString('en-US'),
