@@ -28,7 +28,7 @@ function LoginComponent() {
        
       case 100:{
         console.log(100)
-        navigate('/admin/menu')}
+        navigate('/admin/lotes')}
       default: 
      
       window.localStorage.removeItem('loggedNoteAppUser');

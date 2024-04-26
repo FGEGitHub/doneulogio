@@ -51,8 +51,17 @@ return data
 const traerlotes= async  (datos) => {
 
 
-  const {data } = await axios.get(baseUrl+"traerlotes",datos)
+  const {data } = await axios.get(baseUrl+"traerlotes")
 
 return data
 }  
- export default { traer,enviar,traerlotes}
+
+const traerclientes= async  (datos) => {
+
+
+  const {data } = await axios.get(baseUrl+"traerclientes")
+
+return data
+}  
+
+ export default { traer,enviar,traerlotes,traerclientes}

@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom'; // Importa el componente Link
 import logo from "../Assets/logonav.png";
 
 
@@ -40,7 +41,7 @@ function ResponsiveAppBar() {
     width: "60px",                  
     };
   return (
-    <AppBar position="static"       sx={{ backgroundColor: '#1b7f3e',}}> 
+    <AppBar position="static" sx={{ backgroundColor: '#1b7f3e' }}> 
       <Container maxWidth="xl">
         <Toolbar disableGutters>
        
@@ -118,9 +119,11 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button
                 key={page}
+                component={Link} // Usa el componente Link
+                to={`/admin/${page.toLowerCase()}`} // Define la ruta correspondiente
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >

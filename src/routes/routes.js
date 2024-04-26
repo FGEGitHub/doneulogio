@@ -13,8 +13,8 @@ const Rutas = [
 
 	{ path: '/login', element: <Login/> },
 
-	{ path: '/admin/menu', element: <Menuadmin/> },
-	{ path: '/admin/menu', element: <	Clientesadmin/> },
+	{ path: '/admin/lotes', element: <Menuadmin/> },
+	{ path: '/admin/clientes', element: <	Clientesadmin/> },
 
 ];
 

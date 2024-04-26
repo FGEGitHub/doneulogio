@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import Nav from '../../../components/navbar'
-import Lotes from '../../../components/lotes/tabla'
+import Clientes from '../../../components/clientes/tabla'
 
 export default function Paginas() {
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ return (
   <div style={{ backgroundColor: '#ba9470' }}>
   <Nav/>
   <br/> <br/> <br/>
-  <Lotes/>
+  <Clientes/>
   <br/> <br/> <br/> <br/>
   </div>
   </>
