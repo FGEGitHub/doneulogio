@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar'
-import Mapa from '../mapas/arg'
+import Mapa from '../mapas/bosques'
 function DarkGreenBackground() {
   const style = {
     backgroundColor: 'darkgreen',

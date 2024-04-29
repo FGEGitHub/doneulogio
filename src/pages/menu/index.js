@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Inicio from '../../components/mapas/arg';
+import Inicio from '../../components/mapas/bosques';
 import Tarjeta from '../../components/inicio/tarjetas';
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
