@@ -1,69 +1,76 @@
-import React, { useState } from 'react';
-import servicioLotes from '../../services/lotes'
+// DialogComponent.js
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import servicioDatos from '../../services/datos'
 import NativeSelect from '@mui/material/NativeSelect';
 import InputLabel from '@mui/material/InputLabel';
-import Button from '@mui/material/Button';
-/////////////actualmente para usuario legales
-const Formulario = (props) => {
-  // Estados para almacenar los valores de los campos
-  const [lotes, setLotes] = React.useState();
-  const [form, setForm] = useState({ mapa1: props.info,fraccion:1,manzana:1,lote:1 })
+
+
+const DialogComponent = forwardRef((props, ref) => {
+  const [open, setOpen] = useState(false);
+  const [nivel, setNivel] = useState(false);
+  const [form, setForm] = useState({ })
+
+ 
 
   const handleChange = (e) => {
+    console.log(form)
     setForm({ ...form, [e.target.name]: e.target.value })
   }
   const determinar = async () => {
-    let rta
-    if (props.mapa=="IC3"){
-        const rta = await servicioLotes.determinarmapa1(form)
-    }else{
-        const rta = await servicioLotes.determinarmapa2(form)
-    }
-    
-    props.cerrar();
+
+    const rta = await servicioDatos.determinarmapa1bosques(form)
+    alert(rta)
+    closeDialog();
   
     props.getClients()
 
 
   }
-  const determinarposecion = async () => {
 
-    const rta = await servicioLotes.determinarposecion(form)
-    props.cerrar();
-  
-    props.getClients()
-
-
-  }
-  const cerrar = () => {
-
-    props.cerrar();
-
+  // Función para abrir el diálogo
+  const openDialog = () => {
+    setOpen(true);
+    setForm({mapa1: props.info})
 
   };
+
+  // Función para cerrar el diálogo
+  const closeDialog = () => {
+
+    setOpen(false);
+  };
+
+  // Permite al componente padre llamar a openDialog desde el ref
+  useImperativeHandle(ref, () => ({
+    openDialog,
+    closeDialog, // También puedes exponer la función closeDialog si es necesario
+  }), []); // Asegura que esto se ejecute solo una vez
+
+
+  const cerrar = () => {
+
+  cerrar();
+setForm()
+
+  };
+
+
   return (
-   <>
-     <InputLabel variant="standard" htmlFor="uncontrolled-native">
-     Sector
-   </InputLabel>
-   <NativeSelect
-     defaultValue={'sin determnar'}
-     onChange={handleChange}
-     inputProps={{
-       name: 'sector',
-       id: 'uncontrolled-native',
+    <Dialog open={open} onClose={closeDialog} maxWidth={"110%"}>
 
-     }}
-   >  <option value={1}>Seleccionar</option>  
-    <option value={"Bosques"}>Bosques</option>
-     <option value={"Pinares"}>Pinares</option>
-   
-     
-  
+<DialogTitle>Informacion</DialogTitle>
+      
 
-   </NativeSelect>
-   <InputLabel variant="standard" htmlFor="uncontrolled-native">
+ 
+      {props.info}
+
+
+<InputLabel variant="standard" htmlFor="uncontrolled-native">
      Manzana
    </InputLabel>
    <NativeSelect
@@ -86,9 +93,7 @@ const Formulario = (props) => {
   
 
    </NativeSelect>
-
-
-   <InputLabel variant="standard" htmlFor="uncontrolled-native">
+      <InputLabel variant="standard" htmlFor="uncontrolled-native">
      Lote
    </InputLabel>
    <NativeSelect
@@ -134,36 +139,15 @@ const Formulario = (props) => {
      
 
    </NativeSelect>
-   
-
-   <InputLabel variant="standard" htmlFor="uncontrolled-native">
-    <b>Posecion Lote</b>
-   </InputLabel>
-   <NativeSelect
-     defaultValue={'sin determnar'}
-     onChange={handleChange}
-     inputProps={{
-       name: 'posecion_lote',
-       id: 'uncontrolled-native',
-
-     }}
-   ><option value={1}>Seleccionar</option>  
-    <option value={"Dos actas"}>Dos actas</option>
-     <option value={"Un acta"}>Un acta</option>
-     <option value={"Ningun acta"}>Ningun acta</option>
-   
-
-   </NativeSelect>
-  
    <DialogActions>
-     <Button onClick={determinar}>Determinar ubicacion</Button>
-     <Button onClick={determinarposecion}>Determinar posecion</Button>
+     <Button onClick={determinar}>Determinar </Button>
 
      
      <Button onClick={cerrar}>Cerrar</Button>
      
-   </DialogActions></>
+   </DialogActions>
+    </Dialog>
   );
-};
+});
 
-export default Formulario;
+export default DialogComponent;

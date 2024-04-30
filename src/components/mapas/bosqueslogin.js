@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import DialogComponent from './modalusur';
-import DialogComponentlogin from './modalusur';
+import DialogComponent from './modalbosqueslogin';
 import Tooltip from '@mui/material/Tooltip';
 import NativeSelect from '@mui/material/NativeSelect';
 
@@ -623,16 +622,14 @@ inputProps={{
       </div>
       <DialogComponent ref={dialogRef} title=""
         info={info}
-        mapa={'usur'}
+        mapa={'Bosques'}
         getClients={ async () => {
 
-          const lotess = await servicioDatos.traerlotes()
-      console.log(lotess)
-          setLotes(lotess[0])
-      
-        }
-      
-      }>
+            const lotess = await servicioDatos.traerlotes()
+        console.log(lotess)
+            setLotes(lotess)
+        
+          }}>
 
       </DialogComponent>
 

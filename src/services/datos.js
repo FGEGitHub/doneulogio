@@ -64,4 +64,13 @@ const traerclientes= async  (datos) => {
 return data
 }  
 
- export default { traer,enviar,traerlotes,traerclientes}
+
+
+const determinarmapa1bosques= async  (datos) => {
+
+console.log(datos)
+  const {data } = await axios.post(baseUrl+"determinarmapa1bosques",datos)
+
+return data
+}  
+ export default {determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
