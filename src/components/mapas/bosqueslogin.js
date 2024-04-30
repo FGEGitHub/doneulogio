@@ -23,7 +23,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 const Arg = () => {
   //configuracion de Hooks
   const dialogRef = useRef();
-  const [info, setInfo] = React.useState(false);
+  const [info, setInfo] = React.useState();
   const [open, setOpen] = React.useState(false);
   const [lotes, setLotes] = React.useState();
   const [seleccion, setSeleccion] = useState()
@@ -41,8 +41,10 @@ console.log(lotess)
     getClients()
   }, [])
 
-  const handleOpenDialog = (p) => {
-    setInfo(p)
+  const handleOpenDialog = async (p) => {
+    console.log(p)
+   await setInfo(p)
+    console.log(info)
     // setForm({ mapa: p,fraccion:1,manzana:1,lote:1 })
     dialogRef.current.openDialog();
 
@@ -621,6 +623,7 @@ inputProps={{
 
       </div>
       <DialogComponent ref={dialogRef} title=""
+   
         info={info}
         mapa={'Bosques'}
         getClients={ async () => {

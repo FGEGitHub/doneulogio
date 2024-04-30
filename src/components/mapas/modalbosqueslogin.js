@@ -13,7 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 const DialogComponent = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
   const [nivel, setNivel] = useState(false);
-  const [form, setForm] = useState({ })
+  const [form, setForm] = useState()
 
  
 
@@ -22,8 +22,12 @@ const DialogComponent = forwardRef((props, ref) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
   const determinar = async () => {
-
-    const rta = await servicioDatos.determinarmapa1bosques(form)
+    const mergedJSON = {
+      ...form,
+      ...{mapa1:props.info
+      }
+    };
+    const rta = await servicioDatos.determinarmapa1bosques(mergedJSON)
     alert(rta)
     closeDialog();
   
@@ -33,9 +37,9 @@ const DialogComponent = forwardRef((props, ref) => {
   }
 
   // Función para abrir el diálogo
-  const openDialog = () => {
+  const openDialog = async () => {
     setOpen(true);
-    setForm({mapa1: props.info})
+
 
   };
 
@@ -135,7 +139,7 @@ setForm()
      <option value={28}>28</option>
      <option value={29}>29</option>
      <option value={30}>30</option>
-
+     <option value={30}>31</option>
      
 
    </NativeSelect>
