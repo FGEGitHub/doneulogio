@@ -50,7 +50,7 @@ const DialogComponent = forwardRef((props, ref) => {
 
 
       {nivel ? <>
-        {nivel == 4 ? <>
+        {nivel == 100 ? <>
           <DialogTitle>"Agregar detalles"</DialogTitle>
           <DialogContent>
             <Formulario
