@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom'; // Importa el componente Link
 import logo from "../Assets/logonav.png";
 
 
-const pages = ['Lotes', 'Clientes', 'Ventas'];
+const pages = ['Lotes', 'Clientes', 'Ventas','mapas'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {

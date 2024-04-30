@@ -51,7 +51,7 @@ const DialogComponent = forwardRef((props, ref) => {
 
       {nivel ? <>
         {nivel == 100 ? <>
-          <DialogTitle>"Agregar detalles"</DialogTitle>
+          <DialogTitle>"Agregar detalless"</DialogTitle>
           <DialogContent>
             <Formulario
               getClients={props.getClients}
@@ -65,13 +65,16 @@ const DialogComponent = forwardRef((props, ref) => {
         </> : <>
           <DialogTitle>{"Info del lote"}</DialogTitle>
           <DialogContent>
-            <Componentever
+           {/*  <Componentever
             nivel={nivel}
               info={props.info}
               mapa={props.mapa}
               cerrar={() => {
                 setOpen(false);
-              }} />  </DialogContent>
+              }} /> */} 
+              Modal info deslogin
+
+               </DialogContent>
         </>}
 
       </> : <></>}

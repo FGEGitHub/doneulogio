@@ -50,7 +50,7 @@ const DialogComponent = forwardRef((props, ref) => {
 
 <DialogTitle>Informacion</DialogTitle>
       
-Info 
+mapa login
       {props.children}
       {props.info}
 
