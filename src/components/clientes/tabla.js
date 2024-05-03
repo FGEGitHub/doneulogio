@@ -9,62 +9,34 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos'
 import Seleccionar from './asignarlote'
+
 const columns = [
-  { id: 'nombre', label: 'nombre', minWidth: 170 },
-  
-  {
-    id: 'telefono',
-    label: 'telefono',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'correo',
-    label: 'correo',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'sexo',
-    label: 'sexo',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'provincia',
-    label: 'provincia',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-
+  { id: 'nombre', label: 'Nombre', minWidth: 170 },
+  { id: 'telefono', label: 'Teléfono', minWidth: 170, align: 'right' },
+  { id: 'correo', label: 'Correo', minWidth: 170, align: 'right' },
+  { id: 'sexo', label: 'Sexo', minWidth: 170, align: 'right' },
+  { id: 'provincia', label: 'Provincia', minWidth: 170, align: 'right' },
+  { id: 'seleccionar', label: 'Seleccionar', minWidth: 170, align: 'right' },
 ];
-
-
-
 
 export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
   const [datos, setDatos] = useState();
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const [selectedClientId, setSelectedClientId] = useState(null);
 
   useEffect(() => {
-    traer()
-
+    traer();
   }, []);
+
   const traer = async () => {
-  
-    const historial = await servicioDatos.traerclientes()
+    const historial = await servicioDatos.traerclientes();
+    setDatos(historial);
+  };
 
-
-    setDatos(historial)
-    // 
-
-};
+  const handleSelectClient = (clientId) => {
+    setSelectedClientId(clientId);
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -77,11 +49,10 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{ width: '75%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
-
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead sx={{ backgroundColor: 'black' }}>
-            <TableRow >
+            <TableRow>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
@@ -94,39 +65,48 @@ export default function StickyHeadTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {datos ? <>
-            {datos
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
+            {datos ? (
+              datos
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row) => (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align} style={{ color: 'white' }}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
+                          {column.id === 'seleccionar' ? (
+                            <Seleccionar clientId={row.id} />
+                          ) : (
+                            column.format && typeof value === 'number' ? column.format(value) : value
+                          )}
                         </TableCell>
                       );
                     })}
                   </TableRow>
-                );
-              })}</>:<></>}
+                ))
+            ) : (
+              <></>
+            )}
           </TableBody>
         </Table>
       </TableContainer>
-      {datos ? <>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={datos.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        sx={{ color: 'white' }}
-      /></>:<></>}
+      {selectedClientId && (
+        <Seleccionar clientId={selectedClientId} onClose={() => setSelectedClientId(null)} />
+      )}
+      {datos ? (
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          count={datos.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          sx={{ color: 'white' }}
+        />
+      ) : (
+        <></>
+      )}
     </Paper>
   );
 }
