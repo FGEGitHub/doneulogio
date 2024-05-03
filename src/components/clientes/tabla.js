@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos'
+import Seleccionar from './asignarlote'
 const columns = [
   { id: 'nombre', label: 'nombre', minWidth: 170 },
   
@@ -42,10 +43,7 @@ const columns = [
 
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
+
 
 
 export default function StickyHeadTable() {
