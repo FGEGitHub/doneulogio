@@ -75,7 +75,11 @@ export default function StickyHeadTable() {
                       return (
                         <TableCell key={column.id} align={column.align} style={{ color: 'white' }}>
                           {column.id === 'seleccionar' ? (
-                            <Seleccionar clientId={row.id} />
+                            <Seleccionar id={row.id}
+                            traer={async () => {
+                              const historial = await servicioDatos.traerclientes();
+                              setDatos(historial);
+                            }} />
                           ) : (
                             column.format && typeof value === 'number' ? column.format(value) : value
                           )}

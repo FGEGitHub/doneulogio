@@ -24,7 +24,7 @@ export default function SelectTextFields(props) {
   //const usuario  = useUser().userContext
   const [form, setForm] = useState({
    
-    hora_merienda:"Sin determinar",
+    id:props.id,
   })
   const [datos, setDatos] = useState()
   const [activo, setActivo] = useState(false)
@@ -65,7 +65,7 @@ export default function SelectTextFields(props) {
     try {
       event.preventDefault();
 
-      const nov = await servicioDtc.nuevapersonapsiq(form)
+      const nov = await servicioDtc.asignarventa(form)
       alert(nov)
     } catch (error) {
       console.error(error);
@@ -103,7 +103,7 @@ props.traer()
       noValidate
       autoComplete="off"
     >
-      < Tooltip title="Nueva Clase">
+      < Tooltip title="Venta">
         <Button variant="contained" onClick={handleClickOpen}> asignar  </Button>
 
       </Tooltip>
@@ -126,7 +126,7 @@ props.traer()
                                 defaultValue={30}
                                 onChange={handleChange}
                                 inputProps={{
-                                    name: 'id',
+                                    name: 'id_lote',
                                     id: 'uncontrolled-native',
                                 }}
                                 sx={'width:250px'}

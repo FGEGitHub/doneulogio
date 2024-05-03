@@ -73,4 +73,14 @@ console.log(datos)
 
 return data
 }  
- export default {determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+
+
+const asignarventa= async  (datos) => {
+
+  console.log(datos)
+    const {data } = await axios.post(baseUrl+"asignarventa",datos)
+  
+  return data
+  }  
+  
+ export default {asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
