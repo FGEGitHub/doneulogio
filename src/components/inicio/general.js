@@ -7,6 +7,8 @@ import "react-vertical-timeline-component/style.min.css";
 import Mapa from "../mapas/bosques"
 import Tarjeta from "./tarjetas"
 import Tarjeta2 from "./tarjetas2"
+import Tarjeta3 from "./tarjetas3"
+import MapaGps from "./mapagps"
 const WorkIcon = () => <></>;
 
 export default function App() {
@@ -23,7 +25,11 @@ export default function App() {
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-       <Tarjeta/>
+  <h3 className="vertical-timeline-element-title">Don eulogio</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+           Urbanizacion abierta
+          </h4>
+          <p>Te mostramos que servicios de infraestructura brindamos.</p>
        
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -36,15 +42,11 @@ export default function App() {
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2008 - 2010"
+          date="Don elogio"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Los Angeles, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
+<Tarjeta3/>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -52,11 +54,7 @@ export default function App() {
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
+             <Tarjeta/>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
@@ -76,11 +74,7 @@ export default function App() {
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">
-            Agile Development Scrum Master
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-          <p>Creative Direction, User Experience, Visual Design</p>
+               <MapaGps/>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
