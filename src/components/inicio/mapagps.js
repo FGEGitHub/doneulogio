@@ -3,12 +3,13 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const MapaGPS = () => {
   // Coordenadas específicas
-  const coordenadas = [-27.568544, -58.727339];
+  const coordenadas = [-27.568825, -58.727392];
 
   return (
-    <MapContainer center={coordenadas} zoom={13} style={{ height: '400px' }}>
+    <MapContainer center={coordenadas} zoom={13} >
+
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+       
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={coordenadas}>

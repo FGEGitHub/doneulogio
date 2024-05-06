@@ -1,14 +1,10 @@
 
-
-
-
-
 import { useNavigate, useParams } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
 import Nav from '../../../components/navbar'
-import Clientes from '../../../components/clientes/seleccionador'
+import Seleccion from '../../../components/clientes/seleccionador'
 
 export default function Paginas() {
   const navigate = useNavigate();
@@ -50,7 +46,7 @@ return (
   <div style={{ backgroundColor: '#ba9470' }}>
   <Nav/>
   <br/> <br/> <br/>
-  <Clientes/>
+  <Seleccion/>
   <br/> <br/> <br/> <br/>
   </div>
   </>
