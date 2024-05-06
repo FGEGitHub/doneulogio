@@ -5,43 +5,34 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Mapa from "../mapas/bosques"
+import Tarjeta from "./tarjetas"
+import Tarjeta2 from "./tarjetas2"
 const WorkIcon = () => <></>;
 
 export default function App() {
   return (
     <div className="App">
       <h1>Don Eulogio</h1>
-      <div className="empty"><Mapa/></div>
+      <div ><Mapa/></div>
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="2011 - present"
+          date="Don eulogio"
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Creative Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, Project
-            Management, Team Leading
-          </p>
+       <Tarjeta/>
+       
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          date="2010 - 2011"
+          date="Don Eulogio "
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">Art Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, SEO, Online
-            Marketing
-          </p>
+         <Tarjeta2/>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -97,13 +88,7 @@ export default function App() {
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-          <h3 className="vertical-timeline-element-title">
-            Bachelor of Science in Interactive Digital Media Visual Imaging
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Bachelor Degree
-          </h4>
-          <p>Creative Direction, Visual Design</p>
+         <Tarjeta/>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
