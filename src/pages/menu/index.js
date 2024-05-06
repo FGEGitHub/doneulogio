@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Inicio from '../../components/mapas/bosques';
-import Tarjeta from '../../components/inicio/tarjetas';
+import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
 import backgroundImage2 from "../../Assets/imagenfondo1.jpg"; 
@@ -77,16 +76,11 @@ export default function Paginas() {
             
             {/* Contenido principal */}
             <div style={{ position: 'relative', zIndex: 0 }}>
-                
+            <StrictMode>
                     <Nav/>
                     {/* Agrega aquí el resto de tu contenido */}
-                    <Inicio/>
-                    <Tarjeta />
-                    <Tarjeta />
-                    <Tarjeta />
-                    <Tarjeta />
-                    <Tarjeta />
-                    <Tarjeta />
+              </StrictMode>
+ 
                     {/* Agrega más componentes aquí */}
                     <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar sx={{ backgroundColor: '#1a393c' }}>

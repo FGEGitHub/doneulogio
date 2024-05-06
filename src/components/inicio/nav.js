@@ -15,6 +15,7 @@ import Tarj1 from './tarjetas';
 import Tarj2 from './tarjetas2';
 import Tarj3 from './tarjetas3';
 import logo from "../../Assets/logonav.png";
+import General from './general'
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -80,7 +81,7 @@ export default function BackToTop(props) {
         }}
       > <br/> <br/>
         {/* Usamos flexbox para colocar las tarjetas en línea */}
-        <Box
+     {/*    <Box
           sx={{
             display: 'flex',
             justifyContent: 'space-between', // Espacio entre las tarjetas
@@ -92,7 +93,9 @@ export default function BackToTop(props) {
           <Tarj1 />
           <Tarj2 />
           <Tarj3 />
-        </Box>
+        </Box> */}
+
+<General/>
       </Container>
 
       <ScrollTop {...props}>
