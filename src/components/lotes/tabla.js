@@ -9,12 +9,19 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos'
 const columns = [
-  { id: 'sector', label: 'sector', minWidth: 170 },
+  { id: 'sector', label: 'sector', minWidth: 100 },
   
   {
     id: 'manzana',
     label: 'manzana',
-    minWidth: 170,
+    minWidth: 60,
+    align: 'right',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'lote',
+    label: 'lote',
+    minWidth: 100,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
@@ -32,7 +39,13 @@ const columns = [
     align: 'superficie',
     format: (value) => value.toLocaleString('en-US'),
   },
-
+  {
+    id: 'nombre',
+    label: 'nombre',
+    minWidth: 170,
+    align: 'superficie',
+    format: (value) => value.toLocaleString('en-US'),
+  },
 
 ];
 
