@@ -134,7 +134,7 @@ props.traer()
                                 {datos ? <>
                                 {datos.map((row) => (
                                        
-                                       <option value={row.id}>Manzana {row.manzana} lote {row.lote} </option>
+                                       <option value={row.id}>{row.sector}  Manzana {row.manzana} lote {row.lote} </option>
 
                              ))}
 </>:<></>}

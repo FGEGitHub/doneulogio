@@ -13,9 +13,10 @@ const columns = [
   { id: 'sector', label: 'sector', minWidth: 100 },
   { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
   { id: 'lote', label: 'lote', minWidth: 100, align: 'right' },
-  { id: 'superficie', label: 'superficie', minWidth: 170, align: 'right' },
-  { id: 'estado', label: 'estado', minWidth: 170, align: 'right' },
-  { id: 'nombre', label: 'nombre', minWidth: 170, align: 'right' },
+  { id: 'superficie', label: 'superficie', minWidth: 100, align: 'right' },
+  { id: 'estado', label: 'estado', minWidth: 100, align: 'right' },
+  { id: 'nombre', label: 'nombre', minWidth: 100, align: 'right' },
+  { id: 'id_lote', label: 'Ver detalles', minWidth: 100, align: 'right' },
 ];
 
 const getColorForEstado = (estado) => {
@@ -34,6 +35,7 @@ export default function StickyHeadTable() {
 
   const traerDatos = async () => {
     const historial = await servicioDatos.traerlotes();
+  
     setDatos(historial);
   };
 
@@ -70,7 +72,7 @@ export default function StickyHeadTable() {
                       align={column.align}
                       style={{ color: column.id === 'estado' ? getColorForEstado(row[column.id]) : 'white' }}
                     >
-                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> : row[column.id]}
+                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'id_lote' ? row[column.id] == null ? <>no</>:<>modal</> : row[column.id]}
                     </TableCell>
                   ))}
                 </TableRow>
