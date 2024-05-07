@@ -38,8 +38,14 @@ const enviar= async  (datos) => {
     
   return data
  }  
+ 
+ const actualizarventa= async  (datos) => {
 
-
+   
+  const {data } = await axios.post(baseUrl+"actualizarventa",datos)
+ 
+return data
+}  
  const traer= async  (datos) => {
 
 
@@ -56,6 +62,13 @@ const traerlotes= async  (datos) => {
 return data
 }  
 
+const traerventa= async  (datos) => {
+
+
+  const {data } = await axios.get(baseUrl+"traerventa/"+datos)
+
+return data
+}  
 const traerclientes= async  (datos) => {
 
 
@@ -83,4 +96,4 @@ const asignarventa= async  (datos) => {
   return data
   }  
   
- export default {asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+ export default {actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}

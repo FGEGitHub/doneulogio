@@ -8,6 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos';
+import Modalventa from './modalventa'
 
 const columns = [
   { id: 'sector', label: 'sector', minWidth: 100 },
@@ -16,7 +17,7 @@ const columns = [
   { id: 'superficie', label: 'superficie', minWidth: 100, align: 'right' },
   { id: 'estado', label: 'estado', minWidth: 100, align: 'right' },
   { id: 'nombre', label: 'nombre', minWidth: 100, align: 'right' },
-  { id: 'id_lote', label: 'Ver detalles', minWidth: 100, align: 'right' },
+  { id: 'idventa', label: 'Ver detalles', minWidth: 100, align: 'right' },
 ];
 
 const getColorForEstado = (estado) => {
@@ -72,7 +73,7 @@ export default function StickyHeadTable() {
                       align={column.align}
                       style={{ color: column.id === 'estado' ? getColorForEstado(row[column.id]) : 'white' }}
                     >
-                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'id_lote' ? row[column.id] == null ? <>no</>:<>modal</> : row[column.id]}
+                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'idventa' ? row[column.id] == null ? <>no</>:<><Modalventa id={row[column.id]}/></> : row[column.id]}
                     </TableCell>
                   ))}
                 </TableRow>
