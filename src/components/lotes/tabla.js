@@ -7,73 +7,35 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import servicioDatos from '../../services/datos'
+import servicioDatos from '../../services/datos';
+
 const columns = [
   { id: 'sector', label: 'sector', minWidth: 100 },
-  
-  {
-    id: 'manzana',
-    label: 'manzana',
-    minWidth: 60,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'lote',
-    label: 'lote',
-    minWidth: 100,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'superficie',
-    label: 'superficie',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'estado',
-    label: 'estado',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-  {
-    id: 'nombre',
-    label: 'nombre',
-    minWidth: 170,
-    align: 'superficie',
-    format: (value) => value.toLocaleString('en-US'),
-  },
-
+  { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
+  { id: 'lote', label: 'lote', minWidth: 100, align: 'right' },
+  { id: 'superficie', label: 'superficie', minWidth: 170, align: 'right' },
+  { id: 'estado', label: 'estado', minWidth: 170, align: 'right' },
+  { id: 'nombre', label: 'nombre', minWidth: 170, align: 'right' },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
-
+const getColorForEstado = (estado) => {
+  // Define tu lógica para asignar el color rojo según el estado
+  return estado === 'Vendido' ? 'red' :  estado === 'Disponible' ? 'green' : 'initial';
+};
 
 export default function StickyHeadTable() {
-  const [page, setPage] = React.useState(0);
-  const [datos, setDatos] = useState();
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+  const [page, setPage] = useState(0);
+  const [datos, setDatos] = useState([]);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   useEffect(() => {
-    traer()
-
+    traerDatos();
   }, []);
-  const traer = async () => {
-  
-    const historial = await servicioDatos.traerlotes()
 
-
-    setDatos(historial)
-    // 
-
-};
+  const traerDatos = async () => {
+    const historial = await servicioDatos.traerlotes();
+    setDatos(historial);
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -86,46 +48,36 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{ width: '75%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
-
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead sx={{ backgroundColor: 'black' }}>
-            <TableRow >
+            <TableRow>
               {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth, color: 'black' }}
-                >
+                <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth, color: 'black' }}>
                   {column.label}
                 </TableCell>
               ))}
             </TableRow>
           </TableHead>
           <TableBody>
-            {datos ? <>
             {datos
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => {
-                return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                    {columns.map((column) => {
-                      const value = row[column.id];
-                      return (
-                        <TableCell key={column.id} align={column.align} style={{ color: 'white' }}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(value)
-                            : value}
-                        </TableCell>
-                      );
-                    })}
-                  </TableRow>
-                );
-              })}</>:<></>}
+              .map((row) => (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  {columns.map((column) => (
+                    <TableCell
+                      key={column.id}
+                      align={column.align}
+                      style={{ color: column.id === 'estado' ? getColorForEstado(row[column.id]) : 'white' }}
+                    >
+                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> : row[column.id]}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
-      {datos ? <>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
         component="div"
@@ -135,7 +87,7 @@ export default function StickyHeadTable() {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
         sx={{ color: 'white' }}
-      /></>:<></>}
+      />
     </Paper>
   );
 }
