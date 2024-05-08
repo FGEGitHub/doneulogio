@@ -75,7 +75,7 @@ export default function App() {
           iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-               <MapaGps/>
+             {/*   <MapaGps/> */}
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--education"

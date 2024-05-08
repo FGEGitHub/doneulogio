@@ -23,16 +23,9 @@ const backgroundOverlayStyle = {
   height: '100%',
   zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
   display: 'flex',
-  flexDirection: 'column',
+
 };
-const StyledFab = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: '0 auto',
-  });
+
   
 const backgroundOverlayImageStyle = {
   flex: '1 1 auto',
