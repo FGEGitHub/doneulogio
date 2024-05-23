@@ -62,6 +62,13 @@ const traerlotes= async  (datos) => {
 return data
 }  
 
+const traerloteslogin= async  (datos) => {
+
+
+  const {data } = await axios.get(baseUrl+"traerloteslogin")
+
+return data
+}  
 const traerventa= async  (datos) => {
 
 
@@ -104,4 +111,4 @@ const asignarventa= async  (datos) => {
     
     return data
     }  
- export default {clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+ export default {traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
