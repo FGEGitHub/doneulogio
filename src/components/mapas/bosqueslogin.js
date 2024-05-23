@@ -634,7 +634,7 @@ inputProps={{
             const lotess = await servicioDatos.traerloteslogin()
         console.log(lotess[0])
             setLotes(lotess[0])
-            setPromedio(lotess[1])
+            setPromedio(lotess[1]/lotess[0].length)
         
           }}>
 
