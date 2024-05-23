@@ -12,7 +12,7 @@ import InputLabel from '@mui/material/InputLabel';
 
 const DialogComponent = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
-  const [nivel, setNivel] = useState(false);
+  
   const [form, setForm] = useState()
 
  

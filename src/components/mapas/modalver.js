@@ -6,7 +6,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Formulario from './formulariolotes'
-import Componentever from './componenteinfo'
+import servicioDatos from '../../services/datos'
 
 
 const DialogComponent = forwardRef((props, ref) => {
@@ -21,9 +21,12 @@ const DialogComponent = forwardRef((props, ref) => {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setNivel(user.nivel)
-
+   
 
     }
+    console.log('props.info')
+    const historial = await servicioDatos.clickgenerallote({id:props.info});
+    setDatos(historial);
   }
 
 
