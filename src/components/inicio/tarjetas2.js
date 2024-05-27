@@ -5,8 +5,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from "react-router-dom";
 import imagen from "../../Assets/doneu2.png"
 export default function ImgMediaCard() {
+  const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -14,10 +16,12 @@ export default function ImgMediaCard() {
         alt="green iguana"
         height="300"
         image={imagen}
+        onClick={() => navigate('/masterplan')}
+
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="div">
-        Agregar enlaces
+        Ver Master Plan
         </Typography>
         <Typography variant="body2" color="text.secondary">
         agregar desccripcion 2

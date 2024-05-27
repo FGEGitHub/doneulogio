@@ -47,7 +47,7 @@ export default function App() {
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-  <div ><Mapa/></div>
+  <div ><Tarjeta/></div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
