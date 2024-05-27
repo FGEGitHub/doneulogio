@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
-import General from '../../components/inicio/general';
+import General from '../../components/mapas/bosques';
 
 const backgroundOverlayStyle = {
   position: 'fixed',
@@ -51,14 +51,14 @@ export default function Paginas() {
             {/* Contenedor para las imágenes de fondo */}
             <div style={backgroundOverlayStyle}>
               <div style={{ backgroundImage: `url(${backgroundImage1})`, ...backgroundOverlayImageStyle }}>
-              <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>
+              <br/><br/>        <br/><br/>   <br/><br/>     <br/><br/>
               </div>
             </div>
             
             {/* Contenido principal */}
             <div style={{ position: 'relative', zIndex: 0 }}>
             <StrictMode>
-                    <Nav/>
+                    <Nav/> <br/><br/>   
                     {/* Agrega aquí el resto de tu contenido */}
                     <General/>
               </StrictMode>

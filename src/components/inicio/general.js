@@ -15,8 +15,8 @@ const WorkIcon = () => <></>;
 export default function App() {
   return (
     <div className="App">
-      <h1>Don Eulogio</h1>
-      <div ><Mapa/></div>
+ 
+    
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
@@ -47,7 +47,7 @@ export default function App() {
           iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
           icon={<WorkIcon />}
         >
-<Tarjeta3/>
+  <div ><Mapa/></div>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"

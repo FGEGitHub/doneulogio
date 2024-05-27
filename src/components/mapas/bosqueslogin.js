@@ -575,7 +575,7 @@ inputProps={{
         {[52].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote+" Clicks:"+objetoEncontrado.clicks : 'Sin datos'}>
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote+" Clicks:"+objetoEncontrado.clicks : 'Bosques'}>
             <path className="mi-path"  onClick={() => handleOpenDialog(52)}fillOpacity={imagenDeFondoActivada ?  0.5:1 } fill={objetoEncontrado ? objetoEncontrado.clicks > promedio ? "red"  : "green":"white"}   d="M1920.25,1277.26 L2094.41,1278.16 L2283.38,503.24 L1919.04,485.703 L1920.25,1277.26" vector-effect="none" fill-rule="evenodd"/>
               
             </Tooltip>)})}

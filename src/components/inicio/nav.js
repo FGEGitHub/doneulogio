@@ -7,15 +7,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
-import Map from '../mapas/arg';
-import Tarj1 from './tarjetas';
-import Tarj2 from './tarjetas2';
-import Tarj3 from './tarjetas3';
+import { Link } from 'react-router-dom'; // Importa el componente Link
 import logo from "../../Assets/logonav.png";
-import General from './general'
+import General from './general';
+
+// Falta  Importa la fuente "Galileo"
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -56,8 +56,17 @@ ScrollTop.propTypes = {
 };
 
 const islogo = {
-    width: "70px",                  
+  width: "70px",
 };
+
+// Define las páginas y sus rutas correspondientes
+const pages = [
+  { name: 'Home', path: '/' },
+  { name: 'Urbanización Abierta', path: '/urbanizacion-abierta' },
+  { name: 'Master Plan', path: '/masterplan' },
+  { name: 'Espacios Públicos', path: '/espacios-publicos' },
+  { name: 'Contacto', path: '/contacto' }
+];
 
 export default function BackToTop(props) {
   return (
@@ -68,41 +77,34 @@ export default function BackToTop(props) {
           <Typography variant="h6" component="div">
             <img style={islogo} src={logo} alt="logo" /> 
           </Typography>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                component={Link}
+                to={page.path}
+                sx={{ 
+                  my: 2, 
+                  color: '#d9d9d9', 
+                  display: 'block', 
+                  fontFamily: 'Galileo, sans-serif', 
+                  textTransform: 'none',
+                  margin: '0 10px', 
+                  backgroundColor: '#1e4d50', // Leve diferencia de color
+                  '&:hover': {
+                    backgroundColor: '#1a393c', // Misma que AppBar
+                    color: '#fff', // Cambia el color del texto al pasar el mouse
+                  },
+                }}
+              >
+                {page.name}
+              </Button>
+            ))}
+          </Box>
         </Toolbar>
       </AppBar>
-
       <Toolbar id="back-to-top-anchor" />
-      <Container
-        sx={{
-          backgroundColor: '#1b7f3e',
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      > <br/> <br/>
-        {/* Usamos flexbox para colocar las tarjetas en línea */}
-     {/*    <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between', // Espacio entre las tarjetas
-            width: '100%',
-            padding: '0 20px', // Espacio horizontal para las tarjetas
-          }}
-        >
-           
-          <Tarj1 />
-          <Tarj2 />
-          <Tarj3 />
-        </Box> */}
 
-<General/>
-      </Container>
-
-      <ScrollTop {...props}>
-        <Fab size="small" aria-label="scroll back to top">
-          <KeyboardArrowUpIcon />
-        </Fab>
-      </ScrollTop>
     </React.Fragment>
   );
 }
