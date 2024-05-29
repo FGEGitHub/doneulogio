@@ -38,12 +38,12 @@ const TextContent = styled(Box)({
 
 const Title = styled(Typography)({
   fontFamily: 'Montserrat, sans-serif',
-  color: '#fff',
+  color: '#000', // Cambia el color del texto a negro
 });
 
 const Description = styled(Typography)({
   fontFamily: 'Montserrat, sans-serif',
-  color: '#fff',
+  color: '#000', // Cambia el color del texto a negro
 });
 
 const spaces = [
@@ -60,7 +60,7 @@ const spaces = [
   {
     title: 'Centro deportivo',
     description: 'El Puente Pexoa es una estructura de hierro sobre el arroyo Riachuelo, en el llamado Paso Pexoa, en la localidad de Riachuelo, provincia de Corrientes.',
-    imageUrl: 'https://via.placeholder.com/400x200',
+    imageUrl: 'https://img.freepik.com/fotos-premium/complejo-deportivo-centro-minsk-canchas-deportivas-al-aire-libre-juegos-bielorrusia_217593-15308.jpg?w=996',
   },
 ];
 
