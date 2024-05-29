@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Container, Grid, Box } from '@mui/material';
+import { Card, CardContent, Typography, Container, Grid, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
 const Root = styled(Box)({
@@ -11,17 +11,24 @@ const Root = styled(Box)({
 
 const CardStyled = styled(Card)({
   marginBottom: '16px',
-  display: 'flex',
   minHeight: '400px', // Asegura que las tarjetas tengan una altura mínima suficiente
 });
 
-const MediaStyled = styled(CardMedia)({
+const ContentBox = styled(Box)({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  height: '100%',
+});
+
+const ImageStyled = styled('img')({
   width: '75%', // La imagen ocupa el 75% del ancho
-  height: '100%', // Asegura que la imagen ocupe todo el contenedor en altura
+  height: 'auto', // La altura se ajusta automáticamente para mantener la proporción de la imagen
   objectFit: 'cover', // Asegura que la imagen cubra el área del contenedor
 });
 
-const ContentBox = styled(Box)({
+const TextContent = styled(Box)({
   width: '25%', // El contenido ocupa el 25% del ancho
   padding: '16px',
   display: 'flex',
@@ -65,17 +72,19 @@ const PublicSpaces = () => {
           {spaces.map((space, index) => (
             <Grid item xs={12} key={index}>
               <CardStyled>
-                <MediaStyled
-                  image={space.imageUrl}
-                  title={space.title}
-                />
                 <ContentBox>
-                  <Title variant="h5" component="div">
-                    {space.title}
-                  </Title>
-                  <Description variant="body2">
-                    {space.description}
-                  </Description>
+                  <ImageStyled
+                    src={space.imageUrl}
+                    alt={space.title}
+                  />
+                  <TextContent>
+                    <Title variant="h5" component="div">
+                      {space.title}
+                    </Title>
+                    <Description variant="body2">
+                      {space.description}
+                    </Description>
+                  </TextContent>
                 </ContentBox>
               </CardStyled>
             </Grid>
