@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos'
 import Seleccionar from './asignarlote'
 import Nuevo from './nuevo'
+import Modificar from './modificar'
 
 const columns = [
   { id: 'nombre', label: 'Nombre', minWidth: 170 },
@@ -18,6 +19,7 @@ const columns = [
   { id: 'sexo', label: 'Sexo', minWidth: 170, align: 'right' },
   { id: 'provincia', label: 'Provincia', minWidth: 170, align: 'right' },
   { id: 'seleccionar', label: 'Seleccionar', minWidth: 170, align: 'right' },
+  { id: 'modificar', label: 'Modificar', minWidth: 170, align: 'right' },
 ];
 
 export default function StickyHeadTable() {
@@ -35,9 +37,7 @@ export default function StickyHeadTable() {
     setDatos(historial);
   };
 
-  const handleSelectClient = (clientId) => {
-    setSelectedClientId(clientId);
-  };
+
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -49,7 +49,7 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '75%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
+    <Paper sx={{ width: '90%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
       <Nuevo
       traer={async () => {
         const historial = await servicioDatos.traerclientes();
@@ -80,16 +80,39 @@ export default function StickyHeadTable() {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align} style={{ color: 'white' }}>
-                          {column.id === 'seleccionar' ? (
-                            <Seleccionar id={row.id}
+                        {column.id === 'seleccionar' ? (
+                          <Seleccionar
+                            id={row.id}
                             traer={async () => {
                               const historial = await servicioDatos.traerclientes();
                               setDatos(historial);
-                            }} />
-                          ) : (
-                            column.format && typeof value === 'number' ? column.format(value) : value
-                          )}
-                        </TableCell>
+                            }}
+                          />
+                        ) : column.id === 'modificar' ? (
+                          <Modificar id={row.id}
+                 
+     
+                          fecha_nac= {row.fecha_nac}
+                          observaciones= {row.observaciones}
+                         
+                          nombre= {row.nombre}
+                          correo= {row.correo}
+                          dni= {row.dni}
+                        
+                  
+                          telefono= {row.telefono}
+                          provincia= {row.provincia}
+                          sexo= {row.sexo}
+                          estado_civil= {row.estado_civil}
+                          traer={async () => {
+                            const historial = await servicioDatos.traerclientes();
+                            setDatos(historial);
+                          }}
+                    />
+                        ) : (
+                          column.format && typeof value === 'number' ? column.format(value) : value
+                        )}
+                      </TableCell>
                       );
                     })}
                   </TableRow>
@@ -112,6 +135,7 @@ export default function StickyHeadTable() {
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage="Clientes por página"
           sx={{ color: 'white' }}
         />
       ) : (
