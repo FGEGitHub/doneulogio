@@ -62,6 +62,7 @@ const islogo = {
 // Define las páginas y sus rutas correspondientes
 const pages = [
   { name: 'Home', path: '/' },
+  { name: 'ubicacion', path: '/ubicacion' },
   { name: 'Urbanización Abierta', path: '/urbanizacion-abierta' },
   { name: 'Master Plan', path: '/masterplan' },
   { name: 'Espacios Públicos', path: '/espacios-publicos' },
