@@ -9,6 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos'
 import Seleccionar from './asignarlote'
+import Nuevo from './nuevo'
 
 const columns = [
   { id: 'nombre', label: 'Nombre', minWidth: 170 },
@@ -49,6 +50,11 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{ width: '75%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
+      <Nuevo
+      traer={async () => {
+        const historial = await servicioDatos.traerclientes();
+        setDatos(historial);
+      }} />
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead sx={{ backgroundColor: 'black' }}>

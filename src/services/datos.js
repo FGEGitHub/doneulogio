@@ -111,4 +111,13 @@ const asignarventa= async  (datos) => {
     
     return data
     }  
- export default {traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+    
+    const nuevocliente= async  (datos) => {
+
+      console.log(datos)
+        const {data } = await axios.post(baseUrl+"nuevocliente",datos)
+      
+      return data
+      }  
+
+ export default {nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}

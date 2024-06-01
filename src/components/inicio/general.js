@@ -20,10 +20,10 @@ export default function App() {
       <VerticalTimeline>
         <VerticalTimelineElement
           className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          contentStyle={{ background: "rgb(33, 150, 243)", color: "#1a393c" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
           date="Don eulogio"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#1a393c" }}
           icon={<WorkIcon />}
         >
   <h3 className="vertical-timeline-element-title">Don eulogio</h3>
