@@ -9,7 +9,6 @@ import Tarjeta from "./tarjetas"
 import Tarjeta2 from "./tarjetas2"
 import Tarjeta3 from "./tarjetas3"
 import MapaGps from "./mapagps"
-import Whatsapp from "./chatwa";
 const WorkIcon = () => <></>;
 
 export default function App() {
@@ -89,7 +88,6 @@ export default function App() {
           iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
           icon={<WorkIcon />}
         />
-        <Whatsapp />
       </VerticalTimeline>
     </div>
   );
