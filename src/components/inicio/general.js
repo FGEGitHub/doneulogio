@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import Mapa from "../mapas/bosques"
 import Tarjeta from "./tarjetas"
 import Tarjeta2 from "./tarjetas2"
 import Tarjeta3 from "./tarjetas3"
