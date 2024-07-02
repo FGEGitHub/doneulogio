@@ -1,3 +1,6 @@
+
+import WhatsappChat from '../inicio/chatwa'; // Ajusta la ruta según sea necesario
+
 import React, { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -72,6 +75,9 @@ const DialogComponent = forwardRef((props, ref) => {
           <div>Cargando información...</div>
         )}
         {props.children}
+        <div style={{ marginTop: '20px' }}>
+          <WhatsappChat precio={10}/> {/* Aquí se incluye el widget de WhatsApp */}
+        </div>
       </DialogContent>
       <DialogActions>
         <Button onClick={closeDialog} color="primary">
