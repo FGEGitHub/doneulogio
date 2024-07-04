@@ -16,24 +16,19 @@ const CardStyled = styled(Card)({
 
 const ContentBox = styled(Box)({
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   justifyContent: 'space-between',
-  alignItems: 'center',
   height: '100%',
 });
 
 const ImageStyled = styled('img')({
-  width: '75%', // La imagen ocupa el 75% del ancho
+  width: '100%', // La imagen ocupa todo el ancho del contenedor
   height: 'auto', // La altura se ajusta automáticamente para mantener la proporción de la imagen
   objectFit: 'cover', // Asegura que la imagen cubra el área del contenedor
 });
 
 const TextContent = styled(Box)({
-  width: '25%', // El contenido ocupa el 25% del ancho
   padding: '16px',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center', // Centra el contenido verticalmente
 });
 
 const Title = styled(Typography)({
@@ -68,24 +63,22 @@ const PublicSpaces = () => {
   return (
     <Root>
       <Container>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           {spaces.map((space, index) => (
-            <Grid item xs={12} key={index}>
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <CardStyled>
-                <ContentBox>
-                  <ImageStyled
-                    src={space.imageUrl}
-                    alt={space.title}
-                  />
-                  <TextContent>
-                    <Title variant="h5" component="div">
-                      {space.title}
-                    </Title>
-                    <Description variant="body2">
-                      {space.description}
-                    </Description>
-                  </TextContent>
-                </ContentBox>
+                <ImageStyled
+                  src={space.imageUrl}
+                  alt={space.title}
+                />
+                <CardContent>
+                  <Title variant="h5" component="div">
+                    {space.title}
+                  </Title>
+                  <Description variant="body2">
+                    {space.description}
+                  </Description>
+                </CardContent>
               </CardStyled>
             </Grid>
           ))}
