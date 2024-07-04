@@ -9,7 +9,7 @@ import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
 import Gps from "../../Assets/mapadon.jpeg";
 import servicioDatos from '../../services/datos';
-
+import './config.css'
 const Arg = () => {
   const dialogRef = useRef();
   const [info, setInfo] = useState(false);
@@ -111,7 +111,7 @@ const Arg = () => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(0)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M-2,-2 L7877,-2 L7877,7877 L-2,7877 L-2,-2"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(0)} className="mi-path" fill={objetoEncontrado ? objetoEncontrado.idp == null ? "green"  : "grey":"white"}    fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M-2,-2 L7877,-2 L7877,7877 L-2,7877 L-2,-2"/></Tooltip>)})}
   </g>
 
           {[1].map(() => (
@@ -130,7 +130,7 @@ const Arg = () => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(1)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M0,0 L202.893,0 L202.893,202.627 L0,202.627 L0,0"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(1)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M0,0 L202.893,0 L202.893,202.627 L0,202.627 L0,0"/></Tooltip>)})}
   </g>
 
           {[2].map(() => (
@@ -149,589 +149,589 @@ const Arg = () => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(2)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M1812.06,1559.83 L1907.61,1565.41 L1906.01,1805.08 L1812.85,1800.3 L1812.06,1559.83"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(2)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M1812.06,1559.83 L1907.61,1565.41 L1906.01,1805.08 L1812.85,1800.3 L1812.06,1559.83"/></Tooltip>)})}
 
         {[3].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(3)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M1911.59,1566.2 L2004.75,1576.55 L2003.16,1801.89 L1910.79,1803.48 L1911.59,1566.2"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(3)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M1911.59,1566.2 L2004.75,1576.55 L2003.16,1801.89 L1910.79,1803.48 L1911.59,1566.2"/></Tooltip>)})}
 
         {[4].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(4)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2007.54,1577.35 L2103.08,1584.12 L2097.11,1804.68 L2005.55,1800.7 L2007.54,1577.35"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(4)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2007.54,1577.35 L2103.08,1584.12 L2097.11,1804.68 L2005.55,1800.7 L2007.54,1577.35"/></Tooltip>)})}
 
         {[5].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(5)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2103.48,1584.52 L2196.25,1589.69 L2193.46,1808.26 L2098.71,1802.69 L2103.48,1584.52"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(5)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2103.48,1584.52 L2196.25,1589.69 L2193.46,1808.26 L2098.71,1802.69 L2103.48,1584.52"/></Tooltip>)})}
 
         {[6].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(6)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2263.53,1598.05 L2353.9,1607.61 L2351.51,1810.25 L2258.75,1809.45 L2263.53,1598.05"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(6)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2263.53,1598.05 L2353.9,1607.61 L2351.51,1810.25 L2258.75,1809.45 L2263.53,1598.05"/></Tooltip>)})}
 
         {[7].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(7)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2355.49,1608.8 L2450.64,1614.77 L2448.26,1812.64 L2355.89,1809.85 L2355.49,1608.8"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(7)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2355.49,1608.8 L2450.64,1614.77 L2448.26,1812.64 L2355.89,1809.85 L2355.49,1608.8"/></Tooltip>)})}
 
         {[8].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(8)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2452.24,1615.97 L2543.41,1624.33 L2538.63,1809.85 L2447.46,1812.64 L2452.24,1615.97"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(8)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2452.24,1615.97 L2543.41,1624.33 L2538.63,1809.85 L2447.46,1812.64 L2452.24,1615.97"/></Tooltip>)})}
 
         {[9].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(9)} fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2546.59,1625.92 L2640.15,1632.69 L2635.37,1813.83 L2539.82,1811.84 L2546.59,1625.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(9)}   fillOpacity={imagenDeFondoActivada ?  0.000001:1 }fill-rule="evenodd" vector-effect="none" d="M2546.59,1625.92 L2640.15,1632.69 L2635.37,1813.83 L2539.82,1811.84 L2546.59,1625.92"/></Tooltip>)})}
 
         {[10].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(10)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1811.26,1868.18 L1906.41,1870.17 L1902.43,2052.51 L1809.27,2050.12 L1811.26,1868.18"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(10)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1811.26,1868.18 L1906.41,1870.17 L1902.43,2052.51 L1809.27,2050.12 L1811.26,1868.18"/></Tooltip>)})}
 
         {[11].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(11)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1908.8,1870.17 L2000.37,1869.77 L1999.18,2052.91 L1906.41,2052.91 L1908.8,1870.17"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(11)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1908.8,1870.17 L2000.37,1869.77 L1999.18,2052.91 L1906.41,2052.91 L1908.8,1870.17"/></Tooltip>)})}
 
         {[12].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(12)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2002.36,1870.57 L2194.65,1872.56 L2194.25,1943.02 L2000.37,1938.64 L2002.36,1870.57"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(12)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2002.36,1870.57 L2194.65,1872.56 L2194.25,1943.02 L2000.37,1938.64 L2002.36,1870.57"/></Tooltip>)})}
 
         {[13].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(13)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.49,1939.68 L2194.25,1945.41 L2193.06,2017.47 L2001.96,2013.49 L2001.49,1939.68"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(13)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.49,1939.68 L2194.25,1945.41 L2193.06,2017.47 L2001.96,2013.49 L2001.49,1939.68"/></Tooltip>)})}
 
         {[14].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(14)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.96,2017.87 L2192.66,2019.86 L2189.48,2088.34 L2000.75,2083.85 L2001.96,2017.87"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(14)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.96,2017.87 L2192.66,2019.86 L2189.48,2088.34 L2000.75,2083.85 L2001.96,2017.87"/></Tooltip>)})}
 
         {[15].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(15)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2002.47,2085.32 L2189.02,2090.99 L2189.02,2160.98 L2000.75,2160.49 L2002.47,2085.32"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(15)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2002.47,2085.32 L2189.02,2090.99 L2189.02,2160.98 L2000.75,2160.49 L2002.47,2085.32"/></Tooltip>)})}
 
         {[16].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(16)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2000.75,2162.46 L2189.02,2162.46 L2190.5,2241.32 L1999.76,2236.88 L2000.75,2162.46"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(16)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2000.75,2162.46 L2189.02,2162.46 L2190.5,2241.32 L1999.76,2236.88 L2000.75,2162.46"/></Tooltip>)})}
 
         {[17].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(17)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1936.18,2055.51 L1996.8,2055.75 L1997.79,2238.85 L1938.15,2238.85 L1936.18,2055.51"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(17)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1936.18,2055.51 L1996.8,2055.75 L1997.79,2238.85 L1938.15,2238.85 L1936.18,2055.51"/></Tooltip>)})}
 
         {[18].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(18)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1871.62,2054.27 L1933.22,2056 L1934.7,2238.85 L1870.63,2238.36 L1871.62,2054.27"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(18)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1871.62,2054.27 L1933.22,2056 L1934.7,2238.85 L1870.63,2238.36 L1871.62,2054.27"/></Tooltip>)})}
 
         {[19].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(19)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1808.53,2053.53 L1870.38,2054.52 L1869.15,2237.37 L1804.59,2233.92 L1808.53,2053.53"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(19)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1808.53,2053.53 L1870.38,2054.52 L1869.15,2237.37 L1804.59,2233.92 L1808.53,2053.53"/></Tooltip>)})}
 
         {[20].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(20)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.64,1870.8 L2445.44,1874.25 L2444.45,1946.21 L2261.1,1942.76 L2258.64,1870.8"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(20)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.64,1870.8 L2445.44,1874.25 L2444.45,1946.21 L2261.1,1942.76 L2258.64,1870.8"/></Tooltip>)})}
 
         {[21].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(21)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2260.12,1945.72 L2444.45,1947.69 L2443.46,2020.14 L2259.13,2019.65 L2260.12,1945.72"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(21)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2260.12,1945.72 L2444.45,1947.69 L2443.46,2020.14 L2259.13,2019.65 L2260.12,1945.72"/></Tooltip>)})}
 
         {[22].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(22)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.15,2022.61 L2444.94,2022.61 L2444.94,2091.61 L2257.65,2090.13 L2258.15,2022.61"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(22)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.15,2022.61 L2444.94,2022.61 L2444.94,2091.61 L2257.65,2090.13 L2258.15,2022.61"/></Tooltip>)})}
 
         {[23].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(23)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2448.89,1875.24 L2540.56,1877.7 L2539.08,2060.56 L2446.91,2059.57 L2448.89,1875.24"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(23)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2448.89,1875.24 L2540.56,1877.7 L2539.08,2060.56 L2446.91,2059.57 L2448.89,1875.24"/></Tooltip>)})}
 
         {[24].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(24)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2543.02,1877.7 L2636.67,1876.72 L2633.71,2062.04 L2541.05,2060.07 L2543.02,1877.7"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(24)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2543.02,1877.7 L2636.67,1876.72 L2633.71,2062.04 L2541.05,2060.07 L2543.02,1877.7"/></Tooltip>)})}
 
         {[25].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(25)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2542.53,2064.01 L2541.05,2062.53 L2537.6,2245.88 L2632.23,2246.37 L2634.7,2063.52 L2542.53,2064.01"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(25)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2542.53,2064.01 L2541.05,2062.53 L2537.6,2245.88 L2632.23,2246.37 L2634.7,2063.52 L2542.53,2064.01"/></Tooltip>)})}
 
         {[26].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(26)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2445.93,2063.02 L2539.57,2062.53 L2537.11,2244.89 L2442.97,2246.86 L2445.93,2063.02"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(26)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2445.93,2063.02 L2539.57,2062.53 L2537.11,2244.89 L2442.97,2246.86 L2445.93,2063.02"/></Tooltip>)})}
 
         {[27].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(27)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.15,2092.59 L2444.94,2091.61 L2442.97,2165.54 L2257.65,2164.55 L2258.15,2092.59"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(27)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.15,2092.59 L2444.94,2091.61 L2442.97,2165.54 L2257.65,2164.55 L2258.15,2092.59"/></Tooltip>)})}
 
         {[28].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(28)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2255.68,2167.51 L2442.97,2166.03 L2442.97,2246.86 L2255.68,2241.44 L2255.68,2167.51"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(28)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2255.68,2167.51 L2442.97,2166.03 L2442.97,2246.86 L2255.68,2241.44 L2255.68,2167.51"/></Tooltip>)})}
 
         {[29].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(29)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1806.68,2301.57 L1866.81,2302.06 L1867.8,2492.31 L1805.7,2492.31 L1806.68,2301.57"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(29)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1806.68,2301.57 L1866.81,2302.06 L1867.8,2492.31 L1805.7,2492.31 L1806.68,2301.57"/></Tooltip>)})}
 
         {[30].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(30)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1869.77,2303.54 L1869.77,2303.54 L1933.35,2305.02 L1869.77,2303.54"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(30)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1869.77,2303.54 L1869.77,2303.54 L1933.35,2305.02 L1869.77,2303.54"/></Tooltip>)})}
 
         {[31].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(31)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1869.77,2304.53 L1930.88,2305.51 L1931.38,2495.76 L1867.8,2494.28 L1869.77,2304.53"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(31)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1869.77,2304.53 L1930.88,2305.51 L1931.38,2495.76 L1867.8,2494.28 L1869.77,2304.53"/></Tooltip>)})}
 
         {[32].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(32)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1933.35,2306.01 L1997.91,2304.53 L1993.97,2496.74 L1934.83,2493.79 L1933.35,2306.01"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(32)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1933.35,2306.01 L1997.91,2304.53 L1993.97,2496.74 L1934.83,2493.79 L1933.35,2306.01"/></Tooltip>)})}
 
         {[33].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(33)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.36,2305.51 L2189.15,2307.48 L2189.15,2370.57 L1999.88,2366.63 L2001.36,2305.51"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(33)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2001.36,2305.51 L2189.15,2307.48 L2189.15,2370.57 L1999.88,2366.63 L2001.36,2305.51"/></Tooltip>)})}
 
         {[34].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(34)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2000.87,2368.11 L2189.15,2373.04 L2188.65,2432.18 L1997.91,2431.19 L2000.87,2368.11"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(34)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2000.87,2368.11 L2189.15,2373.04 L2188.65,2432.18 L1997.91,2431.19 L2000.87,2368.11"/></Tooltip>)})}
 
         {[35].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(35)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1997.42,2435.14 L2187.17,2434.64 L2185.7,2497.24 L1996.43,2494.77 L1997.42,2435.14"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(35)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1997.42,2435.14 L2187.17,2434.64 L2185.7,2497.24 L1996.43,2494.77 L1997.42,2435.14"/></Tooltip>)})}
 
         {[36].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(36)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1804.71,2497.24 L1878.15,2495.76 L1877.65,2657.42 L1798.8,2657.91 L1804.71,2497.24"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(36)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1804.71,2497.24 L1878.15,2495.76 L1877.65,2657.42 L1798.8,2657.91 L1804.71,2497.24"/></Tooltip>)})}
 
         {[37].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(37)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1880.12,2496.25 L1956.51,2496.25 L1952.57,2660.87 L1877.16,2658.4 L1880.12,2496.25"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(37)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1880.12,2496.25 L1956.51,2496.25 L1952.57,2660.87 L1877.16,2658.4 L1880.12,2496.25"/></Tooltip>)})}
 
         {[38].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(38)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1957.5,2498.72 L2030.94,2499.21 L2028.47,2659.88 L1954.05,2658.9 L1957.5,2498.72"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(38)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1957.5,2498.72 L2030.94,2499.21 L2028.47,2659.88 L1954.05,2658.9 L1957.5,2498.72"/></Tooltip>)})}
 
         {[39].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(39)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2033.89,2500.19 L2110.29,2499.21 L2108.81,2662.35 L2031.92,2657.42 L2033.89,2500.19"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(39)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2033.89,2500.19 L2110.29,2499.21 L2108.81,2662.35 L2031.92,2657.42 L2033.89,2500.19"/></Tooltip>)})}
 
         {[40].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(40)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2110.78,2500.19 L2187.67,2501.18 L2185.2,2663.83 L2112.26,2661.85 L2110.78,2500.19"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(40)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2110.78,2500.19 L2187.67,2501.18 L2185.2,2663.83 L2112.26,2661.85 L2110.78,2500.19"/></Tooltip>)})}
 
         {[41].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(41)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2253.22,2306.99 L2440.51,2308.96 L2440.01,2369.58 L2253.71,2367.61 L2253.22,2306.99"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(41)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2253.22,2306.99 L2440.51,2308.96 L2440.01,2369.58 L2253.71,2367.61 L2253.22,2306.99"/></Tooltip>)})}
 
         {[42].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(42)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2253.71,2372.05 L2439.52,2372.54 L2439.52,2437.11 L2252.73,2433.66 L2253.71,2372.05"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(42)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2253.71,2372.05 L2439.52,2372.54 L2439.52,2437.11 L2252.73,2433.66 L2253.71,2372.05"/></Tooltip>)})}
 
         {[43].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(43)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2251.25,2437.6 L2441,2438.59 L2441,2497.73 L2252.23,2497.24 L2251.25,2437.6"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(43)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2251.25,2437.6 L2441,2438.59 L2441,2497.73 L2252.23,2497.24 L2251.25,2437.6"/></Tooltip>)})}
 
         {[44].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(44)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2442.97,2310.93 L2537.6,2311.43 L2534.15,2501.67 L2442.97,2498.72 L2442.97,2310.93"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(44)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2442.97,2310.93 L2537.6,2311.43 L2534.15,2501.67 L2442.97,2498.72 L2442.97,2310.93"/></Tooltip>)})}
 
         {[45].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(45)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2540.07,2311.92 L2633.22,2312.91 L2630.26,2504.14 L2536.62,2500.69 L2540.07,2311.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(45)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2540.07,2311.92 L2633.22,2312.91 L2630.26,2504.14 L2536.62,2500.69 L2540.07,2311.92"/></Tooltip>)})}
 
         {[46].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(46)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2634.7,2311.92 L2746.08,2314.88 L2694.83,2506.11 L2630.75,2504.63 L2634.7,2311.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(46)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2634.7,2311.92 L2746.08,2314.88 L2694.83,2506.11 L2630.75,2504.63 L2634.7,2311.92"/></Tooltip>)})}
 
         {[47].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(47)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2592.31,2506.6 L2693.84,2507.09 L2646.03,2696.36 L2590.34,2693.4 L2592.31,2506.6"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(47)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2592.31,2506.6 L2693.84,2507.09 L2646.03,2696.36 L2590.34,2693.4 L2592.31,2506.6"/></Tooltip>)})}
 
         {[48].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(48)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2591.32,2507.59 L2587.38,2690.44 L2524.79,2686.5 L2525.28,2505.12 L2591.32,2507.59"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(48)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2591.32,2507.59 L2587.38,2690.44 L2524.79,2686.5 L2525.28,2505.12 L2591.32,2507.59"/></Tooltip>)})}
 
         {[49].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(49)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2521.34,2505.12 L2522.82,2684.03 L2455.29,2678.61 L2456.77,2503.64 L2521.34,2505.12"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(49)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2521.34,2505.12 L2522.82,2684.03 L2455.29,2678.61 L2456.77,2503.64 L2521.34,2505.12"/></Tooltip>)})}
 
         {[50].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(50)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2453.32,2504.14 L2452.83,2677.13 L2386.29,2674.67 L2386.29,2502.66 L2453.32,2504.14"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(50)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2453.32,2504.14 L2452.83,2677.13 L2386.29,2674.67 L2386.29,2502.66 L2453.32,2504.14"/></Tooltip>)})}
 
         {[51].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(51)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2320.74,2500.19 L2383.83,2503.64"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(51)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2320.74,2500.19 L2383.83,2503.64"/></Tooltip>)})}
 
         {[52].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(52)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2316.31,2500.69 L2315.32,2666.78 L2249.28,2663.83 L2249.28,2500.19 L2316.31,2500.69"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(52)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2316.31,2500.69 L2315.32,2666.78 L2249.28,2663.83 L2249.28,2500.19 L2316.31,2500.69"/></Tooltip>)})}
 
         {[53].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(53)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1796.33,2802.81 L2174.85,2805.77 L2167.95,3332.15 L1789.43,3327.22 L1796.33,2802.81"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(53)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1796.33,2802.81 L2174.85,2805.77 L2167.95,3332.15 L1789.43,3327.22 L1796.33,2802.81"/></Tooltip>)})}
 
         {[54].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(54)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(54)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
 
         {[55].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(55)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1791.9,3391.79 L1881.1,3390.8 L1879.13,3517.47 L1793.37,3515.5 L1791.9,3391.79"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(55)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1791.9,3391.79 L1881.1,3390.8 L1879.13,3517.47 L1793.37,3515.5 L1791.9,3391.79"/></Tooltip>)})}
 
         {[56].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(56)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1885.05,3391.3 L1973.27,3392.78 L1969.82,3517.47 L1881.1,3516.48 L1885.05,3391.3"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(56)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1885.05,3391.3 L1973.27,3392.78 L1969.82,3517.47 L1881.1,3516.48 L1885.05,3391.3"/></Tooltip>)})}
 
         {[57].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(57)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1976.23,3393.27 L2165.98,3394.75 L2166.47,3458.33 L1974.75,3452.9 L1976.23,3393.27"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(57)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1976.23,3393.27 L2165.98,3394.75 L2166.47,3458.33 L1974.75,3452.9 L1976.23,3393.27"/></Tooltip>)})}
 
         {[58].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(58)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1974.26,3455.86 L2161.55,3460.3 L2163.52,3521.91 L1975.24,3518.95 L1974.26,3455.86"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(58)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1974.26,3455.86 L2161.55,3460.3 L2163.52,3521.91 L1975.24,3518.95 L1974.26,3455.86"/></Tooltip>)})}
 
         {[59].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(59)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1974.26,3521.91 L2163.02,3522.89 L2161.55,3584.99 L1973.27,3581.05 L1974.26,3521.91"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(59)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1974.26,3521.91 L2163.02,3522.89 L2161.55,3584.99 L1973.27,3581.05 L1974.26,3521.91"/></Tooltip>)})}
 
         {[60].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(60)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1790.42,3520.92 L1970.81,3520.92 L1969.33,3584.99 L1790.42,3579.08 L1790.42,3520.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(60)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1790.42,3520.92 L1970.81,3520.92 L1969.33,3584.99 L1790.42,3579.08 L1790.42,3520.92"/></Tooltip>)})}
 
         {[61].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(61)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3582.04 L1971.3,3584.01 L1971.3,3649.07 L1789.92,3646.11 L1787.95,3582.04"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(61)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3582.04 L1971.3,3584.01 L1971.3,3649.07 L1789.92,3646.11 L1787.95,3582.04"/></Tooltip>)})}
 
         {[62].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(62)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1973.27,3585.98 L2162.53,3586.47 L2162.04,3649.07 L1969.82,3648.08 L1973.27,3585.98"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(62)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1973.27,3585.98 L2162.53,3586.47 L2162.04,3649.07 L1969.82,3648.08 L1973.27,3585.98"/></Tooltip>)})}
 
         {[63].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(63)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3648.08 L1969.82,3650.05 L1969.33,3714.62 L1788.94,3711.66 L1787.95,3648.08"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(63)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3648.08 L1969.82,3650.05 L1969.33,3714.62 L1788.94,3711.66 L1787.95,3648.08"/></Tooltip>)})}
 
         {[64].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(64)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1970.81,3650.54 L2161.55,3650.54 L2164.01,3717.08 L1970.81,3711.66 L1970.81,3650.54"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(64)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1970.81,3650.54 L2161.55,3650.54 L2164.01,3717.08 L1970.81,3711.66 L1970.81,3650.54"/></Tooltip>)})}
 
         {[65].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(65)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3714.12 L1968.34,3713.14 L1967.85,3775.73 L1790.42,3773.76 L1787.95,3714.12"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(65)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1787.95,3714.12 L1968.34,3713.14 L1967.85,3775.73 L1790.42,3773.76 L1787.95,3714.12"/></Tooltip>)})}
 
         {[66].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(66)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1971.79,3714.12 L2161.55,3717.08 L2160.56,3778.69 L1970.31,3774.25 L1971.79,3714.12"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(66)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1971.79,3714.12 L2161.55,3717.08 L2160.56,3778.69 L1970.31,3774.25 L1971.79,3714.12"/></Tooltip>)})}
 
         {[67].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(67)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1788.94,3775.73 L1875.19,3777.21 L1874.7,3902.4 L1785.98,3899.93 L1788.94,3775.73"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(67)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1788.94,3775.73 L1875.19,3777.21 L1874.7,3902.4 L1785.98,3899.93 L1788.94,3775.73"/></Tooltip>)})}
 
         {[68].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(68)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1876.18,3777.7 L1966.37,3779.18 L1964.4,3904.37 L1875.68,3901.91 L1876.18,3777.7"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(68)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1876.18,3777.7 L1966.37,3779.18 L1964.4,3904.37 L1875.68,3901.91 L1876.18,3777.7"/></Tooltip>)})}
 
         {[69].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(69)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1970.31,3777.7 L2160.07,3779.68 L2159.57,3843.25 L1967.36,3840.3 L1970.31,3777.7"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(69)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1970.31,3777.7 L2160.07,3779.68 L2159.57,3843.25 L1967.36,3840.3 L1970.31,3777.7"/></Tooltip>)})}
 
         {[70].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(70)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1967.85,3843.75 L2159.57,3844.73 L2159.57,3906.83 L1966.37,3903.88 L1967.85,3843.75"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(70)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1967.85,3843.75 L2159.57,3844.73 L2159.57,3906.83 L1966.37,3903.88 L1967.85,3843.75"/></Tooltip>)})}
 
         {[71].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(71)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2248.78,3395.24 L2442.48,3396.72 L2440.51,3459.31 L2247.3,3458.33 L2248.78,3395.24"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(71)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2248.78,3395.24 L2442.48,3396.72 L2440.51,3459.31 L2247.3,3458.33 L2248.78,3395.24"/></Tooltip>)})}
 
         {[72].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(72)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2247.3,3460.54 L2441.99,3462.52 L2440.01,3527.08 L2248.29,3523.14 L2247.3,3460.54"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(72)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2247.3,3460.54 L2441.99,3462.52 L2440.01,3527.08 L2248.29,3523.14 L2247.3,3460.54"/></Tooltip>)})}
 
         {[73].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(73)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.32,3525.6 L2441.49,3529.55 L2440.51,3591.65 L2245.83,3585.73 L2246.32,3525.6"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(73)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.32,3525.6 L2441.49,3529.55 L2440.51,3591.65 L2245.83,3585.73 L2246.32,3525.6"/></Tooltip>)})}
 
         {[74].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(74)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.83,3588.2 L2439.03,3591.15 L2439.03,3652.27 L2247.3,3651.28 L2245.83,3588.2"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(74)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.83,3588.2 L2439.03,3591.15 L2439.03,3652.27 L2247.3,3651.28 L2245.83,3588.2"/></Tooltip>)})}
 
         {[75].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(75)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.32,3653.25 L2439.52,3655.23 L2438.04,3720.28 L2246.32,3715.36 L2246.32,3653.25"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(75)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.32,3653.25 L2439.52,3655.23 L2438.04,3720.28 L2246.32,3715.36 L2246.32,3653.25"/></Tooltip>)})}
 
         {[76].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(76)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.33,3717.82 L2437.55,3722.26 L2435.58,3781.4 L2244.84,3780.41 L2245.33,3717.82"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(76)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.33,3717.82 L2437.55,3722.26 L2435.58,3781.4 L2244.84,3780.41 L2245.33,3717.82"/></Tooltip>)})}
 
         {[77].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(77)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.83,3782.88 L2437.06,3780.91 L2437.06,3846.46 L2246.81,3843.5 L2245.83,3782.88"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(77)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2245.83,3782.88 L2437.06,3780.91 L2437.06,3846.46 L2246.81,3843.5 L2245.83,3782.88"/></Tooltip>)})}
 
         {[78].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(78)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.81,3846.46 L2436.56,3845.47 L2437.06,3907.08 L2243.85,3908.07 L2246.81,3846.46"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(78)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2246.81,3846.46 L2436.56,3845.47 L2437.06,3907.08 L2243.85,3908.07 L2246.81,3846.46"/></Tooltip>)})}
 
         {[79].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(79)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2513.45,3399.92 L2578.51,3399.92 L2576.05,3589.68 L2515.42,3590.17 L2513.45,3399.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(79)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2513.45,3399.92 L2578.51,3399.92 L2576.05,3589.68 L2515.42,3590.17 L2513.45,3399.92"/></Tooltip>)})}
 
         {[80].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(80)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2580.48,3400.41 L2642.09,3399.92 L2639.63,3589.68 L2579,3589.68 L2580.48,3400.41"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(80)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2580.48,3400.41 L2642.09,3399.92 L2639.63,3589.68 L2579,3589.68 L2580.48,3400.41"/></Tooltip>)})}
 
         {[81].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(81)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2645.05,3401.89 L2706.66,3402.39 L2703.7,3592.14 L2641.6,3591.65 L2645.05,3401.89"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(81)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2645.05,3401.89 L2706.66,3402.39 L2703.7,3592.14 L2641.6,3591.65 L2645.05,3401.89"/></Tooltip>)})}
 
         {[82].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(82)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2514.44,3594.11 L2704.68,3595.59 L2702.22,3657.2 L2512.96,3654.24 L2514.44,3594.11"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(82)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2514.44,3594.11 L2704.68,3595.59 L2702.22,3657.2 L2512.96,3654.24 L2514.44,3594.11"/></Tooltip>)})}
 
         {[83].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(83)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2512.96,3657.69 L2702.22,3659.66 L2702.22,3723.24 L2512.96,3719.3 L2512.96,3657.69"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(83)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2512.96,3657.69 L2702.22,3659.66 L2702.22,3723.24 L2512.96,3719.3 L2512.96,3657.69"/></Tooltip>)})}
 
         {[84].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(84)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2509.02,3723.24 L2573.58,3722.75 L2574.57,3911.52 L2506.55,3912.5 L2509.02,3723.24"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(84)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2509.02,3723.24 L2573.58,3722.75 L2574.57,3911.52 L2506.55,3912.5 L2509.02,3723.24"/></Tooltip>)})}
 
         {[85].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(85)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2577.03,3723.24 L2637.65,3721.76 L2636.18,3914.47 L2576.54,3914.47 L2577.03,3723.24"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(85)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2577.03,3723.24 L2637.65,3721.76 L2636.18,3914.47 L2576.54,3914.47 L2577.03,3723.24"/></Tooltip>)})}
 
         {[86].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(86)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2638.15,3723.73 L2702.71,3722.75 L2700.74,3916.94 L2638.64,3912.5 L2638.15,3723.73"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(86)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M2638.15,3723.73 L2702.71,3722.75 L2700.74,3916.94 L2638.64,3912.5 L2638.15,3723.73"/></Tooltip>)})}
 
         {[87].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(87)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(87)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
 
         {[88].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(88)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1878.15,3969.18 L1961.93,3969.18 L1962.92,4095.85 L1872.23,4097.33 L1878.15,3969.18"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(88)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1878.15,3969.18 L1961.93,3969.18 L1962.92,4095.85 L1872.23,4097.33 L1878.15,3969.18"/></Tooltip>)})}
 
         {[89].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(89)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.88,3971.65 L2158.1,3971.15 L2154.64,4034.73 L1967.36,4032.76 L1965.88,3971.65"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(89)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.88,3971.65 L2158.1,3971.15 L2154.64,4034.73 L1967.36,4032.76 L1965.88,3971.65"/></Tooltip>)})}
 
         {[90].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(90)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.38,4035.72 L2152.67,4036.7 L2153.66,4099.79 L1966.86,4096.83 L1965.38,4035.72"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(90)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.38,4035.72 L2152.67,4036.7 L2153.66,4099.79 L1966.86,4096.83 L1965.38,4035.72"/></Tooltip>)})}
 
         {[91].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(91)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1783.52,4097.33 L1962.92,4099.79 L1960.95,4159.43 L1782.53,4154.99 L1783.52,4097.33"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(91)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1783.52,4097.33 L1962.92,4099.79 L1960.95,4159.43 L1782.53,4154.99 L1783.52,4097.33"/></Tooltip>)})}
 
         {[92].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(92)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.38,4101.27 L2153.17,4101.76 L2154.15,4162.39 L1964.89,4158.94 L1965.38,4101.27"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(92)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1965.38,4101.27 L2153.17,4101.76 L2154.15,4162.39 L1964.89,4158.94 L1965.38,4101.27"/></Tooltip>)})}
 
         {[93].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(93)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1779.57,4161.4 L1959.96,4160.91 L1959.47,4225.47 L1781.55,4222.02 L1779.57,4161.4"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(93)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1779.57,4161.4 L1959.96,4160.91 L1959.47,4225.47 L1781.55,4222.02 L1779.57,4161.4"/></Tooltip>)})}
 
         {[94].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(94)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1962.92,4161.4 L2154.64,4163.86 L2152.67,4227.94 L1962.43,4225.47 L1962.92,4161.4"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(94)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1962.92,4161.4 L2154.64,4163.86 L2152.67,4227.94 L1962.43,4225.47 L1962.92,4161.4"/></Tooltip>)})}
 
         {[95].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(95)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1780.07,4225.47 L1959.96,4228.43 L1957.99,4290.04 L1777.6,4284.62 L1780.07,4225.47"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(95)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1780.07,4225.47 L1959.96,4228.43 L1957.99,4290.04 L1777.6,4284.62 L1780.07,4225.47"/></Tooltip>)})}
 
         {[96].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(96)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1961.93,4228.92 L2153.66,4227.44 L2151.69,4293.49 L1961.44,4290.04 L1961.93,4228.92"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(96)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1961.93,4228.92 L2153.66,4227.44 L2151.69,4293.49 L1961.44,4290.04 L1961.93,4228.92"/></Tooltip>)})}
 
         {[97].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(97)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1781.05,4290.53 L1958.48,4293 L1958.98,4353.12 L1781.55,4348.2 L1781.05,4290.53"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(97)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1781.05,4290.53 L1958.48,4293 L1958.98,4353.12 L1781.55,4348.2 L1781.05,4290.53"/></Tooltip>)})}
 
         {[98].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(98)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1962.43,4293 L2152.67,4295.46 L2150.21,4356.08 L1962.43,4352.63 L1962.43,4293"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(98)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1962.43,4293 L2152.67,4295.46 L2150.21,4356.08 L1962.43,4352.63 L1962.43,4293"/></Tooltip>)})}
 
         {[99].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path onClick={() => handleOpenDialog(99)}fill="transparent"  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1779.08,4354.11 L1868.29,4353.12 L1870.26,4479.79 L1777.11,4479.79 L1779.08,4354.11"/></Tooltip>)})}
+            <path onClick={() => handleOpenDialog(99)}  fillOpacity={imagenDeFondoActivada ?  0.000001:1 } fill-rule="evenodd" vector-effect="none" d="M1779.08,4354.11 L1868.29,4353.12 L1870.26,4479.79 L1777.11,4479.79 L1779.08,4354.11"/></Tooltip>)})}
 
         {[100].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
