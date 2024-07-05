@@ -89,17 +89,24 @@ const Arg = () => {
               <TransformComponent>
                 {lotes ? (
                   <>
-                    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                      {imagenDeFondoActivada && (
-                        <img
-                          src={Gps}
-                          alt="Imagen de fondo"
-                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
-                        />
-                      )}
+                  <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+  {imagenDeFondoActivada && (
+    <img
+      src={Gps}
+      alt="Imagen de fondo"
+      style={{ 
+        position: 'absolute', 
+        width: '100%', 
+        height: '100%', 
+        objectFit: 'contain', // o 'cover' según prefieras
+        zIndex: -1 
+      }}
+    />
+  )}
+
                <div style={{ marginTop: '1%' }}>
                 
-<svg xmlns="http://www.w3.org/2000/svg" width="215mm"  viewBox="0 0 7874 7874" baseProfile="tiny" height="215mm" version="1.2">
+<svg xmlns="http://www.w3.org/2000/svg" width="215mm" height="215mm"  viewBox="0 0 7874 7874" baseProfile="tiny" version="1.2">
  <defs/>
  <g stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g stroke-width="1" transform="matrix(1,0,0,1,0,0)" font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
