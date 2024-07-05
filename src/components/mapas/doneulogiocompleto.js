@@ -64,7 +64,7 @@ const Arg = () => {
                   color="secondary"
                   style={{ marginBottom: "10px" }}
                 >
-                  <ZoomIn /> Zona Bosquess
+                  <ZoomIn /> Zona Bosques
                 </IconButton>
 
                 <IconButton
@@ -97,7 +97,7 @@ const Arg = () => {
                           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}
                         />
                       )}
-               <div style={{ marginTop: '2mm' }}>
+               <div style={{ marginTop: '1%' }}>
                 
 <svg xmlns="http://www.w3.org/2000/svg" width="215mm"  viewBox="0 0 7874 7874" baseProfile="tiny" height="215mm" version="1.2">
  <defs/>
