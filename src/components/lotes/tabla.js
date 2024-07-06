@@ -9,12 +9,14 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos';
 import Modalventa from './modalventa'
-
+import ModalLote from './modalprecio'
 const columns = [
   { id: 'sector', label: 'sector', minWidth: 100 },
   { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
   { id: 'lote', label: 'lote', minWidth: 100, align: 'right' },
   { id: 'superficie', label: 'superficie', minWidth: 100, align: 'right' },
+  { id: 'posecion', label: 'posecion', minWidth: 100, align: 'right' },
+  { id: 'escritura', label: 'escritura', minWidth: 100, align: 'right' },
   { id: 'estado', label: 'estado', minWidth: 100, align: 'right' },
   { id: 'nombre', label: 'nombre', minWidth: 100, align: 'right' },
   { id: 'idventa', label: 'Ver detalles', minWidth: 100, align: 'right' },
@@ -73,7 +75,7 @@ export default function StickyHeadTable() {
                       align={column.align}
                       style={{ color: column.id === 'estado' ? getColorForEstado(row[column.id]) : 'white' }}
                     >
-                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'idventa' ? row[column.id] == null ? <>no</>:<><Modalventa id={row[column.id]}/></> : row[column.id]}
+                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'idventa' ? row[column.id] == null ? <>no</>:<><Modalventa id={row[column.id]}/> <ModalLote id={row[column.id]}/></> : row[column.id]}
                     </TableCell>
                   ))}
                 </TableRow>

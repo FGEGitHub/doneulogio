@@ -73,40 +73,26 @@ export default function SelectTextFields(props) {
             }}
         >
             <Tooltip title="Venta">
-                <button  onClick={handleClickOpen}>Actualizar</button>
+                <button onClick={handleClickOpen}>Modificar</button>
             </Tooltip>
             <Dialog open={open} onClose={handleClose}>
                 <DialogContent>
                     <Typography variant="h5" gutterBottom><b>Datos de venta</b></Typography>
-                    {datos ? (
-                        <>
-                            {['escritura', 'posecion', 'consctruccion'].map((field) => (
-                                <Fragment key={field}>
-                                    <InputLabel htmlFor={`${field}-select`}>
-                                        <StyledParagraph>{field.charAt(0).toUpperCase() + field.slice(1)}</StyledParagraph>
-                                    </InputLabel>
-                                    <NativeSelect
-                                        defaultValue={datos[field]}
-                                        onChange={handleChange}
-                                        inputProps={{
-                                            name: field,
-                                            id: `${field}-select`,
-                                        }}
-                                        sx={{ width: '100%', mb: 2 }}
-                                    >
-                                        <option value={datos[field]}>{datos[field]}</option>
-                                        <option value={'Si'}>Si</option>
-                                        <option value={'No'}>No</option>
-                                    </NativeSelect>
-                                </Fragment>
-                            ))}
-                     
-                        </>
-                    ) : (
-                        <CircularProgress />
-                    )}
+                   
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="precio"
+                                label="Precio"
+                                name="precio"
+                                onChange={handleChange}
+                                fullWidth
+                                variant="standard"
+                            />
+                   
+                
                     <DialogActions>
-                        <Button variant="contained" color="primary" onClick={handleDeterminar}>Asignar</Button>
+                        <Button variant="contained" color="primary" onClick={handleDeterminar}>Modificar</Button>
                         <Button variant="outlined" color="error" onClick={handleClose}>Cancelar</Button>
                     </DialogActions>
                 </DialogContent>
