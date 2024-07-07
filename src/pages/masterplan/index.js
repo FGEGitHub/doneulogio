@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Nav from '../../components/inicio/nav';
-import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
 import fondoMaster from "../../Assets/fondomaster.png"; // Importa la imagen de fondo
 import General from '../../components/mapas/doneulogiocompleto';
 
@@ -15,6 +14,25 @@ const backgroundOverlayStyle = {
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundImage: `url(${fondoMaster})`,
+};
+
+const contentContainerStyle = {
+  minHeight: '200vh',
+  position: 'relative',
+  zIndex: 1,
+  display: 'flex',
+  justifyContent: 'center', // Centra horizontalmente
+  alignItems: 'center', // Centra verticalmente
+  flexDirection: 'column', // Asegura que los elementos se coloquen uno debajo del otro
+};
+
+const generalContainerStyle = {
+  padding: '20px',
+  backgroundColor: 'white', // Color de fondo del recuadro
+  border: '2px solid black', // Borde del recuadro
+  borderRadius: '10px', // Bordes redondeados
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para el recuadro
+  overflow: 'hidden', // Asegura que el contenido no se salga del recuadro
 };
 
 export default function Paginas() {
@@ -47,10 +65,11 @@ export default function Paginas() {
             <div style={backgroundOverlayStyle}></div>
          
             {/* Contenido principal */}
-            <div style={{ minHeight: '200vh', position: 'relative', zIndex: 1 }}>
+            <div style={contentContainerStyle}>
                 <Nav /> <br /><br />   
-                {/* Agrega aquí el resto de tu contenido */}
-                <General />
+                <div style={generalContainerStyle}>
+                    <General />
+                </div>
             </div>
         </>
     );

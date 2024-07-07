@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
-import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
+import fondoMaster from "../../Assets/fondomaster.png"; // Importa la imagen de fondo
 import General from '../../components/inicio/general';
 
 const backgroundOverlayStyle = {
@@ -12,14 +11,28 @@ const backgroundOverlayStyle = {
   height: '100%',
   zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
   display: 'flex',
-
-};
-
-  
-const backgroundOverlayImageStyle = {
-  flex: '1 1 auto',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  backgroundImage: `url(${fondoMaster})`,
+};
+
+const contentContainerStyle = {
+  minHeight: '200vh',
+  position: 'relative',
+  zIndex: 1,
+  display: 'flex',
+  justifyContent: 'center', // Centra horizontalmente
+  alignItems: 'center', // Centra verticalmente
+  flexDirection: 'column', // Asegura que los elementos se coloquen uno debajo del otro
+};
+
+const generalContainerStyle = {
+  padding: '20px',
+  backgroundColor: 'white', // Color de fondo del recuadro
+  border: '2px solid black', // Borde del recuadro
+  borderRadius: '10px', // Bordes redondeados
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Sombra para el recuadro
+  overflow: 'hidden', // Asegura que el contenido no se salga del recuadro
 };
 
 export default function Paginas() {
@@ -46,26 +59,17 @@ export default function Paginas() {
     return (
         <>
             {/* Fondo verde */}
-            <div style={{ backgroundColor: '#1b7f3e', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
-                
-            </div>
-         
-            {/* Contenedor para las imágenes de fondo */}
-       
-      
-      
+            <div style={{ backgroundColor: '#558b2f', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
             
+            {/* Fondo con imagen */}
+         
+         
             {/* Contenido principal */}
-            <div style={{ position: 'relative', zIndex: 0 }}>
-            <StrictMode>
-                    <Nav/>
-                    {/* Agrega aquí el resto de tu contenido */}
-                    <General/>
-              </StrictMode>
- 
-                    {/* Agrega más componentes aquí */}
-                 
-            </div>
-        </>
+        
+                <Nav /> <br /><br />   
+              
+                    <General />
+             
+           </>
     );
 }
