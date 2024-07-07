@@ -52,7 +52,7 @@ export default function SelectTextFields(props) {
     const handleDeterminar = async (event) => {
         try {
             event.preventDefault();
-            const nov = await servicioDatos.actualizarventa(form);
+            const nov = await servicioDatos.modificarlotee(form);
             alert(nov);
         } catch (error) {
             console.error(error);
