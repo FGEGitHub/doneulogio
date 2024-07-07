@@ -86,7 +86,17 @@ export default function StickyHeadTable() {
                             <>no</>
                           ) : (
                             <>
-                              <Modalventa id={value} /> <ModalLote id={value} />
+                              <Modalventa id={row[column.id]} 
+                              traer={ async () => {
+                                const historial = await servicioDatos.traerlotes();
+                                setDatos(historial);
+                              }
+                            }/> <ModalLote id={row[column.id]} 
+                            traer={ async () => {
+                              const historial = await servicioDatos.traerlotes();
+                              setDatos(historial);
+                            }
+                          }/>
                             </>
                           )
                         ) : (

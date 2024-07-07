@@ -54,6 +54,7 @@ export default function SelectTextFields(props) {
             event.preventDefault();
             const nov = await servicioDatos.modificarlotee(form);
             alert(nov);
+            props.traer()
         } catch (error) {
             console.error(error);
             console.log('Error algo sucedio');
