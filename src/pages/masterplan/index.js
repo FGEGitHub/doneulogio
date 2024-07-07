@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
+import fondoMaster from "../../Assets/fondomaster.png"; // Importa la imagen de fondo
 import General from '../../components/mapas/doneulogiocompleto';
 
 const backgroundOverlayStyle = {
@@ -12,14 +12,9 @@ const backgroundOverlayStyle = {
   height: '100%',
   zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
   display: 'flex',
-
-};
-
-  
-const backgroundOverlayImageStyle = {
-  flex: '1 1 auto',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
+  backgroundImage: `url(${fondoMaster})`,
 };
 
 export default function Paginas() {
@@ -47,21 +42,16 @@ export default function Paginas() {
         <>
             {/* Fondo verde */}
             <div style={{ backgroundColor: '#558b2f', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
-         
-            {/* Contenedor para las imágenes de fondo */}
-         
             
+            {/* Fondo con imagen */}
+            <div style={backgroundOverlayStyle}></div>
+         
             {/* Contenido principal */}
-     
-
-                    <Nav/> <br/><br/>   
-                    {/* Agrega aquí el resto de tu contenido */}
-                    <General/>
-
- 
-                    {/* Agrega más componentes aquí */}
-                 
-        
+            <div style={{ minHeight: '200vh', position: 'relative', zIndex: 1 }}>
+                <Nav /> <br /><br />   
+                {/* Agrega aquí el resto de tu contenido */}
+                <General />
+            </div>
         </>
     );
 }
