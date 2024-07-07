@@ -8,8 +8,9 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import servicioDatos from '../../services/datos';
-import Modalventa from './modalventa'
-import ModalLote from './modalprecio'
+import Modalventa from './modalventa';
+import ModalLote from './modalprecio';
+
 const columns = [
   { id: 'sector', label: 'sector', minWidth: 100 },
   { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
@@ -23,8 +24,7 @@ const columns = [
 ];
 
 const getColorForEstado = (estado) => {
-  // Define tu lógica para asignar el color rojo según el estado
-  return estado === 'Vendido' ? 'red' :  estado === 'Disponible' ? 'green' : 'initial';
+  return estado === 'Vendido' ? 'red' : estado === 'Disponible' ? 'green' : 'initial';
 };
 
 export default function StickyHeadTable() {
@@ -38,7 +38,6 @@ export default function StickyHeadTable() {
 
   const traerDatos = async () => {
     const historial = await servicioDatos.traerlotes();
-  
     setDatos(historial);
   };
 
@@ -69,15 +68,33 @@ export default function StickyHeadTable() {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => (
                 <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ color: column.id === 'estado' ? getColorForEstado(row[column.id]) : 'white' }}
-                    >
-                      {column.id === 'estado' ? <p style={{ color: getColorForEstado(row[column.id]) }}>{row[column.id]}</p> :column.id === 'idventa' ? row[column.id] == null ? <>no</>:<><Modalventa id={row[column.id]}/> <ModalLote id={row[column.id]}/></> : row[column.id]}
-                    </TableCell>
-                  ))}
+                  {columns.map((column) => {
+                    let value = row[column.id];
+                    if (column.id === 'estado') {
+                      value = row['id_cliente'] ? 'Vendido' : 'Disponible';
+                    }
+                    return (
+                      <TableCell
+                        key={column.id}
+                        align={column.align}
+                        style={{ color: column.id === 'estado' ? getColorForEstado(value) : 'white' }}
+                      >
+                        {column.id === 'estado' ? (
+                          <p style={{ color: getColorForEstado(value) }}>{value}</p>
+                        ) : column.id === 'idventa' ? (
+                          value == null ? (
+                            <>no</>
+                          ) : (
+                            <>
+                              <Modalventa id={value} /> <ModalLote id={value} />
+                            </>
+                          )
+                        ) : (
+                          value
+                        )}
+                      </TableCell>
+                    );
+                  })}
                 </TableRow>
               ))}
           </TableBody>
