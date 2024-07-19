@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card, CardContent, Typography, Container, Grid, Box } from '@mui/material';
 import { styled } from '@mui/system';
+import videodron from "../../Assets/videodron.mp4";
+import "../mapas/config.css";
 
 const Root = styled(Box)({
   backgroundColor: '#1a393c',
   padding: '16px',
   minHeight: '100vh',
   fontFamily: 'Montserrat, sans-serif',
+  position: 'relative', // Asegura que el contenido se posicione correctamente
 });
 
 const CardStyled = styled(Card)({
@@ -41,6 +44,22 @@ const Description = styled(Typography)({
   color: '#000', // Cambia el color del texto a negro
 });
 
+const VideoBackground = styled('div')({
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  zIndex: -1,
+  overflow: 'hidden',
+});
+
+const Video = styled('video')({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+});
+
 const spaces = [
   {
     title: 'Puente Pexoa',
@@ -62,6 +81,12 @@ const spaces = [
 const PublicSpaces = () => {
   return (
     <Root>
+      <VideoBackground>
+        <Video autoPlay loop muted>
+          <source src={videodron} type="video/mp4" />
+          Your browser does not support the video tag.
+        </Video>
+      </VideoBackground>
       <Container>
         <Grid container spacing={2}>
           {spaces.map((space, index) => (
