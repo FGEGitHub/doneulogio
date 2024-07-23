@@ -24,6 +24,7 @@ const Rutas = [
 	{ path: '/urbanizacion-abierta', element: <	Urbanizacion/> },
 	{ path: '/espacios-publicos', element: <	Espacios/> },
 	{ path: '/ubicacion', element: <	Ubicacion/> },
+	{ path: '/contacto', element: <	Contacto/> },
 	
 
 
