@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import servicioDatos from '../../services/datos';
-
+import Lote from '../../Assets/lote5.png'
 const DialogComponent = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
   const [nivel, setNivel] = useState(null);
@@ -67,6 +67,7 @@ const DialogComponent = forwardRef((props, ref) => {
               <div>Manzana: {datos[0].manzana}</div>
               <div>Lote: {datos[0].lote}</div>
               <div>Disponibilidad: {datos[0].disponibilidad}</div>
+              <img src={Lote}/>
             </>
           ) : (
             <div>No se encontró información.</div>
