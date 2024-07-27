@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import DialogComponent from './modalusur';
+import Imagen from '../../Assets/logonav.png';
 import Tooltip from '@mui/material/Tooltip';
 import NativeSelect from '@mui/material/NativeSelect';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
@@ -20,12 +20,15 @@ const Arg = () => {
   const [seleccion, setSeleccion] = useState();
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
+  const [isImageLoaded, setIsImageLoaded] = useState(false); // Estado para rastrear si la imagen está cargada
 
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
     setLotes(lotess);
   };
-
+  const isLogo = {
+    width: "60px",
+  };
   useEffect(() => {
     getClients();
   }, []);
@@ -45,7 +48,15 @@ const Arg = () => {
 
   const handleImageChange = (e) => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
+    setIsImageLoaded(false); // Reinicia el estado de carga de la imagen
   };
+
+  // useEffect para cargar la imagen seleccionada
+  useEffect(() => {
+    const img = new Image();
+    img.src = selectedImage;
+    img.onload = () => setIsImageLoaded(true);
+  }, [selectedImage]);
 
   return (
     <>
@@ -99,19 +110,18 @@ const Arg = () => {
               </select>
 
               <TransformComponent>
-                {lotes ? (
-                  <>
-                    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                      {imagenDeFondoActivada && (
-                        <img
-                          src={selectedImage} // Usa la imagen seleccionada
-                          alt="Imagen de fondo"
-                          style={{ position: 'absolute', width: "300mm", height: "300mm", viewBox: "0 0 7874 7874", zIndex: -1 }}
-                        />
-                      )}
-                      <div style={{ marginTop: '0.5%', marginLeft: '0%' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="300mm" height="300mm" viewBox="0 0 7874 7874" baseProfile="tiny" version="1.2">
-                          <defs />
+                {isImageLoaded ? (
+                  <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                    {imagenDeFondoActivada && (
+                      <img
+                        src={selectedImage} // Usa la imagen seleccionada
+                        alt="Imagen de fondo"
+                        style={{ position: 'absolute', width: "300mm", height: "300mm", viewBox: "0 0 7874 7874", zIndex: -1 }}
+                      />
+                    )}
+                    <div style={{ marginTop: '0.5%', marginLeft: '0%' }}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="300mm" height="300mm" viewBox="0 0 7874 7874" baseProfile="tiny" version="1.2">
+                        <defs />
  <g stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g stroke-width="1" transform="matrix(1,0,0,1,0,0)" font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g stroke-width="1" transform="matrix(1,0,0,1,0,0)" font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
@@ -1050,38 +1060,19 @@ const Arg = () => {
   <g stroke-width="1" transform="matrix(39.37,0,0,39.37,0,0)" font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g stroke-width="1" transform="matrix(1,0,0,1,0,0)" font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
  </g>
-
-</svg>
-</div>
-</div>
-                  </>
-                ) : null}
+ </svg>
+                    </div>
+                  </div>
+                ) : (
+                  <div><img style={isLogo} src={Imagen}/> <br/>Cargando</div>
+                )}
               </TransformComponent>
             </React.Fragment>
           )}
         </TransformWrapper>
       </div>
-      <DialogComponent ref={dialogRef} title=""
-        info={info}
-        mapa={'usur'}
-        getClients={ async () => {
-
-          const lotess = await servicioDatos.traerlotes()
-      console.log(lotess)
-          setLotes(lotess[0])
-      
-        }
-      
-      }>
-
-      </DialogComponent>
-
-
-      
     </>
-
-
-  )
-}
+  );
+};
 
 export default Arg;
