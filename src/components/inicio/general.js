@@ -6,7 +6,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import Tarjeta from "./tarjetas";
 import Tarjeta2 from "./tarjetas2";
-import Tarjeta3 from "./tarjetas3";
+import Ubi from "../ubicacion/ubi";
 import MapaGps from "./mapagps";
 import videodron from "../../Assets/videodron.mp4";
 
@@ -31,11 +31,7 @@ export default function App() {
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#1a393c" }}
             icon={<WorkIcon />}
           >
-            <h3 className="vertical-timeline-element-title">Don eulogio</h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              Urbanizacion abierta
-            </h4>
-            <p>Te mostramos que servicios de infraestructura brindamos.</p>
+          <Ubi/>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"

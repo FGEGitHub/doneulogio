@@ -1,25 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
-import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
-import General from '../../components/inicio/general';
+import General from '../../components/ubicacion/ubi';
+import backgroundVideo from "../../Assets/videodron.mp4"; // Importa tu video de fondo
 
-const backgroundOverlayStyle = {
+const backgroundVideoStyle = {
   position: 'fixed',
   top: 0,
   left: 0,
   width: '100%',
   height: '100%',
-  zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
-  display: 'flex',
-
+  objectFit: 'cover',
+  zIndex: -1, // Coloca el video de fondo detrás de los otros elementos
 };
 
-  
-const backgroundOverlayImageStyle = {
-  flex: '1 1 auto',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+const contentStyle = {
+  position: 'relative',
+  zIndex: 1,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  minHeight: '100vh',
+  width: '100%',
+};
+
+const innerContentStyle = {
+  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo blanco semitransparente
+  padding: '20px',
+  borderRadius: '8px',
+  maxWidth: '800px', // Ajusta el ancho máximo según sea necesario
+  width: '100%',
 };
 
 export default function Paginas() {
@@ -45,26 +55,22 @@ export default function Paginas() {
 
     return (
         <>
-            {/* Fondo verde */}
-            <div style={{ backgroundColor: '#8eb937', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
-         
-            {/* Contenedor para las imágenes de fondo */}
-            <div style={backgroundOverlayStyle}>
-              <div style={{ backgroundImage: `url(${backgroundImage1})`, ...backgroundOverlayImageStyle }}>
-              <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>
-              </div>
-            </div>
-            
+            {/* Video de fondo */}
+            <video style={backgroundVideoStyle} autoPlay loop muted>
+                <source src={backgroundVideo} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
             {/* Contenido principal */}
-            <div style={{ position: 'relative', zIndex: 0 }}>
-            <StrictMode>
-                    <Nav/>
-                    {/* Agrega aquí el resto de tu contenido */}
-                    <General/>
-              </StrictMode>
- 
-                    {/* Agrega más componentes aquí */}
-                 
+            <div style={contentStyle}>
+                <div style={innerContentStyle}>
+                    <StrictMode>
+                        <Nav />
+                        {/* Agrega aquí el resto de tu contenido */}
+                        <br/><br/><br/> <br/><br/><br/>
+                        <General />
+                    </StrictMode>
+                </div>
             </div>
         </>
     );
