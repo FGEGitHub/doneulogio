@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
-import General from '../../components/inicio/general';
+import General from '../../components/urbanizaciona/componente';
 
 const backgroundOverlayStyle = {
   position: 'fixed',

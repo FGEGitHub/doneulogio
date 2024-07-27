@@ -1,4 +1,4 @@
-import "../mapas/config.css";
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement
@@ -9,10 +9,14 @@ import Tarjeta2 from "./tarjetas2";
 import Ubi from "../ubicacion/ubi";
 import MapaGps from "./mapagps";
 import videodron from "../../Assets/videodron.mp4";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import "../mapas/config.css";
 
 const WorkIcon = () => <></>;
 
 export default function App() {
+  const isMobile = useMediaQuery('(max-width:600px)');
+
   return (
     <div className="App">
       <div className="video-background">
@@ -25,17 +29,21 @@ export default function App() {
         <VerticalTimeline>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            contentStyle={{ background: "rgb(33, 150, 243)", color: "#1a393c" }}
+            contentStyle={{ 
+              background: "rgb(33, 150, 243)", 
+              color: "#1a393c",
+              ...(isMobile && { textAlign: 'left' }) 
+            }}
             contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-            date="Don eulogio"
+            date={!isMobile && "Don eulogio"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#1a393c" }}
             icon={<WorkIcon />}
           >
-          <Ubi/>
+            <Ubi />
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="Don Eulogio "
+            date={!isMobile && "Don Eulogio"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             icon={<WorkIcon />}
           >
@@ -43,7 +51,7 @@ export default function App() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="Don elogio"
+            date={!isMobile && "Don elogio"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             icon={<WorkIcon />}
           >
@@ -51,7 +59,7 @@ export default function App() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2006 - 2008"
+            date={!isMobile && "2006 - 2008"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
             icon={<WorkIcon />}
           >
@@ -59,7 +67,7 @@ export default function App() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            date="April 2013"
+            date={!isMobile && "April 2013"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
             icon={<WorkIcon />}
           >
@@ -71,7 +79,7 @@ export default function App() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            date="November 2012"
+            date={!isMobile && "November 2012"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
             icon={<WorkIcon />}
           >
@@ -79,7 +87,7 @@ export default function App() {
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--education"
-            date="2002 - 2006"
+            date={!isMobile && "2002 - 2006"} // Ocultar fecha en móvil
             iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
             icon={<WorkIcon />}
           >
