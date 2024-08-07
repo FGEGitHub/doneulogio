@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+  
+  .urbanizacion-navbar {
+    margin-bottom: 16px;
+  }
+  
+  .urbanizacion-toolbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .urbanizacion-logo {
+    height: 50px;
+  }
+  
+  .urbanizacion-nav {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0;
+  }
+  
+  .urbanizacion-navlink {
+    margin: 0 12px;
+  }
+  
+  .urbanizacion-header-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+  }
+  
+  .urbanizacion-section {
+    padding: 16px 0;
+  }
+  
+  .urbanizacion-content-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .urbanizacion-comparison-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    padding: 32px;
+    background-color: #e0f7fa;
+  }
+  
+  .urbanizacion-comparison-title {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .urbanizacion-comparison-grid {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .urbanizacion-comparison-item {
+    width: 45%;
+    padding: 16px;
+    background-color: #ffffff;
+  }
+  
+  .urbanizacion-footer {
+    margin-top: 32px;
+    padding: 16px;
+    text-align: center;
+    background-color: #e0e0e0;
+  }
+  

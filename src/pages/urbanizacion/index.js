@@ -50,7 +50,7 @@ export default function Paginas() {
          
             {/* Contenedor para las imágenes de fondo */}
             <div style={backgroundOverlayStyle}>
-              <div style={{ backgroundImage: `url(${backgroundImage1})`, ...backgroundOverlayImageStyle }}>
+              <div>
               <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>
               </div>
             </div>
