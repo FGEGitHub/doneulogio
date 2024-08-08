@@ -25,7 +25,7 @@ body {
   }
   
   .urbanizacion-logo {
-    height: 50px;
+    height: 200px;
   }
   
   .urbanizacion-nav {
@@ -82,4 +82,118 @@ body {
     text-align: center;
     background-color: #e0e0e0;
   }
-  
+  /* src/App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #326B6B;
+  color: white;
+  padding: 20px;
+}
+
+.comparativa-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: white;
+}
+
+.subtitulo {
+  font-weight: normal;
+}
+
+.comparativa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.urbanizacion, .barrio-cerrado {
+  flex: 1;
+  padding: 10px;
+}
+
+.urbanizacion h3, .barrio-cerrado h3 {
+  color: #2D623D;
+}
+
+.versus {
+  flex: 0;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.arrow {
+  font-size: 24px;
+  color: white;
+}
+
+.arrow.left {
+  transform: rotate(-45deg);
+}
+
+.arrow.right {
+  transform: rotate(45deg);
+}
+
+/* src/App.css */
+
+.App3 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+.urbanizacion-descripcion-container {
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos estén en fila */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.urbanizacion-texto {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.urbanizacion-texto p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.urbanizacion-imagen {
+  flex: 0;
+  max-width: 400px;
+}
+
+.urbanizacion-imagen img {
+  max-width: 100%;
+  border-radius: 10px;
+}

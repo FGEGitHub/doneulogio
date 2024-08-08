@@ -45,27 +45,9 @@ export default function Paginas() {
 
     return (
         <>
-            {/* Fondo verde */}
-            <div style={{ backgroundColor: '#8eb937', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
-         
-            {/* Contenedor para las imágenes de fondo */}
-            <div style={backgroundOverlayStyle}>
-              <div>
-              <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>
-              </div>
-            </div>
-            
-            {/* Contenido principal */}
-            <div style={{ position: 'relative', zIndex: 0 }}>
-            <StrictMode>
-                    <Nav/>
+            <Nav/>
                     {/* Agrega aquí el resto de tu contenido */}
                     <General/>
-              </StrictMode>
- 
-                    {/* Agrega más componentes aquí */}
-                 
-            </div>
         </>
     );
 }

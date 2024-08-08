@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
-import foto1 from '../../Assets/foto1.png';
+import foto1 from '../../Assets/urabierta.png';
 import foto2 from '../../Assets/fondo2.png';
 import logo from '../../Assets/logonav.png';
 import './UrbanizacionAbierta.css';
+import Parte4 from './parte4'
+import Parte3 from './Parte3'
 
 const UrbanizacionAbierta = () => {
   return (
@@ -45,31 +47,10 @@ const UrbanizacionAbierta = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box className="urbanizacion-comparison-section">
-          <Typography variant="h5" className="urbanizacion-comparison-title">
-            ¿Urbanización Abierta o Barrio Cerrado?
-          </Typography>
-          <Grid container spacing={2} className="urbanizacion-comparison-grid">
-            <Box className="urbanizacion-comparison-item">
-              <Typography variant="h6">Urbanización Abierta</Typography>
-              <Typography variant="body1">LIBERTAD</Typography>
-              <Typography variant="body2">Calles y accesos integrados</Typography>
-              <Typography variant="body2">Libertad de decisión</Typography>
-              <Typography variant="body2">Áreas comunes accesibles</Typography>
-              <Typography variant="body2">Interacción social y comunidad activa</Typography>
-            </Box>
-            <Box className="urbanizacion-comparison-item">
-              <Typography variant="h6">Barrio Cerrado</Typography>
-              <Typography variant="body1">EXCLUSIVIDAD</Typography>
-              <Typography variant="body2">Cierre perimetral y acceso restringido</Typography>
-              <Typography variant="body2">Propiedad privada de áreas comunes</Typography>
-              <Typography variant="body2">Gastos de mantenimiento elevados</Typography>
-              <Typography variant="body2">Regulaciones estrictas</Typography>
-              <Typography variant="body2">Servicios exclusivos</Typography>
-            </Box>
-          </Grid>
-        </Box>
+     
       </Container>
+     
+      <Parte4/>
       <Box className="urbanizacion-footer">
         <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
       </Box>
