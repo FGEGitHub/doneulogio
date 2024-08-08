@@ -11,6 +11,8 @@ import Gps from "../../Assets/mapadon.jpeg";
 import Gps2 from "../../Assets/mapadon.jpeg"; // Añade las nuevas imágenes aquí
 import servicioDatos from '../../services/datos';
 import './config.css';
+import foto1 from '../../Assets/masterp.png';
+import foto2 from '../../Assets/redesagua.png';
 
 const Arg = () => {
   const dialogRef = useRef();
@@ -49,6 +51,7 @@ const Arg = () => {
 
   return (
     <>
+     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
       <div>
         <TransformWrapper
           defaultPositionX={0}
@@ -1076,6 +1079,7 @@ const Arg = () => {
 
       </DialogComponent>
 
+      <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
       
     </>

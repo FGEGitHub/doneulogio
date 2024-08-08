@@ -58,19 +58,9 @@ export default function Paginas() {
 
     return (
         <>
-            {/* Fondo verde */}
-            <div style={{ backgroundColor: '#558b2f', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
-            
-            {/* Fondo con imagen */}
-            <div style={backgroundOverlayStyle}></div>
-         
-            {/* Contenido principal */}
-            <div style={contentContainerStyle}>
-                <Nav /> <br /><br />   
-                <div style={generalContainerStyle}>
-                    <General />
-                </div>
-            </div>
+         <Nav /> <br /><br />   
+          
+          <General />
         </>
     );
 }
