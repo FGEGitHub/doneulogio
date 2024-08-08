@@ -3,6 +3,8 @@ import { Card, CardContent, Typography, Container, Grid, Box } from '@mui/materi
 import { styled } from '@mui/system';
 import videodron from "../../Assets/videodron.mp4";
 
+import foto1 from '../../Assets/espaciospubllicosbaner.png';
+
 const Root = styled(Box)({
   backgroundColor: '#1a393c',
   padding: '16px',
@@ -85,6 +87,8 @@ const PublicSpaces = () => {
 
   return (
     <Root>
+              <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-content-image" />
+
       <VideoBackground>
         <Video autoPlay loop muted>
           <source src={videodron} type="video/mp4" />
