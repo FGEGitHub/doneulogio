@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import logo from "../../Assets/doneu1.png";
-import whatsappLogo from "../../Assets/whatsapp_logo.png"; // Asegúrate de tener un logo de WhatsApp en esta ruta
-import "./WhatsappChat.css"; // Asegúrate de crear este archivo CSS para los estilos
+import whatsappLogo from "../../Assets/whatsapp_logo.png";
+import "./WhatsappChat.css";
 
-const WhatsappChat = (props) => {
+const WhatsappChat = () => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState([]);
+  const [lotes, setLotes] = useState([]);
+
+  useEffect(() => {
+    const fetchLotes = async () => {
+      try {
+        const response = await axios.get("https://esme.cuquicalvano.com:4000/doneu/traerlotes");
+        setLotes(response.data);
+      } catch (error) {
+        console.error("Error fetching lotes:", error);
+      }
+    };
+
+    fetchLotes();
+  }, []);
 
   const handleSendMessage = () => {
     if (message.trim() !== "") {
@@ -18,15 +33,42 @@ const WhatsappChat = (props) => {
 
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
-    if (question === "¿Cuál es el precio del lote?") {
-      setResponse("el precio es "+ props.precio);
-    } else if (question === "¿Está disponible el lote?") {
-      setResponse("Sí, está disponible");
+    let formattedResponse = [];
+    switch (question) {
+      case "¿Cuáles son los precios de los lotes?":
+        formattedResponse = lotes
+          .filter(lote => lote.precio !== "0" && lote.estado !== "Vendido")
+          .map(lote => ({
+            title: `Lote ${lote.lote} (Manzana ${lote.manzana}, Sector ${lote.sector})`,
+            value: `$${lote.precio}`
+          }));
+        break;
+      case "¿Qué lotes están disponibles?":
+        formattedResponse = lotes
+          .filter(lote => lote.estado !== "Vendido")
+          .map(lote => ({
+            title: `Lote ${lote.lote}`,
+            value: `Manzana ${lote.manzana}, Sector ${lote.sector}`
+          }));
+        break;
+      case "¿Cuál es la superficie de los lotes?":
+        formattedResponse = lotes
+          .map(lote => ({
+            title: `Lote ${lote.lote} (Manzana ${lote.manzana}, Sector ${lote.sector})`,
+            value: `${lote.superficie} m²`
+          }));
+        break;
+      default:
+        formattedResponse = [{
+          title: "Información no disponible",
+          value: "Lo siento, no tengo información sobre esa pregunta. ¿Puedo ayudarte con algo más?"
+        }];
     }
+    setResponse(formattedResponse);
   };
 
   const handleOtherQuestionClick = () => {
-    const defaultMessage = "Hola, tengo otra pregunta.";
+    const defaultMessage = "Hola, tengo una pregunta específica sobre los lotes.";
     window.open(`https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`, "_blank");
   };
 
@@ -42,14 +84,17 @@ const WhatsappChat = (props) => {
       {chatOpen && (
         <div className="whatsapp-body">
           <div className="whatsapp-message">
-            <span>Hola 👋 <br /><br /> En qué puedo ayudarte?</span>
+            <span>Hola 👋 <br /><br /> ¿En qué puedo ayudarte con los lotes de Don Eulogio?</span>
           </div>
           <div className="whatsapp-questions">
-            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuál es el precio del lote?")}>
-              ¿Cuál es el precio del lote?
+            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuáles son los precios de los lotes?")}>
+              ¿Cuáles son los precios de los lotes?
             </button>
-            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Está disponible el lote?")}>
-              ¿Está disponible el lote?
+            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Qué lotes están disponibles?")}>
+              ¿Qué lotes están disponibles?
+            </button>
+            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuál es la superficie de los lotes?")}>
+              ¿Cuál es la superficie de los lotes?
             </button>
             <button className="whatsapp-question-btn" onClick={handleOtherQuestionClick}>
               <img src={whatsappLogo} alt="WhatsApp" className="whatsapp-icon" />
@@ -58,9 +103,14 @@ const WhatsappChat = (props) => {
           </div>
           {selectedQuestion && (
             <div className="whatsapp-response">
-              <span>{selectedQuestion}</span>
+              <span className="whatsapp-question">{selectedQuestion}</span>
               <div className="whatsapp-reply">
-                <span>{response}</span>
+                {response.map((item, index) => (
+                  <div key={index} className="whatsapp-reply-item">
+                    <span className="whatsapp-reply-title">{item.title}</span>
+                    <span className="whatsapp-reply-value">{item.value}</span>
+                  </div>
+                ))}
               </div>
               <div className="whatsapp-footer">
                 <input
