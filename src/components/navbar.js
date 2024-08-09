@@ -10,11 +10,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from 'react-router-dom'; // Importa el componente Link
+import { Link } from 'react-router-dom';
 import logo from "../Assets/logonav.png";
 
-const pages = ['Datos','Estadísticas','Mapas'];
+const pages = ['Datos', 'Estadísticas', 'Mapas'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -95,8 +97,8 @@ function ResponsiveAppBar() {
             {pages.map((page, index) => (
               <Button
                 key={page}
-                component={Link} // Usa el componente Link
-                to={`/admin/${page.toLowerCase()}`} // Define la ruta correspondiente
+                component={Link}
+                to={`/admin/${page.toLowerCase()}`}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
@@ -104,7 +106,41 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <Tooltip title="Facebook">
+              <IconButton
+                aria-label="facebook"
+                href="https://www.facebook.com"
+                target="_blank"
+                sx={{
+                  color: 'white',
+                  backgroundColor: '#3b5998',
+                  marginRight: '8px',
+                  '&:hover': {
+                    backgroundColor: '#2d4373',
+                  },
+                }}
+              >
+                <FacebookIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Instagram">
+              <IconButton
+                aria-label="instagram"
+                href="https://www.instagram.com"
+                target="_blank"
+                sx={{
+                  color: 'white',
+                  backgroundColor: '#E4405F',
+                  marginRight: '8px',
+                  '&:hover': {
+                    backgroundColor: '#C13584',
+                  },
+                }}
+              >
+                <InstagramIcon />
+              </IconButton>
+            </Tooltip>
             <Tooltip title="Editar">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <img style={isLogo} src={logo} alt="logo" />

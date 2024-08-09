@@ -3,9 +3,10 @@ import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } 
 import foto1 from '../../Assets/urabierta.png';
 import foto2 from '../../Assets/fondo2.png';
 import logo from '../../Assets/logonav.png';
-import './UrbanizacionAbierta.css';
-import Parte4 from './parte4'
-import Parte3 from './Parte3'
+import '../urbanizaciona/UrbanizacionAbierta.css';
+import Circulos from './circulos'
+import Carrusel from './carrusel'
+import Puntosdeint from './puntosdeinteres'
 
 const UrbanizacionAbierta = () => {
   return (
@@ -66,6 +67,9 @@ const UrbanizacionAbierta = () => {
 </nav>
 
         <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+        <Circulos/>
+        <Carrusel/>
+        <Puntosdeint/>
         <Box className="urbanizacion-section">
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
@@ -81,7 +85,7 @@ const UrbanizacionAbierta = () => {
      
       </Container>
      
-      <Parte4/>
+  
       <Box className="urbanizacion-footer">
         <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
       </Box>

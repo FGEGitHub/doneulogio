@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Nav from '../../components/inicio/nav';
 import fondoMaster from "../../Assets/fondomaster.png"; // Importa la imagen de fondo
-import General from '../../components/inicio/general';
+import General from '../../components/inicio2/Component';
 
 const backgroundOverlayStyle = {
   position: 'fixed',
   top: 0,
   left: 0,
   width: '100%',
-  height: '100%',
-  zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
+  height: '100%',  zIndex: -1, // Coloca las imágenes de fondo detrás de los otros elementos
   display: 'flex',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -59,7 +58,6 @@ export default function Paginas() {
     return (
         <>
             {/* Fondo verde */}
-            <div style={{ backgroundColor: '#558b2f', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
             
             {/* Fondo con imagen */}
          
