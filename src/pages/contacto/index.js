@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
-import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
+import backgroundImage1 from "../../Assets/contacto.png"; // Importa tus imágenes de fondo
 import General from '../../components/contacto/componenteprinc';
 
 const backgroundOverlayStyle = {
@@ -45,27 +45,10 @@ export default function Paginas() {
 
     return (
         <>
-            {/* Fondo verde */}
-            <div style={{ backgroundColor: '#8eb937', minHeight: '100vh', zIndex: -2, position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}></div>
-         
-            {/* Contenedor para las imágenes de fondo */}
-            <div style={backgroundOverlayStyle}>
-              <div style={{ backgroundImage: `url(${backgroundImage1})`, ...backgroundOverlayImageStyle }}>
-              <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>   <br/><br/>     <br/><br/>
-              </div>
-            </div>
-            
-            {/* Contenido principal */}
-            <div style={{ position: 'relative', zIndex: 0 }}>
-            <StrictMode>
-                    <Nav/>
+              <Nav/>
                     {/* Agrega aquí el resto de tu contenido */}
                     <General/>
-              </StrictMode>
- 
-                    {/* Agrega más componentes aquí */}
-                 
-            </div>
+       
         </>
     );
 }
