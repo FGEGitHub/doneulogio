@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import foto1 from '../../Assets/urabierta.png';
 import foto2 from '../../Assets/fondo2.png';
-import logo from '../../Assets/logonav.png';
+import logo from '../../Assets/logonav2.png';
 import './UrbanizacionAbierta.css';
 import Parte4 from './parte4'
 import Parte3 from './Parte3'
