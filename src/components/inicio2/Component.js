@@ -7,6 +7,7 @@ import '../urbanizaciona/UrbanizacionAbierta.css';
 import Circulos from './circulos'
 import Carrusel from './carrusel'
 import Puntosdeint from './puntosdeinteres'
+import Mapacomp from './mapacomponente'
 
 const UrbanizacionAbierta = () => {
   return (
@@ -68,20 +69,12 @@ const UrbanizacionAbierta = () => {
 
         <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
         <Circulos/>
+        <br/>        <br/>
+
         <Carrusel/>
         <Puntosdeint/>
-        <Box className="urbanizacion-section">
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="body1" paragraph>
-                Una urbanización abierta es un tipo de desarrollo urbano donde las áreas comunes y los espacios verdes son accesibles para todos los residentes. A diferencia de las urbanizaciones cerradas, que suelen tener áreas restringidas y calles privadas, una urbanización abierta integra las áreas públicas en el ámbito vecinal, promoviendo así la interacción social y la cohesión de la comunidad.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-content-image" />
-            </Grid>
-          </Grid>
-        </Box>
+        <Mapacomp/>
+        
      
       </Container>
      
