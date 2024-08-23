@@ -50,8 +50,9 @@ const Arg = () => {
   };
 
   return (
-    <>
-     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+    <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
+ 
+<>
       <div>
         <TransformWrapper
           defaultPositionX={0}
@@ -1080,8 +1081,8 @@ const Arg = () => {
       </DialogComponent>
 
       <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
-
-      
+      </>
+    }
     </>
 
 
