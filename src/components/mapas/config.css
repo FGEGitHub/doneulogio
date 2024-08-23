@@ -12,16 +12,14 @@
   }
 
   .mi-path {
-   /* fill:#4caf50;  Estilo normal del relleno del path */
-    transition: fill 0.3s ease; /* Agrega una transición suave */
-  
-    /* Otros estilos para el path si es necesario */
-  }
-  
-  .mi-path:hover {
-    fill: blue; /* Estilo del relleno cuando el mouse está sobre el path */
-    cursor: 'crosshair'
-  }
+    transition: fill 0.3s ease, fill-opacity 0.3s ease;
+}
+
+.mi-path:hover {
+    fill: blue !important; /* Forzamos que se mantenga gris en el hover */
+    fill-opacity: 1 !important; /* Aseguramos que la opacidad sea 1 en hover */
+    cursor: pointer;
+}
 
   .App {
     font-family: sans-serif;
