@@ -9,6 +9,9 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import servicioDatos from '../../services/datos';
 import Lote from '../../Assets/lote5.png'
+
+import Fotobosques from '../../Assets/bosquesfoto.jpg'
+
 const DialogComponent = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
   const [nivel, setNivel] = useState(null);
@@ -55,11 +58,18 @@ const DialogComponent = forwardRef((props, ref) => {
       console.error('Error fetching data:', error);
     }
   };
-
+  const isLogo = {
+    width: "160px",
+  };
   return (
     <Dialog open={open} onClose={closeDialog} maxWidth="md" fullWidth>
       <DialogTitle>Información del Lote</DialogTitle>
       <DialogContent dividers>
+      {props.info == 145 ? 
+              <img src={Fotobosques} style={isLogo}/>
+              :
+              <img src={Lote}/>
+            }
         {datos ? (
           datos.length > 0 ? (
             <>
@@ -67,18 +77,21 @@ const DialogComponent = forwardRef((props, ref) => {
               <div>Manzana: {datos[0].manzana}</div>
               <div>Lote: {datos[0].lote}</div>
               <div>Disponibilidad: {datos[0].disponibilidad}</div>
-              <img src={Lote}/>
+              <div style={{ marginTop: '20px' }}>
+          <WhatsappChat precio={10}/> {/* Aquí se incluye el widget de WhatsApp */}
+        </div>
+              
             </>
           ) : (
-            <div>No se encontró información.</div>
+            <div>  {props.info == 145 ? 
+            <>Bosques de Don eulogio</>  
+              : <>No se encontro info</>            }</div>
           )
         ) : (
           <div>Cargando información...</div>
         )}
         {props.children}
-        <div style={{ marginTop: '20px' }}>
-          <WhatsappChat precio={10}/> {/* Aquí se incluye el widget de WhatsApp */}
-        </div>
+       
       </DialogContent>
       <DialogActions>
         <Button onClick={closeDialog} color="primary">

@@ -72,7 +72,25 @@ setForm()
 
  
       {props.info}
+      <InputLabel variant="standard" htmlFor="uncontrolled-native">
+     Sector
+   </InputLabel>
+   <NativeSelect
+     defaultValue={'sin determnar'}
+     onChange={handleChange}
+     inputProps={{
+       name: 'sector',
+       id: 'uncontrolled-native',
 
+     }}
+   >  <option value={1}>Seleccionar</option>  
+    <option value={"Bosques"}>Bosques</option>
+     <option value={"Pinares"}>Pinares</option>
+   
+     
+  
+
+   </NativeSelect>
 
 <InputLabel variant="standard" htmlFor="uncontrolled-native">
      Manzana

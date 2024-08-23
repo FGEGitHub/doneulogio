@@ -1463,7 +1463,7 @@ const handleMouseLeave = (e) => {
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? 'grey' : 'white';
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 : 0.00001;
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            <Tooltip title="Bosques">
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(145)}    fill-rule="evenodd" vector-effect="none" d="M2636.82,1858.61 L2720.92,1860.92 L2721.84,2122.44 L2741.71,2122.91 L2742.17,1859.07 L2822.11,1858.61 L2823.03,1839.2 L2742.17,1838.28 L2742.63,1777.75 L2756.96,1774.51 L2769.9,1763.88 L2774.52,1755.57 L2782.83,1740.78 L2783.3,1712.13 L2774.52,1699.19 L2767.59,1689.49 L2761.58,1683.02 L2748.18,1677.02 L2741.25,1674.24 L2717.22,1672.86 L2705.67,1678.86 L2702.43,1682.56 L2695.04,1691.34 L2689.5,1696.42 L2679.33,1706.13 L2678.41,1712.13 L2677.48,1744.01 L2686.72,1758.34 L2691.35,1765.27 L2695.97,1770.35 L2711.21,1779.13 L2724.61,1779.59 L2724.15,1838.28 L2635.9,1840.59 L2637.75,1649.29 L2916.83,1677.02 L2760.65,2249.51 L2633.59,2244.43 L2636.82,1858.61"/></Tooltip>)})}
 
       
@@ -1517,6 +1517,7 @@ const handleMouseLeave = (e) => {
       </div>
       <DialogComponent ref={dialogRef} title=""
         info={info}
+       
         mapa={'usur'}
         getClients={ async () => {
 

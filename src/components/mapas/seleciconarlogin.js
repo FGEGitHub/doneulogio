@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 import Bosques from "./bosqueslogin"
+import Otro from "./todoslogin"
 
 import * as React from 'react';
 
@@ -53,7 +54,7 @@ inputProps={{
 { mapa === "1" ? <><Bosques/></>:<>
 
 
-
+    <Otro/>
 
 
 </>}
