@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1tEUDhyGzSAiQ8jJQbCgopfm9VGq_6wiQ">
+	<name>Preuba</name>
+	<gx:CascadingStyle kml:id="__managed_style_04BB45B8D632B50C0296">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1ED69B5BBC32B50C0295">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=fbc02d&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<gx:displayMode>card</gx:displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_2072BEBFA132B50A4AAB">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.8</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_1FAFB4F4C332B50A4AAB">
+		<styleUrl>https://earth.google.com/balloon_components/base/1.0.26.0/card_template.kml#main</styleUrl>
+		<Style>
+			<IconStyle>
+				<scale>1.5</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0926D4646F32B50A4AAB">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1FAFB4F4C332B50A4AAB</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_2072BEBFA132B50A4AAB</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="__managed_style_08F464C0D832B50C0295">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_1ED69B5BBC32B50C0295</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_04BB45B8D632B50C0296</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_21F993C81232B50A4AAA">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_14CA1E205232B50A4AAA">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_01E4EB857432B50A4AAA">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_14CA1E205232B50A4AAA</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_21F993C81232B50A4AAA</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="01AB40054D32B5024D69">
+		<name>doneulogio</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_01E4EB857432B50A4AAA</styleUrl>
+	</Folder>
+	<Placemark id="08E6D30D3432B5049638">
+		<name>Bosques de don Eulogio</name>
+		<description><![CDATA[<div>Don eulogio<br></div>]]></description>
+		<LookAt>
+			<longitude>-58.73043199854713</longitude>
+			<latitude>-27.56404843612257</latitude>
+			<altitude>50.44296694240568</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>3436.600879202597</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0926D4646F32B50A4AAB</styleUrl>
+		<Point>
+			<coordinates>-58.72693823808585,-27.56737336827824,60.22657513859915</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0A6F2DEA2732B50C0289">
+		<name>Parroquia San Cayetano</name>
+		<gx:mid>/g/1tgb8fsf</gx:mid>
+		<gx:fid>0x944542d9533dca91:0xe81329c242c1c99e</gx:fid>
+		<LookAt>
+			<longitude>-58.6967526</longitude>
+			<latitude>-27.5702925</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>923.8153287640976</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_08F464C0D832B50C0295</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-58.6967526,-27.5702925,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="01BD0987E232B50C4DBE">
+		<name>Puente Pexoa</name>
+		<gx:mid>/g/120_g98c</gx:mid>
+		<gx:fid>0x9445428fb40172f5:0x55f7c518df4cca8d</gx:fid>
+		<LookAt>
+			<longitude>-58.72509619999999</longitude>
+			<latitude>-27.5612249</latitude>
+			<altitude>0</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>923.8998771736808</range>
+			<altitudeMode>relativeToGround</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_08F464C0D832B50C0295</styleUrl>
+		<Point>
+			<altitudeMode>relativeToGround</altitudeMode>
+			<coordinates>-58.7250962,-27.5612249,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="064C605E1732B50CBE55">
+		<name>Sector Pinares</name>
+		<LookAt>
+			<longitude>-58.7259907211822</longitude>
+			<latitude>-27.56954876510632</latitude>
+			<altitude>56.61876561441603</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30.00000205081539</gx:fovy>
+			<range>1269.186428019894</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_01E4EB857432B50A4AAA</styleUrl>
+		<Point>
+			<coordinates>-58.72651943435392,-27.57015971575903,58.87387365607477</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="05381A084D32B50D3EE9">
+		<name>Ruta 12</name>
+		<LookAt>
+			<longitude>-58.7403961814079</longitude>
+			<latitude>-27.56972755512504</latitude>
+			<altitude>56.90252986875267</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>30.00000205081539</gx:fovy>
+			<range>1268.90273420373</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_01E4EB857432B50A4AAA</styleUrl>
+		<Point>
+			<coordinates>-58.74198978643107,-27.57005057970477,58.94398588234593</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

@@ -19,7 +19,7 @@
   }
   
   .mi-path:hover {
-    fill: gray; /* Estilo del relleno cuando el mouse está sobre el path */
+    fill: blue; /* Estilo del relleno cuando el mouse está sobre el path */
     cursor: 'crosshair'
   }
 

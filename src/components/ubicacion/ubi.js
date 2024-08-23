@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import omnivore from '@mapbox/leaflet-omnivore';
-import Mapa from '../../Assets/done.kml';
+import Mapa from '../../Assets/doneu.kml';
 
 // Configura el icono para que Leaflet lo cargue correctamente
 delete L.Icon.Default.prototype._getIconUrl;
@@ -56,7 +56,7 @@ const MapComponent = () => {
     <MapContainer center={[0, 0]} zoom={2} style={{ height: "500px", width: "100%" }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">Ver Masterplan</a> contributors'
       />
       <LoadKML kmlUrl={kmlUrl} />
     </MapContainer>
