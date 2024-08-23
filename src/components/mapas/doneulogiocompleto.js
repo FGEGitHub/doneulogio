@@ -68,7 +68,7 @@ const handleMouseLeave = (e) => {
         >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
                 <IconButton
                   onClick={toggleImagenDeFondo}
                   color="primary"
@@ -112,13 +112,13 @@ const handleMouseLeave = (e) => {
                 {lotes ? (
                   <>
                     <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                      {imagenDeFondoActivada && (
+                  {imagenDeFondoActivada && (
                         <img
                           src={selectedImage} // Usa la imagen seleccionada
                           alt="Imagen de fondo"
                           style={{ position: 'absolute', width: "250mm", height: "250mm", viewBox: "0 0 7874 7874", zIndex: -1 }}
                         />
-                      )}
+                      )}    {  selectedImage && <>
                       <div style={{ marginTop: '0.7%', marginLeft: '0%' }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="250mm" height="250mm" viewBox="0 0 7874 7874" baseProfile="tiny" version="1.2">
                           <defs />
@@ -1506,7 +1506,7 @@ const handleMouseLeave = (e) => {
  </g>
 
 </svg>
-</div>
+</div></>}
 </div>
                   </>
                 ) : null}
