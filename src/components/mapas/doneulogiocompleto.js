@@ -59,6 +59,8 @@ const handleMouseLeave = (e) => {
     <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
 <>
+<img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+
       <div>
         <TransformWrapper
           defaultPositionX={0}
@@ -1515,6 +1517,8 @@ const handleMouseLeave = (e) => {
           )}
         </TransformWrapper>
       </div>
+      <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+
       <DialogComponent ref={dialogRef} title=""
         info={info}
        
@@ -1531,7 +1535,6 @@ const handleMouseLeave = (e) => {
 
       </DialogComponent>
 
-      <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
       </>
     }
     </>
