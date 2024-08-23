@@ -13,6 +13,7 @@ import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
+import foto3 from '../../Assets/tanque.jpg';
 
 const Arg = () => {
   const dialogRef = useRef();
@@ -109,7 +110,13 @@ const handleMouseLeave = (e) => {
                 <option value={Gps2}>Mapa 2</option>
                 {/* Añade más opciones para cada imagen que tengas */}
               </select>
-
+              <div style={{ display: 'flex' }}>
+  <div style={{ flex: 1 }}>
+    {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
+    podesmos agregar texto
+   
+    </div>
+  <div style={{ flex: 3 }}>
               <TransformComponent>
                 {lotes ? (
                   <>
@@ -1513,12 +1520,15 @@ const handleMouseLeave = (e) => {
                   </>
                 ) : null}
               </TransformComponent>
+              </div>
+              </div>
             </React.Fragment>
           )}
         </TransformWrapper>
       </div>
       <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
+      
       <DialogComponent ref={dialogRef} title=""
         info={info}
        
