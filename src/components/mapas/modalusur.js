@@ -79,7 +79,8 @@ const DialogComponent = forwardRef((props, ref) => {
               <div>Disponibilidad: {datos[0].disponibilidad}</div>
               <div style={{ marginTop: '20px' }}>
            
-          <WhatsappChat precio={datos[0].precio}/> {/* Aquí se incluye el widget de WhatsApp */}
+          <WhatsappChat precio={datos[0].precio}
+                      preciofinanciado={2}   /> {/* Aquí se incluye el widget de WhatsApp */}
         </div>
               
             </>
