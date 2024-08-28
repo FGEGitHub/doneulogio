@@ -114,7 +114,7 @@ const handleMouseLeave = (e) => {
   <div style={{ flex: 1 }}>
     {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
     podesmos agregar texto
-   
+    <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" />
     </div>
   <div style={{ flex: 3 }}>
               <TransformComponent>

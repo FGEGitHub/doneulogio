@@ -16,6 +16,7 @@ const columns = [
   { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
   { id: 'lote', label: 'lote', minWidth: 100, align: 'right' },
   { id: 'superficie', label: 'superficie', minWidth: 100, align: 'right' },
+  { id: 'precio', label: 'precio', minWidth: 100, align: 'right' },
   { id: 'posecion', label: 'posecion', minWidth: 100, align: 'right' },
   { id: 'escritura', label: 'escritura', minWidth: 100, align: 'right' },
   { id: 'estado', label: 'estado', minWidth: 100, align: 'right' },
