@@ -4,25 +4,11 @@ import logo from "../../Assets/doneu1.png";
 import whatsappLogo from "../../Assets/whatsapp_logo.png";
 import "./WhatsappChat.css";
 
-const WhatsappChat = () => {
+const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [response, setResponse] = useState([]);
-  const [lotes, setLotes] = useState([]);
-
-  useEffect(() => {
-    const fetchLotes = async () => {
-      try {
-        const response = await axios.get("https://esme.cuquicalvano.com:4000/doneu/traerlotes");
-        setLotes(response.data);
-      } catch (error) {
-        console.error("Error fetching lotes:", error);
-      }
-    };
-
-    fetchLotes();
-  }, []);
 
   const handleSendMessage = () => {
     if (message.trim() !== "") {
@@ -35,29 +21,19 @@ const WhatsappChat = () => {
     setSelectedQuestion(question);
     let formattedResponse = [];
     switch (question) {
-      case "¿Cuáles son los precios de los lotes?":
-        formattedResponse = lotes
-          .filter(lote => lote.precio !== "0" && lote.estado !== "Vendido")
-          .map(lote => ({
-            title: `Lote ${lote.lote} (Manzana ${lote.manzana}, Sector ${lote.sector})`,
-            value: `$${lote.precio}`
-          }));
+      case "¿Cuáles son los precios de contado?":
+        formattedResponse = [{
+          title: "Precios de contado",
+          value: `$${props.precio}` // Display the single price directly
+        }];
         break;
-      case "¿Qué lotes están disponibles?":
-        formattedResponse = lotes
-          .filter(lote => lote.estado !== "Vendido")
-          .map(lote => ({
-            title: `Lote ${lote.lote}`,
-            value: `Manzana ${lote.manzana}, Sector ${lote.sector}`
-          }));
-        break;
-      case "¿Cuál es la superficie de los lotes?":
-        formattedResponse = lotes
-          .map(lote => ({
-            title: `Lote ${lote.lote} (Manzana ${lote.manzana}, Sector ${lote.sector})`,
-            value: `${lote.superficie} m²`
-          }));
-        break;
+        case "¿Cuáles son los precios financiados?":
+          formattedResponse = [{
+            title: "Precios de contado",
+            value: `$${props.preciofinanciado}` // Display the single price directly
+          }];
+          break;
+
       default:
         formattedResponse = [{
           title: "Información no disponible",
@@ -87,11 +63,11 @@ const WhatsappChat = () => {
             <span>Hola 👋 <br /><br /> ¿En qué puedo ayudarte con los lotes de Don Eulogio?</span>
           </div>
           <div className="whatsapp-questions">
-            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuáles son los precios de los lotes?")}>
-              ¿Cuáles son los precios de los lotes?
+            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuáles son los precios de contado?")}>
+            ¿Cuáles son los precios de contado?
             </button>
-            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Qué lotes están disponibles?")}>
-              ¿Qué lotes están disponibles?
+            <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuáles son los precios financiados?")}>
+            ¿Cuáles son los precios financiados?
             </button>
             <button className="whatsapp-question-btn" onClick={() => handleQuestionClick("¿Cuál es la superficie de los lotes?")}>
               ¿Cuál es la superficie de los lotes?

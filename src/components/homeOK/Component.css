@@ -1,0 +1,113 @@
+.background,
+.background-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.background {
+  height: 100%;
+  bottom: 0;
+  background-color: var(--color-darkslategray-200);
+}
+.background-wrapper {
+  height: 77.59%;
+  bottom: 22.41%;
+}
+.home2 {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  min-width: 79px;
+}
+.home2,
+.masterplan1,
+.urbanizacin-abierta1 {
+  position: relative;
+}
+.masterplan-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contacto1,
+.espacios-pblicos1 {
+  position: relative;
+}
+.contacto1 {
+  display: inline-block;
+  min-width: 122px;
+}
+.home-parent {
+  position: absolute;
+  height: 7.02%;
+  width: 52.19%;
+  top: 35.27%;
+  right: 23.28%;
+  bottom: 57.71%;
+  left: 24.53%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-14xl-3);
+  z-index: 1;
+}
+.group-icon,
+.group-icon1,
+.recurso-82x-1 {
+  position: absolute;
+  height: 13.23%;
+  width: 3.34%;
+  top: 32.18%;
+  right: 4.46%;
+  bottom: 54.59%;
+  left: 92.2%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.group-icon1,
+.recurso-82x-1 {
+  right: 9.69%;
+  left: 86.97%;
+}
+.recurso-82x-1 {
+  height: 27.04%;
+  width: 10.85%;
+  top: 25.26%;
+  right: 84.69%;
+  bottom: 47.7%;
+  left: 4.46%;
+  object-fit: cover;
+}
+.component-2 {
+  align-self: stretch;
+  height: 484.5px;
+  position: relative;
+  text-align: left;
+  font-size: var(--font-size-9xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 1350px) {
+  .home-parent {
+    flex-wrap: wrap;
+  }
+  .component-2 {
+    height: auto;
+    min-height: 484.50000000000045;
+  }
+}
+@media screen and (max-width: 450px) {
+  .contacto1,
+  .espacios-pblicos1,
+  .home2,
+  .masterplan1,
+  .urbanizacin-abierta1 {
+    font-size: var(--font-size-3xl);
+  }
+}

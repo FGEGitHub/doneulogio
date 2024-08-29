@@ -1,0 +1,100 @@
+.image-15-icon {
+  height: 725.3px;
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+.don-eulogio,
+.tu-futuro-en {
+  margin: 0;
+}
+.tu-futuro-en-container {
+  margin: 0 !important;
+  height: 232px;
+  position: absolute;
+  top: 246.6px;
+  left: 175px;
+  font-size: inherit;
+  font-weight: 800;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 2;
+}
+.image-15-parent {
+  width: 1920px;
+  margin: 0 !important;
+  position: absolute;
+  top: 348.6px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-77xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.videotitulo {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 1;
+}
+.videotitulo-wrapper {
+  width: 495.6px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl) 135.5px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.home-child {
+  align-self: stretch;
+  height: 447px;
+  position: relative;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+.home {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 62.4px 0 418.4px;
+  box-sizing: border-box;
+  gap: 0.1px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: 56px;
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 925px) {
+  .tu-futuro-en-container {
+    font-size: var(--font-size-29xl);
+  }
+  .videotitulo {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .tu-futuro-en-container {
+    font-size: var(--font-size-10xl);
+  }
+  .videotitulo {
+    font-size: 34px;
+  }
+}
