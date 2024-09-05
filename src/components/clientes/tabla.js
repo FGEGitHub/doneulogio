@@ -48,13 +48,22 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
-  return (
+  return (<> <div style={{ 
+    color: 'white', 
+    padding: '10px 20px', 
+    border: 'none', 
+    borderRadius: '5px', 
+    cursor: 'pointer'
+}}>
+  <Nuevo
+traer={async () => {
+const historial = await servicioDatos.traerclientes();
+setDatos(historial);
+}} />
+</div>
     <Paper sx={{ width: '90%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto' }}>
-      <Nuevo
-      traer={async () => {
-        const historial = await servicioDatos.traerclientes();
-        setDatos(historial);
-      }} />
+    
+     
       <TableContainer sx={{ maxHeight: 440 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead sx={{ backgroundColor: 'black' }}>
@@ -141,6 +150,7 @@ export default function StickyHeadTable() {
       ) : (
         <></>
       )}
-    </Paper>
+      
+    </Paper> </>
   );
 }

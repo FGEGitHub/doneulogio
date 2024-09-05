@@ -136,7 +136,7 @@ const handleMouseLeave = (e) => {
     />
   )}  {  selectedImage && <>
 <div style={{ position: 'relative', zIndex: 1, width: '150%', height: '150%' }}>                    
-      <svg xmlns="http://www.w3.org/2000/svg" width="250mm" height="250mm" viewBox="-265 830 9874 9874"  baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="auto" viewBox="-265 830 9874 9874"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.06,1.05)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.06,1.05)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
