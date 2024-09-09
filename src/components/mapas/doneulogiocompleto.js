@@ -38,9 +38,8 @@ const Arg = () => {
     dialogRef.current.openDialog();
   };
 
-  const handleChange = (e) => {
-    setSeleccion(e.target.value);
-  };
+  const transformWrapperRef = useRef(null);
+
 
   const toggleImagenDeFondo = () => {
     setImagenDeFondoActivada((prev) => !prev);
@@ -50,13 +49,17 @@ const Arg = () => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
   };
   const cambiarsvg = (e) => {
-    if(e===1){
-      setPosicion0(false)
-     // setTransform(0, 0, 2)
-    }else{
-      setPosicion0(false)
+    if (e === 1) {
+        setPosicion0(false);
+        if (transformWrapperRef.current) {
+            // Ajusta los valores para mover un poco hacia el centro y hacia abajo
+            transformWrapperRef.current.setTransform(-200, -100, 2); // Ajusta estos valores según sea necesario
+        }
+    } else {
+        setPosicion0(false);
     }
-  };
+};
+
 
 const handleMouseLeave = (e) => {
     e.target.style.fillOpacity = 0.00001;
@@ -68,12 +71,13 @@ const handleMouseLeave = (e) => {
 <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
       <div>
-        <TransformWrapper
-          defaultPositionX={0}
-          defaultPositionY={0}
-          defaultScale={1}
-          wheel={{ disabled: false }}
-        >
+      <TransformWrapper
+    ref={transformWrapperRef}  // Asigna la referencia
+    defaultPositionX={0}
+    defaultPositionY={0}
+    defaultScale={1}
+    wheel={{ disabled: false }}
+>
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
               <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
