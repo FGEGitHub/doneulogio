@@ -22,6 +22,7 @@ const Arg = () => {
   const [seleccion, setSeleccion] = useState();
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
+  const [posicion0, setPosicion0] = useState(true);
 
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
@@ -48,12 +49,23 @@ const Arg = () => {
   const handleImageChange = (e) => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
   };
-  const handleMouseEnter = (e) => {
-    e.target.style.fillOpacity = 1;
-};
 
-const handleMouseLeave = (e) => {
-    e.target.style.fillOpacity = 0.00001;
+  const transformWrapperRef = useRef(null);
+
+  const cambiarsvg = (e) => {
+    if (e === 1) {
+        setPosicion0(false);
+        if (transformWrapperRef.current) {
+            // Ajusta los valores para mover un poco hacia el centro y hacia abajo
+            transformWrapperRef.current.setTransform(-200, -100, 2); // Ajusta estos valores según sea necesario
+        }
+    } else {
+        setPosicion0(false);
+        if (transformWrapperRef.current) {
+          // Ajusta los valores para mover un poco hacia el centro y hacia abajo
+          transformWrapperRef.current.setTransform(-200, -400, 2); // Ajusta estos valores según sea necesario
+      }
+    }
 };
   return (
     <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
@@ -62,12 +74,13 @@ const handleMouseLeave = (e) => {
 <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
       <div>
-        <TransformWrapper
-          defaultPositionX={0}
-          defaultPositionY={0}
-          defaultScale={1}
-          wheel={{ disabled: false }}
-        >
+      <TransformWrapper
+    ref={transformWrapperRef}  // Asigna la referencia
+    defaultPositionX={0}
+    defaultPositionY={0}
+    defaultScale={1}
+    wheel={{ disabled: false }}
+>
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
               <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
@@ -112,7 +125,7 @@ const handleMouseLeave = (e) => {
               <div style={{ display: 'flex' }}>
   <div style={{ flex: 1 }}>
     {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
-    podesmos agregar texto
+
   {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
     </div>
   <div style={{ flex: 3 }}>
@@ -135,7 +148,57 @@ const handleMouseLeave = (e) => {
       }}
     />
   )}  {  selectedImage && <>
-<div style={{ position: 'relative', zIndex: 1, width: '150%', height: '150%' }}>                    
+
+{posicion0 ? <div>
+  <div style={{ position: 'relative', zIndex: 1, width: '155%', height: '150%' }}>   
+  <svg viewBox="700 640 3507 2480" version="1.2" width="90%" height="90%" xmlns="http://www.w3.org/2000/svg" >
+ <defs/>
+ <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal" stroke="none" fill-opacity="1" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#ffffff">
+   <path vector-effect="none" d="M-2,-2 L3510,-2 L3510,2483 L-2,2483 L-2,-2" fill="none" fill-rule="evenodd"/>
+  </g>
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal" stroke="none" fill-opacity="1" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#ffffff">
+   <path vector-effect="none" style={{ cursor: 'important' }} fillOpacity={0.0001} fill='none'  d="M0,0 L297,0 L297,210 L0,210 L0,0" fill-rule="evenodd"/>
+  </g>
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal" stroke="none" fill-opacity="0" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#000000">
+  
+  </g>
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
+   <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,0.97)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
+  </g>
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
+   <path  transform="scale(1.1,0.97)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
+  </g>
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+ </g>
+ 
+</svg>
+</div>
+</div>:<div>
+<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}>     
       <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="-230 835 9874 9874"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.06,1.06)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
@@ -1522,10 +1585,11 @@ const handleMouseLeave = (e) => {
  </g>
 
 </svg>
-</div></>}
 </div>
-                  </>
-                ) : null}
+</div>  }
+</>}
+</div></>)
+                 : null}
               </TransformComponent>
               </div>
               </div>
