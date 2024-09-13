@@ -123,16 +123,12 @@ const Arg = () => {
                 {/* Añade más opciones para cada imagen que tengas */}
               </select>
               <div style={{ display: 'flex' }}>
-  <div style={{ flex: 1 }}>
-    {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
-
-  {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
-    </div>
-  <div style={{ flex: 3 }}>
+ 
+  <div>
               <TransformComponent>
                 {lotes ? (
                   <>
-                    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+                    <div style={{ position: 'relative' }}>
   {imagenDeFondoActivada && (
     <img
       src={selectedImage}
@@ -150,49 +146,49 @@ const Arg = () => {
   )}  {  selectedImage && <>
 
 {posicion0 ? <div>
-  <div style={{ position: 'relative', zIndex: 1, width: '155%', height: '150%' }}>   
-  <svg viewBox="700 640 3507 2480" version="1.2" width="90%" height="90%" xmlns="http://www.w3.org/2000/svg" >
+  <div>
+  <svg  style={{ position: 'relative', zIndex: 1 }}  viewBox="540 950 1550 1500" version="1.2"width="100%" height="50%"xmlns="http://www.w3.org/2000/svg" >
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="none" fill-opacity="1" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#ffffff">
-   <path vector-effect="none" d="M-2,-2 L3510,-2 L3510,2483 L-2,2483 L-2,-2" fill="none" fill-rule="evenodd"/>
+   <path vector-effect="none" transform="scale(1,1)" d="M-2,-2 L3510,-2 L3510,2483 L-2,2483 L-2,-2" fill="none" fill-rule="evenodd"/>
   </g>
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="none" fill-opacity="1" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#ffffff">
-   <path vector-effect="none" style={{ cursor: 'important' }} fillOpacity={0.0001} fill='none'  d="M0,0 L297,0 L297,210 L0,210 L0,0" fill-rule="evenodd"/>
+   <path vector-effect="none" transform="scale(1,1)" style={{ cursor: 'important' }} fillOpacity={0.0001} fill='none'  d="M0,0 L297,0 L297,210 L0,210 L0,0" fill-rule="evenodd"/>
   </g>
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="none" fill-opacity="0" font-size="32.5" font-family="MS Shell Dlg 2" font-weight="400" fill="#000000">
   
   </g>
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,0.97)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
   </g>
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,0.97)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
   </g>
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal"  transform="scale(1.2,1.2)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
+  <g font-style="normal"  transform="scale(0.8,1)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
  </g>
  
 </svg>
