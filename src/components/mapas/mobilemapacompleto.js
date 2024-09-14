@@ -147,7 +147,11 @@ const Arg = () => {
 
 {posicion0 ? <div>
   <div style={{ position: 'relative', zIndex: 1 }}> 
+<<<<<<< HEAD
       <svg   viewBox="250 1375 4010 1500"  width="90mm"  height="90mm" xmlns="http://www.w3.org/2000/svg" >
+=======
+      <svg   viewBox="250 1400 4010 1483"  width="90mm"  height="90mm" xmlns="http://www.w3.org/2000/svg" >
+>>>>>>> 1af139139fb6f60c40dac6edda73921e82206950
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
