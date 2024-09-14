@@ -66,7 +66,7 @@ const Arg = () => {
           transformWrapperRef.current.setTransform(0, -200, 2); // Ajusta estos valores según sea necesario
       }
     }
-};
+}; 
   return (
     <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
