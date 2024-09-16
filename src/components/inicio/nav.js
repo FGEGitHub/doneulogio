@@ -106,7 +106,7 @@ export default function BackToTop(props) {
           <Typography variant="h6" component="div">
             <img style={islogo} src={logo} alt="logo" /> 
           </Typography>
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'right' }}>
             {isMobile ? (
               <IconButton
                 color="inherit"

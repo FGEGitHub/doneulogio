@@ -15,25 +15,21 @@ const CiudadVerde = () => {
         </p>
       </div>
       <div style={styles.imagesSection}>
-        <div style={styles.imageRow}>
-          <div style={styles.imageWrapper}>
-            <img src={Image1} alt="Lotes" style={styles.image} />
-            <p style={styles.imageText}>+500 Lotes</p>
-          </div>
-          <div style={styles.imageWrapper}>
-            <img src={Image2} alt="Superficie promedio" style={styles.image} />
-            <p style={styles.imageText}>750m² superficie promedio</p>
-          </div>
+        <div style={styles.imageWrapper}>
+          <img src={Image1} alt="Lotes" style={styles.image} />
+          <p style={styles.imageText}>+500 Lotes</p>
         </div>
-        <div style={styles.imageRow}>
-          <div style={styles.imageWrapper}>
-            <img src={Image3} alt="Espacios comunes" style={styles.image} />
-            <p style={styles.imageText}>Espacios comunes</p>
-          </div>
-          <div style={styles.imageWrapper}>
-            <img src={Image4} alt="Áreas verdes" style={styles.image} />
-            <p style={styles.imageText}>Áreas Verdes</p>
-          </div>
+        <div style={styles.imageWrapper}>
+          <img src={Image2} alt="Superficie promedio" style={styles.image} />
+          <p style={styles.imageText}>750m² superficie promedio</p>
+        </div>
+        <div style={styles.imageWrapper}>
+          <img src={Image3} alt="Espacios comunes" style={styles.image} />
+          <p style={styles.imageText}>Espacios comunes</p>
+        </div>
+        <div style={styles.imageWrapper}>
+          <img src={Image4} alt="Áreas verdes" style={styles.image} />
+          <p style={styles.imageText}>Áreas Verdes</p>
         </div>
       </div>
     </div>
@@ -43,41 +39,39 @@ const CiudadVerde = () => {
 const styles = {
   container: {
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    alignItems: 'center',
     padding: '20px',
     backgroundColor: '#fff',
     color: '#000',
     border: '1px solid #e0e0e0',
     borderRadius: '8px',
     fontFamily: 'Arial, sans-serif',
-    width: '90vw',
-    height: '70vh',
-    margin: 'auto',
+    width: '90%',
+    maxWidth: '1200px',
+    margin: '20px auto',
     boxSizing: 'border-box',
-    // Agregamos un media query para pantallas pequeñas
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
-      flexDirection: 'column',
-      height: 'auto',
+      width: '100%',
+      padding: '10px',
     },
   },
   textSection: {
-    flex: 1,
-    marginRight: '20px',
+    marginBottom: '20px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    // Agregamos un media query para pantallas pequeñas
+    alignItems: 'center',
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
-      marginRight: '0',
-      marginBottom: '20px',
+      marginBottom: '10px',
     },
   },
   title: {
     fontSize: '36px',
     fontWeight: 'bold',
     marginBottom: '20px',
-    // Agregamos un media query para pantallas pequeñas
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       fontSize: '28px',
     },
@@ -85,43 +79,33 @@ const styles = {
   description: {
     fontSize: '18px',
     lineHeight: '1.6',
-    // Agregamos un media query para pantallas pequeñas
+    textAlign: 'center',
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       fontSize: '16px',
     },
   },
   imagesSection: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    flex: 0.5,
-    // Agregamos un media query para pantallas pequeñas
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '10px',
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
-      flexDirection: 'column',
-    },
-  },
-  imageRow: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '5px',
-    // Agregamos un media query para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      flexDirection: 'row',
-      marginBottom: '10px',
+      gridTemplateColumns: 'repeat(2, 1fr)',
+      gap: '10px',
     },
   },
   imageWrapper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%',
   },
   image: {
     width: '120px',
     height: '120px',
     marginBottom: '10px',
     objectFit: 'cover',
-    // Agregamos un media query para pantallas pequeñas
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       width: '100px',
       height: '100px',
@@ -130,7 +114,7 @@ const styles = {
   imageText: {
     fontSize: '25px',
     textAlign: 'center',
-    // Agregamos un media query para pantallas pequeñas
+    // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       fontSize: '20px',
     },

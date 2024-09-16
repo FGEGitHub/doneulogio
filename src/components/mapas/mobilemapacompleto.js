@@ -10,7 +10,7 @@ import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
 import Gps from "../../Assets/mapadon.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
-import foto1 from '../../Assets/masterp.png';
+import foto1 from '../../Assets/cuadradamaster.png';
 import foto2 from '../../Assets/redesagua.png';
 import foto3 from '../../Assets/tanque.jpg';
 import UNaciudad from '../masterplan/unaciudadenelverde'
@@ -68,7 +68,8 @@ const Arg = () => {
     }
 }; 
   return (
-    <><img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+    <><img src={foto1} alt="Urbanización Abierta"  style={{ position: 'static', width: "100%"}} />
+    <br/>   <br/>   <br/>
 <UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
 <>
