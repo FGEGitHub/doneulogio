@@ -12,7 +12,7 @@ import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
 import foto2 from '../../Assets/redesagua.png';
-import foto3 from '../../Assets/tanque.jpg';
+import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
 const Arg = () => {
   const dialogRef = useRef();
@@ -1581,8 +1581,9 @@ const Arg = () => {
           )}
         </TransformWrapper>
       </div>
-      <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
-
+   
+    
+      <img src={Grupo6} alt="Urbanización Abierta" style={{ width: "50%"}} />
       
       <DialogComponent ref={dialogRef} title=""
         info={info}
@@ -1602,6 +1603,7 @@ const Arg = () => {
 
       </>
     }
+    
     </>
 
 

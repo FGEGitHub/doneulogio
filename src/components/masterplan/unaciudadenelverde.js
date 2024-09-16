@@ -89,11 +89,11 @@ const styles = {
   imagesSection: {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '10px',
+    gap: '5px',
     // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
+    '@media (max-width: 568px)': {
       gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '10px',
+      gap: '5px',
     },
   },
   imageWrapper: {
