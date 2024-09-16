@@ -12,7 +12,7 @@ import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
-import foto3 from '../../Assets/tanque.jpg';
+import Componente1 from "../masterplan/unaciudadenelverde"
 
 const Arg = () => {
   const dialogRef = useRef();
@@ -72,8 +72,17 @@ const handleMouseLeave = (e) => {
     <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
 <>
-<img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
+<div style={styles.imageContainer}>
+      <img 
+        src={foto1} 
+        alt="Urbanización Abierta" 
+        style={styles.image} 
+      />
+      <span style={styles.imageText}>Masterplan</span>
+    </div>
+<Componente1/>
+<br/><br/><br/>
       <div>
       <TransformWrapper
     ref={transformWrapperRef}  // Asigna la referencia
@@ -84,30 +93,8 @@ const handleMouseLeave = (e) => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
-                <IconButton
-                  onClick={toggleImagenDeFondo}
-                  color="primary"
-                  style={{ marginBottom: "10px" }}
-                >
-                  <GpsFixed />
-                </IconButton>
-
-                <IconButton
-                  onClick={() => setTransform(0, 0, 2)} // Zoom al cuadrante superior izquierdo
-                  color="secondary"
-                  style={{ marginBottom: "10px" }}
-                >
-                  <ZoomIn /> Zona Bosques
-                </IconButton>
-
-                <IconButton
-  onClick={() => setTransform(0, 1240, 1.5)} // Ajuste de zoom
-  color="secondary"
-  style={{ marginBottom: "10px" }}
->
-  <ZoomOut /> Pinares
-</IconButton>
+              <div style={{ position: 'fixed', bottom: 20, left: 5, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
+    
 
                 <IconButton
                   onClick={() => resetTransform()} // Restaurar la vista completa
@@ -1628,5 +1615,28 @@ const handleMouseLeave = (e) => {
 
   )
 }
+
+const styles = {
+  imageContainer: {
+    position: 'relative',
+    display: 'inline-block', // Ajusta el tamaño al de la imagen
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+  },
+  imageText: {
+    position: 'absolute',
+    top: '50%',
+    left: '20%', // Mueve el texto más a la izquierda
+    transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
+    color: 'white', // El color del texto
+    fontSize: '48px', // Texto más grande
+    fontWeight: 'bold', // Hacer el texto en negrita
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
+    pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+  },
+};
 
 export default Arg;

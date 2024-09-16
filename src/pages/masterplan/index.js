@@ -30,7 +30,7 @@ export default function Paginas() {
   return (
     <>
       <Nav /> <br /><br />
-      <div style={{ backgroundColor: 'darkgreen', padding: '20px', textAlign: 'center' }}>
+      <div style={{  padding: '20px', textAlign: 'center' }}>
         {isMobile ? <MobileComponent /> : <General />}
       </div>
     </>
