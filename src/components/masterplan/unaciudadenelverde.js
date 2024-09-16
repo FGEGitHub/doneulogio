@@ -71,9 +71,10 @@ const styles = {
     fontSize: '36px',
     fontWeight: 'bold',
     marginBottom: '20px',
+    textAlign: 'center', // Centramos el título
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
-      fontSize: '28px',
+      fontSize: '24px', // Reducimos el tamaño de la fuente
     },
   },
   description: {

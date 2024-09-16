@@ -70,8 +70,8 @@ const Arg = () => {
   return (
     <><img src={foto1} alt="Urbanización Abierta"  style={{ position: 'static', width: "100%"}} />
     <br/>   <br/>   <br/>
-<UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
- 
+<UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
+
 <>
 
 <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
@@ -93,21 +93,8 @@ const Arg = () => {
                   <GpsFixed />
                 </IconButton>
 
-                <IconButton
-                  onClick={() => setTransform(0, 0, 2)} // Zoom al cuadrante superior izquierdo
-                  color="secondary"
-                  style={{ marginBottom: "10px" }}
-                >
-                  <ZoomIn /> Zona Bosques
-                </IconButton>
 
-                <IconButton
-  onClick={() => setTransform(0, 1240, 1.5)} // Ajuste de zoom
-  color="secondary"
-  style={{ marginBottom: "10px" }}
->
-  <ZoomOut /> Pinares
-</IconButton>
+             
 
                 <IconButton
                   onClick={() => resetTransform()} // Restaurar la vista completa
@@ -148,7 +135,7 @@ const Arg = () => {
 
 {posicion0 ? <div>
   <div style={{ position: 'relative', zIndex: 1 }}> 
-      <svg   viewBox="250 1375 4010 1500"  width="90mm"  height="90mm" xmlns="http://www.w3.org/2000/svg" >
+      <svg   viewBox="250 1375 4010 1500"  width="110mm"  height="110mm" xmlns="http://www.w3.org/2000/svg" >
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
