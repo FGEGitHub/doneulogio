@@ -13,7 +13,7 @@ import './config.css';
 import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
 import Componente1 from "../masterplan/unaciudadenelverde"
-
+import Componentevs from "../masterplan/bosqypinares"
 const Arg = () => {
   const dialogRef = useRef();
   const [info, setInfo] = useState(false);
@@ -79,7 +79,7 @@ const handleMouseLeave = (e) => {
         alt="Urbanización Abierta" 
         style={styles.image} 
       />
-      <span style={styles.imageText}>Masterplan</span>
+      <span style={styles.imageText}>MasterPlan</span>
     </div>
 <Componente1/>
 <br/><br/><br/>
@@ -105,7 +105,7 @@ const handleMouseLeave = (e) => {
                 </IconButton>
               </div>
 
-              <select onChange={handleImageChange} style={{ position: 'fixed', top: 20, left: 10, zIndex: 2 }}>
+              <select onChange={handleImageChange} style={{ position: 'fixed', top: 20, left: -10, zIndex: 2 }}>
                 <option value={Gps}>Mapa 1</option>
                 <option value={"Gps2"}>Mapa 2</option>
                 {/* Añade más opciones para cada imagen que tengas */}
@@ -1589,8 +1589,14 @@ const handleMouseLeave = (e) => {
           )}
         </TransformWrapper>
       </div>
-      <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-header-image" />
-
+      <div style={styles.imageContainer}>
+      <img 
+        src={foto2} 
+        alt="Urbanización Abierta" 
+        style={styles.image} 
+      />
+ 
+    </div>
       
       <DialogComponent ref={dialogRef} title=""
         info={info}
@@ -1607,7 +1613,7 @@ const handleMouseLeave = (e) => {
       }>
 
       </DialogComponent>
-
+      <Componentevs/>
       </>
     }
     </>
@@ -1629,10 +1635,10 @@ const styles = {
   imageText: {
     position: 'absolute',
     top: '50%',
-    left: '20%', // Mueve el texto más a la izquierda
+    left: '10%', // Mueve el texto más a la izquierda
     transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
     color: 'white', // El color del texto
-    fontSize: '48px', // Texto más grande
+    fontSize: '60px', // Texto más grande
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción

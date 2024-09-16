@@ -46,58 +46,94 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: '20px',
-    backgroundColor: '#fff', // Fondo blanco
-    color: '#000', // Texto negro
+    backgroundColor: '#fff',
+    color: '#000',
     border: '1px solid #e0e0e0',
     borderRadius: '8px',
     fontFamily: 'Arial, sans-serif',
-    width: '90vw',  // 90% del ancho de la pantalla
-    height: '90vh', // 90% del alto de la pantalla
+    width: '90vw',
+    height: '70vh',
     margin: 'auto',
     boxSizing: 'border-box',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      height: 'auto',
+    },
   },
   textSection: {
     flex: 1,
     marginRight: '20px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center', // Centrar el contenido verticalmente
+    justifyContent: 'center',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      marginRight: '0',
+      marginBottom: '20px',
+    },
   },
   title: {
     fontSize: '36px',
     fontWeight: 'bold',
     marginBottom: '20px',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      fontSize: '28px',
+    },
   },
   description: {
     fontSize: '18px',
     lineHeight: '1.6',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      fontSize: '16px',
+    },
   },
   imagesSection: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
     flex: 0.5,
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+    },
   },
   imageRow: {
     display: 'flex',
     justifyContent: 'space-between',
-    marginBottom: '20px',
+    marginBottom: '5px',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      flexDirection: 'row',
+      marginBottom: '10px',
+    },
   },
   imageWrapper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: '100%', // Ajustar para que ocupen el espacio completo
+    width: '100%',
   },
   image: {
-    width: '120px', // Cuadrado más grande
-    height: '120px', // Cuadrado más grande
+    width: '120px',
+    height: '120px',
     marginBottom: '10px',
-    objectFit: 'cover', // Mantener las proporciones
+    objectFit: 'cover',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      width: '100px',
+      height: '100px',
+    },
   },
   imageText: {
-    fontSize: '16px',
+    fontSize: '25px',
     textAlign: 'center',
+    // Agregamos un media query para pantallas pequeñas
+    '@media (max-width: 768px)': {
+      fontSize: '20px',
+    },
   },
 };
 

@@ -13,7 +13,7 @@ import './config.css';
 import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
 import foto3 from '../../Assets/tanque.jpg';
-
+import UNaciudad from '../masterplan/unaciudadenelverde'
 const Arg = () => {
   const dialogRef = useRef();
   const [info, setInfo] = useState(false);
@@ -68,10 +68,10 @@ const Arg = () => {
     }
 }; 
   return (
-    <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
+    <><img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+<UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
 <>
-<img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
 
 <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <TransformWrapper

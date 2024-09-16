@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -86,12 +85,12 @@ export default function BackToTop(props) {
     <Box
       onClick={handleDrawerToggle}
       onKeyDown={handleDrawerToggle}
-      sx={{ width: 250 }}
+      sx={{ width: '250px', textAlign: 'right' }} // Alinea el texto a la derecha
     >
       <List>
         {pages.map((page) => (
           <ListItem button key={page.name} component={Link} to={page.path}>
-            <ListItemText primary={page.name} />
+            <ListItemText primary={page.name} sx={{ textAlign: 'right' }} />
           </ListItem>
         ))}
       </List>
