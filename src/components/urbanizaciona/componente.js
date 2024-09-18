@@ -12,11 +12,11 @@ const UrbanizacionAbierta = () => {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="static" color="default" className="urbanizacion-navbar">
+     
         <Toolbar className="urbanizacion-toolbar">
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
-      </AppBar>
+    
    
       <nav className="urbanizacion-nav">
   <Link

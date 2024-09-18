@@ -8,66 +8,70 @@ import Circulos from './circulos';
 import Carrusel from './carrusel';
 import Puntosdeint from './puntosdeinteres';
 import Mapacomp from './mapacomponente';
-
+import { useNavigate } from "react-router-dom";
 const UrbanizacionAbierta = () => {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="static" color="default" className="urbanizacion-navbar">
-        <Toolbar className="urbanizacion-toolbar">
-        <br/>
+      
+      <Toolbar className="urbanizacion-toolbar">
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
-          <br/>   <br/>
         </Toolbar>
-      </AppBar>
-      <Container>
-        <nav className="urbanizacion-nav">
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Home
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Urbanización Abierta
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            MasterPlan
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Espacios públicos
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B" }}
-          >
-            Contacto
-          </Link>
-        </nav>
+         
+      <nav className="urbanizacion-nav">
+  <Link
+    variant="button"
+    color="primary" // Cambia el color del texto
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    onClick={() => navigate('/')}
+  >
+    Home
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
+  >
+    Urbanización Abierta
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
+  >
+    MasterPlan
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/espacios-publicos')}
+  >
+    Espacios públicos
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B" }}
+    onClick={() => navigate('/contacto')}
+  >
+    Contacto
+  </Link>
+</nav>
+
 
         {/* Video Section */}
         <Box sx={{ position: 'relative', width: '100%', height: 'auto', overflow: 'hidden' }}>
@@ -96,7 +100,7 @@ const UrbanizacionAbierta = () => {
         <Carrusel />
         <Puntosdeint />
         <Mapacomp />
-      </Container>
+     
 
       <Box className="urbanizacion-footer">
         <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
