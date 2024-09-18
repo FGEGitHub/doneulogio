@@ -73,11 +73,11 @@ const handleMouseLeave = (e) => {
     <>
     
     <CssBaseline />
-      <AppBar position="static" color="default" className="urbanizacion-navbar">
+   
         <Toolbar className="urbanizacion-toolbar">
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
-      </AppBar>
+   
    
       <nav className="urbanizacion-nav">
   <Link
@@ -85,7 +85,7 @@ const handleMouseLeave = (e) => {
     color="primary" // Cambia el color del texto
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
   >
     Home
@@ -95,7 +95,7 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
@@ -105,7 +105,7 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
@@ -115,7 +115,7 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
@@ -125,7 +125,7 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B" }}
+    style={{ color: "#246F74" }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
@@ -169,11 +169,7 @@ const handleMouseLeave = (e) => {
                 </IconButton>
               </div>
 
-              <select onChange={handleImageChange} style={{ position: 'fixed', top: 20, left: -10, zIndex: 2 }}>
-                <option value={Gps}>Mapa 1</option>
-                <option value={"Gps2"}>Mapa 2</option>
-                {/* Añade más opciones para cada imagen que tengas */}
-              </select>
+       
               <div style={{ display: 'flex' }}>
   <div style={{ flex: 1 }}>
     {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}

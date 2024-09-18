@@ -24,7 +24,7 @@ const UrbanizacionAbierta = () => {
     color="primary" // Cambia el color del texto
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
   >
     Home
@@ -34,7 +34,7 @@ const UrbanizacionAbierta = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/masterplan')}
   >
     Urbanización Abierta
@@ -44,7 +44,7 @@ const UrbanizacionAbierta = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
@@ -54,7 +54,7 @@ const UrbanizacionAbierta = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
@@ -64,7 +64,7 @@ const UrbanizacionAbierta = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px"  }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
