@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Nav from '../../components/inicio/nav';
 import General from '../../components/mapas/doneulogiocompleto';
 import MobileComponent from '../../components/mapas/mobilemapacompleto'; // Componente para móvil
 
@@ -29,7 +28,7 @@ export default function Paginas() {
 
   return (
     <>
-      <Nav /> <br /><br />
+
 
         {isMobile ? <MobileComponent /> :       <div style={{  padding: '20px', textAlign: 'center' }}><General />  </div>}
     

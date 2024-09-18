@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StrictMode } from "react";
-import Nav from '../../components/inicio/nav';
+
 import General from '../../components/espaciospublicos/componenteprincipal';
 
 const backgroundOverlayStyle = {
@@ -44,25 +44,12 @@ export default function Paginas() {
 
     return (
         <>
-            {/* Fondo verde */}
-         
-            {/* Contenedor para las imágenes de fondo */}
-        <div sx={{ backgroundColor: '#1a393c',}}>
-             
+ 
      
              
-         
-            
-            {/* Contenido principal */}
-       
-            <StrictMode>
-                    <Nav/>
                     {/* Agrega aquí el resto de tu contenido */}
                     <General/>
-              </StrictMode>
-              </div>
-                    {/* Agrega más componentes aquí */}
-                 
+
          
         </>
     );

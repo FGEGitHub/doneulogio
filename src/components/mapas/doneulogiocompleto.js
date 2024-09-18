@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
-import NativeSelect from '@mui/material/NativeSelect';
+import logo from '../../Assets/logonav2.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import MuiAlert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
+import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
 import Gps from "../../Assets/mapadon.png";
@@ -14,8 +13,10 @@ import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
 import Componente1 from "../masterplan/unaciudadenelverde"
 import Componentevs from "../masterplan/bosqypinares"
+import { useNavigate } from "react-router-dom";
 const Arg = () => {
   const dialogRef = useRef();
+  const navigate = useNavigate();
   const [info, setInfo] = useState(false);
   const [open, setOpen] = useState(false);
   const [lotes, setLotes] = useState();
@@ -69,7 +70,70 @@ const handleMouseLeave = (e) => {
     e.target.style.fillOpacity = 0.00001;
 };
   return (
-    <>{     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
+    <>
+    
+    <CssBaseline />
+      <AppBar position="static" color="default" className="urbanizacion-navbar">
+        <Toolbar className="urbanizacion-toolbar">
+          <img src={logo} alt="Logo" className="urbanizacion-logo" />
+        </Toolbar>
+      </AppBar>
+   
+      <nav className="urbanizacion-nav">
+  <Link
+    variant="button"
+    color="primary" // Cambia el color del texto
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    onClick={() => navigate('/')}
+  >
+    Home
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/urbanizacion-abierta')}
+  >
+    Urbanización Abierta
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
+  >
+    MasterPlan
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/espacios-publicos')}
+  >
+    Espacios públicos
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B" }}
+    onClick={() => navigate('/contacto')}
+  >
+    Contacto
+  </Link>
+</nav>
+    
+    
+    {     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
 <>
 

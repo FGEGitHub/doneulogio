@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import foto1 from '../../Assets/urabierta.png';
-import foto2 from '../../Assets/fondo2.png';
+import foto2 from '../../Assets/uapng.png';
 import logo from '../../Assets/logonav2.png';
 import './UrbanizacionAbierta.css';
 import Parte4 from './parte4'
 import Parte3 from './Parte3'
-
+import { useNavigate } from "react-router-dom";
 const UrbanizacionAbierta = () => {
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <CssBaseline />
@@ -16,7 +17,7 @@ const UrbanizacionAbierta = () => {
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
       </AppBar>
-      <Container>
+   
       <nav className="urbanizacion-nav">
   <Link
     variant="button"
@@ -24,6 +25,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    onClick={() => navigate('/')}
   >
     Home
   </Link>
@@ -33,6 +35,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
   >
     Urbanización Abierta
   </Link>
@@ -42,6 +45,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
   >
     MasterPlan
   </Link>
@@ -51,6 +55,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
   </Link>
@@ -60,6 +65,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B" }}
+    onClick={() => navigate('/contacto')}
   >
     Contacto
   </Link>
@@ -67,19 +73,34 @@ const UrbanizacionAbierta = () => {
 
         <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
         <Box className="urbanizacion-section">
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="body1" paragraph>
-                Una urbanización abierta es un tipo de desarrollo urbano donde las áreas comunes y los espacios verdes son accesibles para todos los residentes. A diferencia de las urbanizaciones cerradas, que suelen tener áreas restringidas y calles privadas, una urbanización abierta integra las áreas públicas en el ámbito vecinal, promoviendo así la interacción social y la cohesión de la comunidad.
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <img src={foto2} alt="Urbanización Abierta" className="urbanizacion-content-image" />
-            </Grid>
-          </Grid>
-        </Box>
+  <Grid container spacing={4}>
+    <Grid item xs={12} md={6}>
+      <Typography
+        variant="body1"
+        paragraph
+        sx={{
+          fontFamily: 'Inter',
+          fontSize: '23px',
+          fontWeight: 400,
+          lineHeight: '38.73px',
+          textAlign: 'center', // Asegúrate que el texto esté centrado
+          marginTop:'20%',
+        }}
+      >
+        Al desarrollar un proyecto al estilo Urbanización Abierta se busca <strong>generar un modelo de “Ciudad dentro del verde”</strong>, logrando integrar el Barrio al entorno natural que lo rodea y conformando una comunidad activa.
+      </Typography>
+    </Grid>
+    <Grid item xs={12} md={6}>
+      <img
+        src={foto2}
+        alt="Urbanización Abierta"
+        className="urbanizacion-content-image"
+      />
+    </Grid>
+  </Grid>
+</Box>
      
-      </Container>
+    
      
       <Parte4/>
       <Box className="urbanizacion-footer">

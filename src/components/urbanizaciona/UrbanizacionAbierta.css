@@ -39,9 +39,10 @@ body {
   }
   
   .urbanizacion-header-image {
-    width: 100%;
-    height: auto;
+    width: 1920px;
+    height: 725.27px;
     margin-bottom: 16px;
+    top:348.59px;
   }
   
   .urbanizacion-section {
@@ -49,8 +50,10 @@ body {
   }
   
   .urbanizacion-content-image {
-    width: 100%;
-    height: auto;
+    width: 714.29px;
+    height: 616.51px;
+    top:1173.5px;
+    Left:1030.71px;
   }
   
   .urbanizacion-comparison-section {

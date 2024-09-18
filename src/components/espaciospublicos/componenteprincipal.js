@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardContent, Typography, Container, Grid, Box } from '@mui/material';
+import { Container, Card, CardContent, Typography, CssBaseline, Grid, Box ,Link ,AppBar, Toolbar,} from '@mui/material';
 import { styled } from '@mui/system';
 import videodron from "../../Assets/videodron.mp4";
-
+import { useNavigate } from "react-router-dom";
 import foto1 from '../../Assets/espaciospubllicosbaner.png';
-
+import logo from '../../Assets/logonav2.png';
 const Root = styled(Box)({
   backgroundColor: '#1a393c',
   padding: '16px',
@@ -62,6 +62,7 @@ const Video = styled('video')({
 });
 
 const PublicSpaces = () => {
+  const navigate = useNavigate();
   const spaces = [
     {
       title: 'Puente Pexoa',
@@ -87,6 +88,65 @@ const PublicSpaces = () => {
 
   return (
     <Root>
+      <CssBaseline />
+      <AppBar position="static" color="default" className="urbanizacion-navbar">
+        <Toolbar className="urbanizacion-toolbar">
+          <img src={logo} alt="Logo" className="urbanizacion-logo" />
+        </Toolbar>
+      </AppBar>
+   
+      <nav className="urbanizacion-nav">
+  <Link
+    variant="button"
+    color="primary" // Cambia el color del texto
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    onClick={() => navigate('/')}
+  >
+    Home
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/urbanizacion-abierta')}
+  >
+    Urbanización Abierta
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/masterplan')}
+  >
+    MasterPlan
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B", marginRight: "20px" }}
+    onClick={() => navigate('/espacios-publicos')}
+  >
+    Espacios públicos
+  </Link>
+  <Link
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#326B6B" }}
+    onClick={() => navigate('/contacto')}
+  >
+    Contacto
+  </Link>
+</nav>
               <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-content-image" />
 
       <VideoBackground>
