@@ -11,9 +11,10 @@ import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
 import foto2 from '../../Assets/redesagua.png';
-import Componente1 from "../masterplan/unaciudadenelverde"
+import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
+import Footer from "../footer"
 const Arg = () => {
   const dialogRef = useRef();
   const navigate = useNavigate();
@@ -149,6 +150,7 @@ const handleMouseLeave = (e) => {
 <br/><br/><br/>
       <div>
       <TransformWrapper
+       style={{ marginBottom: '0px' }} 
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
@@ -165,7 +167,7 @@ const handleMouseLeave = (e) => {
                   color="default"
                   style={{ marginBottom: "10px" }}
                 >
-                  <Restore /> Restaurar Vista
+                  <Restore /> Volver
                 </IconButton>
               </div>
 
@@ -1649,14 +1651,7 @@ const handleMouseLeave = (e) => {
           )}
         </TransformWrapper>
       </div>
-      <div style={styles.imageContainer}>
-      <img 
-        src={foto2} 
-        alt="Urbanización Abierta" 
-        style={styles.image} 
-      />
  
-    </div>
       
       <DialogComponent ref={dialogRef} title=""
         info={info}
@@ -1674,6 +1669,7 @@ const handleMouseLeave = (e) => {
 
       </DialogComponent>
       <Componentevs/>
+      <Footer/>
       </>
     }
     </>

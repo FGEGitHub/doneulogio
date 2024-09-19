@@ -5,7 +5,7 @@ import foto2 from '../../Assets/uapng.png';
 import logo from '../../Assets/logonav2.png';
 import './UrbanizacionAbierta.css';
 import Parte4 from './parte4'
-import Parte3 from './Parte3'
+import Footer from '../footer'
 import { useNavigate } from "react-router-dom";
 const UrbanizacionAbierta = () => {
   const navigate = useNavigate();
@@ -103,6 +103,7 @@ const UrbanizacionAbierta = () => {
     
      
       <Parte4/>
+      <Footer/>
       <Box className="urbanizacion-footer">
         <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
       </Box>

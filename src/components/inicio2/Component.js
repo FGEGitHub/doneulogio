@@ -36,7 +36,7 @@ const UrbanizacionAbierta = () => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
-    onClick={() => navigate('/masterplan')}
+    onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
   </Link>
