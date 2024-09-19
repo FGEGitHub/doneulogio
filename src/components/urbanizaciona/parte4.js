@@ -28,10 +28,10 @@ const UrbanizacionAbierta = () => {
           alt="Flecha Izquierda"
           style={{
             position: 'absolute',
-            top: '-80px', // Posiciona a la altura del salto de línea del título
+            top: '-80px',
             left: '25%',
-            height: '100px', // Aumenta el largo de la flecha
-            transform: 'rotate(20deg)', // Opcional: hace que la flecha apunte mejor
+            height: '100px',
+            transform: 'rotate(20deg)',
           }}
         />
         {/* Flecha derecha */}
@@ -40,34 +40,48 @@ const UrbanizacionAbierta = () => {
           alt="Flecha Derecha"
           style={{
             position: 'absolute',
-            top: '-80px', // Posiciona a la altura del salto de línea del título
+            top: '-80px',
             right: '25%',
-            height: '100px', // Aumenta el largo de la flecha
-            transform: 'rotate(-20deg)', // Opcional: hace que la flecha apunte mejor
+            height: '100px',
+            transform: 'rotate(-20deg)',
           }}
         />
       </Box>
-<br/><br/>
+
+      <br /><br />
       {/* Tarjetas centradas */}
       <Grid container spacing={4} justifyContent="center" alignItems="center">
         {/* Tarjeta 1 */}
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '500px',
+              height: '550px',
               width: '70%',
-              borderRadius: '0', // Esquinas no redondeadas
+              borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center', // Centra el contenido verticalmente
+              alignItems: 'center',   // Centra el contenido horizontalmente
             }}
           >
-            <CardContent>
+            <CardContent
+              sx={{
+                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center', // Centra el texto verticalmente
+                alignItems: 'center', // Centra el texto horizontalmente
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369' }}
+                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
               >
                 Libertad de Decisiones
               </Typography>
-              <Typography variant="body2" color="textSecondary">
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
                 Ante la inexistencia de consorcios de administración y de reglamentos internos de convivencia y construcción, cada propietario goza de total libertad en cuanto a las decisiones sobre su lote (respetando la legislación aplicable).
               </Typography>
             </CardContent>
@@ -78,21 +92,34 @@ const UrbanizacionAbierta = () => {
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '500px',
+              height: '550px',
               width: '70%',
-              borderRadius: '0', // Esquinas no redondeadas
+              borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center', // Centra el contenido verticalmente
+              alignItems: 'center',   // Centra el contenido horizontalmente
             }}
           >
-            <CardContent>
+            <CardContent
+              sx={{
+                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center', // Centra el texto verticalmente
+                alignItems: 'center', // Centra el texto horizontalmente
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369' }}
+                sx={{ fontWeight: 'bold', marginBottom: '20px',  marginTottom: '20px',color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
               >
                 Integración al Entorno
               </Typography>
-              <Typography variant="body2" color="textSecondary">
-                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
+                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.       <br/><br/><br/><br/>                                                      
               </Typography>
             </CardContent>
           </Card>
@@ -102,21 +129,34 @@ const UrbanizacionAbierta = () => {
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '500px',
+              height: '550px',
               width: '70%',
-              borderRadius: '0', // Esquinas no redondeadas
+              borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center', // Centra el contenido verticalmente
+              alignItems: 'center',   // Centra el contenido horizontalmente
             }}
           >
-            <CardContent>
+            <CardContent
+              sx={{
+                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center', // Centra el texto verticalmente
+                alignItems: 'center', // Centra el texto horizontalmente
+              }}
+            >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369' }}
+                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
               >
                 Interacción Social y Comunidad Activa
               </Typography>
-              <Typography variant="body2" color="textSecondary">
-                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
+                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.<br/><br/>  <br/>
               </Typography>
             </CardContent>
           </Card>
