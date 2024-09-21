@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import foto1 from '../../Assets/espacios.png';
 import logo from '../../Assets/logonav2.png';
 import Puntosdeinteres from './puntosdeinteres'
+import Footer from '../footer'
 const Root = styled(Box)({
   //backgroundColor: '#1a393c',
   padding: '16px',
@@ -63,13 +64,12 @@ const PublicSpaces = () => {
   ];
 
   return (
-    <Root>
+    <>
       <CssBaseline />
-      <AppBar position="static" color="default" className="urbanizacion-navbar">
-        <Toolbar className="urbanizacion-toolbar">
+      <Toolbar className="urbanizacion-toolbar">
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
-      </AppBar>
+   
    
       
       <nav className="urbanizacion-nav">
@@ -125,17 +125,44 @@ const PublicSpaces = () => {
   </Link>
 </nav>
 
+<div style={styles.imageContainer}>
+      <img 
+        src={foto1} 
+        alt="Urbanización Abierta" 
+        style={styles.image} 
+      />
+      <span style={styles.imageText}>  Construimos espacios<br />
+      para crecer juntos</span>
+    </div>
 
-      <FullscreenImage>
-        <OverlayText>
-          Construimos espacios<br />
-          para crecer juntos
-        </OverlayText>
-      </FullscreenImage>
+      
       <Dosfotos/>
       <Puntosdeinteres/>
-    </Root>
+      <Footer/>
+ </>
   );
 };
 
+const styles = {
+  imageContainer: {
+    position: 'relative',
+    display: 'inline-block', // Ajusta el tamaño al de la imagen
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+  },
+  imageText: {
+    position: 'absolute',
+    top: '50%',
+    left: '10%', // Mueve el texto más a la izquierda
+    transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
+    color: 'white', // El color del texto
+    fontSize: '60px', // Texto más grande
+    fontWeight: 'bold', // Hacer el texto en negrita
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
+    pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+  },
+};
 export default PublicSpaces;
