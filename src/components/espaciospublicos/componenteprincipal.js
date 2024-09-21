@@ -1,64 +1,40 @@
 import React from 'react';
-import { Container, Card, CardContent, Typography, CssBaseline, Grid, Box ,Link ,AppBar, Toolbar,} from '@mui/material';
+import { Container, Card, CardContent, Typography, CssBaseline, Grid, Box, Link, AppBar, Toolbar } from '@mui/material';
 import { styled } from '@mui/system';
-import videodron from "../../Assets/videodron.mp4";
+import Dosfotos from "./compnente2fotos";
 import { useNavigate } from "react-router-dom";
-import foto1 from '../../Assets/espaciospubllicosbaner.png';
+import foto1 from '../../Assets/espacios.png';
 import logo from '../../Assets/logonav2.png';
+import Puntosdeinteres from './puntosdeinteres'
 const Root = styled(Box)({
-  backgroundColor: '#1a393c',
+  //backgroundColor: '#1a393c',
   padding: '16px',
   minHeight: '100vh',
   fontFamily: 'Montserrat, sans-serif',
   position: 'relative',
 });
 
-const CardStyled = styled(Card)({
-  marginBottom: '16px',
-  minHeight: '400px',
-});
-
-const ContentBox = styled(Box)({
+const FullscreenImage = styled('div')({
+  position: 'relative',
+  width: '100%',
+  height: '70vh',
+  backgroundImage: `url(${foto1})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  height: '100%',
+  justifyContent: 'left',
+  alignItems: 'center',
 });
 
-const ImageStyled = styled('img')({
-  width: '100%',
-  height: 'auto',
-  objectFit: 'cover',
-});
-
-const TextContent = styled(Box)({
-  padding: '16px',
-});
-
-const Title = styled(Typography)({
+const OverlayText = styled(Typography)({
+  color: '#fff',
+  fontSize: '3.5rem',
+  fontWeight: 'bold',
+  textAlign: 'left',
+  //backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semitransparente para mejorar la legibilidad
+  padding: '10px',
+  borderRadius: '10px',
   fontFamily: 'Montserrat, sans-serif',
-  color: '#000',
-});
-
-const Description = styled(Typography)({
-  fontFamily: 'Montserrat, sans-serif',
-  color: '#000',
-});
-
-const VideoBackground = styled('div')({
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  zIndex: -1,
-  overflow: 'hidden',
-});
-
-const Video = styled('video')({
-  width: '100%',
-  height: '100%',
-  objectFit: 'cover',
 });
 
 const PublicSpaces = () => {
@@ -95,13 +71,14 @@ const PublicSpaces = () => {
         </Toolbar>
       </AppBar>
    
+      
       <nav className="urbanizacion-nav">
   <Link
     variant="button"
     color="primary" // Cambia el color del texto
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
   >
     Home
@@ -111,8 +88,8 @@ const PublicSpaces = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
-    onClick={() => navigate('/urbanizacion-abierta')}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    onClick={() => navigate('/masterplan')}
   >
     Urbanización Abierta
   </Link>
@@ -121,7 +98,7 @@ const PublicSpaces = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
@@ -131,7 +108,7 @@ const PublicSpaces = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B", marginRight: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
@@ -141,42 +118,22 @@ const PublicSpaces = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#326B6B" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px"  }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
   </Link>
 </nav>
-              <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-content-image" />
 
-      <VideoBackground>
-        <Video autoPlay loop muted>
-          <source src={videodron} type="video/mp4" />
-          Your browser does not support the video tag.
-        </Video>
-      </VideoBackground>
-      <Container>
-        <Grid container spacing={2}>
-          {spaces.map((space, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <CardStyled>
-                <ImageStyled
-                  src={space.imageUrl}
-                  alt={space.title}
-                />
-                <CardContent>
-                  <Title variant="h5" component="div">
-                    {space.title}
-                  </Title>
-                  <Description variant="body2">
-                    {space.description}
-                  </Description>
-                </CardContent>
-              </CardStyled>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
+
+      <FullscreenImage>
+        <OverlayText>
+          Construimos espacios<br />
+          para crecer juntos
+        </OverlayText>
+      </FullscreenImage>
+      <Dosfotos/>
+      <Puntosdeinteres/>
     </Root>
   );
 };

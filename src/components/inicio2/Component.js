@@ -6,7 +6,7 @@ import logo from '../../Assets/logonav2.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
 import Circulos from './circulos';
 import Carrusel from './carrusel';
-import Puntosdeint from './puntosdeinteres';
+import Puntosdeint from '../espaciospublicos/puntosdeinteres';
 import Mapacomp from './mapacomponente';
 import { useNavigate } from "react-router-dom";
 const UrbanizacionAbierta = () => {
