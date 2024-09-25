@@ -7,7 +7,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
-import Nav from '../../../components/navbar'
 import Clientes from '../../../components/mapas/seleciconarlogin'
 
 export default function Paginas() {
@@ -48,7 +47,6 @@ export default function Paginas() {
 return (
   <>
   <div style={{ backgroundColor: '#ba9470' }}>
-  <Nav/>
   <br/> <br/> <br/>
   <Clientes/>
   <br/> <br/> <br/> <br/>

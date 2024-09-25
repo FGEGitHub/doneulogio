@@ -9,16 +9,15 @@ import Masterplan from '../pages/masterplan';
 import Urbanizacion from '../pages/urbanizacion';
 import Espacios from '../pages/espaciospublicos';
 import Ubicacion from '../pages/ubicacion';
-import Home from '../pages/home';
-import UrbanizacinAbierta from '../pages/urba/Urba.js';
+import { Home } from '../pages/hoome';
 
 const Rutas = [
 
 	{ path: '/', element: <Inicio/> },
 
+	{ path: '/home', element: <Home/> },
+
 	{ path: '/login', element: <Login/> },
-	{ path: "/home", element: <Home/>},
-	{ path: "/urba", element: <UrbanizacinAbierta/>},
 	{ path: '/admin/lotes', element: <Menuadmin/> },
 	{ path: '/admin/datos', element: <	Clientesadmin/> },
 	{ path: '/admin/mapas', element: <	Mapaslogin/> },
