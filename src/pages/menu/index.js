@@ -64,7 +64,7 @@ export default function Paginas() {
          
             {/* Contenido principal */}
         
-                <Nav /> <br /><br />   
+        
               
                     <General />
              

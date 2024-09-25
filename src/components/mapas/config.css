@@ -16,7 +16,7 @@
 }
 
 .mi-path:hover {
-    fill: blue !important; /* Forzamos que se mantenga gris en el hover */
+    fill: grey !important; /* Forzamos que se mantenga gris en el hover */
     fill-opacity: 1 !important; /* Aseguramos que la opacidad sea 1 en hover */
     cursor: pointer;
 }

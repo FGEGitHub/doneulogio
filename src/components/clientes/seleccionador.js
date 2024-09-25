@@ -1,83 +1,88 @@
-import { useState, useEffect } from "react";
-
-
-import { useNavigate } from "react-router-dom";
-import Clientes from "./tabla"
-import Lotes from "../lotes/tabla"
-
+import { useState } from "react";
+import Clientes from "./tabla";
+import Lotes from "../lotes/tabla";
 import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import MuiAlert from '@mui/material/Alert';
-
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import NativeSelect from '@mui/material/NativeSelect';
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-  });
-
-
-
 const Seleccion = () => {
-    //configuracion de Hooks
-    const [mapa, setMapa] = useState();
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
+    const [mapa, setMapa] = useState("");
 
-  
- 
     const handleChange = (e) => {
-        console.log( e.target.value)
-        setMapa(e.target.value)
+        setMapa(e.target.value);
+    };
 
-
-    }
     return (
-        <>
-            <NativeSelect
-defaultValue={30}
-onChange={handleChange}
-inputProps={{
-    name: 'anio',
-    id: 'uncontrolled-native',
+        <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            height: '100vh', 
+            backgroundColor: '#214138',
+            color: 'white'
+        }}>
+            {/* Header con logo y navegación */}
+         
+            {/* Contenedor principal con selección y botones */}
+            <div style={{ 
+                flex: 1, 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                justifyContent: 'center'
+            }}>
+                <NativeSelect
+                    defaultValue={30}
+                    onChange={handleChange}
+                    inputProps={{
+                        name: 'anio',
+                        id: 'uncontrolled-native',
+                    }}
+                    style={{ 
+                        backgroundColor: 'white', 
+                        color: 'black', 
+                        padding: '10px', 
+                        borderRadius: '5px',
+                        marginBottom: '20px'
+                    }}
+                >
+                    <option value={''}>Elegir</option>
+                    <option value={0}>Todo</option>
+                    <option value={1}>Clientes</option>
+                    <option value={2}>Lotes</option>
+                    <option value={3}>Ventas</option>
+                </NativeSelect>
 
-}}
+                {mapa === "1" ? <Clientes /> : null}
+                {mapa === "2" ? <Lotes /> : null}
+                {mapa === "3" ? <Clientes /> : null}
+                {!mapa && <p>Sin selección</p>}
+            </div>
 
-> <option value={''}>Elegir</option>
-<option value={0}>Todo</option>
-<option value={1}>Clientes</option>
-<option value={2}>Lotes</option>
-<option value={3}>Ventas</option>
-
-
-
-</NativeSelect>
-{ mapa === "1" ? <><Clientes/></>:<>
-
-
-{ mapa === "2" ? <><Lotes/></>:<>
-<br/><br/><br/><br/>
-{ mapa === "3" ? <><Clientes/></>:<>
-<br/><br/><br/><br/>
-Sin seleccion
-
-
-
-</>}
-
-
-
-</>}
-
-
-
-</>}
-
-        </>
-
-
-    )
-}
+            {/* Botones de acción */}
+            <div style={{ 
+                position: 'absolute', 
+                bottom: '20px', 
+                left: '20px' 
+            }}>
+                
+            </div>
+            <div style={{ 
+                position: 'absolute', 
+                bottom: '20px', 
+                right: '20px' 
+            }}>
+                <button style={{ 
+                    backgroundColor: '#2E7D32', 
+                    color: 'white', 
+                    padding: '10px 20px', 
+                    border: 'none', 
+                    borderRadius: '5px', 
+                    cursor: 'pointer'
+                }}>
+                    Descargar PDF
+                </button>
+            </div>
+        </div>
+    );
+};
 
 export default Seleccion;

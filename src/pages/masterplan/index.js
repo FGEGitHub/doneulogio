@@ -1,33 +1,37 @@
 import React, { useState, useEffect } from "react";
-import Nav from '../../components/inicio/nav';
 import General from '../../components/mapas/doneulogiocompleto';
+import MobileComponent from '../../components/mapas/mobilemapacompleto'; // Componente para móvil
+
 
 export default function Paginas() {
-    const [showSecondBackground, setShowSecondBackground] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            if (scrollPosition >= 1000) {
-                setShowSecondBackground(true);
-            } else {
-                setShowSecondBackground(false);
-            }
-        };
+  useEffect(() => {
+    // Función que verifica si el ancho de la pantalla es menor o igual a 768px
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
 
-        window.addEventListener('scroll', handleScroll);
+    // Llamamos a la función al montar el componente y cada vez que la ventana cambia de tamaño
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    // Cleanup: eliminamos el event listener al desmontar el componente
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-    return (
-        <>
-            <Nav /> <br /><br />
-            <div style={{ backgroundColor: 'darkgreen', padding: '20px', textAlign: 'center' }}>
-                <General />
-            </div>
-        </>
-    );
+  return (
+    <>
+
+
+        {isMobile ? <MobileComponent /> :       <div style={{  padding: '20px', textAlign: 'center' }}><General />  </div>}
+    
+    </>
+  );
 }

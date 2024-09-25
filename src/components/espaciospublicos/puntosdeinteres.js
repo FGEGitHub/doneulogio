@@ -36,9 +36,9 @@ const styles = {
     padding: '20px',
   },
   title: {
-    fontSize: '24px',
+    fontSize: '28px', // Aumentamos el tamaño del título
     fontWeight: 'bold',
-    marginBottom: '20px',
+    marginBottom: '30px',
   },
   grid: {
     display: 'flex',
@@ -47,18 +47,18 @@ const styles = {
     flexWrap: 'wrap',
   },
   item: {
-    width: '200px',
-    margin: '10px',
+    width: '300px', // Hacemos el contenedor más grande para imágenes más grandes
+    margin: '15px',
   },
   image: {
-    width: '100%',
-    height: 'auto',
+    width: '100%',  // La imagen ocupará el 100% del ancho del contenedor
+    height: 'auto', // Se mantiene el aspecto original de la imagen
     borderRadius: '8px',
     border: '2px solid #009688',
   },
   caption: {
-    marginTop: '10px',
-    fontSize: '16px',
+    marginTop: '12px', // Ajuste en el espaciado del texto debajo de la imagen
+    fontSize: '18px', // Tamaño de fuente mayor para el pie de imagen
     fontWeight: 'bold',
     color: '#4CAF50',
   },
