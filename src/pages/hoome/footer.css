@@ -1,0 +1,99 @@
+.component {
+    height: 484px;
+    width: 1920px;
+}
+
+.component .overlap-group {
+    background-color: #1a393c;
+    height: 376px;
+    position: relative;
+}
+
+.component .group {
+    height: 34px;
+    left: 471px;
+    position: absolute;
+    top: 171px;
+    width: 1010px;
+}
+
+.component .text-wrapper {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 28px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.component .div {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 28px;
+    font-weight: 400;
+    left: 113px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.component .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 28px;
+    font-weight: 400;
+    left: 609px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.component .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 28px;
+    font-weight: 400;
+    left: 880px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+}
+
+.component .div-wrapper {
+    height: 34px;
+    left: 426px;
+    position: absolute;
+    top: 0;
+    width: 151px;
+}
+
+.component .img {
+    height: 64px;
+    left: 1770px;
+    position: absolute;
+    top: 156px;
+    width: 64px;
+}
+
+.component .group-2 {
+    height: 64px;
+    left: 1670px;
+    position: absolute;
+    top: 156px;
+    width: 64px;
+}
+
+.component .recurso {
+    height: 131px;
+    left: 86px;
+    object-fit: cover;
+    position: absolute;
+    top: 122px;
+    width: 208px;
+}

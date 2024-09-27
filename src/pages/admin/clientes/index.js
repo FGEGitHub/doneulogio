@@ -7,7 +7,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
-import Nav from '../../../components/navbar'
 import Clientes from '../../../components/clientes/seleccionador'
 
 export default function Paginas() {

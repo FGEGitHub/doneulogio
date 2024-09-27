@@ -1,0 +1,22 @@
+/* Estilo para el contenedor de la imagen fija */
+.image {
+    height: 2880px;
+    width: 1920px;
+  }
+  
+  /* Estilos para la imagen fija particular */
+  .image .element {
+    height: 721px;
+    left: 0;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    width: 1920px;
+  }
+  
+  /* Estilos para las imágenes dentro del carrusel */
+  .carouselImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }

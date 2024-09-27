@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import foto1 from '../../Assets/urabierta.png';
-import foto2 from '../../Assets/masterp.png';
-import foto3 from '../../Assets/urabierta.png';
+import React, { useState, useEffect } from "react";
+import Image from "./Image"; // Importamos el componente 'Image'
+import foto1 from "../../Assets/urabierta.png";
+import foto2 from "../../Assets/masterp.png";
+import foto3 from "../../Assets/urabierta.png";
+import "./carrusel.css"; // Importamos el CSS de los estilos de 'Image'
 
 const Carousel = ({ images, links }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,59 +31,69 @@ const Carousel = ({ images, links }) => {
             style={{
               ...styles.imageContainer,
               transform: `translateX(${(index - currentIndex) * 100}%)`,
-              transition: 'transform 1s ease-in-out',
+              transition: "transform 1s ease-in-out",
             }}
           >
             <a href={links[index]} style={styles.imageLink}>
-              <img src={image} alt={`Carousel ${index + 1}`} style={styles.image} />
+              <img
+                src={image}
+                alt={`Carousel ${index + 1}`}
+                className="carouselImage"
+              />
             </a>
           </div>
         ))}
       </div>
+      {/* Aquí usamos el componente 'Image' */}
+      <Image />
     </div>
   );
 };
 
 const styles = {
   carouselContainer: {
-    position: 'relative',
-    width: '100%',
-    height: 'auto',
-    overflow: 'hidden',
+    position: "relative",
+    width: "100%",
+    height: "auto",
+    overflow: "hidden"
   },
   imageWrapper: {
-    display: 'flex',
-    width: '100%',
-    height: 'auto',
+    display: "flex",
+    width: "100%",
+    height: "auto"
   },
+
   imageContainer: {
-    minWidth: '100%',
-    height: '100%',
-    position: 'relative',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    minWidth: "100%",
+    height: "100%",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
+
   imageLink: {
-    display: 'block',
-    width: '100%',
-    height: '100%',
-    textDecoration: 'none',
+    display: "block",
+    width: "100%",
+    height: "100%",
+    textDecoration: "none"
   },
+
+  // Este estilo lo movemos al archivo CSS con la clase 'carouselImage'
   image: {
-    width: '100%',
-    height: 'auto',
-    objectFit: 'cover',
-  },
+    width: "100%",
+    height: "auto",
+    objectFit: "cover"
+  }
 };
 
 // Uso del componente
 const App = () => {
   const images = [foto1, foto2, foto3];
   const links = [
-    'https://www.enlace1.com',  // Reemplaza con las URLs correspondientes
-    'https://www.enlace2.com',  // Reemplaza con las URLs correspondientes
-    'https://www.enlace3.com',  // Reemplaza con las URLs correspondientes
+    "https://www.enlace1.com", // Reemplaza con las URLs correspondientes
+    "https://www.enlace2.com", // Reemplaza con las URLs correspondientes
+    "https://www.enlace3.com"  // Reemplaza con las URLs correspondientes
   ];
 
   return (
