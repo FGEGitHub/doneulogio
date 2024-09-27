@@ -44,9 +44,8 @@ inputProps={{
 
 > <option value={''}>Elegir</option>
 
-<option value={1}>Bosques</option>
 
-<option value={3}>Otro</option>
+<option value={3}>Todos</option>
 
 
 

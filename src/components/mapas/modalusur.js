@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import servicioDatos from '../../services/datos';
 import Fotobosques from '../../Assets/bosquesfoto.jpg'; // Imagen del bosque
+import ImagenDefault from '../../Assets/lotes/69.png'; // Imagen predeterminada
 
 const DialogComponent = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
@@ -60,15 +61,11 @@ const DialogComponent = forwardRef((props, ref) => {
   // Función para cargar la imagen del lote correspondiente
   const loadImage = (idLote) => {
     try {
-      console.log(idLote)
-      const rutaa = idLote+'.png'
-      console.log(rutaa)
-      const image = require(`../../Assets/lotes/${rutaa}`);
-     // const image = require(`../../Assets/lotes/${idLote}.png`); // Cargar la imagen con el ID del lote
+      const image = require(`../../Assets/lotes/${idLote}.png`); // Cargar la imagen con el ID del lote
       setImageSrc(image);  // Guardar la ruta de la imagen en el estado
     } catch (error) {
       console.error(`No se encontró la imagen para el lote ${idLote}`);
-      setImageSrc(null);  // Si no se encuentra la imagen, no mostrar nada
+      setImageSrc(ImagenDefault);  // Si no se encuentra la imagen, se muestra la predeterminada
     }
   };
 
@@ -79,10 +76,10 @@ const DialogComponent = forwardRef((props, ref) => {
       justifyContent: 'space-between',
     },
     image: {
-      width: '50%',  // Ajusta el tamaño de la imagen
+      width: '60%',  // Tamaño mayor por defecto
     },
     info: {
-      width: '45%',
+      width: '40%',
       paddingLeft: '20px',
       display: 'flex',
       flexDirection: 'column',
@@ -96,13 +93,23 @@ const DialogComponent = forwardRef((props, ref) => {
     }
   };
 
+  // Estilos para móviles
+  const mobileStyles = {
+    image: {
+      width: '100%',  // En móviles, imagen ocupa todo el ancho disponible
+    },
+  };
+
+  // Detectar si es móvil
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <Dialog open={open} onClose={closeDialog} maxWidth="md" fullWidth>
       <DialogTitle>Información del Lote</DialogTitle>
       <DialogContent dividers style={styles.dialogContent}>
         <div style={styles.container}>
           {/* Imagen del lote */}
-          <div style={styles.image}>
+          <div style={isMobile ? mobileStyles.image : styles.image}>
             {imageSrc ? (
               <img src={imageSrc} alt="Lote esquema" style={{ width: '100%' }} />
             ) : (
@@ -117,10 +124,10 @@ const DialogComponent = forwardRef((props, ref) => {
             {datos ? (
               datos.length > 0 ? (
                 <>
-                  <div>Sector: {datos[0].sector}</div>
-                  <div>Manzana: {datos[0].manzana}</div>
-                  <div>Lote: {datos[0].lote}</div>
-                  <div>Disponibilidad: {datos[0].disponibilidad}</div>
+                  <div><b>Sector:</b> {datos[0].sector}</div>
+                  <div><b>Manzana:</b> {datos[0].manzana}</div>
+                  <div><b>Lote:</b> {datos[0].lote}</div>
+                  <div><b>Disponibilidad:</b> {datos[0].disponibilidad}</div>
 
                   {/* Chat de WhatsApp */}
                   <div style={styles.chatContainer}>

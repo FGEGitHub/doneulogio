@@ -18,7 +18,8 @@ const UrbanizacionAbierta = () => {
         </Toolbar>
     
    
-      <nav className="urbanizacion-nav">
+        
+        <nav className="urbanizacion-nav">
   <Link
     variant="button"
     color="primary" // Cambia el color del texto

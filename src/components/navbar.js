@@ -12,7 +12,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import logo from "../Assets/logonav.png";
 
@@ -44,56 +43,16 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#1b7f3e' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#1A393C' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <IconButton
-            size="large"
-            aria-label="open navigation menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-            color="inherit"
-            sx={{ display: { xs: 'flex', md: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: '#1a393c',
-              textDecoration: 'none',
-            }}
-          >
-            Don Eulogio
-          </Typography>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {/* LOGO a la izquierda */}
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <img style={isLogo} src={logo} alt="logo" />
+          </Box>
+
+          {/* Botones de navegación justo a la derecha del logo */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, ml: 2 }}>
             {pages.map((page, index) => (
               <Button
                 key={page}
@@ -106,7 +65,9 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+
+          {/* Mantén el resto de los elementos alineados a la derecha */}
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             <Tooltip title="Facebook">
               <IconButton
                 aria-label="facebook"
@@ -124,6 +85,7 @@ function ResponsiveAppBar() {
                 <FacebookIcon />
               </IconButton>
             </Tooltip>
+
             <Tooltip title="Instagram">
               <IconButton
                 aria-label="instagram"
@@ -141,11 +103,7 @@ function ResponsiveAppBar() {
                 <InstagramIcon />
               </IconButton>
             </Tooltip>
-            <Tooltip title="Editar">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <img style={isLogo} src={logo} alt="logo" />
-              </IconButton>
-            </Tooltip>
+
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -170,6 +128,8 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
         </Toolbar>
+
+        {/* Menú móvil */}
         <Menu
           id="menu-appbar"
           anchorEl={anchorElNav}

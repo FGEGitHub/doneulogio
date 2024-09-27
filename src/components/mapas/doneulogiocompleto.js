@@ -6,7 +6,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/mapadon.png";
+import Gps from "../../Assets/doneulcom.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
@@ -79,8 +79,8 @@ const handleMouseLeave = (e) => {
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
    
-   
-      <nav className="urbanizacion-nav">
+    
+        <nav className="urbanizacion-nav">
   <Link
     variant="button"
     color="primary" // Cambia el color del texto
@@ -97,7 +97,7 @@ const handleMouseLeave = (e) => {
     href="#"
     className="urbanizacion-navlink"
     style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
-    onClick={() => navigate('/urbanizacion-abierta')}
+    onClick={() => navigate('/masterplan')}
   >
     Urbanización Abierta
   </Link>
@@ -126,13 +126,12 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px"  }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
   </Link>
 </nav>
-    
     
     {     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  

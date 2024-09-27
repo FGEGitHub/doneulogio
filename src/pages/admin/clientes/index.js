@@ -47,7 +47,7 @@ export default function Paginas() {
 
 return (
   <>
-  <div style={{ backgroundColor: '#ba9470' }}>
+  <div style={{ backgroundColor: '#1A393C' }}>
   <Nav/>
   <br/> <br/> <br/>
   <Clientes/>
