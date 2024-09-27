@@ -5,7 +5,7 @@ import video from '../../Assets/videodron.mp4';
 import img from "../../Assets/image 30.png";
 import img2 from "../../Assets/image 31.png";
 import rectangulo from "../../Assets/rectanguloverde.png"
-import footer from "../../Assets/footer.png"
+import Footer from "../../Assets/footer.png"
 import map from "../../Assets/MapaDon Eulogio.png"
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 
@@ -91,8 +91,6 @@ export const Home = () => {
                             />
                             <div className="text-wrapper-10">{images[currentImageIndex].text}</div>
                         </div>
-                        {/* Controles del Carrusel */}
-                       
                     </div>
                 </div>
                 
@@ -116,17 +114,27 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="group-6">
-                    <div className="group-7">
-                        <img className="image" alt="Image" src={img} />
-                        <img className="image-2" alt="Image" src={img2} />
-                    </div>
-                    <div className="desarrolla-y">
-                        Desarrolla <br />y Comercializa
-                    </div>
-                </div>
+                <div className="group-7">
+        <img className="image" alt="Image" src={img} />
+        <img className="image-2" alt="Image" src={img2} />
+    </div>
+    <div className="desarrolla-y">
+        Desarrolla <br />y Comercializa..
+    </div>
+</div>
+
                 <div className="text-wrapper-14">Nuestros sectores</div>
                 <img className="mapa-don-eulogio" alt="Mapa don eulogio" src={map} />
+
+
+
+            
             </div>
+        <div className="footer">
+            <img className="footer-image" alt="Footer" src={Footer} />
+        </div>
+
+
         </div>
     );
-};
+}

@@ -18,17 +18,6 @@ const UrbanizacionAbierta = () => {
       <Toolbar className="urbanizacion-toolbar">
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
-<<<<<<< HEAD
-      </AppBar>
-      <Container>
-
-        <nav className="urbanizacion-nav" style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-  <Link
-    variant="button"
-    color="primary"
-    href="#"
-    style={{ color: "#326B6B", fontSize: "28px" }} // Tamaño de texto
-=======
          
       <nav className="urbanizacion-nav">
   <Link
@@ -38,7 +27,6 @@ const UrbanizacionAbierta = () => {
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
->>>>>>> 5cafb7e88f4a3f02b8f499c47d0d38a2644b824d
   >
     Home
   </Link>
@@ -46,13 +34,9 @@ const UrbanizacionAbierta = () => {
     variant="button"
     color="primary"
     href="#"
-<<<<<<< HEAD
-    style={{ color: "#326B6B", fontSize: "28px" }} // Tamaño de texto
-=======
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
     onClick={() => navigate('/urbanizacion-abierta')}
->>>>>>> 5cafb7e88f4a3f02b8f499c47d0d38a2644b824d
   >
     Urbanización Abierta
   </Link>
@@ -60,31 +44,6 @@ const UrbanizacionAbierta = () => {
     variant="button"
     color="primary"
     href="#"
-<<<<<<< HEAD
-    style={{ color: "#326B6B", fontSize: "28px" }} // Tamaño de texto
-          >
-        
-            MasterPlan
-          </Link>
-          <Link
-    variant="button"
-    color="primary"
-    href="#"
-    style={{ color: "#326B6B", fontSize: "28px" }} // Tamaño de texto
-          >
-            Espacios públicos
-          </Link>
-          <Link
-    variant="button"
-    color="primary"
-    href="#"
-    style={{ color: "#326B6B", fontSize: "28px" }} // Tamaño de texto
-          >
-            Contacto
-          </Link>
-  {/* Añade los demás Links similares */}
-</nav>
-=======
     className="urbanizacion-navlink"
     style={{ color: "#326B6B", marginRight: "20px" }}
     onClick={() => navigate('/masterplan')}
@@ -113,7 +72,6 @@ const UrbanizacionAbierta = () => {
   </Link>
 </nav>
 
->>>>>>> 5cafb7e88f4a3f02b8f499c47d0d38a2644b824d
 
         {/* Video Section */}
         <Box sx={{ position: 'relative', width: '100%', height: 'auto', overflow: 'hidden' }}>

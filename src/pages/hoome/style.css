@@ -1,9 +1,12 @@
 .home {
     background-color: #ffffff;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    justify-content: flex-start;
     width: 100%;
+    position: relative; /* Asegura que el contenedor principal no esté afectado por absolute */
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos el 100% de la altura de la ventana */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y alto */
 }
 
 .home .div-2 {
@@ -427,11 +430,11 @@
     font-family: "Bebas Neue-Regular", Helvetica;
     font-size: 54px;
     font-weight: 400;
-    left: 0;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
-    top: 43px;
+    position: relative; /* Asegura que siga el flujo del documento */
+    margin-left: 100; /* Ajusta el margen izquierdo para alinearlo con el contenedor */
+    margin-top: 20px; /* Ajusta el margen superior para posicionarlo correctamente */
 }
 
 .home .text-wrapper-14 {
@@ -454,4 +457,12 @@
     position: absolute;
     top: 2497px;
     width: 1099px;
+}
+
+.footer-image {
+    width: 100%; /* Asegura que el footer ocupe todo el ancho del contenedor */
+    display: block; /* Asegura que se muestre como un bloque */
+    margin-top: 20px; /* Espacio superior opcional */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    position: relative; /* Asegura que el footer siga el flujo del documento */
 }
