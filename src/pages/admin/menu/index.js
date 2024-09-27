@@ -8,6 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import Lotes from '../../../components/lotes/tabla'
+import Nav from '../../../components/navbar'
 
 export default function Paginas() {
   const navigate = useNavigate();

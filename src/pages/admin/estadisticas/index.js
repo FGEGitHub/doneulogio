@@ -3,12 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
-<<<<<<< HEAD
 import Seleccion from '../../../components/clientes/seleccionador'
-=======
 import Nav from '../../../components/navbar'
-import Seleccion from '../../../components/estadisticas/principal'
->>>>>>> 5cafb7e88f4a3f02b8f499c47d0d38a2644b824d
+
 
 export default function Paginas() {
   const navigate = useNavigate();
