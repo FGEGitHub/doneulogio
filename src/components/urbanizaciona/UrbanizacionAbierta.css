@@ -17,6 +17,15 @@ body {
   
   .urbanizacion-navbar {
     margin-bottom: 16px;
+    color: #246f74;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 28px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
   }
   
   .urbanizacion-toolbar {
@@ -25,12 +34,12 @@ body {
   }
   
   .urbanizacion-logo {
-    height:  213.88px;
+    height: 135px;
     width: auto;
     margin-top: 3%;
     margin-bottom: 3%;
   }
-  
+
   .urbanizacion-nav {
     display: flex;
     justify-content: center;
@@ -206,3 +215,4 @@ h2 {
   max-width: 100%;
   border-radius: 10px;
 }
+

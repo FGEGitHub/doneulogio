@@ -4,8 +4,11 @@ import foto1 from '../../Assets/urabierta.png';
 import Formulario from './formulario';
 import logo from '../../Assets/logonav2.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
+import { useNavigate } from "react-router-dom";
 
 const UrbanizacionAbierta = () => {
+  const navigate = useNavigate();
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -20,53 +23,59 @@ const UrbanizacionAbierta = () => {
       <br/>      <br/>
 
       <Container>
-        <nav className="urbanizacion-nav">
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Home
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Urbanización Abierta
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            MasterPlan
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B", marginRight: "20px" }}
-          >
-            Espacios públicos
-          </Link>
-          <Link
-            variant="button"
-            color="primary"
-            href="#"
-            className="urbanizacion-navlink"
-            style={{ color: "#326B6B" }}
-          >
-            Contacto
-          </Link>
-        </nav>
+           
+      <nav className="urbanizacion-nav">
+  <div
+    variant="button"
+    color="primary" // Cambia el color del texto
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px", fontFamily: "Inter", fontWeight: 400 }} // Cambia el color del texto y agrega separación
+    onClick={() => navigate('/')}
+  >
+    Home
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    onClick={() => navigate('/urbanizacion-abierta')}
+  >
+    Urbanización Abierta
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    onClick={() => navigate('/masterplan')}
+  >
+    MasterPlan
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    onClick={() => navigate('/espacios-publicos')}
+  >
+    Espacios públicos
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px"  }}
+    onClick={() => navigate('/contacto')}
+  >
+    Contacto
+  </div>
+</nav>
 
         <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
         <br /><br />

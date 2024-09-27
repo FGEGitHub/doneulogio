@@ -27,11 +27,6 @@ const columns = [
   { id: 'modificar', label: 'Acciones', minWidth: 100, align: 'center' },
 ];
 
-
-const getColorForEstado = (estado) => {
-  return estado === 'Vendido' ? 'red' : estado === 'Disponible' ? 'green' : 'initial';
-};
-
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [datos, setDatos] = useState([]);
@@ -70,18 +65,19 @@ export default function StickyHeadTable() {
     }));
   };
 
-  const handleSubmit = (row) => {
+  const handleSubmit = async (row) => {
     const updatedRow = {
       ...row,
       ...editingRow[row.lote], // Obtiene los cambios realizados en la fila
     };
-    console.log(updatedRow)
-    servicioDatos.enviarformlotes(updatedRow); // Aquí envías la fila al servicio
+    await servicioDatos.enviarformlotes(updatedRow); // Envía la fila al servicio
+    alert('Realizado')
     setEditingRow((prev) => {
       const newEditing = { ...prev };
       delete newEditing[row.lote]; // Limpia el estado editado para esa fila
       return newEditing;
     });
+    await traerDatos(); // Actualiza los datos después de guardar
   };
 
   return (
@@ -120,7 +116,8 @@ export default function StickyHeadTable() {
                         </TableCell>
                       );
                     }
-                    if (column.id === 'construccion') {
+
+                    if (column.id === 'posecion' || column.id === 'escritura' || column.id === 'construccion') {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           <Checkbox
@@ -130,21 +127,10 @@ export default function StickyHeadTable() {
                         </TableCell>
                       );
                     }
-                    
+
                     if (column.id === 'anticipo') {
                       const anticipo = (editingRow[row.lote]?.preciofinanciado || row.preciofinanciado) / 2;
                       return <TableCell key={column.id} align={column.align}>{anticipo.toFixed(2)}</TableCell>;
-                    }
-
-                    if (column.id === 'posecion' || column.id === 'escritura') {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          <Checkbox
-                            checked={isEditing ? editingRow[row.lote][column.id] === 'Si' : value === 'Si'}
-                            onChange={(e) => handleCheckboxChange(row.lote, column.id, e.target.checked)}
-                          />
-                        </TableCell>
-                      );
                     }
 
                     if (column.id === 'modificar') {
