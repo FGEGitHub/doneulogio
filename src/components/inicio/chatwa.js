@@ -6,7 +6,7 @@ import "./WhatsappChat.css";
 
 const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
-  const [chatOpen, setChatOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(true);
   const [selectedQuestion, setSelectedQuestion] = useState(null);
   const [response, setResponse] = useState([]);
 
