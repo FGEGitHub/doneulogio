@@ -15,6 +15,7 @@ import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
+import './Christian Sunday.ttf'
 const Arg = () => {
   const dialogRef = useRef();
   const navigate = useNavigate();
@@ -230,10 +231,15 @@ const handleMouseLeave = (e) => {
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,0.97)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
+  <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
+
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,0.97)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
+   <text x="1400" y="1400" style={styles.svgText}>Pinares</text>
+
+ 
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -1699,7 +1705,18 @@ const styles = {
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+    
   },
+  svgText: {
+    fill: '#fff', // Relleno blanco para el texto
+    stroke: '#fff', // Contorno blanco para el texto
+    fontSize: '80px',
+    fontFamily: 'Christian Sunday, cursive', // Definir la fuente
+    textAnchor: 'middle',
+    fontFamily: 'Christian Sunday',
+  },
+  
 };
+
 
 export default Arg;
