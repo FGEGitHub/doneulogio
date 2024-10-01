@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Clientes from "./tabla";
 import Lotes from "../lotes/tabla";
+import Nuevo from './nuevo'
 import * as React from 'react';
 
 const Seleccion = () => {
@@ -111,16 +112,7 @@ const Seleccion = () => {
                 bottom: '20px', 
                 right: '20px' 
             }}>
-                <button style={{ 
-                    backgroundColor: '#6AC32E', 
-                    color: 'white', 
-                    padding: '10px 20px', 
-                    border: 'none', 
-                    borderRadius: '5px', 
-                    cursor: 'pointer' 
-                }}>
-                    Nuevo
-                </button>
+               <Nuevo/>
             </div>
         </div>
     );
