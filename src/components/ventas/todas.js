@@ -26,12 +26,11 @@ export default function VentasTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [datos, setDatos] = useState([]);
-  const [lotes, setLotes] = useState([]); // Cambié el estado para solo lotes
+  const [lotes, setLotes] = useState([]); // Estado para lotes
+  const [propietarios, setPropietarios] = useState([]); // Estado para propietarios
   const [editingRow, setEditingRow] = useState({});
   const [nuevaVenta, setNuevaVenta] = useState(false);
   const [options, setOptions] = useState({
-    lote: [],
-    propietario: [],
     modelo_venta: []
   });
 
@@ -44,16 +43,13 @@ export default function VentasTable() {
     const historial = await servicioDatos.traerVentas();
     setDatos(historial[0]);
     setLotes(historial[1]); // Cargar los lotes desde el servicio
+    setPropietarios(historial[2]); // Cargar los propietarios desde el servicio
   };
 
   const traerOpciones = async () => {
     // Simulación de opciones traídas de una API
-    const opcionesLote = ['56', '76'];
-    const opcionesPropietario = ['Nombre y Apellido 1', 'Nombre y Apellido 2'];
     const opcionesModeloVenta = ['Contado', 'Financiado'];
     setOptions({
-      lote: opcionesLote,
-      propietario: opcionesPropietario,
       modelo_venta: opcionesModeloVenta,
     });
   };
@@ -130,8 +126,7 @@ export default function VentasTable() {
                     );
                   }
 
-                  if (['lote', 'propietario', 'modelo_venta'].includes(column.id)) {
-                    const optionsList = options[column.id] || [];
+                  if (column.id === 'lote') {
                     return (
                       <TableCell key={column.id} align={column.align}>
                         <Select
@@ -140,11 +135,45 @@ export default function VentasTable() {
                         >
                           {lotes && lotes.length > 0 ? (
                             lotes.map((lote) => (
-                              <MenuItem key={lote} value={lote}>{lote}</MenuItem>
+                              <MenuItem key={lote.lote} value={lote.lote}>{lote.sector} -{lote.manzana} -{lote.lote}  </MenuItem>
                             ))
                           ) : (
                             <MenuItem value="" disabled>Cargando lotes...</MenuItem>
                           )}
+                        </Select>
+                      </TableCell>
+                    );
+                  }
+
+                  if (column.id === 'nombre') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        <Select
+                          value={editingRow.new[column.id] || ''}
+                          onChange={(e) => handleInputChange('new', column.id, e.target.value)}
+                        >
+                          {propietarios && propietarios.length > 0 ? (
+                            propietarios.map((propietario) => (
+                              <MenuItem key={propietario.id} value={propietario.nombre}>{propietario.nombre}</MenuItem>
+                            ))
+                          ) : (
+                            <MenuItem value="" disabled>Cargando propietarios...</MenuItem>
+                          )}
+                        </Select>
+                      </TableCell>
+                    );
+                  }
+
+                  if (column.id === 'modelo_venta') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        <Select
+                          value={editingRow.new[column.id] || ''}
+                          onChange={(e) => handleInputChange('new', column.id, e.target.value)}
+                        >
+                          {options.modelo_venta.map((modelo) => (
+                            <MenuItem key={modelo} value={modelo}>{modelo}</MenuItem>
+                          ))}
                         </Select>
                       </TableCell>
                     );
@@ -168,15 +197,16 @@ export default function VentasTable() {
                 {columns.map((column) => {
                   const value = row[column.id];
                   const isEditing = editingRow[row.id_venta] && editingRow[row.id_venta][column.id] !== undefined;
+
                   if (column.id === 'id_venta') {
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        {`${row.sector} - ${row.manzana} - ${row.lote}`} {/* Concatenar id_venta con propietario */}
+                        {`${row.sector} - ${row.manzana} - ${row.lote}`} {/* Aquí se combinan los datos para mostrar en la celda */}
                       </TableCell>
                     );
                   }
-                  if (['lote', 'propietario', 'modelo_venta'].includes(column.id)) {
-                    const optionsList = options[column.id] || [];
+
+                  if (column.id === 'lote') {
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {isEditing ? (
@@ -186,7 +216,7 @@ export default function VentasTable() {
                           >
                             {lotes && lotes.length > 0 ? (
                               lotes.map((lote) => (
-                                <MenuItem key={lote} value={lote}>{lote}</MenuItem>
+                                <MenuItem key={lote.lote} value={lote.lote}>{lote.lote}</MenuItem>
                               ))
                             ) : (
                               <MenuItem value="" disabled>Cargando lotes...</MenuItem>
@@ -199,10 +229,44 @@ export default function VentasTable() {
                     );
                   }
 
-                  if (column.id === 'modificar') {
+                  if (column.id === 'nombre') {
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        <button onClick={() => handleSubmit(row)}>Modificar</button>
+                        {isEditing ? (
+                          <Select
+                            value={editingRow[row.id_venta][column.id] || ''}
+                            onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
+                          >
+                            {propietarios && propietarios.length > 0 ? (
+                              propietarios.map((propietario) => (
+                                <MenuItem key={propietario.id} value={propietario.nombre}>{propietario.nombre}</MenuItem>
+                              ))
+                            ) : (
+                              <MenuItem value="" disabled>Cargando propietarios...</MenuItem>
+                            )}
+                          </Select>
+                        ) : (
+                          value // Mostrar el valor directamente cuando no está en modo de edición
+                        )}
+                      </TableCell>
+                    );
+                  }
+
+                  if (column.id === 'modelo_venta') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        {isEditing ? (
+                          <Select
+                            value={editingRow[row.id_venta][column.id] || ''}
+                            onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
+                          >
+                            {options.modelo_venta.map((modelo) => (
+                              <MenuItem key={modelo} value={modelo}>{modelo}</MenuItem>
+                            ))}
+                          </Select>
+                        ) : (
+                          value // Mostrar el valor directamente cuando no está en modo de edición
+                        )}
                       </TableCell>
                     );
                   }
