@@ -91,6 +91,7 @@ export default function VentasTable() {
   };
 
   const handleGuardarNuevaVenta = async () => {
+    console.log(editingRow.new)
     await servicioDatos.nuevaVenta(editingRow.new);
     alert('Nueva venta agregada');
     setNuevaVenta(false);
@@ -135,7 +136,7 @@ export default function VentasTable() {
                         >
                           {lotes && lotes.length > 0 ? (
                             lotes.map((lote) => (
-                              <MenuItem key={lote.lote} value={lote.lote}>{lote.sector} -{lote.manzana} -{lote.lote}  </MenuItem>
+                              <MenuItem key={lote.id} value={lote.id}>{lote.sector} -{lote.manzana} -{lote.lote}  </MenuItem>
                             ))
                           ) : (
                             <MenuItem value="" disabled>Cargando lotes...</MenuItem>
@@ -154,7 +155,7 @@ export default function VentasTable() {
                         >
                           {propietarios && propietarios.length > 0 ? (
                             propietarios.map((propietario) => (
-                              <MenuItem key={propietario.id} value={propietario.nombre}>{propietario.nombre}</MenuItem>
+                              <MenuItem key={propietario.id} value={propietario.id}>{propietario.nombre}</MenuItem>
                             ))
                           ) : (
                             <MenuItem value="" disabled>Cargando propietarios...</MenuItem>
