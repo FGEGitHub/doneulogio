@@ -2,6 +2,7 @@ import { useState } from "react";
 import Clientes from "./tabla";
 import Lotes from "../lotes/tabla";
 import Nuevo from './nuevo'
+import Ventas from '../ventas/todas'
 import * as React from 'react';
 
 const Seleccion = () => {
@@ -71,7 +72,7 @@ const Seleccion = () => {
             }}>
                 {mapa === "1" ? <Clientes /> : null}
                 {mapa === "2" ? <Lotes /> : null}
-                {mapa === "3" ? <Clientes /> : null}
+                {mapa === "3" ? <Ventas /> : null}
                 {!mapa && <p>Sin selección</p>}
             </div>
 
