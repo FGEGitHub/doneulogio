@@ -68,9 +68,7 @@ const Arg = () => {
 };
 
 
-const handleMouseLeave = (e) => {
-    e.target.style.fillOpacity = 0.00001;
-};
+
   return (
     <>
     
@@ -157,21 +155,22 @@ const handleMouseLeave = (e) => {
     defaultPositionX={0}
     defaultPositionY={0}
     defaultScale={1}
-    wheel={{ disabled: false }}
+    transitionDuration={500}
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 5, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
-    
-
-                <IconButton
-                  onClick={() => resetTransform()} // Restaurar la vista completa
-                  color="default"
-                  style={{ marginBottom: "10px" }}
-                >
-                  <Restore /> Volver
-                </IconButton>
-              </div>
+               <div style={{ position: 'fixed', bottom: 20, left: 5, zIndex: 2, display: 'flex', flexDirection: 'column' }}>
+        <IconButton
+          onClick={() => {
+            resetTransform();  // Restaurar la vista completa
+            setPosicion0(true);  // Activa la primera capa del SVG
+          }}
+          color="default"
+          style={{ marginBottom: "10px" }}
+        >
+          <Restore /> Volver
+        </IconButton>
+      </div>
 
        
               <div style={{ display: 'flex' }}>
