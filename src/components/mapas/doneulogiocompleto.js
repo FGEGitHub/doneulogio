@@ -90,14 +90,20 @@ const Arg = () => {
    
     
         
-          
         <nav className="urbanizacion-nav">
   <div
     variant="button"
-    color="primary" // Cambia el color del texto
+    color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px", fontFamily: "Inter", fontWeight: 400 }} // Cambia el color del texto y agrega separación
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "28px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/')}
   >
     Home
@@ -107,7 +113,14 @@ const Arg = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
@@ -117,7 +130,14 @@ const Arg = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
@@ -127,7 +147,14 @@ const Arg = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
@@ -137,12 +164,20 @@ const Arg = () => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px"  }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
   </div>
 </nav>
+
     
     {     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
