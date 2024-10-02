@@ -34,7 +34,7 @@ const Arg = () => {
 
   useEffect(() => {
     getClients().then(() => {
-     // setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
+     setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
     });
   }, []);
 
