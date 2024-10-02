@@ -226,7 +226,7 @@ const Arg = () => {
   
   {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
     </div>
-  <div style={{ flex: 3 }}>
+  <div style={{ flex: 3}}>
               <TransformComponent>
                 {lotes ? (
                   <>
@@ -248,7 +248,7 @@ const Arg = () => {
       height: 'auto',
       objectFit: 'cover',
       zIndex: 0,
-      margin: '0',   // Elimina márgenes en la imagen
+      marginLeft: '-3%' ,  // Elimina márgenes en la imagen
       padding: '0',  // Elimina padding en la imagen
       }}
     />
@@ -256,7 +256,7 @@ const Arg = () => {
  
 
 {posicion0 ? <div>
-  <div style={{ position: 'relative', zIndex: 1, width: '145%', height: '120%' }}>   
+  <div style={{ position: 'relative', zIndex: 1, width: '145%', height: '120%', marginLeft: '-3%' }}>   
   <svg viewBox="1200 640 3507 2480" version="1.2" width="450mm"  height="450mm"  xmlns="http://www.w3.org/2000/svg" >
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
@@ -309,7 +309,7 @@ const Arg = () => {
 </svg>
 </div>
 </div>:<div>
-<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%', top: '1px',right: '-3px'}}>     
+<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%', top: '1px',right: '-3px', marginLeft: '-3%'}}>     
 
       <svg xmlns="http://www.w3.org/2000/svg"  width="450mm"  height="450mm" viewBox="1677 859 9874 9834"  baseProfile="tiny" version="1.2">
                           <defs />
