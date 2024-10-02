@@ -10,7 +10,7 @@ import Gps from "../../Assets/doneulcom.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
-import foto2 from '../../Assets/redesagua.png';
+import { CircularProgress } from '@mui/material'; // Importar un componente de carga (opcional)
 import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ const Arg = () => {
   const [info, setInfo] = useState(false);
   const [open, setOpen] = useState(false);
   const [lotes, setLotes] = useState();
-  const [seleccion, setSeleccion] = useState();
+  const [loading, setLoading] = useState(true); // Estado para la pantalla de carga
   const [posicion0, setPosicion0] = useState(true);
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
@@ -33,7 +33,9 @@ const Arg = () => {
   };
 
   useEffect(() => {
-    getClients();
+    getClients().then(() => {
+     // setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
+    });
   }, []);
 
   const handleOpenDialog = (p) => {
@@ -71,7 +73,15 @@ const Arg = () => {
 
   return (
     <>
-    
+     {loading ? (
+        <div className="loading-screen">
+          {/* Aquí puedes personalizar la pantalla de carga */}
+          <img src={logo} alt="Logo" className="urbanizacion-logo" />
+
+         
+          <p>Cargando ... <CircularProgress /></p>
+        </div>
+      ) : (<>
     <CssBaseline />
    
         <Toolbar className="urbanizacion-toolbar">
@@ -1687,7 +1697,7 @@ const Arg = () => {
       <Footer/>
       </>
     }
-    </>
+   </>  )} </>
 
 
   )
