@@ -11,7 +11,6 @@ import Gps from "../../Assets/mapadon.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
-import foto2 from '../../Assets/redesagua.png';
 import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
 const Arg = () => {

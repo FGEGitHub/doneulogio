@@ -1718,8 +1718,8 @@ const styles = {
   svgText: {
     fill: '#fff', // Relleno blanco para el texto
     stroke: '#fff', // Contorno blanco para el texto
-    fontSize: '80px',
-    fontFamily: 'Christian Sunday, cursive', // Definir la fuente
+    fontSize: '90px',
+    fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
     textAnchor: 'middle',
     fontFamily: 'Christian Sunday',
   },

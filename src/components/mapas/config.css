@@ -99,4 +99,7 @@
       padding: 10px;
     }
   }
-  
+  @font-face {
+    font-family: 'Christian Sunday';
+    src: url('./Christian Sunday.ttf') format('truetype');
+  }
