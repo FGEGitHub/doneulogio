@@ -28,7 +28,7 @@ const UrbanizacionAbierta = () => {
     style={{ 
       color: "#246F74", 
       marginRight: "25px", 
-      fontSize: "28px", 
+      fontSize: "24px", 
       fontFamily: "Inter", 
       fontWeight: 400,
       cursor: "pointer"  // Cambia el cursor al pasar el mouse
