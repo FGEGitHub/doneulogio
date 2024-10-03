@@ -7,7 +7,7 @@ import MuiAlert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/mapadon.png";
+import Gps from "../../Assets/doneulcom.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
@@ -67,7 +67,9 @@ const Arg = () => {
     }
 }; 
   return (
-    <><img src={foto1} alt="Urbanización Abierta"  style={{ position: 'static', width: "100%"}} />
+    <>
+    
+    <img src={foto1} alt="Urbanización Abierta"  style={{ position: 'static', width: "100%"}} />
     <br/>   <br/>   <br/>
 <UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
@@ -161,11 +163,13 @@ const Arg = () => {
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,1.1)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
-  </g>
+   <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
+   </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,1.1)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
-  </g>
+   <text x="1400" y="1600" style={styles.svgText}>Pinares</text>
+   </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -1608,5 +1612,38 @@ const Arg = () => {
 
   )
 }
+
+const styles = {
+  imageContainer: {
+    position: 'relative',
+    display: 'inline-block', // Ajusta el tamaño al de la imagen
+  },
+  image: {
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+  },
+  imageText: {
+    position: 'absolute',
+    top: '50%',
+    left: '10%', // Mueve el texto más a la izquierda
+    transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
+    color: 'white', // El color del texto
+    fontSize: '60px', // Texto más grande
+    fontWeight: 'bold', // Hacer el texto en negrita
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
+    pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+    
+  },
+  svgText: {
+    fill: '#fff', // Relleno blanco para el texto
+    stroke: '#fff', // Contorno blanco para el texto
+    fontSize: '90px',
+    fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
+    textAnchor: 'middle',
+    fontFamily: 'Christian Sunday',
+  },
+  
+};
 
 export default Arg;
