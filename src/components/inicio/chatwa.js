@@ -131,6 +131,7 @@ const WhatsappChat = (props) => {
             </button>
           </div>
 
+
           {selectedQuestion && (
             <div className="whatsapp-response">
               <span className="whatsapp-question">{selectedQuestion}</span>
