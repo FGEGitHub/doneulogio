@@ -59,7 +59,7 @@ alert(nov)
 
     }
    setForm({})
-    props.traer()
+ 
 
     setOpen(false);
   };
@@ -85,22 +85,16 @@ alert(nov)
       autoComplete="off"
     >
       < Tooltip title="Nuevo cliente">
-      <Button
-      variant="contained"
-      onClick={handleClickOpen}
-      sx={{
-        backgroundColor: '#007bff', // Color personalizado
-        color: '#fff', // Color del texto
-        padding: '2px 4px', // Tamaño personalizado (más pequeño)
-        fontSize: '1em', // Tamaño de fuente personalizado (más pequeño)
-        minWidth: '50px', // Ajuste del ancho mínimo
-        '&:hover': {
-          backgroundColor: '#0056b3' // Color del botón al pasar el ratón
-        }
-      }}
-    >
+      <button   onClick={handleClickOpen} style={{ 
+                    backgroundColor: '#6AC32E', 
+                    color: 'white', 
+                    padding: '10px 20px', 
+                    border: 'none', 
+                    borderRadius: '5px', 
+                    cursor: 'pointer' 
+                }}>
       Nuevo
-    </Button>
+    </button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
@@ -132,17 +126,7 @@ alert(nov)
               fullWidth
               variant="standard"
             />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="dni"
-              
-              label="DNI"
-              name="dni"
-              onChange={handleChange}
-              fullWidth
-              variant="standard"
-            />
+          
             <br/>
             <TextField
 

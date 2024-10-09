@@ -85,7 +85,13 @@ return data
 }  
 
 
+const traerVentas= async  (datos) => {
 
+
+  const {data } = await axios.get(baseUrl+"traerVentas")
+
+return data
+}  
 const determinarmapa1bosques= async  (datos) => {
 
 console.log(datos)
@@ -141,7 +147,13 @@ const asignarventa= async  (datos) => {
         
         return data
         }  
-  
+        const nuevaVenta= async  (datos) => {
 
+          console.log(datos)
+            const {data } = await axios.post(baseUrl+"nuevaVenta",datos)
+          
+          return data
+          } 
+        
 
- export default {enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+ export default {nuevaVenta,traerVentas,enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}

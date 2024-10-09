@@ -10,18 +10,19 @@ import Gps from "../../Assets/doneulcom.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
-import foto2 from '../../Assets/redesagua.png';
+import { CircularProgress } from '@mui/material'; // Importar un componente de carga (opcional)
 import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
+import './Christian Sunday.ttf'
 const Arg = () => {
   const dialogRef = useRef();
   const navigate = useNavigate();
   const [info, setInfo] = useState(false);
   const [open, setOpen] = useState(false);
   const [lotes, setLotes] = useState();
-  const [seleccion, setSeleccion] = useState();
+  const [loading, setLoading] = useState(true); // Estado para la pantalla de carga
   const [posicion0, setPosicion0] = useState(true);
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
@@ -32,7 +33,9 @@ const Arg = () => {
   };
 
   useEffect(() => {
-    getClients();
+    getClients().then(() => {
+     setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
+    });
   }, []);
 
   const handleOpenDialog = (p) => {
@@ -67,12 +70,18 @@ const Arg = () => {
 };
 
 
-const handleMouseLeave = (e) => {
-    e.target.style.fillOpacity = 0.00001;
-};
+
   return (
     <>
-    
+     {loading ? (
+        <div className="loading-screen">
+          {/* Aquí puedes personalizar la pantalla de carga */}
+          <img src={logo} alt="Logo" className="urbanizacion-logo" />
+
+         
+          <p>Cargando ... <CircularProgress /></p>
+        </div>
+      ) : (<>
     <CssBaseline />
    
         <Toolbar className="urbanizacion-toolbar">
@@ -81,14 +90,20 @@ const handleMouseLeave = (e) => {
    
     
         
-          
         <nav className="urbanizacion-nav">
   <div
     variant="button"
-    color="primary" // Cambia el color del texto
+    color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px", fontFamily: "Inter", fontWeight: 400 }} // Cambia el color del texto y agrega separación
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/')}
   >
     Home
@@ -98,7 +113,14 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
@@ -108,7 +130,14 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
@@ -118,7 +147,14 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
@@ -128,12 +164,20 @@ const handleMouseLeave = (e) => {
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px"  }}
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
   </div>
 </nav>
+
     
     {     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  
@@ -151,26 +195,29 @@ const handleMouseLeave = (e) => {
 <br/><br/><br/>
       <div>
       <TransformWrapper
-       style={{ marginBottom: '0px' }} 
+       style={{ marginBottom: '0px' , left: '-20%' }} 
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
     defaultScale={1}
-    wheel={{ disabled: false }}
+    wheel={{ disabled: posicion0 }}  // Deshabilita el zoom cuando posicion0 es true
+    pan={{ disabled: posicion0 }}  
+    transitionDuration={500}
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 5, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
-    
-
-                <IconButton
-                  onClick={() => resetTransform()} // Restaurar la vista completa
-                  color="default"
-                  style={{ marginBottom: "10px" }}
-                >
-                  <Restore /> Volver
-                </IconButton>
-              </div>
+               <div style={{ position: 'fixed', bottom: 20, left: 5, zIndex: 2, display: 'flex', flexDirection: 'column' }}>
+        <IconButton
+          onClick={() => {
+            resetTransform();  // Restaurar la vista completa
+            setPosicion0(true);  // Activa la primera capa del SVG
+          }}
+          color="default"
+          style={{ marginBottom: "10px" }}
+        >
+          <Restore /> Volver
+        </IconButton>
+      </div>
 
        
               <div style={{ display: 'flex' }}>
@@ -179,31 +226,38 @@ const handleMouseLeave = (e) => {
   
   {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
     </div>
-  <div style={{ flex: 3 }}>
+  <div style={{ flex: 3}}>
               <TransformComponent>
                 {lotes ? (
                   <>
-                    <div style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
+                    <div style={{ position: 'relative', 
+    width: '100%', 
+    height: 'auto', 
+    margin: '0',        // Elimina cualquier margen
+    padding: '0',       // Elimina cualquier padding
+    overflow: 'hidden' }}>
   {imagenDeFondoActivada && (
     <img
-      src={selectedImage}
-      alt="Imagen de fondo"
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%', // Ajusta este tamaño según sea necesario
-        height: '70%', // Cambia este valor si es necesario para que se vea correctamente
-        objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
-        zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
+    src={selectedImage}
+    alt="Imagen de fondo"
+    style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',  // Ocupar todo el ancho de la pantalla
+      height: 'auto',
+      objectFit: 'cover',
+      zIndex: 0,
+      marginLeft: '-3%' ,  // Elimina márgenes en la imagen
+      padding: '0',  // Elimina padding en la imagen
       }}
     />
   )}  {  selectedImage && <>
  
 
 {posicion0 ? <div>
-  <div style={{ position: 'relative', zIndex: 1, width: '145%', height: '120%' }}>   
-  <svg viewBox="1200 640 3507 2480" version="1.2" width="250mm"  height="250mm"  xmlns="http://www.w3.org/2000/svg" >
+  <div style={{ position: 'relative', zIndex: 1, width: '145%', height: '120%', marginLeft: '-3%' }}>   
+  <svg viewBox="1200 640 3507 2480" version="1.2" width="450mm"  height="450mm"  xmlns="http://www.w3.org/2000/svg" >
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -230,10 +284,15 @@ const handleMouseLeave = (e) => {
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,0.97)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
+  <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
+
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,0.97)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
+   <text x="1400" y="1400" style={styles.svgText}>Pinares</text>
+
+ 
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -250,15 +309,15 @@ const handleMouseLeave = (e) => {
 </svg>
 </div>
 </div>:<div>
-<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}>     
+<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%', top: '1px',right: '-3px', marginLeft: '-3%'}}>     
 
-      <svg xmlns="http://www.w3.org/2000/svg" width="250mm" height="250mm" viewBox="1677 839 9874 9874"  baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="450mm"  height="450mm" viewBox="1677 859 9874 9834"  baseProfile="tiny" version="1.2">
                           <defs />
- <g transform="scale(1.052,1.052)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+ <g transform="scale(1.052,1.048)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
         {[0].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -272,11 +331,11 @@ const handleMouseLeave = (e) => {
 
          
         
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[1].map((tooltipValue) => {
@@ -294,12 +353,12 @@ const handleMouseLeave = (e) => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="0"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#000000" font-weight="400" stroke="none">
    <rect x="0" width="7988" y="0" height="7977"/>
   </g>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
 
         {[2].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1627,15 +1686,15 @@ const handleMouseLeave = (e) => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.052,1.052)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.052,1.048)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
  </g>
 
 </svg>
@@ -1673,7 +1732,7 @@ const handleMouseLeave = (e) => {
       <Footer/>
       </>
     }
-    </>
+   </>  )} </>
 
 
   )
@@ -1699,7 +1758,18 @@ const styles = {
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+    
   },
+  svgText: {
+    fill: '#fff', // Relleno blanco para el texto
+    stroke: '#fff', // Contorno blanco para el texto
+    fontSize: '90px',
+    fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
+    textAnchor: 'middle',
+    fontFamily: 'Christian Sunday',
+  },
+  
 };
+
 
 export default Arg;

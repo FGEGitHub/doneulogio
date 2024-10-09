@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import General from '../../components/mapas/doneulogiocompleto';
 import MobileComponent from '../../components/mapas/mobilemapacompleto'; // Componente para móvil
 
+import Nav from '../../components/inicio/nav';
 
 export default function Paginas() {
   const [isMobile, setIsMobile] = useState(false);
@@ -9,11 +10,7 @@ export default function Paginas() {
   useEffect(() => {
     // Función que verifica si el ancho de la pantalla es menor o igual a 768px
     const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
 
     // Llamamos a la función al montar el componente y cada vez que la ventana cambia de tamaño
@@ -30,7 +27,7 @@ export default function Paginas() {
     <>
 
 
-        {isMobile ? <MobileComponent /> :       <div style={{  padding: '20px', textAlign: 'center' }}><General />  </div>}
+        {isMobile ? <><Nav/><MobileComponent /></> :       <div style={{  padding: '10px', textAlign: 'center' }}><General />  </div>}
     
     </>
   );

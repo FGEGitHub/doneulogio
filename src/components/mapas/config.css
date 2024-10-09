@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+
 #mapa {
     width: 2500px; /* Ajusta el ancho según tus necesidades */
     height: 1500px; /* Ajusta la altura según tus necesidades */
@@ -99,4 +102,7 @@
       padding: 10px;
     }
   }
-  
+  @font-face {
+    font-family: 'Christian Sunday';
+    src: url('./Christian Sunday.ttf') format('truetype');
+  }

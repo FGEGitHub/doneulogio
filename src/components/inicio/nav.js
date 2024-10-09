@@ -7,11 +7,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Fade from '@mui/material/Fade';
-import { Link } from 'react-router-dom'; // Importa el componente Link
-import logo from "../../Assets/logonav.png";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
@@ -20,6 +15,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { Link } from 'react-router-dom';
+import logo from "../../Assets/logonav.png";
+import Fade from '@mui/material/Fade'; // Asegúrate de tener esto
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -30,24 +28,15 @@ function ScrollTop(props) {
   });
 
   const handleClick = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector(
-      '#back-to-top-anchor',
-    );
-
+    const anchor = (event.target.ownerDocument || document).querySelector('#back-to-top-anchor');
     if (anchor) {
-      anchor.scrollIntoView({
-        block: 'center',
-      });
+      anchor.scrollIntoView({ block: 'center' });
     }
   };
 
   return (
     <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      >
+      <Box onClick={handleClick} role="presentation" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
         {children}
       </Box>
     </Fade>
@@ -59,14 +48,17 @@ ScrollTop.propTypes = {
   window: PropTypes.func,
 };
 
-const islogo = {
-  width: "70px",
+// Estilo para el logo: tamaño ajustado y centrado
+const logoStyle = {
+  width: "100px", // Tamaño del logo
+  height: "auto",
+  display: "block",
 };
 
 // Define las páginas y sus rutas correspondientes
 const pages = [
-  { name: 'Home', path: '/' }, 
-  { name: 'ubicacion', path: '/ubicacion' },
+  { name: 'Home', path: '/' },
+  { name: 'Ubicación', path: '/ubicacion' },
   { name: 'Urbanización Abierta', path: '/urbanizacion-abierta' },
   { name: 'Master Plan', path: '/masterplan' },
   { name: 'Espacios Públicos', path: '/espacios-publicos' },
@@ -82,11 +74,7 @@ export default function BackToTop(props) {
   };
 
   const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      onKeyDown={handleDrawerToggle}
-      sx={{ width: '250px', textAlign: 'right' }} // Alinea el texto a la derecha
-    >
+    <Box onClick={handleDrawerToggle} onKeyDown={handleDrawerToggle} sx={{ width: '250px', textAlign: 'right' }}>
       <List>
         {pages.map((page) => (
           <ListItem button key={page.name} component={Link} to={page.path}>
@@ -99,57 +87,60 @@ export default function BackToTop(props) {
   );
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
-      <AppBar sx={{ backgroundColor: '#1a393c' }}>
-        <Toolbar>
-          <Typography variant="h6" component="div">
-            <img style={islogo} src={logo} alt="logo" /> 
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'right' }}>
-            {isMobile ? (
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="end"
-                onClick={handleDrawerToggle}
-                sx={{ ml: 'auto' }}
-              >
-                <MenuIcon />
-              </IconButton>
-            ) : (
-              pages.map((page) => (
+      <AppBar position="sticky" sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }}>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          
+          {/* Icono de menú hamburguesa alineado a la izquierda */}
+          {isMobile && (
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start" // Esto asegura que el icono esté alineado a la izquierda
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
+
+          {/* Logo centrado */}
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+            <img style={logoStyle} src={logo} alt="logo" />
+          </Box>
+
+          {/* Espacio vacío en el lado derecho del toolbar en la versión móvil para centrar el logo */}
+          {isMobile && <Box sx={{ width: '48px' }} />} {/* Ancho equivalente al del botón hamburguesa */}
+          
+          {/* Botones de páginas en escritorio */}
+          {!isMobile && (
+            <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end' }}>
+              {pages.map((page) => (
                 <Button
                   key={page.name}
                   component={Link}
                   to={page.path}
-                  sx={{ 
-                    my: 2, 
-                    color: '#d9d9d9', 
-                    display: 'block', 
-                    fontFamily: 'Galileo, sans-serif', 
+                  sx={{
+                    my: 2,
+                    color: '#000',
+                    fontFamily: 'Galileo, sans-serif',
                     textTransform: 'none',
-                    margin: '0 10px', 
-                    backgroundColor: '#1e4d50', // Leve diferencia de color
+                    margin: '0 10px',
                     '&:hover': {
-                      backgroundColor: '#1a393c', // Misma que AppBar
-                      color: '#fff', // Cambia el color del texto al pasar el mouse
+                      color: '#1a393c', // Misma que AppBar
                     },
                   }}
                 >
                   {page.name}
                 </Button>
-              ))
-            )}
-          </Box>
+              ))}
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={handleDrawerToggle}
-      >
+      <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
         {drawer}
       </Drawer>
     </React.Fragment>

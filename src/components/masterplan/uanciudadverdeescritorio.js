@@ -38,62 +38,38 @@ const CiudadVerde = () => {
 
 const styles = {
   container: {
-    display: 'flex', // Usamos flexbox para alinear texto e imágenes en línea
-    justifyContent: 'space-between', // Distribuye el espacio entre el texto y las imágenes
-    alignItems: 'flex-start', // Alinea los elementos al principio del eje vertical
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
     padding: '20px',
     backgroundColor: '#fff',
     color: '#000',
     borderRadius: '8px',
     fontFamily: 'Arial, sans-serif',
-    width: 'calc(80% - 40px)', // Ajusta el ancho para dejar margen a los lados
-    margin: '0 auto', // Centra el componente
+    width: 'calc(80% - 40px)',
+    margin: '0 auto',
     boxSizing: 'border-box',
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      flexDirection: 'column', // Cambia a una columna en pantallas pequeñas
-      width: 'calc(100% - 20px)', // Ajusta el ancho para pantallas pequeñas
-      padding: '10px',
-    },
   },
   textSection: {
-    flex: '1', // Ocupa un 50% del espacio disponible
-    marginRight: '30px', // Espacio entre el texto y las imágenes
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      marginRight: '0',
-      marginBottom: '20px', // Espacio entre texto e imágenes en pantalla pequeña
-    },
+    flex: '1',
+    marginRight: '30px',
   },
   title: {
     fontSize: '36px',
     fontWeight: 'bold',
     marginBottom: '20px',
-    textAlign: 'left', // Alineamos el título a la izquierda
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      fontSize: '24px',
-    },
+    textAlign: 'left',
   },
   description: {
     fontSize: '18px',
     lineHeight: '1.9',
-    textAlign: 'left', // Alineamos el texto a la izquierda
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      fontSize: '16px',
-    },
+    textAlign: 'left',
   },
   imagesSection: {
-    flex: '1', // Las imágenes también ocupan el 50% del espacio disponible
+    flex: '1',
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)', // Distribuye las imágenes en una cuadrícula de 2 columnas
-    gap: '5px',
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 568px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '5px',
-    },
+    gridTemplateColumns: 'repeat(2, 1fr)', // Ajuste de 2 columnas
+    gap: '20px',
   },
   imageWrapper: {
     display: 'flex',
@@ -101,23 +77,14 @@ const styles = {
     alignItems: 'center',
   },
   image: {
-    width: '120px',
+    width: '120px', // Tamaño específico para las imágenes
     height: '120px',
     marginBottom: '10px',
-    objectFit: 'cover',
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      width: '100px',
-      height: '100px',
-    },
+    objectFit: 'contain', // Evita que las imágenes se corten
   },
   imageText: {
     fontSize: '16px',
     textAlign: 'center',
-    // Estilos para pantallas pequeñas
-    '@media (max-width: 768px)': {
-      fontSize: '14px',
-    },
   },
 };
 
