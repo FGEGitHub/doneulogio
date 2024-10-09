@@ -45,7 +45,6 @@ export default function Paginas() {
 
     return (
         <>
-              <Nav/>
                     {/* Agrega aquí el resto de tu contenido */}
                     <General/>
        
