@@ -72,57 +72,58 @@ const PublicSpaces = () => {
    
    
       
-      <nav className="urbanizacion-nav">
-  <Link
+       
+        <nav className="urbanizacion-nav">
+  <div
     variant="button"
     color="primary" // Cambia el color del texto
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }} // Cambia el color del texto y agrega separación
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px", fontFamily: "Inter", fontWeight: 400 }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
   >
     Home
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
-    onClick={() => navigate('/masterplan')}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
+    onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px"  }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px"  }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
-  </Link>
+  </div>
 </nav>
 
 <div style={styles.imageContainer}>

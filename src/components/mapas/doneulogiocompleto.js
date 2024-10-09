@@ -6,7 +6,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/mapadon.png";
+import Gps from "../../Assets/doneulcom.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
@@ -79,60 +79,61 @@ const handleMouseLeave = (e) => {
           <img src={logo} alt="Logo" className="urbanizacion-logo" />
         </Toolbar>
    
-   
-      <nav className="urbanizacion-nav">
-  <Link
+    
+        
+          
+        <nav className="urbanizacion-nav">
+  <div
     variant="button"
     color="primary" // Cambia el color del texto
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }} // Cambia el color del texto y agrega separación
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px", fontFamily: "Inter", fontWeight: 400 }} // Cambia el color del texto y agrega separación
     onClick={() => navigate('/')}
   >
     Home
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
     onClick={() => navigate('/urbanizacion-abierta')}
   >
     Urbanización Abierta
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
     onClick={() => navigate('/masterplan')}
   >
     MasterPlan
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74", marginRight: "25px",fontSize: "20px" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px" }}
     onClick={() => navigate('/espacios-publicos')}
   >
     Espacios públicos
-  </Link>
-  <Link
+  </div>
+  <div
     variant="button"
     color="primary"
     href="#"
     className="urbanizacion-navlink"
-    style={{ color: "#246F74" }}
+    style={{ color: "#246F74", marginRight: "25px",fontSize: "28px"  }}
     onClick={() => navigate('/contacto')}
   >
     Contacto
-  </Link>
+  </div>
 </nav>
-    
     
     {     <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" /> &&
  

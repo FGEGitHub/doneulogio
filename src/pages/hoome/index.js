@@ -8,6 +8,7 @@ import rectangulo from "../../Assets/rectanguloverde.png"
 import Footer from "../../Assets/footer.png"
 import map from "../../Assets/MapaDon Eulogio.png"
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 // Importa todas las imágenes del carrusel
 import libertad from '../../Assets/93.png';
@@ -18,6 +19,8 @@ import bienestar from '../../Assets/Bienestar.png';
 
 
 export const Home = () => {
+    const navigate = useNavigate();
+
     // Array de imágenes con sus textos correspondientes
     const images = [
         { src: libertad, alt: 'Libertad', text: 'Libertad' },
@@ -61,12 +64,12 @@ export const Home = () => {
                     </p>
                 </div>
                 <div className="navbar">
-                    <div className="text-wrapper-4">Home</div>
-                    <div className="text-wrapper-5">Urbanización Abierta</div>
-                    <div className="text-wrapper-6">Espacios públicos</div>
-                    <div className="text-wrapper-7">Contacto</div>
+                    <div className="text-wrapper-4"  onClick={() => navigate('/')}>Home</div>
+                    <div className="text-wrapper-5"     onClick={() => navigate('/urbanizacion-abierta')}                    >Urbanización Abierta</div>
+                    <div className="text-wrapper-6"   onClick={() => navigate('/espacios-publicos')}>Espacios públicos</div>
+                    <div className="text-wrapper-7" onClick={() => navigate('/contacto')}>Contacto</div>
                     <div className="group-3">
-                        <div className="text-wrapper-4">MasterPlan</div>
+                        <div className="text-wrapper-4"  onClick={() => navigate('/masterplan')}>MasterPlan</div>
                     </div>
                 </div>
                 <img className="recurso-x" alt="Recurso" src={logo} />

@@ -13,7 +13,7 @@ import { Home } from '../pages/hoome';
 
 const Rutas = [
 
-	{ path: '/', element: <Inicio/> },
+	{ path: '/', element: <Home/> },
 
 	{ path: '/home', element: <Home/> },
 

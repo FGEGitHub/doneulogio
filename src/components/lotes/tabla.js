@@ -7,31 +7,31 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import Checkbox from '@mui/material/Checkbox';
 import servicioDatos from '../../services/datos';
-import Modalventa from './modalventa';
-import ModalLote from './modalprecio';
 
 const columns = [
-  { id: 'sector', label: 'sector', minWidth: 100 },
-  { id: 'manzana', label: 'manzana', minWidth: 60, align: 'right' },
-  { id: 'lote', label: 'lote', minWidth: 100, align: 'right' },
-  { id: 'superficie', label: 'superficie', minWidth: 100, align: 'right' },
-  { id: 'precio', label: 'precio', minWidth: 100, align: 'right' },
-  { id: 'posecion', label: 'posecion', minWidth: 100, align: 'right' },
-  { id: 'escritura', label: 'escritura', minWidth: 100, align: 'right' },
-  { id: 'estado', label: 'estado', minWidth: 100, align: 'right' },
-  { id: 'nombre', label: 'nombre', minWidth: 100, align: 'right' },
-  { id: 'idventa', label: 'Ver detalles', minWidth: 100, align: 'right' },
+  { id: 'sector', label: 'Sector', minWidth: 100 },
+  { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' },
+  { id: 'lote', label: 'Lote', minWidth: 100, align: 'right' },
+  { id: 'superficie', label: 'Superficie', minWidth: 100, align: 'right' },
+  { id: 'precio', label: 'P. Contado', minWidth: 100, align: 'right' },
+  { id: 'preciofinanciado', label: 'P. Financiado', minWidth: 100, align: 'right' },
+  { id: 'anticipo', label: 'Anticipo', minWidth: 100, align: 'right' },
+  { id: 'saldoFinanciado', label: 'Saldo Financiado', minWidth: 100, align: 'right' },
+  { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
+  { id: 'nombre', label: 'Propietario', minWidth: 100, align: 'right' },
+  { id: 'posecion', label: 'Posesión', minWidth: 100, align: 'center' },
+  { id: 'escritura', label: 'Escritura', minWidth: 100, align: 'center' },
+  { id: 'construccion', label: 'Construcción', minWidth: 100, align: 'center' }, // Nueva columna
+  { id: 'modificar', label: 'Acciones', minWidth: 100, align: 'center' },
 ];
-
-const getColorForEstado = (estado) => {
-  return estado === 'Vendido' ? 'red' : estado === 'Disponible' ? 'green' : 'initial';
-};
 
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [datos, setDatos] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [editingRow, setEditingRow] = useState({});
 
   useEffect(() => {
     traerDatos();
@@ -51,76 +51,117 @@ export default function StickyHeadTable() {
     setPage(0);
   };
 
+  const handleInputChange = (id, field, value) => {
+    setEditingRow((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], [field]: value }
+    }));
+  };
+
+  const handleCheckboxChange = (id, field, checked) => {
+    setEditingRow((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], [field]: checked ? 'Si' : 'No' }
+    }));
+  };
+
+  const handleSubmit = async (row) => {
+    const updatedRow = {
+      ...row,
+      ...editingRow[row.lote], // Obtiene los cambios realizados en la fila
+    };
+    await servicioDatos.enviarformlotes(updatedRow); // Envía la fila al servicio
+    alert('Realizado')
+    setEditingRow((prev) => {
+      const newEditing = { ...prev };
+      delete newEditing[row.lote]; // Limpia el estado editado para esa fila
+      return newEditing;
+    });
+    await traerDatos(); // Actualiza los datos después de guardar
+  };
+
   return (
-    <Paper sx={{ width: '75%', overflow: 'hidden', backgroundColor: '#1a393c', margin: 'auto', height: '90vh' }}>
-      <TableContainer sx={{ maxHeight: '80vh' }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead sx={{ backgroundColor: 'black' }}>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth, color: 'black' }}>
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {datos
-              .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              .map((row) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+    <>
+      <Paper sx={{ width: '90%', overflow: 'hidden', margin: 'auto', height: '90vh', marginTop: '150px' }}>
+        <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)' }}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {datos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.lote}>
                   {columns.map((column) => {
                     let value = row[column.id];
+                    const isEditing = editingRow[row.lote] && editingRow[row.lote][column.id] !== undefined;
+
                     if (column.id === 'estado') {
                       value = row['id_cliente'] ? 'Vendido' : 'Disponible';
                     }
+
+                    if (column.id === 'precio' || column.id === 'preciofinanciado') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          <input
+                            type="number"
+                            value={isEditing ? editingRow[row.lote][column.id] : value}
+                            onChange={(e) => handleInputChange(row.lote, column.id, e.target.value)}
+                          />
+                        </TableCell>
+                      );
+                    }
+
+                    if (column.id === 'posecion' || column.id === 'escritura' || column.id === 'construccion') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          <Checkbox
+                            checked={isEditing ? editingRow[row.lote][column.id] === 'Si' : value === 'Si'}
+                            onChange={(e) => handleCheckboxChange(row.lote, column.id, e.target.checked)}
+                          />
+                        </TableCell>
+                      );
+                    }
+
+                    if (column.id === 'anticipo') {
+                      const anticipo = (editingRow[row.lote]?.preciofinanciado || row.preciofinanciado) / 2;
+                      return <TableCell key={column.id} align={column.align}>{anticipo.toFixed(2)}</TableCell>;
+                    }
+
+                    if (column.id === 'modificar') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          <button onClick={() => handleSubmit(row)}>Modificar</button>
+                        </TableCell>
+                      );
+                    }
+
                     return (
-                      <TableCell
-                        key={column.id}
-                        align={column.align}
-                        style={{ color: column.id === 'estado' ? getColorForEstado(value) : 'white' }}
-                      >
-                        {column.id === 'estado' ? (
-                          <p style={{ color: getColorForEstado(value) }}>{value}</p>
-                        ) : column.id === 'idventa' ? (
-                          value == null ? (
-                            <>no</>
-                          ) : (
-                            <>
-                              <Modalventa id={row[column.id]} 
-                              traer={ async () => {
-                                const historial = await servicioDatos.traerlotes();
-                                setDatos(historial);
-                              }
-                            }/> <ModalLote id={row[column.id]} 
-                            traer={ async () => {
-                              const historial = await servicioDatos.traerlotes();
-                              setDatos(historial);
-                            }
-                          }/>
-                            </>
-                          )
-                        ) : (
-                          value
-                        )}
+                      <TableCell key={column.id} align={column.align}>
+                        {value}
                       </TableCell>
                     );
                   })}
                 </TableRow>
               ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={datos.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        sx={{ color: 'white' }}
-      />
-    </Paper>
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          count={datos.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </Paper>
+    </>
   );
 }

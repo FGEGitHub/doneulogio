@@ -433,7 +433,7 @@
     letter-spacing: 0;
     line-height: normal;
     position: relative; /* Asegura que siga el flujo del documento */
-    margin-left: 100; /* Ajusta el margen izquierdo para alinearlo con el contenedor */
+    margin-left: 0; /* Ajusta el margen izquierdo para alinearlo con el contenedor */
     margin-top: 20px; /* Ajusta el margen superior para posicionarlo correctamente */
 }
 
