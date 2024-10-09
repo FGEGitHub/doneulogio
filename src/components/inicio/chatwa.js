@@ -160,7 +160,7 @@ const WhatsappChat = (props) => {
             </div>
           )}
 
-         
+      
         </div>
       )}
     </div>
