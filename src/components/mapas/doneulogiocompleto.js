@@ -231,7 +231,7 @@ const Arg = () => {
                 {lotes ? (
                   <>
                     <div style={{ position: 'relative', 
-    width: '50%', 
+    width: '100%', 
     height: 'auto', 
     margin: '0',        // Elimina cualquier margen
     padding: '0',       // Elimina cualquier padding
