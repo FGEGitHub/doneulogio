@@ -85,7 +85,7 @@ const DialogComponent = forwardRef((props, ref) => {
       flexDirection: 'column',
     },
     chatContainer: {
-      marginTop: '20px',
+      marginTop: '5px',
     },
     dialogContent: {
       display: 'flex',
@@ -104,8 +104,21 @@ const DialogComponent = forwardRef((props, ref) => {
   const isMobile = window.innerWidth <= 768;
 
   return (
-    <Dialog open={open} onClose={closeDialog} maxWidth="md" fullWidth>
-      <DialogTitle>Información del Lote</DialogTitle>
+<Dialog 
+  open={open} 
+  onClose={closeDialog} 
+  maxWidth="xl" 
+  fullWidth 
+  sx={{ 
+    maxWidth: '90vw', 
+    height: '150vh',               // Aumenta la altura del modal
+    margin: 'auto',               // Centrado horizontal
+   // top: '10%',                   // Ajusta para mover el modal más abajo
+   // transform: 'translateY(10%)', // Mueve ligeramente el modal hacia abajo para centrarlo mejor
+    maxHeight: '90vh'             // Limita la altura máxima
+  }}
+>
+<DialogTitle>Información del Lote</DialogTitle>
       <DialogContent dividers style={styles.dialogContent}>
         <div style={styles.container}>
           {/* Imagen del lote */}
@@ -124,11 +137,12 @@ const DialogComponent = forwardRef((props, ref) => {
             {datos ? (
               datos.length > 0 ? (
                 <>
+                <p>
                   <div><b>Sector:</b> {datos[0].sector}</div>
                   <div><b>Manzana:</b> {datos[0].manzana}</div>
                   <div><b>Lote:</b> {datos[0].lote}</div>
                   <div><b>Disponibilidad:</b> {datos[0].disponibilidad}</div>
-
+</p>
                   {/* Chat de WhatsApp */}
                   <div style={styles.chatContainer}>
                     <WhatsappChat 
