@@ -19,7 +19,7 @@ const Sectores = () => {
           <h3 style={styles.cardTitle}>Bosques</h3>
           <ul style={styles.list}>
             <li style={styles.listItem}>
-              <span style={styles.icon}>🏡</span> 50 Lotes Residenciales
+              <span style={styles.icon}>🏡</span> <b>50</b>  Lotes Residenciales
             </li>
             <li style={styles.listItem}>
               <span style={styles.icon}>🌲</span> Parque del Origen
@@ -39,7 +39,7 @@ const Sectores = () => {
           <h3 style={styles.cardTitle}>Pinares</h3>
           <ul style={styles.list}>
             <li style={styles.listItem}>
-              <span style={styles.icon}>🏡</span> 93 Lotes Residenciales
+              <span style={styles.icon}>🏡</span> <b>93</b> Lotes Residenciales
             </li>
             <li style={styles.listItem}>
               <span style={styles.icon}>🏪</span> Area Comercial
@@ -72,7 +72,7 @@ const styles = {
     arrowsRow: {
       display: 'flex',
       justifyContent: 'center',
-      gap: '50px', // Espacio entre las flechas de 50px (5 cm)
+      gap: '50vh', // Espacio entre las flechas de 50px (5 cm)
       marginBottom: '20px', // Espacio debajo de las flechas
     },
     arrow: {
@@ -109,10 +109,12 @@ const styles = {
       marginBottom: '15px',
     },
     cardTitle: {
-      fontSize: '24px',
+      fontSize: '28px',
       fontWeight: 'bold',
       color: '#226d6f', // Color verde del título
       marginBottom: '15px',
+      fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
+
     },
     list: {
       listStyleType: 'none',

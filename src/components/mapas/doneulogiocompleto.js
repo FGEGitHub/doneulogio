@@ -27,18 +27,13 @@ const Arg = () => {
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
   const [showText, setShowText] = useState(true);
+  const [showRestoreButton, setShowRestoreButton] = useState(false);
 
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
     setLotes(lotess);
   };
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowText(false); // Cambia el estado para ocultar el texto
-    }, 3000); // 3000 milisegundos = 3 segundos
-
-    return () => clearTimeout(timer); // Limpia el temporizador cuando el componente se desmonte
-  }, []);
+  
   useEffect(() => {
     getClients().then(() => {
      setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
@@ -61,8 +56,10 @@ const Arg = () => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
   };
   const cambiarsvg = (e) => {
+    setShowRestoreButton(true)
     if (e === 1) {
-        setPosicion0(false);
+        setPosicion0(false);  
+        ;
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
             transformWrapperRef.current.setTransform(-200, -100, 3); // Ajusta estos valores según sea necesario
@@ -214,18 +211,17 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-               <div style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
-        <IconButton
+             {  showRestoreButton &&   <div style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
+               <button
           onClick={() => {
             resetTransform();  // Restaurar la vista completa
             setPosicion0(true);  // Activa la primera capa del SVG
+            setShowRestoreButton(false);
           }}
-          color="default"
-          style={{ marginBottom: "10px" }}
         >
-          <Restore /> Volver
-        </IconButton>
-      </div>
+            Restaurar vista
+        </button>
+      </div>}
 
        
               <div style={{ display: 'flex' }}>
@@ -261,11 +257,14 @@ const Arg = () => {
       }}
     />
   )}  {  selectedImage && <>
- {showText && (
-        <div style={styles.overlayText}>
-          Selecciona tu barrio
-        </div>
-      )}
+{showText && (
+    <div
+        style={styles.overlayText}
+        onMouseEnter={() => setShowText(false)}
+    >
+        Selecciona tu barrio
+    </div>
+)}
 {posicion0 ? <div>
   <div style={{ position: 'relative', zIndex: 1, width: 'auto', height: '100vh'}}>   
   <svg viewBox="80 140 3507 2480" version="1.2" width="auto"  height="90vh"  xmlns="http://www.w3.org/2000/svg" >
