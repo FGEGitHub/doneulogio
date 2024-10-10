@@ -62,7 +62,7 @@ const Arg = () => {
         ;
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-            transformWrapperRef.current.setTransform(-200, -100, 3); // Ajusta estos valores según sea necesario
+            transformWrapperRef.current.setTransform(-200, -100, 2.5); // Ajusta estos valores según sea necesario
         }
     } else {
         setPosicion0(false);
