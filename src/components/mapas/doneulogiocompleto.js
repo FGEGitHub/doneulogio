@@ -26,12 +26,19 @@ const Arg = () => {
   const [posicion0, setPosicion0] = useState(true);
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
+  const [showText, setShowText] = useState(true);
 
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
     setLotes(lotess);
   };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowText(false); // Cambia el estado para ocultar el texto
+    }, 3000); // 3000 milisegundos = 3 segundos
 
+    return () => clearTimeout(timer); // Limpia el temporizador cuando el componente se desmonte
+  }, []);
   useEffect(() => {
     getClients().then(() => {
      setLoading(false); // Cuando los datos se carguen, ocultar la pantalla de carga
@@ -254,8 +261,11 @@ const Arg = () => {
       }}
     />
   )}  {  selectedImage && <>
- 
-
+ {showText && (
+        <div style={styles.overlayText}>
+          Selecciona tu barrio
+        </div>
+      )}
 {posicion0 ? <div>
   <div style={{ position: 'relative', zIndex: 1, width: 'auto', height: '100vh'}}>   
   <svg viewBox="80 140 3507 2480" version="1.2" width="auto"  height="90vh"  xmlns="http://www.w3.org/2000/svg" >
@@ -1770,6 +1780,22 @@ const styles = {
     fontFamily: 'Christian Sunday',
     cursor: 'important'
   },
+  overlayText: {
+    position: 'absolute',
+    top: '0', // Posicionar en la parte superior
+    left: '0', // Posicionar en la parte izquierda
+    color: 'white',
+    fontSize: '24px',
+    backgroundColor: '#556b2f', // Color verde moho
+    padding: '10px',
+    width: '100%', // Que abarque todo el ancho de la imagen
+    height: '100%', // Que abarque todo el alto de la imagen
+    display: 'flex', // Usamos flex para centrar el texto
+    justifyContent: 'center', // Centrar horizontalmente
+    alignItems: 'center', // Centrar verticalmente
+    zIndex: 10, // Asegura que el texto esté por encima del mapa
+    opacity: 0.8, // Ajusta la opacidad si quieres un efecto semitransparente
+  }
   
 };
 
