@@ -75,6 +75,8 @@
     line-height: normal;
     position: absolute;
     top: 0;
+    cursor: pointer; /* Esto hará que el cursor sea una mano */
+
 }
 
 .home .text-wrapper-5 {
@@ -87,6 +89,8 @@
     line-height: normal;
     position: absolute;
     top: 0;
+    cursor: pointer; /* Esto hará que el cursor sea una mano */
+
 }
 
 .home .text-wrapper-6 {
@@ -99,6 +103,8 @@
     line-height: normal;
     position: absolute;
     top: 0;
+    cursor: pointer; /* Esto hará que el cursor sea una mano */
+
 }
 
 .home .text-wrapper-7 {
@@ -111,6 +117,8 @@
     line-height: normal;
     position: absolute;
     top: 0;
+    cursor: pointer; /* Esto hará que el cursor sea una mano */
+
 }
 
 .home .group-3 {

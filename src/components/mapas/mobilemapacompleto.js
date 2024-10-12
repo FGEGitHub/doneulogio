@@ -106,11 +106,7 @@ const Arg = () => {
                 </IconButton>
               </div>
 
-              <select onChange={handleImageChange} style={{ position: 'fixed', top: 20, left: 10, zIndex: 2 }}>
-                <option value={Gps}>Mapa 1</option>
-                <option value={"Gps2"}>Mapa 2</option>
-                {/* Añade más opciones para cada imagen que tengas */}
-              </select>
+             
               <div style={{ display: 'flex' }}>
  
   <div>
