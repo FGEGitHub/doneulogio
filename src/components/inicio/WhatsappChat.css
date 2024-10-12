@@ -98,14 +98,14 @@
   background-color: white;
   padding: 15px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 20px; /* Aumenta el margen superior */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-reply-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Cambia a columna para que el título y el valor estén uno debajo del otro */
+  align-items: flex-start; /* Alinea el contenido al inicio */
   padding: 10px 0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -117,6 +117,7 @@
 .whatsapp-reply-title {
   font-weight: bold;
   color: #075e54;
+  margin-bottom: 10px; /* Añade un margen inferior para separar el título del valor */
 }
 
 .whatsapp-reply-value {

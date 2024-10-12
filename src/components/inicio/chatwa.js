@@ -21,26 +21,48 @@ const WhatsappChat = (props) => {
 
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
-    setCalculos(null); // Reiniciar cálculos
+    setCalculos(null);
     let formattedResponse = [];
     switch (question) {
-      case "¿Cuáles son los precios de contado?":
+      case "¿Cuáles son las formas de Pago disponibles?":
         formattedResponse = [
           {
-            title: "Precios de contado",
-            value: `$${props.precio}`, // Mostrar el precio de contado
+            title: "Formas de Pago",
+            value:
+              "Se tienen contemplados 2 formas de pago para la adquisición de tu lote:\n• Modelo Contado: Con precios promocionales, pagaderos en dólares o en pesos.\n• Modelo Financiado: Con un sistema de entrega del 50% del valor del lote y el saldo a financiarse en hasta 6 cuotas.",
           },
         ];
         break;
-      case "¿Cuáles son los precios financiados?":
+      case "¿Cuál es el precio de contado de este lote?":
         formattedResponse = [
           {
-            title: "Precio financiado",
-            value: `$${props.preciofinanciado}`, // Mostrar el precio financiado
+            title: "Precio de Contado",
+            value: `$${props.precio}`, // Precio de contado desde la base de datos
+          },
+        ];
+        break;
+      case "¿Cuál es el precio financiado de este lote?":
+        const anticipo = props.preciofinanciado / 2;
+        const valorCuotas = anticipo / 6;
+        formattedResponse = [
+          {
+            title: "Precio Financiado",
+            value: `$${props.preciofinanciado}`,
           },
           {
-            title: "Por favor, ingresa la cantidad de cuotas",
-            value: "¿Cuántas cuotas deseas para financiar el lote?",
+            title: "Financiación",
+            value: `Anticipo (50%): $${anticipo.toFixed(
+              2
+            )}. Las 6 cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
+          },
+        ];
+        break;
+      case "¿La operación incluye Comisiones Inmobiliarias?":
+        formattedResponse = [
+          {
+            title: "Comisiones Inmobiliarias",
+            value:
+              "La operación no incluye comisiones de ningún tipo, debido a que la misma se efectúa de forma directa con los propietarios y desarrolladores del proyecto.",
           },
         ];
         break;
@@ -56,37 +78,13 @@ const WhatsappChat = (props) => {
     setResponse(formattedResponse);
   };
 
-  const handleCuotasChange = (e) => {
-    setCuotas(e.target.value);
-  };
-
-  const handleCalcular = () => {
-    const numeroCuotas = parseInt(cuotas);
-    if (!isNaN(numeroCuotas) && numeroCuotas > 0) {
-      const anticipo = props.preciofinanciado / 2;
-      const valorCuotas = anticipo / numeroCuotas;
-      const nuevoResponse = [
-        ...response,
-        {
-          title: "Anticipo y cuotas",
-          value: `Anticipo (50%): $${anticipo.toFixed(
-            2
-          )}. Las cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
-        },
-      ];
-      setResponse(nuevoResponse);
-      setCalculos({
-        anticipo: anticipo.toFixed(2),
-        valorCuotas: valorCuotas.toFixed(2),
-      });
-    } else {
-      alert("Por favor, ingresa un número válido de cuotas.");
-    }
-  };
-
   const handleOtherQuestionClick = () => {
-    const defaultMessage = "Hola, tengo una pregunta específica sobre los lotes.";
-    window.open(`https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`, "_blank");
+    const defaultMessage =
+      "Hola, tengo una pregunta específica sobre los lotes.";
+    window.open(
+      `https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`,
+      "_blank"
+    );
   };
 
   return (
@@ -102,35 +100,40 @@ const WhatsappChat = (props) => {
         <div className="whatsapp-body">
           <div className="whatsapp-message">
             <span>
-              Hola 👋 <br />
-              <br /> ¿En qué puedo ayudarte con los lotes de Don Eulogio?
+              Hola 👋 Gracias por comunicarte con el equipo de ventas de Don Eulogio.
+              <br /> <br /> ¿En qué podemos ayudarte?
             </span>
           </div>
           <div className="whatsapp-questions">
             <button
               className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuáles son los precios de contado?")}
+              onClick={() => handleQuestionClick("¿Cuáles son las formas de Pago disponibles?")}
             >
-              ¿Cuáles son los precios de contado?
+              ¿Cuáles son las formas de Pago disponibles?
             </button>
             <button
               className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuáles son los precios financiados?")}
+              onClick={() => handleQuestionClick("¿Cuál es el precio de contado de este lote?")}
             >
-              ¿Cuáles son los precios financiados?
+              ¿Cuál es el precio de contado de este lote?
             </button>
             <button
               className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuál es la superficie de los lotes?")}
+              onClick={() => handleQuestionClick("¿Cuál es el precio financiado de este lote?")}
             >
-              ¿Cuál es la superficie de los lotes?
+              ¿Cuál es el precio financiado de este lote?
+            </button>
+            <button
+              className="whatsapp-question-btn"
+              onClick={() => handleQuestionClick("¿La operación incluye Comisiones Inmobiliarias?")}
+            >
+              ¿La operación incluye Comisiones Inmobiliarias?
             </button>
             <button className="whatsapp-question-btn" onClick={handleOtherQuestionClick}>
               <img src={whatsappLogo} alt="WhatsApp" className="whatsapp-icon" />
               Tengo otra pregunta
             </button>
           </div>
-
 
           {selectedQuestion && (
             <div className="whatsapp-response">
@@ -143,25 +146,8 @@ const WhatsappChat = (props) => {
                   </div>
                 ))}
               </div>
-
-              {selectedQuestion === "¿Cuáles son los precios financiados?" && !calculos && (
-                <div className="whatsapp-cuotas">
-                  <input
-                    type="number"
-                    className="whatsapp-input whatsapp-input-fullwidth"
-                    placeholder="Ingresa la cantidad de cuotas"
-                    value={cuotas}
-                    onChange={handleCuotasChange}
-                  />
-                  <button className="whatsapp-send-btn" onClick={handleCalcular}>
-                    Calcular
-                  </button>
-                </div>
-              )}
             </div>
           )}
-
-      
         </div>
       )}
     </div>
