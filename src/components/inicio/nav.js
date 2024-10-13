@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -12,6 +13,7 @@ import imagen from "../../Assets/logo.png";
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate(); // Hook para navegar
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -20,7 +22,19 @@ export default function NavBar() {
     setDrawerOpen(open);
   };
 
-  const menuItems = ['Home', 'Urbanización Abierta', 'MasterPlan', 'Espacios Públicos', 'Contacto'];
+  // Mapeo de nombres del menú a sus rutas correspondientes
+  const menuItems = [
+    { text: 'Home', path: '/' },
+    { text: 'Urbanización Abierta', path: '/urbanizacion-abierta' },
+    { text: 'MasterPlan', path: '/masterplan' },
+    { text: 'Espacios Públicos', path: '/espacios-publicos' },
+    { text: 'Contacto', path: '/contacto' },
+  ];
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setDrawerOpen(false); // Cierra el drawer después de la navegación
+  };
 
   return (
     <>
@@ -41,7 +55,7 @@ export default function NavBar() {
             width: '100%',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between', // Asegura que haya espacio entre el icono del menú y el logo
+            justifyContent: 'space-between',
           }}
         >
           <IconButton
@@ -61,28 +75,25 @@ export default function NavBar() {
             sx={{ flexGrow: 1 }}
             style={{
               display: 'flex',
-              justifyContent: 'center', // Centra el logo horizontalmente
+              justifyContent: 'center',
               alignItems: 'center',
-              marginLeft: '-15%', // Ajusta el AppBar
-
               margin: '0',
               padding: '0',
+              marginLeft: '-15%',              
             }}
           >
             <img
               src={imagen}
               alt="Logo Don Eulogio"
               style={{
-                height: '40px', // Ajusta la altura según tus necesidades
+                height: '45px',
                 width: 'auto',
                 margin: '0',
-               // marginLeft: '-25%',  Ajusta el AppBar
-
                 padding: '0',
               }}
             />
           </Box>
-          <Box style={{ width: '48px' }} /> {/* Espacio vacío para balancear el layout */}
+          <Box style={{ width: '48px' }} />
         </Toolbar>
       </AppBar>
 
@@ -92,9 +103,9 @@ export default function NavBar() {
         onClose={toggleDrawer(false)}
       >
         <List>
-          {menuItems.map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemText primary={text} />
+          {menuItems.map((item, index) => (
+            <ListItem button key={index} onClick={() => handleNavigation(item.path)}>
+              <ListItemText primary={item.text} />
             </ListItem>
           ))}
         </List>
