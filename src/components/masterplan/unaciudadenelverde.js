@@ -68,22 +68,24 @@ const styles = {
     },
   },
   title: {
-    fontSize: '36px',
+   // fontSize: '32px',
     fontWeight: 'bold',
     marginBottom: '20px',
     textAlign: 'center', // Centramos el título
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       fontSize: '24px', // Reducimos el tamaño de la fuente
+      fontFamily: 'inter',
     },
   },
   description: {
-    fontSize: '18px',
-    lineHeight: '1.6',
-    textAlign: 'center',
+    fontSize: '16px',
+    lineHeight: '1.0',
+    textAlign: 'left', // Justificado a la izquierda
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
       fontSize: '16px',
+      fontFamily: 'inter',
     },
   },
   imagesSection: {
@@ -102,8 +104,8 @@ const styles = {
     alignItems: 'center',
   },
   image: {
-    width: '120px',
-    height: '120px',
+    width: '80px',
+    height: '80px',
     marginBottom: '10px',
     objectFit: 'cover',
     // Estilos para pantallas pequeñas
@@ -113,7 +115,7 @@ const styles = {
     },
   },
   imageText: {
-    fontSize: '25px',
+    fontSize: '15px',
     textAlign: 'center',
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {

@@ -69,7 +69,17 @@ const Arg = () => {
   return (
     <>
     
-    <img src={foto1} alt="Urbanización Abierta"  style={{ position: 'static', width: "100%"}} />
+    <div style={styles.imageContainer}>
+      <img 
+        src={foto1} 
+        alt="Urbanización Abierta" 
+        style={styles.image} 
+      />
+      <span style={styles.imageText}>MasterPlan</span>
+    </div>
+
+
+
     <br/>   <br/>   <br/>
 <UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
@@ -1621,11 +1631,11 @@ const styles = {
   },
   imageText: {
     position: 'absolute',
-    top: '50%',
+    top: '60%',
     left: '10%', // Mueve el texto más a la izquierda
     transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
     color: 'white', // El color del texto
-    fontSize: '60px', // Texto más grande
+    fontSize: '35px', // Texto más grande
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
