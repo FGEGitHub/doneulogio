@@ -8,28 +8,59 @@ import Box from '@mui/material/Box';
 
 export default function NavBar() {
   return (
-    <AppBar position="static" style={{ backgroundColor: '#ffffff', boxShadow: 'none' }}>
-      <Toolbar>
+    <AppBar
+      position="static"
+      style={{
+        backgroundColor: '#ffffff',
+        boxShadow: 'none',
+        padding: '0',
+        marginLeft: '-10px', // Desplaza el AppBar -10px a la izquierda
+        width: 'calc(100% + 10px)', // Expande el ancho para cubrir el margen negativo
+      }}
+    >
+      <Toolbar
+        style={{
+          padding: '0',
+          margin: '0',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+        }}
+      >
         <IconButton
           edge="start"
           color="inherit"
           aria-label="menu"
-          sx={{ mr: 2 }}
-          style={{ color: '#1f3c3d' }} // Color del icono del menú
+          style={{
+            color: '#1f3c3d',
+            margin: '0',
+            padding: '0',
+          }}
         >
           <MenuIcon />
         </IconButton>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box
+          sx={{ flexGrow: 1 }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            margin: '0',
+            padding: '0',
+          }}
+        >
           <Typography
             variant="h6"
             component="div"
             style={{
               color: '#1f3c3d',
-              fontFamily: 'serif', // Similar a la tipografía del logo
-              textAlign: 'center',
+              fontFamily: 'serif',
               fontWeight: 'bold',
               letterSpacing: '2px',
-              fontSize: '24px'
+              fontSize: '24px',
+              margin: '0',
+              padding: '0',
             }}
           >
             DON EULOGIO
@@ -38,10 +69,11 @@ export default function NavBar() {
             variant="subtitle1"
             style={{
               color: '#1f3c3d',
-              fontFamily: 'serif', // Tipografía para el subtítulo
-              textAlign: 'center',
+              fontFamily: 'serif',
               fontSize: '12px',
-              letterSpacing: '2px'
+              letterSpacing: '2px',
+              margin: '0',
+              padding: '0',
             }}
           >
             URBANIZACIÓN ABIERTA
