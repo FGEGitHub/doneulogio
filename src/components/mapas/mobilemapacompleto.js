@@ -1589,10 +1589,11 @@ const Arg = () => {
             </React.Fragment>
           )}
         </TransformWrapper>
+        <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "93%"}} />
       </div>
    
     
-      <img src={Grupo6} alt="Urbanización Abierta" style={{ width: "50%"}} />
+   
       
       <DialogComponent ref={dialogRef} title=""
         info={info}

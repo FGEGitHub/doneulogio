@@ -3,6 +3,8 @@ import { StrictMode } from "react";
 import Nav from '../../components/inicio/nav';
 import backgroundImage1 from "../../Assets/imagenfondo1.jpg"; // Importa tus imágenes de fondo
 import General from '../../components/urbanizaciona/componente';
+import Mobile from '../../components/urbanizaciona/componentemobile';
+
 
 const backgroundOverlayStyle = {
   position: 'fixed',
@@ -45,7 +47,7 @@ export default function Paginas() {
 
     return (
         <>
-              {isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><General /></div> :       <div style={{  padding: '10px', textAlign: 'center' }}><General />  </div>}
+              {isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><Mobile /></div> :       <div style={{  padding: '10px', textAlign: 'center' }}><General />  </div>}
 
         </>
     );
