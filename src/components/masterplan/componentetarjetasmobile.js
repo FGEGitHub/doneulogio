@@ -1,65 +1,87 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, Chip, Grid } from '@mui/material';
-import { Home, Park, Edit, Forest, Store, SportsSoccer } from '@mui/icons-material';
+import { Box, Typography, Grid, Paper } from '@mui/material';
+// Importa tus íconos aquí
+import Icon1 from '../../Assets/uno.png';
+import Icon2 from '../../Assets/dos.png';
+import Icon3 from '../../Assets/tres.png';
+import Icon4 from '../../Assets/cuatro.png';
+import Icon5 from '../../Assets/cinco.png';
+import Icon6 from '../../Assets/seis.png';
+import Icon7 from '../../Assets/siete.png';
 
-const Sectores = () => {
+const Servicios = () => {
   return (
-    <Box sx={{ backgroundColor: '#2D7C7E', padding: '20px', textAlign: 'center' }}>
-      <Typography variant="h5" sx={{ color: '#fff', marginBottom: '20px' }}>
-        Nuestros sectores
-      </Typography>
-      <Typography variant="body1" sx={{ color: '#fff', marginBottom: '20px' }}>
-        ⬇️
+    <Box sx={{ padding: 2, textAlign: 'center' }}>
+      <Typography variant="h4" gutterBottom>
+        Nuestros Servicios
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Card sx={{ border: '1px solid #4CAF50', borderRadius: '10px' }}>
-            <CardContent>
-              <Chip label="Obra Terminada" sx={{ backgroundColor: '#9ACD32', color: '#fff', marginBottom: '10px' }} />
-              <Typography variant="h6" sx={{ fontFamily: 'cursive', marginBottom: '10px' }}>
-                Bosques
-              </Typography>
-              <Box sx={{ textAlign: 'left' }}>
-                <Typography variant="body1">
-                  <Home fontSize="small" /> 50 Lotes Residenciales
-                </Typography>
-                <Typography variant="body1">
-                  <Park fontSize="small" /> Parque del Origen
-                </Typography>
-                <Typography variant="body1">
-                  <Edit fontSize="small" /> Escrituración y Entrega de Posesión Inmediata
-                </Typography>
-                <Typography variant="body1">
-                  <Forest fontSize="small" /> Bosque Nativo
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon1} alt="Servicio 1" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 1</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 1.
+            </Typography>
+          </Paper>
         </Grid>
-        <Grid item xs={12}>
-          <Card sx={{ border: '1px solid #FFD700', borderRadius: '10px' }}>
-            <CardContent>
-              <Chip label="Obra en curso" sx={{ backgroundColor: '#FFD700', color: '#fff', marginBottom: '10px' }} />
-              <Typography variant="h6" sx={{ fontFamily: 'cursive', marginBottom: '10px' }}>
-                Pinares
-              </Typography>
-              <Box sx={{ textAlign: 'left' }}>
-                <Typography variant="body1">
-                  <Home fontSize="small" /> 93 Lotes Residenciales
-                </Typography>
-                <Typography variant="body1">
-                  <Store fontSize="small" /> Área Comercial
-                </Typography>
-                <Typography variant="body1">
-                  <SportsSoccer fontSize="small" /> Plaza Deportiva
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon2} alt="Servicio 2" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 2</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 2.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon3} alt="Servicio 3" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 3</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 3.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon4} alt="Servicio 4" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 4</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 4.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon5} alt="Servicio 5" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 5</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 5.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon6} alt="Servicio 6" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 6</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 6.
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Paper elevation={3} sx={{ padding: 2 }}>
+            <img src={Icon7} alt="Servicio 7" style={{ width: '50px', height: '50px' }} />
+            <Typography variant="h6">Servicio 7</Typography>
+            <Typography variant="body2">
+              Descripción breve del servicio 7.
+            </Typography>
+          </Paper>
         </Grid>
       </Grid>
     </Box>
   );
 };
 
-export default Sectores;
+export default Servicios;
