@@ -1780,7 +1780,7 @@ const styles = {
     fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
     textAnchor: 'middle',
     fontFamily: 'Christian Sunday',
-    cursor: 'important'
+   cursor: 'pointer'
   },
   overlayText: {
     position: 'absolute',
