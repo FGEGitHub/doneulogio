@@ -1593,9 +1593,7 @@ const Arg = () => {
           )}
         </TransformWrapper>       
         <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "91%"}} />
-        <ComponenteTarjetas/>
-     
-        <Footer/>
+   
       </div>
    
     
@@ -1616,7 +1614,9 @@ const Arg = () => {
       }>
 
       </DialogComponent>
-
+      <ComponenteTarjetas/>
+     
+     <Footer/>
       </>
     }
   
