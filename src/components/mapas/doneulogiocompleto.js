@@ -6,7 +6,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/mapadon.png";
+import Gps from "../../Assets/svgdoncompleto.svg";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
