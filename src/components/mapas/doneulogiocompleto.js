@@ -28,7 +28,8 @@ const Arg = () => {
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
   const [showText, setShowText] = useState(true);
   const [showRestoreButton, setShowRestoreButton] = useState(false);
-
+  const [color, setColor] = useState("#1C6A3B"); // Estado para controlar el tamaño del SVG
+  const [color2, setColor2] = useState("#246F74");
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
     setLotes(lotess);
@@ -48,10 +49,12 @@ const Arg = () => {
   const transformWrapperRef = useRef(null);
 
 
-  const toggleImagenDeFondo = () => {
-    setImagenDeFondoActivada((prev) => !prev);
-  };
-
+  
+  // Función para manejar el cambio de escala
+  const handleMouseEnter = () => setColor("green"); // 
+  const handleMouseLeave = () => setColor("#1C6A3B");  // 
+  const handleMouseEnter2 = () => setColor2("blue"); // 
+  const handleMouseLeave2 = () => setColor2("#246F74");  // 
   const handleImageChange = (e) => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
   };
@@ -293,13 +296,13 @@ const Arg = () => {
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
-   <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(0.92,0.97)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
+   <path vector-effect="none" style={{ cursor: 'important' }}  fill={color}   transform="scale(0.92,0.97)"  onMouseEnter={handleMouseEnter}  onMouseLeave={handleMouseLeave}   onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
   <text x="1150" y="700" style={styles.svgText}  onClick={ () => cambiarsvg(1)}  >Bosques</text>
 
   </g>
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
-   <path  transform="scale(0.92,0.97)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
+   <path  transform="scale(0.92,0.97)" fill={color2} onClick={ () => cambiarsvg(2)} onMouseEnter={handleMouseEnter2}  onMouseLeave={handleMouseLeave2}    vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
    <text x="1100" y="1400" style={styles.svgText}onClick={ () => cambiarsvg(2)}>Pinares</text>
 
  

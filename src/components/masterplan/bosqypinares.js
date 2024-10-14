@@ -99,7 +99,7 @@ const styles = {
     color: '#000',
     borderRadius: '8px',
     padding: '20px',
-    width: '360px',
+    width: '350px',
     height: '380px', // Aumentar la altura de las tarjetas
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     position: 'relative', // Necesario para posicionar los carteles
