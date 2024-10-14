@@ -13,6 +13,8 @@ import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
 import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
+import ComponenteTarjetas from '../masterplan/componentetarjetasmobile'
+
 import Footer from '../footermobile'
 const Arg = () => {
   const dialogRef = useRef();
@@ -1590,7 +1592,9 @@ const Arg = () => {
             </React.Fragment>
           )}
         </TransformWrapper>
-        <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "93%"}} />
+        <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "91%"}} />
+        <ComponenteTarjetas/>
+        555
         <Footer/>
       </div>
    
