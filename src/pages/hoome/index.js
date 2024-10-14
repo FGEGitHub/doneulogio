@@ -17,10 +17,28 @@ import naturaleza from '../../Assets/Naturaleza.png';
 import inversion from '../../Assets/Inversion.png';
 import bienestar from '../../Assets/Bienestar.png';
 
+import MobileComponent from '../../components/iniciomobile/componete1'; // Componente para móvil
 
+import Nav from '../../components/inicio/nav';
 export const Home = () => {
     const navigate = useNavigate();
+    const [isMobile, setIsMobile] = useState(false);
 
+    useEffect(() => {
+      // Función que verifica si el ancho de la pantalla es menor o igual a 768px
+      const handleResize = () => {
+        setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+      };
+  
+      // Llamamos a la función al montar el componente y cada vez que la ventana cambia de tamaño
+      handleResize();
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup: eliminamos el event listener al desmontar el componente
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
     // Array de imágenes con sus textos correspondientes
     const images = [
         { src: libertad, alt: 'Libertad', text: 'Libertad' },
@@ -52,6 +70,13 @@ export const Home = () => {
     };
 
     return (
+<>
+{isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><MobileComponent /></div> :       <div >
+    
+    
+    
+ 
+    <>
         <div className="home">
             <div className="div-2">
                 <div className="overlap">
@@ -139,5 +164,9 @@ export const Home = () => {
 
 
         </div>
-    );
+   </> 
+ </div>}
+
+   </>
+);
 }
