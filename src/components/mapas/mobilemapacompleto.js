@@ -71,7 +71,7 @@ const Arg = () => {
 }; 
   return (
     <>
-    
+   
     <div style={styles.imageContainer}>
       <img 
         src={foto1} 
@@ -1591,10 +1591,10 @@ const Arg = () => {
               </div>
             </React.Fragment>
           )}
-        </TransformWrapper>
+        </TransformWrapper>       
         <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "91%"}} />
         <ComponenteTarjetas/>
-        555
+     
         <Footer/>
       </div>
    
