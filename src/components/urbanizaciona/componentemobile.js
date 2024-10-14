@@ -2,8 +2,9 @@ import React from 'react';
 // Importa tus imágenes aquí
 import Image1 from '../../Assets/uamobile.png';
 import Componete1 from './foto1ytextomobile';
-import Image3 from '../../Assets/im3.png';
-import Image4 from '../../Assets/im4.png';
+import Componente2 from './parteverde';
+
+import Footer from '../footermobile';
 
 const CiudadVerde = () => {
   return (
@@ -19,6 +20,8 @@ const CiudadVerde = () => {
       </span>
     </div>
     <Componete1/>
+    <Componente2/>
+    <Footer/>
     </div>
   );
 };

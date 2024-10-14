@@ -24,7 +24,7 @@ const styles = {
     fontSize: '16px',
     lineHeight: '1.5',
     textAlign: 'justify', // Alineación justificada
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'inter',
     marginBottom: '16px',
     '@media (max-width: 768px)': {
       fontSize: '14px',
