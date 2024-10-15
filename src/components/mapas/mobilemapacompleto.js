@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
-import NativeSelect from '@mui/material/NativeSelect';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import MuiAlert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
+
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/doneulcom.png";
+import Gps from "../../Assets/svgdoncompleto.svg";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
@@ -146,7 +144,7 @@ const Arg = () => {
 
 {posicion0 ? <div>
   <div style={{ position: 'relative', zIndex: 1 }}> 
-      <svg   viewBox="250 1375 4010 1500"  width="110mm"  height="110mm" xmlns="http://www.w3.org/2000/svg" >
+      <svg   viewBox="250 1395 4010 1500"  width="110mm"  height="110mm" xmlns="http://www.w3.org/2000/svg" >
  <defs/>
  <g stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linejoin="bevel" stroke-linecap="square" fill="none">
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -196,13 +194,13 @@ const Arg = () => {
 </div>
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}>     
-      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="1170 865 9874 9874"   baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="1120 840 9974 9974"   baseProfile="tiny" version="1.2">
                           <defs />
- <g transform="scale(1.06,1.06)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+ <g transform="scale(1.058,1.058)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[0].map((tooltipValue) => {
@@ -217,11 +215,11 @@ const Arg = () => {
 
          
         
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[1].map((tooltipValue) => {
@@ -239,12 +237,12 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="0"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#000000" font-weight="400" stroke="none">
    <rect x="0" width="7988" y="0" height="7977"/>
   </g>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
 
         {[2].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1570,15 +1568,15 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.06,1.06)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
  </g>
 
 </svg>
