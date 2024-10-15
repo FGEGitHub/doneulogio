@@ -5,7 +5,7 @@ import flechaDerecha from '../../Assets/der.png'; // Importa la flecha derecha
 
 const UrbanizacionAbierta = () => {
   return (
-    <Box sx={{ backgroundColor: '#357369', padding: '40px 0', height: '847.15px', position: 'relative' }}>
+    <Box sx={{ backgroundColor: '#357369', padding: '40px ', height: '847.15px', position: 'relative' }}>
       {/* Título con salto de línea */}
       <Typography
         variant="h4"
@@ -50,13 +50,13 @@ const UrbanizacionAbierta = () => {
 
       <br /><br />
       {/* Tarjetas centradas */}
-      <Grid container spacing={4} justifyContent="center" alignItems="center">
+      <Grid container spacing={4} justifyContent="center" alignItems="center" >
         {/* Tarjeta 1 */}
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
               height: '520px',
-              width: '90%',
+              width: '85%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
@@ -67,7 +67,7 @@ const UrbanizacionAbierta = () => {
           >
             <CardContent
               sx={{
-                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
+                padding: '20px ', // Ajusta el espacio interior, puedes cambiar el valor
                 flexGrow: 1,
                 display: 'flex',
                 flexDirection: 'column',
@@ -77,11 +77,11 @@ const UrbanizacionAbierta = () => {
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
+                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px',textAlign: 'left',fontFamily:'inter'  }} // Tamaño del título más grande
               >
                 Libertad de Decisiones
               </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
                 Ante la inexistencia de consorcios de administración y de reglamentos internos de convivencia y construcción, cada propietario goza de total libertad en cuanto a las decisiones sobre su lote (respetando la legislación aplicable).
               </Typography>
             </CardContent>
@@ -93,7 +93,7 @@ const UrbanizacionAbierta = () => {
           <Card
             sx={{
               height: '520px',
-              width: '90%',
+              width: '85%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
@@ -114,11 +114,11 @@ const UrbanizacionAbierta = () => {
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px',  marginTottom: '20px',color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
+                sx={{ fontWeight: 'bold', marginBottom: '20px',  marginTottom: '20px',color: '#357369', fontSize: '27px' ,textAlign: 'left', fontFamily:'inter' }} // Tamaño del título más grande
               >
                 Integración al Entorno
               </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
                 En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.       <br/><br/><br/><br/>                                                      
               </Typography>
             </CardContent>
@@ -130,7 +130,7 @@ const UrbanizacionAbierta = () => {
           <Card
             sx={{
               height: '520px',
-              width: '90%',
+              width: '85%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
@@ -151,11 +151,11 @@ const UrbanizacionAbierta = () => {
             >
               <Typography
                 variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px' }} // Tamaño del título más grande
+                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px',textAlign: 'left' ,fontFamily:'inter' }} // Tamaño del título más grande
               >
                 Interacción Social y Comunidad Activa
               </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.5 }}>
+              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
                 En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.<br/><br/>  <br/>
               </Typography>
             </CardContent>
