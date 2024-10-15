@@ -183,10 +183,12 @@ const styles = {
   imageContainer: {
     position: 'relative',
     display: 'inline-block', // Ajusta el tamaño al de la imagen
+
+   
   },
   image: {
-    width: '100%',
-    height: 'auto',
+    width:' 115vw',
+    height: '50vh',
     display: 'block',
   },
   imageText: {

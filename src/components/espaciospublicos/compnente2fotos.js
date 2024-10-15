@@ -4,13 +4,13 @@ import { styled } from '@mui/system';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importa los estilos del carrusel
 
-import image1a from '../../Assets/Vector.png'; // Imagen 1 del carrusel
-import image1b from '../../Assets/Vector.png'; // Imagen 2 del carrusel
-import image1c from '../../Assets/Vector.png'; // Imagen 3 del carrusel
+import image1a from '../../Assets/carrusel1.svg'; // Imagen 1 del carrusel
+import image1b from '../../Assets/carrusel2.svg'; // Imagen 2 del carrusel
+import image1c from '../../Assets/carrusel1.svg'; // Imagen 3 del carrusel
 
-import image2a from '../../Assets/Vector.png'; // Imagen 1 del segundo carrusel
-import image2b from '../../Assets/Vector.png'; // Imagen 2 del segundo carrusel
-import image2c from '../../Assets/Vector.png'; // Imagen 3 del segundo carrusel
+import image2a from '../../Assets/carrusel2.svg'; // Imagen 1 del segundo carrusel
+import image2b from '../../Assets/carrusel1.svg'; // Imagen 2 del segundo carrusel
+import image2c from '../../Assets/carrusel2.svg'; // Imagen 3 del segundo carrusel
 
 // Aumentamos la altura general de las tarjetas (más grandes)
 const StyledCard = styled(Card)({
