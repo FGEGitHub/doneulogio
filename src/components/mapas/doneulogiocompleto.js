@@ -15,7 +15,7 @@ import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
-import './Christian Sunday.ttf'
+//import './Christian Sunday.ttf'
 import './Human Nature - Demo.ttf'
 const Arg = () => {
   const dialogRef = useRef();

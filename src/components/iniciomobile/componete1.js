@@ -12,6 +12,7 @@ import Footer from '../footermobile';
 
 const CiudadVerde = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     // Lista de todas las imágenes a cargar
@@ -33,10 +34,23 @@ const CiudadVerde = () => {
       img.onload = handleImageLoad;
       img.onerror = handleImageLoad; // En caso de error también avanzar
     });
+
+    // Verificar el estado del video directamente
+    const videoElement = document.createElement('video');
+    videoElement.src = VideoDron;
+    videoElement.oncanplaythrough = () => {
+      setVideoLoaded(true);
+    };
+    videoElement.onerror = () => {
+      setVideoLoaded(true); // Si falla la carga, igual lo marcamos como cargado para evitar un bucle
+    };
   }, []);
 
-  if (!allImagesLoaded) {
-    // Muestra un mensaje de carga o un spinner mientras se cargan las imágenes
+  // Verifica si tanto las imágenes como el video están cargados
+  const contentLoaded = allImagesLoaded && videoLoaded;
+
+  if (!contentLoaded) {
+    // Muestra un mensaje de carga o un spinner mientras se cargan las imágenes y el video
     return <div>Cargando...</div>;
   }
 
@@ -55,8 +69,8 @@ const CiudadVerde = () => {
       <Componete1 />
       <img
         src={Image2}
-        alt="Urbanización Abierta"
-        style={styles.image}
+        alt="libertad"
+        style={styles.imagelibertad}
       />
       <Componente2 />
       <img
@@ -106,6 +120,14 @@ const styles = {
     height: 'auto',
     marginLeft: '-3%',
     display: 'block',
+  },
+  imagelibertad: {
+    width: '108%',
+    height: '25vh', // Ajustar la altura al 25% del viewport
+    marginLeft: '-3%',
+    display: 'block',
+    objectFit: 'cover', // Mantener la relación de aspecto y cubrir el área
+    objectPosition: 'center',  // Ajustar la altura para el recorte vertical
   },
   imageText: {
     position: 'absolute',
