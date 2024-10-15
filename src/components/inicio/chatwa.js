@@ -42,8 +42,8 @@ const WhatsappChat = (props) => {
         ];
         break;
       case "¿Cuál es el precio financiado de este lote?":
-        const anticipo = props.preciofinanciado / 2;
-        const valorCuotas = anticipo / 6;
+        const anticipo = props.preciofinanciado *props.porcentaje_anticipo/100;
+        const valorCuotas = (props.preciofinanciado-anticipo) / props.cantidad_cuotas;
         formattedResponse = [
           {
             title: "Precio Financiado",
@@ -51,9 +51,7 @@ const WhatsappChat = (props) => {
           },
           {
             title: "Financiación",
-            value: `Anticipo (50%): $${anticipo.toFixed(
-              2
-            )}. Las 6 cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
+            value: `Anticipo (${props.porcentaje_anticipo}): $${anticipo.toFixed(2)}. Las ${props.cantidad_cuotas} cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
           },
         ];
         break;

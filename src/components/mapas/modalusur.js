@@ -148,6 +148,8 @@ const DialogComponent = forwardRef((props, ref) => {
                     <WhatsappChat 
                       precio={datos[0].precio} 
                       preciofinanciado={datos[0].preciofinanciado} 
+                      porcentaje_anticipo={datos[0].porcentaje_anticipo} 
+                      cantidad_cuotas={datos[0].cantidad_cuotas} 
                     />
                   </div>
                 </>
