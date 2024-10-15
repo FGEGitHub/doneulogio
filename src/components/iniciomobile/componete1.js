@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-// Importa tus imágenes aquí
-import Image1 from '../../Assets/iniciomobile.png';
+// Importa tus imágenes y video aquí
 import Image2 from '../../Assets/libertad.png';
 import Imagemapa from '../../Assets/imagenmappa.png';
 import Dibujoarboles from '../../Assets/dibujoarboles.png';
 import Doslogos from '../../Assets/doslogos.png';
+import VideoDron from '../../Assets/videodron.mp4';
 
 import Componete1 from './componente2';
 import Componente2 from './componente3';
@@ -15,7 +15,7 @@ const CiudadVerde = () => {
 
   useEffect(() => {
     // Lista de todas las imágenes a cargar
-    const images = [Image1, Image2, Imagemapa, Dibujoarboles, Doslogos];
+    const images = [Image2, Imagemapa, Dibujoarboles, Doslogos];
     let loadedImagesCount = 0;
 
     // Función para manejar la carga de cada imagen
@@ -42,11 +42,13 @@ const CiudadVerde = () => {
 
   return (
     <div>
-      <div style={styles.imageContainer}>
-        <img
-          src={Image1}
-          alt="Urbanización Abierta"
-          style={styles.image}
+      <div style={styles.videoContainer}>
+        <video
+          src={VideoDron}
+          autoPlay
+          loop
+          muted
+          style={styles.video}
         />
         <span style={styles.imageText}>Tu Futuro en <br />Don Eulogio</span>
       </div>
@@ -78,9 +80,17 @@ const CiudadVerde = () => {
 };
 
 const styles = {
-  imageContainer: {
+  videoContainer: {
     position: 'relative',
     display: 'inline-block',
+    overflow: 'hidden',
+    width: '100%',
+    height: 'auto',
+  },
+  video: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover', // Mantener la relación de aspecto y cubrir el área
   },
   image2: {
     width: '80%',
@@ -107,13 +117,6 @@ const styles = {
     fontWeight: 'bold',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
     pointerEvents: 'none',
-  },
-  svgText: {
-    fill: '#fff',
-    stroke: '#fff',
-    fontSize: '90px',
-    fontFamily: "'Christian Sunday', sans-serif",
-    textAnchor: 'middle',
   },
 };
 
