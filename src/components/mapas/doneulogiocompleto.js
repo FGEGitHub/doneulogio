@@ -325,7 +325,7 @@ const Arg = () => {
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1,   width: 'auto', height: '100vh'}}>     
 
-      <svg xmlns="http://www.w3.org/2000/svg"   width="auto"  height="100vh"  viewBox="-718 1075 12874 9834"  baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"   width="auto"  height="100vh"  viewBox="-716 1075 12874 9834"  baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.192,1.1959)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
