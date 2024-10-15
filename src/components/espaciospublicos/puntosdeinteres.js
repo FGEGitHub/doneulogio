@@ -48,10 +48,10 @@ const styles = {
   },
   item: {
     width: '300px', // Hacemos el contenedor más grande para imágenes más grandes
-    margin: '15px',
+    margin: '5px', // Reducimos el margen para que las imágenes estén más juntas
   },
   image: {
-    width: '100%',  // La imagen ocupará el 100% del ancho del contenedor
+    width: '115%',  // La imagen ocupará el 100% del ancho del contenedor
     height: 'auto', // Se mantiene el aspecto original de la imagen
     borderRadius: '8px',
     border: '2px solid #009688',
