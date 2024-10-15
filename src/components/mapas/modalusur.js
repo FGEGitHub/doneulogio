@@ -14,7 +14,7 @@ const DialogComponent = forwardRef((props, ref) => {
   const [nivel, setNivel] = useState(null);
   const [datos, setDatos] = useState(null);
   const [imageSrc, setImageSrc] = useState(null); // Estado para la imagen
-
+  const isMobile = window.innerWidth <= 768;
   const openDialog = () => {
     setOpen(true);
   };
@@ -72,12 +72,24 @@ const DialogComponent = forwardRef((props, ref) => {
   const styles = {
     container: {
       display: 'flex',
-      flexDirection: 'row',
       justifyContent: 'space-between',
+
+      flexDirection: isMobile ? 'column' : 'row', // Cambia la dirección según el dispositivo
+      //justifyContent: 'space-between',
+      alignItems: 'center',
     },
     image: {
-      width: '60%',  // Tamaño mayor por defecto
+     // width: '60%',  // Tamaño mayor por defecto
+
+      width: isMobile ? '80%' : '60%', // Ajusta el tamaño según el dispositivo
+      maxHeight: '60vh', // Limita la altura máxima para evitar desbordamientos
+      objectFit: 'contain', // Asegura que la imagen mantenga su proporción
+      marginBottom: isMobile ? '20px' : '0', // Añade espacio inferior en móvil
+
     },
+
+
+
     info: {
       width: '40%',
       paddingLeft: '20px',
@@ -100,8 +112,6 @@ const DialogComponent = forwardRef((props, ref) => {
     },
   };
 
-  // Detectar si es móvil
-  const isMobile = window.innerWidth <= 768;
 
   return (
 <Dialog 
