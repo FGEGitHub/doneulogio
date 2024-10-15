@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
-import foto1 from '../../Assets/urabierta.png';
+
 import video from '../../Assets/videodron.mp4';
 import logo from '../../Assets/logonav2.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';

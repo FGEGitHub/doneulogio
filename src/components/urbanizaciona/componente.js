@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, Toolbar } from '@mui/material';
-import foto1 from '../../Assets/urabierta.png';
+import foto1 from '../../Assets/uaimagen.svg';
 import foto2 from '../../Assets/uapng.png';
 import logo from '../../Assets/logo.png';
 import './UrbanizacionAbierta.css';
@@ -118,7 +118,12 @@ const UrbanizacionAbierta = () => {
           Contacto
         </div>
       </nav>
-      <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+      <div className="urbanizacion-image-container">
+        <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
+        <Typography variant="h2" className="urbanizacion-overlay-text">
+          Urbanización <br/>Abierta
+        </Typography>
+      </div>
       <Box className="urbanizacion-section">
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>

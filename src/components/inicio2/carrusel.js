@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "./Image"; // Importamos el componente 'Image'
-import foto1 from "../../Assets/urabierta.png";
+import foto1 from "../../Assets/uaimagen.svg";
 import foto2 from "../../Assets/masterp.png";
-import foto3 from "../../Assets/urabierta.png";
+import foto3 from "../../Assets/uaimagen.svg";
 import "./carrusel.css"; // Importamos el CSS de los estilos de 'Image'
 
 const Carousel = ({ images, links }) => {

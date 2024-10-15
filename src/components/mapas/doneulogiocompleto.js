@@ -1772,6 +1772,7 @@ const styles = {
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
+    fontFamily: 'inter',
     
   },
   svgText: {

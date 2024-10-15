@@ -36,10 +36,10 @@ body {
   }
   
   .urbanizacion-logo {
-    height: 135px;
+    height: 115px;
     width: auto;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin-top: 1%;
+    
   }
 
   .urbanizacion-nav {
@@ -52,12 +52,32 @@ body {
   .urbanizacion-navlink {
     margin: 0 12px;
   }
+  .urbanizacion-image-container {
+    position: relative;
+    text-align: center;
+  }
   
   .urbanizacion-header-image {
-    width: 1920px;
-    height: 725.27px;
+    width: 105vw;
+    height: 50vh;
     margin-bottom: 16px;
     top:348.59px;
+    margin-left:-5%;
+  }
+  .urbanizacion-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Mantén el valor de "left" para controlar qué tan lejos del borde izquierdo lo deseas */
+    transform: translateY(-50%); /* Solo ajustamos la posición vertical */
+    color: white;
+    font-family: 'Inter';
+   
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    font-size: '60px'; 
+    font-weight: 'bold', 
+   
   }
   
   .urbanizacion-section {
@@ -218,3 +238,7 @@ h2 {
   border-radius: 10px;
 }
 
+@font-face {
+  font-family: 'Human Nature - Demo';
+  src: url('../mapas/Human Nature - Demo.ttf') format('truetype');
+}
