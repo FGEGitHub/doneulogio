@@ -21,6 +21,9 @@ const columns = [
   { id: 'superficie', label: 'Superficie', minWidth: 100, align: 'right' },
   { id: 'precio', label: 'P. Contado', minWidth: 100, align: 'right' },
   { id: 'preciofinanciado', label: 'P. Financiado', minWidth: 100, align: 'right' },
+  { id: 'porcentaje_anticipo', label: 'Porcentaje Anticipo', minWidth: 150, align: 'right' },
+  { id: 'anticipo', label: 'Anticipo', minWidth: 150, align: 'right' },
+  { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 150, align: 'right' },
   { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 150, align: 'center' },
   { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
   { id: 'nombre', label: 'Propietario', minWidth: 100, align: 'right' },
@@ -56,10 +59,31 @@ export default function StickyHeadTable() {
   };
 
   const handleInputChange = (id, field, value) => {
-    setEditingRow((prev) => ({
-      ...prev,
-      [id]: { ...prev[id], [field]: value },
-    }));
+    setEditingRow((prev) => {
+      const updatedRow = {
+        ...prev[id],
+        [field]: value,
+      };
+console.log(updatedRow)
+      // Calcular anticipo y saldo financiado cuando porcentaje_anticipo o preciofinanciado cambian
+      if (field === 'porcentaje_anticipo' || field === 'preciofinanciado' ||  field === 'porcentaje_anticipo' ) {
+        const porcentajeAnticipo = parseFloat(updatedRow.porcentaje_anticipo || 0);
+        const precioFinanciado = parseFloat(updatedRow.preciofinanciado || 0);
+        
+        // Calcular anticipo y saldo financiado
+        const anticipo = (porcentajeAnticipo * precioFinanciado) / 100;
+        const saldoFinanciado = precioFinanciado - anticipo;
+
+        updatedRow.anticipo = anticipo.toFixed(2); // Redondear a 2 decimales
+        updatedRow.saldo_financiado = saldoFinanciado.toFixed(2); // Redondear a 2 decimales
+      }
+
+      return {
+        ...prev,
+        [id]: updatedRow,
+      };
+    });
+
     if (!modifiedRows.includes(id)) {
       setModifiedRows((prev) => [...prev, id]);
     }
@@ -94,8 +118,6 @@ export default function StickyHeadTable() {
       ...row,
       ...editingRow[row.lote],
     };
-    console.log(row)
-    console.log(editingRow[row.lote])
     console.log(updatedRow)
     await servicioDatos.enviarformlotes(updatedRow);
     alert('Realizado');
@@ -140,18 +162,30 @@ export default function StickyHeadTable() {
                       value = row['id_cliente'] ? 'Vendido' : 'Disponible';
                     }
 
-                    if (column.id === 'precio' || column.id === 'preciofinanciado') {
+                    if (column.id === 'precio' || column.id === 'preciofinanciado' || column.id === 'porcentaje_anticipo') {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           <input
-                            type="number"
                             value={isEditing ? editingRow[row.lote][column.id] : value}
                             onChange={(e) => handleInputChange(row.lote, column.id, e.target.value)}
                           />
                         </TableCell>
                       );
                     }
-
+                    if (column.id === 'saldo_financiado') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {isEditing ? editingRow[row.lote].saldo_financiado : row.preciofinanciado-(row.porcentaje_anticipo*row.preciofinanciado/100)}
+                        </TableCell>
+                      );
+                    }
+                    if (column.id === 'anticipo') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {isEditing ? ((editingRow[row.lote].porcentaje_anticipo ?editingRow[row.lote].porcentaje_anticipo : row.porcentaje_anticipo) *  (editingRow[row.lote].preciofinanciado ?  editingRow[row.lote].preciofinanciado: row.preciofinanciado)    /100  ) : (row.porcentaje_anticipo*row.preciofinanciado/100)}
+                        </TableCell>
+                      );
+                    }
                     if (column.id === 'posecion' || column.id === 'escritura' || column.id === 'construccion') {
                       return (
                         <TableCell key={column.id} align={column.align}>
