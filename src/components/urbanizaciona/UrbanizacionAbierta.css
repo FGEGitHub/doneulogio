@@ -58,11 +58,11 @@ body {
   }
   
   .urbanizacion-header-image {
-    width: 105vw;
+    width: 115vw;
     height: 50vh;
     margin-bottom: 16px;
     top:348.59px;
-    margin-left:-5%;
+    margin-left:-10%;
   }
   .urbanizacion-overlay-text {
     position: absolute;
@@ -92,7 +92,13 @@ body {
     top:1173.5px;
     Left:1030.71px;
   }
-  
+  .urbanizacion-content-image2 {
+    width: 600.29px;
+    height: auto;
+    top:1173.5px;
+    margin-right: 7%;
+    Left:1030.71px;
+  }
   .urbanizacion-comparison-section {
     margin-top: 32px;
     margin-bottom: 32px;

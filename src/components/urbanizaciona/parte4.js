@@ -55,8 +55,8 @@ const UrbanizacionAbierta = () => {
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '550px',
-              width: '70%',
+              height: '520px',
+              width: '90%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
@@ -92,8 +92,8 @@ const UrbanizacionAbierta = () => {
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '550px',
-              width: '70%',
+              height: '520px',
+              width: '90%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',
@@ -129,8 +129,8 @@ const UrbanizacionAbierta = () => {
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
           <Card
             sx={{
-              height: '550px',
-              width: '70%',
+              height: '520px',
+              width: '90%',
               borderRadius: '16px', // Bordes redondeados
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
               display: 'flex',

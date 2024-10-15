@@ -135,8 +135,10 @@ const UrbanizacionAbierta = () => {
                 fontSize: '23px',
                 fontWeight: 400,
                 lineHeight: '38.73px',
-                textAlign: 'center',
+                textAlign: 'left',
                 marginTop: '20%',
+                marginLeft: '10%',
+                marginRight: '10%',
               }}
             >
               Al desarrollar un proyecto al estilo Urbanización Abierta se busca <strong>generar un modelo de “Ciudad dentro del verde”</strong>, logrando integrar el Barrio al entorno natural que lo rodea y conformando una comunidad activa.
@@ -146,7 +148,7 @@ const UrbanizacionAbierta = () => {
             <img
               src={foto2}
               alt="Urbanización Abierta"
-              className="urbanizacion-content-image"
+              className="urbanizacion-content-image2"
             />
           </Grid>
         </Grid>
