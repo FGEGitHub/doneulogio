@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
-import logo from '../../Assets/logonav2.png';
+import logo from '../../Assets/logo.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import { IconButton } from '@mui/material';
@@ -16,6 +16,7 @@ import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
 import './Christian Sunday.ttf'
+import './Human Nature - Demo.ttf'
 const Arg = () => {
   const dialogRef = useRef();
   const navigate = useNavigate();
@@ -303,7 +304,7 @@ const Arg = () => {
   <g font-style="normal"  transform="scale(0.7,0.7)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  style={{ cursor: 'pointer' }}  transform="scale(0.92,0.97)" fill={color2} onClick={ () => cambiarsvg(2)} onMouseEnter={handleMouseEnter2}  onMouseLeave={handleMouseLeave2}    vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
-   <text x="1100" y="1400" style={styles.svgText}onClick={ () => cambiarsvg(2)}>Pinares</text>
+   <text x="1100" y="1400" style={styles.svgTextpinares}onClick={ () => cambiarsvg(2)}>Pinares</text>
 
  
   </g>
@@ -1780,6 +1781,14 @@ const styles = {
     fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
     textAnchor: 'middle',
     fontFamily: 'Christian Sunday',
+   cursor: 'pointer'
+  },
+  svgTextpinares: {
+    fill: '#fff', // Relleno blanco para el texto
+    stroke: '#fff', // Contorno blanco para el texto
+    fontSize: '80px',
+    textAnchor: 'middle',
+    fontFamily: 'Human Nature - Demo',
    cursor: 'pointer'
   },
   overlayText: {

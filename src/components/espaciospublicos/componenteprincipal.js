@@ -4,7 +4,7 @@ import { styled } from '@mui/system';
 import Dosfotos from "./compnente2fotos";
 import { useNavigate } from "react-router-dom";
 import foto1 from '../../Assets/espacios.png';
-import logo from '../../Assets/logonav2.png';
+import logo from '../../Assets/logo.png';
 import Puntosdeinteres from './puntosdeinteres'
 import Footer from '../footer'
 const Root = styled(Box)({

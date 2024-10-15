@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, Toolbar } from '@mui/material';
 import foto1 from '../../Assets/urabierta.png';
 import foto2 from '../../Assets/uapng.png';
-import logo from '../../Assets/logonav2.png';
+import logo from '../../Assets/logo.png';
 import './UrbanizacionAbierta.css';
 import Parte4 from './parte4';
 import Footer from '../footer';
