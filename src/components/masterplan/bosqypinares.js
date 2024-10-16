@@ -127,7 +127,7 @@ const styles = {
     fontWeight: 'bold',
     color: '#226d6f', // Color verde del título
     marginBottom: '15px',
-    fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
+    fontFamily: 'Human Nature - Demo', // Aplica la fuente
   },
   list: {
     listStyleType: 'none',

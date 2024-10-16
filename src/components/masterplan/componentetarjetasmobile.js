@@ -9,7 +9,7 @@ import icono4 from '../../Assets/cuatro.png';
 import icono5 from '../../Assets/cinco.png';
 import icono6 from '../../Assets/seis.png';
 import icono7 from '../../Assets/siete.png';
-
+import '../mapas/config.css'
 const Sectores = () => {
   const containerStyle = {
     display: 'flex',
@@ -64,7 +64,14 @@ const Sectores = () => {
     margin: '10px 0',
     textAlign:'center'
   };
-
+ 
+   const tituloStyle2 = {
+    color: '#2a6e6e',
+    fontFamily: "Human Nature - Demo", // Aplica la fuente
+    fontSize: '46px',
+    margin: '10px 0',
+    textAlign:'center'
+  };
   const detallesStyle = {
     listStyle: 'none',
     padding: 0,
@@ -121,7 +128,7 @@ const Sectores = () => {
         <div style={estadoEnCursoStyle}>
           <span>Obra en curso</span>
         </div>
-        <h3 style={tituloStyle}>Pinares</h3>
+        <h3 className="tituloStyle2">Pinares</h3>
         <ul style={detallesStyle}>
           <li style={detalleItemStyle}>
             <img src={icono1} alt="Icono 1" style={iconoStyle} />

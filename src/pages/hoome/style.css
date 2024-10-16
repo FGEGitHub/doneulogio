@@ -474,3 +474,8 @@
     object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
     position: relative; /* Asegura que el footer siga el flujo del documento */
 }
+
+/* @font-face {
+    font-family: 'Human Nature - Demo';
+    src: url('../../components/mapas/Human\ Nature\ -\ Demo.ttf') format('truetype');
+  } */
