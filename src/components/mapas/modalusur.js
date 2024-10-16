@@ -72,27 +72,18 @@ const DialogComponent = forwardRef((props, ref) => {
   const styles = {
     container: {
       display: 'flex',
-      justifyContent: 'space-between',
-
       flexDirection: isMobile ? 'column' : 'row', // Cambia la dirección según el dispositivo
-      //justifyContent: 'space-between',
       alignItems: 'center',
     },
     image: {
-     // width: '60%',  // Tamaño mayor por defecto
-
       width: isMobile ? '80%' : '60%', // Ajusta el tamaño según el dispositivo
       maxHeight: '60vh', // Limita la altura máxima para evitar desbordamientos
       objectFit: 'contain', // Asegura que la imagen mantenga su proporción
       marginBottom: isMobile ? '20px' : '0', // Añade espacio inferior en móvil
-
     },
-
-
-
     info: {
-      width: '40%',
-      paddingLeft: '20px',
+      width: '100%', // Ocupa todo el ancho disponible
+      paddingLeft: isMobile ? '0' : '20px',
       display: 'flex',
       flexDirection: 'column',
     },
@@ -101,38 +92,28 @@ const DialogComponent = forwardRef((props, ref) => {
     },
     dialogContent: {
       display: 'flex',
+      flexDirection: isMobile ? 'column' : 'row',
       justifyContent: 'space-between',
-    }
-  };
-
-  // Estilos para móviles
-  const mobileStyles = {
-    image: {
-      width: '100%',  // En móviles, imagen ocupa todo el ancho disponible
     },
   };
 
-
   return (
-<Dialog 
-  open={open} 
-  onClose={closeDialog} 
-  maxWidth="xl" 
-  fullWidth 
-  sx={{ 
-    maxWidth: '90vw', 
-    height: '150vh',               // Aumenta la altura del modal
-    margin: 'auto',               // Centrado horizontal
-   // top: '10%',                   // Ajusta para mover el modal más abajo
-   // transform: 'translateY(10%)', // Mueve ligeramente el modal hacia abajo para centrarlo mejor
-    maxHeight: '90vh'             // Limita la altura máxima
-  }}
->
-<DialogTitle>Información del Lote</DialogTitle>
+    <Dialog 
+      open={open} 
+      onClose={closeDialog} 
+      maxWidth="md" // Reduce el tamaño máximo del modal en escritorio
+      fullWidth 
+      sx={{ 
+        maxWidth: isMobile ? '90vw' : '60vw', // Ajusta el ancho según la versión
+        maxHeight: '90vh', // Limita la altura máxima
+        margin: 'auto', // Centrado horizontal
+      }}
+    >
+      <DialogTitle>Información del Lote</DialogTitle>
       <DialogContent dividers style={styles.dialogContent}>
         <div style={styles.container}>
           {/* Imagen del lote */}
-          <div style={isMobile ? mobileStyles.image : styles.image}>
+          <div style={styles.image}>
             {imageSrc ? (
               <img src={imageSrc} alt="Lote esquema" style={{ width: '100%' }} />
             ) : (
@@ -147,12 +128,12 @@ const DialogComponent = forwardRef((props, ref) => {
             {datos ? (
               datos.length > 0 ? (
                 <>
-                <p>
-                  <div><b>Sector:</b> {datos[0].sector}</div>
-                  <div><b>Manzana:</b> {datos[0].manzana}</div>
-                  <div><b>Lote:</b> {datos[0].lote}</div>
-                  <div><b>Disponibilidad:</b> {datos[0].disponibilidad}</div>
-</p>
+                  <p>
+                    <div><b>Sector:</b> {datos[0].sector}</div>
+                    <div><b>Manzana:</b> {datos[0].manzana}</div>
+                    <div><b>Lote:</b> {datos[0].lote}</div>
+                    <div><b>Disponibilidad:</b> {datos[0].disponibilidad}</div>
+                  </p>
                   {/* Chat de WhatsApp */}
                   <div style={styles.chatContainer}>
                     <WhatsappChat 

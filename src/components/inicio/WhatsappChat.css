@@ -1,5 +1,6 @@
+/* Estilos generales para el componente */
 .whatsapp-chat {
-  width: 150%;
+  width: 100%; /* Ancho completo en versión móvil */
   max-width: 550px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -42,6 +43,8 @@
 .whatsapp-body {
   background-color: #e5ddd5;
   padding: 15px;
+  max-height: calc(100vh - 80px); /* Para ocupar toda la altura disponible menos el header */
+  overflow-y: auto;
 }
 
 .whatsapp-message {
@@ -98,14 +101,14 @@
   background-color: white;
   padding: 15px;
   border-radius: 10px;
-  margin-top: 20px; /* Aumenta el margen superior */
+  margin-top: 20px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-reply-item {
   display: flex;
-  flex-direction: column; /* Cambia a columna para que el título y el valor estén uno debajo del otro */
-  align-items: flex-start; /* Alinea el contenido al inicio */
+  flex-direction: column;
+  align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -117,7 +120,7 @@
 .whatsapp-reply-title {
   font-weight: bold;
   color: #075e54;
-  margin-bottom: 10px; /* Añade un margen inferior para separar el título del valor */
+  margin-bottom: 10px;
 }
 
 .whatsapp-reply-value {
@@ -152,4 +155,28 @@
 
 .whatsapp-send-btn:hover {
   background-color: #7aa32e;
+}
+
+/* Estilos específicos para pantallas móviles */
+@media (max-width: 768px) {
+  .whatsapp-chat {
+    width: 100%; /* Ancho completo */
+    max-width: 100%; /* Sin límite en mobile */
+    height: 100vh; /* Altura total de la pantalla */
+    border-radius: 0; /* Sin bordes redondeados en mobile */
+  }
+
+  .whatsapp-body {
+    max-height: calc(100vh - 80px); /* Ajusta la altura para el cuerpo del chat */
+    padding: 10px; /* Reducir padding en mobile */
+  }
+
+  .whatsapp-question-btn {
+    font-size: 14px; /* Ajustar tamaño de fuente */
+    padding: 10px; /* Ajustar padding */
+  }
+
+  .whatsapp-reply {
+    padding: 10px; /* Reducir padding en mobile */
+  }
 }
