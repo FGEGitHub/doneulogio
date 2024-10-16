@@ -9,7 +9,7 @@ import icono4 from '../../Assets/cuatro.png';
 import icono5 from '../../Assets/cinco.png';
 import icono6 from '../../Assets/seis.png';
 import icono7 from '../../Assets/siete.png';
-
+import '../mapas/config.css'
 const Sectores = () => {
   return (
     <div style={styles.container}>
@@ -24,7 +24,7 @@ const Sectores = () => {
         {/* Tarjeta Bosques */}
         <div style={styles.card}>
           <div style={styles.statusComplete}>Obra Terminada</div>
-          <h3 style={styles.cardTitle}>Bosques</h3>
+          <h3 className='cardTitletarjeta1'>Bosques</h3>
           <ul style={styles.list}>
             <li style={styles.listItem}>
               <img src={icono1} alt="Icono 1" style={styles.icon} /> <b>50</b> Lotes Residenciales
@@ -44,7 +44,7 @@ const Sectores = () => {
         {/* Tarjeta Pinares */}
         <div style={styles.card}>
           <div style={styles.statusInProgress}>Obra en curso</div>
-          <h3 style={styles.cardTitle}>Pinares</h3>
+          <h3 className='cardTitletarjeta2'>Pinares</h3>
           <ul style={styles.list}>
             <li style={styles.listItem}>
               <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93</b> Lotes Residenciales

@@ -120,6 +120,22 @@
   margin: 10px 0;
   text-align: center;
 }
+.cardTitletarjeta1 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #226d6f; /* Color verde del título */
+  margin-bottom: 15px;
+  font-family: 'Christian Sunday'; /* Asegúrate de que la fuente esté disponible */
+}
+.cardTitletarjeta2 {
+  font-size: 55px;
+  font-weight: bold;
+  color: #226d6f; /* Color verde del título */
+  margin-bottom: 15px;
+  font-family: 'Human Nature - Demo', sans-serif; /* Asegúrate de que la fuente esté disponible */
+  line-height: 1.2; /* Ajusta el espacio vertical si es necesario */
+  transform: scaleY(1.2); /* Estira la altura del texto */
+}
 @font-face {
   font-family: 'Christian Sunday';
   src: url('./Christian Sunday.ttf') format('truetype');
