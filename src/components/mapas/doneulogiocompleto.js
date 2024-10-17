@@ -16,7 +16,6 @@ import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
 //import './Christian Sunday.ttf'
-import './Human Nature - Demo.ttf'
 import './config.css'
 const Arg = () => {
   const dialogRef = useRef();

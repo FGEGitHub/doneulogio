@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+@font-face {
+  font-family: 'HumanNature';
+  src: local('HumanNature'), url('./HumanNature.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
 #mapa {
   width: 2500px; /* Ajusta el ancho según tus necesidades */
   height: 1500px; /* Ajusta la altura según tus necesidades */
@@ -110,12 +116,12 @@
   stroke: #fff;
   font-size: 90px;
   text-anchor: middle;
-  font-family: 'Human Nature - Demo';
+  font-family: 'HumanNature';
   cursor: pointer;
 }
 .tituloStyle2 {
   color: #2a6e6e;
-  font-family: 'Human Nature - Demo', sans-serif; 
+  font-family: 'HumanNature', sans-serif; 
   font-size: 46px;
   margin: 10px 0;
   text-align: center;
@@ -132,7 +138,7 @@
   font-weight: bold;
   color: #226d6f; /* Color verde del título */
   margin-bottom: 15px;
-  font-family: 'Human Nature - Demo', sans-serif; /* Asegúrate de que la fuente esté disponible */
+  font-family: 'HumanNature', sans-serif; /* Asegúrate de que la fuente esté disponible */
   line-height: 1.2; /* Ajusta el espacio vertical si es necesario */
   transform: scaleY(1.2); /* Estira la altura del texto */
 }
@@ -140,7 +146,4 @@
   font-family: 'Christian Sunday';
   src: url('./Christian Sunday.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Human Nature - Demo';
-  src: url('./Human Nature - Demo.ttf') format('truetype');
-}
+
