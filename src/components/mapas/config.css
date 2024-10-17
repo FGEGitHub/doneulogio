@@ -140,7 +140,8 @@
   font-family: 'Christian Sunday';
   src: url('./Christian Sunday.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Human Nature - Demo';
-  src: url('./Human Nature - Demo.ttf') format('truetype');
+  src: url('./Human Nature - Demo.ttf') format('Truetype');
 }
