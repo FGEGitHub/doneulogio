@@ -154,6 +154,12 @@ const asignarventa= async  (datos) => {
           
           return data
           } 
-        
+          
+          const borrarlaventa= async  (datos) => {
 
- export default {nuevaVenta,traerVentas,enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+            console.log(datos)
+              const {data } = await axios.post(baseUrl+"borrarlaventa",datos)
+            
+            return data
+            } 
+ export default {borrarlaventa,nuevaVenta,traerVentas,enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}

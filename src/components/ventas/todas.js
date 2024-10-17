@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import servicioDatos from '../../services/datos';
-
+import Borrar from './borrar';
 const columns = [
   { id: 'id_venta', label: 'ID Venta', minWidth: 100 },
   { id: 'fecha_venta', label: 'Fecha de venta', minWidth: 120 },
@@ -20,6 +20,7 @@ const columns = [
   { id: 'valor_escritura', label: 'Valor escritura', minWidth: 100, align: 'right' },
   { id: 'observaciones', label: 'Observaciones', minWidth: 200 },
   { id: 'modificar', label: 'Modificar', minWidth: 100 },
+  { id: 'borrar', label: 'Borrar', minWidth: 100 },
 ];
 
 export default function VentasTable() {
@@ -141,11 +142,14 @@ export default function VentasTable() {
                           ) : (
                             <MenuItem value="" disabled>Cargando lotes...</MenuItem>
                           )}
-                        </Select>
+                        </Select>     <Borrar
+                        id={column.id}/>x
                       </TableCell>
                     );
                   }
-
+                   
+              
+                  
                   if (column.id === 'nombre') {
                     return (
                       <TableCell key={column.id} align={column.align}>
@@ -161,6 +165,7 @@ export default function VentasTable() {
                             <MenuItem value="" disabled>Cargando propietarios...</MenuItem>
                           )}
                         </Select>
+                        
                       </TableCell>
                     );
                   }
@@ -206,7 +211,29 @@ export default function VentasTable() {
                       </TableCell>
                     );
                   }
-
+                
+                  if (column.id === 'borrar') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        {isEditing ? (
+                          <Select
+                            value={editingRow[row.id_venta][column.id] || ''}
+                            onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
+                          >
+                            {lotes && lotes.length > 0 ? (
+                              lotes.map((lote) => (
+                                <MenuItem key={lote.lote} value={lote.lote}>{lote.lote}</MenuItem>
+                              ))
+                            ) : (
+                              <MenuItem value="" disabled>Cargando lotes...</MenuItem>
+                            )}
+                          </Select>
+                        ) : (<>
+                        <Borrar id={row.id} />
+                       </> )}
+                      </TableCell>
+                    );
+                  }
                   if (column.id === 'lote') {
                     return (
                       <TableCell key={column.id} align={column.align}>
