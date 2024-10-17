@@ -147,10 +147,7 @@
   src: url('./Christian Sunday.ttf') format('truetype');
 }
 
-<<<<<<< HEAD
-=======
 @font-face {
   font-family: 'Human Nature - Demo';
-  src: url('./Human Nature - Demo.ttf') format('Truetype');
+  src: url('./HumanNature.ttf') format('Truetype');
 }
->>>>>>> 903b87ef1e74de4a7e19793048d00957587cf745

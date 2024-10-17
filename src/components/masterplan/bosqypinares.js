@@ -9,6 +9,10 @@ import icono4 from '../../Assets/cuatro.png';
 import icono5 from '../../Assets/cinco.png';
 import icono6 from '../../Assets/seis.png';
 import icono7 from '../../Assets/siete.png';
+import pinares from '../../Assets/Pinares.svg';
+import bosques from '../../Assets/Bosques.svg';
+
+
 import '../mapas/config.css'
 const Sectores = () => {
   return (
@@ -23,8 +27,9 @@ const Sectores = () => {
       <div style={styles.sectorContainer}>
         {/* Tarjeta Bosques */}
         <div style={styles.card}>
-          <div style={styles.statusComplete}>Obra Terminada</div>
-          <h3 className='cardTitletarjeta1'>Bosques</h3>
+          <div style={styles.statusComplete}>Obra Terminada</div><br/><br/>
+          <img src={bosques} alt="Bosques" style={{ marginTop: '-10px' }} />
+
           <ul style={styles.list}>
             <li style={styles.listItem}>
               <img src={icono1} alt="Icono 1" style={styles.icon} /> <b>50</b> Lotes Residenciales
@@ -43,20 +48,21 @@ const Sectores = () => {
 
         {/* Tarjeta Pinares */}
         <div style={styles.card}>
-          <div style={styles.statusInProgress}>Obra en curso</div>
-          <h3 className='cardTitletarjeta2'>Pinares</h3>
-          <ul style={styles.list}>
-            <li style={styles.listItem}>
-              <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93</b> Lotes Residenciales
-            </li>
-            <li style={styles.listItem}>
-              <img src={icono6} alt="Icono 6" style={styles.icon} /> Área Comercial
-            </li>
-            <li style={styles.listItem}>
-              <img src={icono7} alt="Icono 7" style={styles.icon} /> Plaza Deportiva
-            </li>
-          </ul>
-        </div>
+  <div style={styles.statusInProgress}>Obra en curso</div>
+  {/* Aquí se inserta el SVG con las medidas específicas */}<br/><br/>
+  <img src={pinares} alt="Pinares" style={{ marginTop: '-10px' }} />
+  <ul style={styles.list}>
+    <li style={styles.listItem}>
+      <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93</b> Lotes Residenciales
+    </li>
+    <li style={styles.listItem}>
+      <img src={icono6} alt="Icono 6" style={styles.icon} /> Área Comercial
+    </li>
+    <li style={styles.listItem}>
+      <img src={icono7} alt="Icono 7" style={styles.icon} /> Plaza Deportiva
+    </li>
+  </ul>
+</div>
       </div>
     </div>
   );
@@ -122,12 +128,13 @@ const styles = {
     top: '0',
     left: '0',
   },
-  cardTitle: {
-    fontSize: '45px',
-    fontWeight: 'bold',
-    color: '#226d6f', // Color verde del título
+  cardTitleImage: {
+    width: '185px',   // Ancho especificado
+    height: '73px',   // Alto especificado
     marginBottom: '15px',
-    fontFamily: 'Human Nature - Demo', // Aplica la fuente
+    position: 'absolute',
+    top: '2386.17px', // Posición Top especificada
+    left: '763.09px', // Posición Left especificada
   },
   list: {
     listStyleType: 'none',
@@ -144,11 +151,6 @@ const styles = {
     marginRight: '10px',
     width: '24px', // Ajuste del tamaño de los iconos
     height: '24px',
-  },
-  // Agregando la fuente Christian Sunday
-  christianSunday: {
-    fontFamily: 'Christian Sunday, Arial, sans-serif',
-  },
-};
-
+  }
+}
 export default Sectores;
