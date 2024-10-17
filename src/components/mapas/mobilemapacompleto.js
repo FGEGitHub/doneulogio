@@ -92,7 +92,7 @@ const Arg = () => {
     defaultPositionX={0}
     defaultPositionY={0}
     defaultScale={1}
-    wheel={{ disabled: posicion0 }}  Deshabilita el zoom cuando posicion0 es true
+    wheel={{ disabled: posicion0 }} // Deshabilita el zoom cuando posicion0 es true
     pan={{ disabled: posicion0 }}  
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
