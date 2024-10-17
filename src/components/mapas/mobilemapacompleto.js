@@ -23,6 +23,7 @@ const Arg = () => {
   const [imagenDeFondoActivada, setImagenDeFondoActivada] = useState(true);
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
   const [posicion0, setPosicion0] = useState(true);
+  const [showRestoreButton, setShowRestoreButton] = useState(false);
 
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
@@ -53,11 +54,12 @@ const Arg = () => {
   const transformWrapperRef = useRef(null);
 
   const cambiarsvg = (e) => {
+    setShowRestoreButton(true)
     if (e === 1) {
         setPosicion0(false);
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-            transformWrapperRef.current.setTransform(0, 0, 5); // Ajusta estos valores según sea necesario
+            transformWrapperRef.current.setTransform(0, 0, 2.5); // Ajusta estos valores según sea necesario
         }
     } else {
         setPosicion0(false);
@@ -126,7 +128,7 @@ const Arg = () => {
                 {lotes ? (
                   <>
                     <div style={{ position: 'relative' }}>
-  {imagenDeFondoActivada && (
+  {imagenDeFondoActivada && (<>
     <img
       src={selectedImage}
       alt="Imagen de fondo"
@@ -139,7 +141,26 @@ const Arg = () => {
         objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
         zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
       }}
-    />
+    /> <button
+    onClick={() => {
+      resetTransform();  // Restaurar la vista completa
+      setPosicion0(true);  // Activa la primera capa del SVG
+      setShowRestoreButton(false);
+    }}// Acción para restaurar la vista
+    color="primary"
+    style={{
+      position: 'absolute',
+      top: '70%', // Ajusta la ubicación verticalmente
+      ledt: '10px', // Ajusta la ubicación horizontalmente
+      zIndex: 1, // Asegura que esté por encima de la imagen
+
+      width: '30%', // Tamaño pequeño del botón
+      height: '30px',
+      padding: '5px',
+      boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.3)',
+    }}
+  >Restaurar</button>
+   </>
   )}  {  selectedImage && <>
 
 {posicion0 ? <div>
