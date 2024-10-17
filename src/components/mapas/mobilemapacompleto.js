@@ -57,13 +57,13 @@ const Arg = () => {
         setPosicion0(false);
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-            transformWrapperRef.current.setTransform(0, 0, 2); // Ajusta estos valores según sea necesario
+            transformWrapperRef.current.setTransform(0, 0, 5); // Ajusta estos valores según sea necesario
         }
     } else {
         setPosicion0(false);
         if (transformWrapperRef.current) {
           // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-          transformWrapperRef.current.setTransform(0, -200, 2); // Ajusta estos valores según sea necesario
+          transformWrapperRef.current.setTransform(0, -200, 3); // Ajusta estos valores según sea necesario
       }
     }
 }; 
@@ -109,13 +109,13 @@ const Arg = () => {
 
              
 
-                <IconButton
+                <button
                   onClick={() => resetTransform()} // Restaurar la vista completa
-                  color="default"
+             
                   style={{ marginBottom: "10px" }}
                 >
-                  <Restore /> Restaurar Vista
-                </IconButton>
+             Restaurar Vista
+                </button>  
               </div>
 
              
