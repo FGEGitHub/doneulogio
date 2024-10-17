@@ -169,12 +169,12 @@ const Arg = () => {
   
   </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
+  <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,1.1)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
    <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
-  <g font-style="normal" stroke="#232323" stroke-width="3.07087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
+  <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,1.1)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
    <text x="1400" y="1600" style={styles.svgText}>Pinares</text>
    </g>
@@ -194,13 +194,13 @@ const Arg = () => {
 </div>
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
-      <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="1129 840 9974 9974"   baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1520 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
- <g transform="scale(1.058,1.058)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+ <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[0].map((tooltipValue) => {
@@ -215,11 +215,11 @@ const Arg = () => {
 
          
         
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[1].map((tooltipValue) => {
@@ -237,12 +237,12 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="0"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#000000" font-weight="400" stroke="none">
    <rect x="0" width="7988" y="0" height="7977"/>
   </g>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="10.22562" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
 
         {[2].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -449,7 +449,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(24)}         fill-rule="evenodd" vector-effect="none" d="M2543.02,1877.7 L2636.67,1876.72 L2633.71,2062.04 L2541.05,2060.07 L2543.02,1877.7"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(24)}         fill-rule="evenodd" vector-effect="none" d="M2543.02,1877.7 L2636.67,1876.72 L2633.71,2062.04 L2541.05,2060.22 L2543.02,1877.7"/></Tooltip>)})}
 
         {[25].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -458,7 +458,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(25)}         fill-rule="evenodd" vector-effect="none" d="M2542.53,2064.01 L2541.05,2062.53 L2537.6,2245.88 L2632.23,2246.37 L2634.7,2063.52 L2542.53,2064.01"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(25)}         fill-rule="evenodd" vector-effect="none" d="M2542.53,2064.01 L2541.05,2062.53 L2537.6,2245.88 L2632.225,2246.37 L2634.7,2063.52 L2542.53,2064.01"/></Tooltip>)})}
 
         {[26].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -620,7 +620,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(43)}         fill-rule="evenodd" vector-effect="none" d="M2251.25,2437.6 L2441,2438.59 L2441,2497.73 L2252.23,2497.24 L2251.25,2437.6"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(43)}         fill-rule="evenodd" vector-effect="none" d="M2251.25,2437.6 L2441,2438.59 L2441,2497.73 L2252.225,2497.24 L2251.25,2437.6"/></Tooltip>)})}
 
         {[44].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -638,7 +638,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(45)}         fill-rule="evenodd" vector-effect="none" d="M2540.07,2311.92 L2633.22,2312.91 L2630.26,2504.14 L2536.62,2500.69 L2540.07,2311.92"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(45)}         fill-rule="evenodd" vector-effect="none" d="M2540.22,2311.92 L2633.22,2312.91 L2630.26,2504.14 L2536.62,2500.69 L2540.22,2311.92"/></Tooltip>)})}
 
         {[46].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -719,7 +719,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.22 L2258.64,2811.69"/></Tooltip>)})}
 
         {[55].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -746,7 +746,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(57)}         fill-rule="evenodd" vector-effect="none" d="M1976.23,3393.27 L2165.98,3394.75 L2166.47,3458.33 L1974.75,3452.9 L1976.23,3393.27"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(57)}         fill-rule="evenodd" vector-effect="none" d="M1976.225,3393.27 L2165.98,3394.75 L2166.47,3458.33 L1974.75,3452.9 L1976.225,3393.27"/></Tooltip>)})}
 
         {[58].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -782,7 +782,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(61)}         fill-rule="evenodd" vector-effect="none" d="M1787.95,3582.04 L1971.3,3584.01 L1971.3,3649.07 L1789.92,3646.11 L1787.95,3582.04"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(61)}         fill-rule="evenodd" vector-effect="none" d="M1787.95,3582.04 L1971.3,3584.01 L1971.3,3649.22 L1789.92,3646.11 L1787.95,3582.04"/></Tooltip>)})}
 
         {[62].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -791,7 +791,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(62)}         fill-rule="evenodd" vector-effect="none" d="M1973.27,3585.98 L2162.53,3586.47 L2162.04,3649.07 L1969.82,3648.08 L1973.27,3585.98"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(62)}         fill-rule="evenodd" vector-effect="none" d="M1973.27,3585.98 L2162.53,3586.47 L2162.04,3649.22 L1969.82,3648.08 L1973.27,3585.98"/></Tooltip>)})}
 
         {[63].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -854,7 +854,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(69)}         fill-rule="evenodd" vector-effect="none" d="M1970.31,3777.7 L2160.07,3779.68 L2159.57,3843.25 L1967.36,3840.3 L1970.31,3777.7"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(69)}         fill-rule="evenodd" vector-effect="none" d="M1970.31,3777.7 L2160.22,3779.68 L2159.57,3843.25 L1967.36,3840.3 L1970.31,3777.7"/></Tooltip>)})}
 
         {[70].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -908,7 +908,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(75)}         fill-rule="evenodd" vector-effect="none" d="M2246.32,3653.25 L2439.52,3655.23 L2438.04,3720.28 L2246.32,3715.36 L2246.32,3653.25"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(75)}         fill-rule="evenodd" vector-effect="none" d="M2246.32,3653.25 L2439.52,3655.225 L2438.04,3720.28 L2246.32,3715.36 L2246.32,3653.25"/></Tooltip>)})}
 
         {[76].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -935,7 +935,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(78)}         fill-rule="evenodd" vector-effect="none" d="M2246.81,3846.46 L2436.56,3845.47 L2437.06,3907.08 L2243.85,3908.07 L2246.81,3846.46"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(78)}         fill-rule="evenodd" vector-effect="none" d="M2246.81,3846.46 L2436.56,3845.47 L2437.06,3907.08 L2243.85,3908.22 L2246.81,3846.46"/></Tooltip>)})}
 
         {[79].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1016,7 +1016,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}         fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}         fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.225,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
 
         {[88].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1025,7 +1025,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(88)}         fill-rule="evenodd" vector-effect="none" d="M1878.15,3969.18 L1961.93,3969.18 L1962.92,4095.85 L1872.23,4097.33 L1878.15,3969.18"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(88)}         fill-rule="evenodd" vector-effect="none" d="M1878.15,3969.18 L1961.93,3969.18 L1962.92,4095.85 L1872.225,4097.33 L1878.15,3969.18"/></Tooltip>)})}
 
         {[89].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1088,7 +1088,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(95)}         fill-rule="evenodd" vector-effect="none" d="M1780.07,4225.47 L1959.96,4228.43 L1957.99,4290.04 L1777.6,4284.62 L1780.07,4225.47"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(95)}         fill-rule="evenodd" vector-effect="none" d="M1780.22,4225.47 L1959.96,4228.43 L1957.99,4290.04 L1777.6,4284.62 L1780.22,4225.47"/></Tooltip>)})}
 
         {[96].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1241,7 +1241,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(112)}    fill-rule="evenodd" vector-effect="none" d="M2574.07,3977.07 L2635.19,3978.05 L2634.2,4168.79 L2570.13,4167.31 L2574.07,3977.07"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(112)}    fill-rule="evenodd" vector-effect="none" d="M2574.22,3977.22 L2635.19,3978.05 L2634.2,4168.79 L2570.13,4167.31 L2574.22,3977.22"/></Tooltip>)})}
 
         {[113].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1259,7 +1259,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(114)}    fill-rule="evenodd" vector-effect="none" d="M2506.06,4170.76 L2698.77,4170.76 L2698.77,4233.36 L2505.07,4232.87 L2506.06,4170.76"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(114)}    fill-rule="evenodd" vector-effect="none" d="M2506.06,4170.76 L2698.77,4170.76 L2698.77,4233.36 L2505.22,4232.87 L2506.06,4170.76"/></Tooltip>)})}
 
         {[115].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1268,7 +1268,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(115)}    fill-rule="evenodd" vector-effect="none" d="M2505.07,4236.32 L2697.29,4237.3 L2693.84,4299.9 L2505.57,4294.47 L2505.07,4236.32"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(115)}    fill-rule="evenodd" vector-effect="none" d="M2505.22,4236.32 L2697.29,4237.3 L2693.84,4299.9 L2505.57,4294.47 L2505.22,4236.32"/></Tooltip>)})}
 
         {[116].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1295,7 +1295,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(118)}    fill-rule="evenodd" vector-effect="none" d="M2632.23,4301.37 L2696.8,4303.35 L2691.87,4491.13 L2629.77,4490.14 L2632.23,4301.37"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(118)}    fill-rule="evenodd" vector-effect="none" d="M2632.225,4301.37 L2696.8,4303.35 L2691.87,4491.13 L2629.77,4490.14 L2632.225,4301.37"/></Tooltip>)})}
 
         {[119].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1385,7 +1385,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(128)}    fill-rule="evenodd" vector-effect="none" d="M1954.54,4929.29 L2143.8,4933.23 L2144.29,5027.37 L1951.58,5024.9 L1954.54,4929.29"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(128)}    fill-rule="evenodd" vector-effect="none" d="M1954.54,4929.29 L2143.8,4933.225 L2144.29,5027.37 L1951.58,5024.9 L1954.54,4929.29"/></Tooltip>)})}
 
         {[129].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1538,7 +1538,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title="Bosques">
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(145)}    fill-rule="evenodd" vector-effect="none" d="M2636.82,1858.61 L2720.92,1860.92 L2721.84,2122.44 L2741.71,2122.91 L2742.17,1859.07 L2822.11,1858.61 L2823.03,1839.2 L2742.17,1838.28 L2742.63,1777.75 L2756.96,1774.51 L2769.9,1763.88 L2774.52,1755.57 L2782.83,1740.78 L2783.3,1712.13 L2774.52,1699.19 L2767.59,1689.49 L2761.58,1683.02 L2748.18,1677.02 L2741.25,1674.24 L2717.22,1672.86 L2705.67,1678.86 L2702.43,1682.56 L2695.04,1691.34 L2689.5,1696.42 L2679.33,1706.13 L2678.41,1712.13 L2677.48,1744.01 L2686.72,1758.34 L2691.35,1765.27 L2695.97,1770.35 L2711.21,1779.13 L2724.61,1779.59 L2724.15,1838.28 L2635.9,1840.59 L2637.75,1649.29 L2916.83,1677.02 L2760.65,2249.51 L2633.59,2244.43 L2636.82,1858.61"/></Tooltip>)})} */}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(145)}    fill-rule="evenodd" vector-effect="none" d="M2636.82,1858.61 L2720.92,1860.92 L2721.84,2122.44 L2741.71,2122.91 L2742.17,1859.22 L2822.11,1858.61 L2823.03,1839.2 L2742.17,1838.28 L2742.63,1777.75 L2756.96,1774.51 L2769.9,1763.88 L2774.52,1755.57 L2782.83,1740.78 L2783.3,1712.13 L2774.52,1699.19 L2767.59,1689.49 L2761.58,1683.02 L2748.18,1677.02 L2741.25,1674.24 L2717.22,1672.86 L2705.67,1678.86 L2702.43,1682.56 L2695.04,1691.34 L2689.5,1696.42 L2679.33,1706.13 L2678.41,1712.13 L2677.48,1744.01 L2686.72,1758.34 L2691.35,1765.27 L2695.97,1770.35 L2711.21,1779.13 L2724.61,1779.59 L2724.15,1838.28 L2635.9,1840.59 L2637.75,1649.29 L2916.83,1677.02 L2760.65,2249.51 L2633.59,2244.43 L2636.82,1858.61"/></Tooltip>)})} */}
 
       
             <Tooltip title="Proyeccion">
@@ -1560,7 +1560,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(148)}    fill-rule="evenodd" vector-effect="none" d="M2582.07,2999.67 L2773.36,3032.01 L2773.36,3335.13 L2574.67,3331.43 L2582.07,2999.67"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(148)}    fill-rule="evenodd" vector-effect="none" d="M2582.22,2999.67 L2773.36,3032.01 L2773.36,3335.13 L2574.67,3331.43 L2582.22,2999.67"/></Tooltip>)})}
   </g>
 
           {[149].map(() => (
@@ -1568,15 +1568,15 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.058,1.058)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
  </g>
 
 </svg>
