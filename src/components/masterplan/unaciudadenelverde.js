@@ -68,12 +68,14 @@ const styles = {
     },
   },
   title: {
+    color:'black',
    // fontSize: '32px',
     fontWeight: 'bold',
     marginBottom: '20px',
     textAlign: 'center', // Centramos el título
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
+      color:'black',
       fontSize: '24px', // Reducimos el tamaño de la fuente
       fontFamily: 'inter',
     },
@@ -110,8 +112,8 @@ const styles = {
     objectFit: 'cover',
     // Estilos para pantallas pequeñas
     '@media (max-width: 768px)': {
-      width: '100px',
-      height: '100px',
+      width: '90px',
+      height: '90px',
     },
   },
   imageText: {
