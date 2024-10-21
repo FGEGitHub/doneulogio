@@ -32,16 +32,16 @@ const Sectores = () => {
 
           <ul style={styles.list}>
             <li style={styles.listItem}>
-              <img src={icono1} alt="Icono 1" style={styles.icon} /> <b>50</b> Lotes Residenciales
+              <img src={icono1} alt="Icono 1" style={styles.icon} /> <b>50 Lotes Residenciales</b>
             </li>
             <li style={styles.listItem}>
-              <img src={icono2} alt="Icono 2" style={styles.icon} /> Parque del Origen
+              <img src={icono2} alt="Icono 2" style={styles.icon} /> <b>Parque del Origen</b>
             </li>
+            <li style={styles.listItemLongText}>
+  <img src={icono3} alt="Icono 3" style={styles.iconLargo} /><b style={styles.llevarizquierda}>Escrituración y Entrega de Posesión Inmediata</b>
+</li>
             <li style={styles.listItem}>
-              <img src={icono3} alt="Icono 3" style={styles.icon} />Escrituración y Entrega de Posesión Inmediata
-            </li>
-            <li style={styles.listItem}>
-              <img src={icono4} alt="Icono 4" style={styles.icon} /> Bosque Nativo
+              <img src={icono4} alt="Icono 4" style={styles.icon} /><b>Bosque Nativo</b> 
             </li>
           </ul>
         </div>
@@ -53,13 +53,13 @@ const Sectores = () => {
   <img src={pinares} alt="Pinares" style={{ marginTop: '-10px' }} />
   <ul style={styles.list}>
     <li style={styles.listItem}>
-      <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93</b> Lotes Residenciales
+      <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93 Lotes Residenciales</b>
     </li>
     <li style={styles.listItem}>
-      <img src={icono6} alt="Icono 6" style={styles.icon} /> Área Comercial
+      <img src={icono6} alt="Icono 6" style={styles.icon} /> <b>Área Comercial</b>
     </li>
     <li style={styles.listItem}>
-      <img src={icono7} alt="Icono 7" style={styles.icon} /> Plaza Deportiva
+      <img src={icono7} alt="Icono 7" style={styles.icon} /> <b>Plaza Deportiva</b>
     </li>
   </ul>
 </div>
@@ -146,11 +146,35 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     fontFamily: "inter", // Aplica la fuente
+    lineHeight: '1.2',
   },
   icon: {
     marginRight: '10px',
     width: '24px', // Ajuste del tamaño de los iconos
     height: '24px',
-  }
+  },
+  iconLargo: {
+   // marginRight: '10px',
+    width: '24px', // Ajuste del tamaño de los iconos
+    height: '24px',
+  },
+  listItemLongText: {
+  fontSize: '16px',
+  marginBottom: '10px',
+  display: 'flex',
+  alignItems: 'center',
+  fontFamily: "inter",
+  lineHeight: '1.2',
+  maxWidth: '280px', // Ajusta el ancho máximo para que no se alargue demasiado
+  whiteSpace: 'normal',
+  wordBreak: 'break-word',
+  marginTop: '-5px', // Reduce el margen superior para acercar el texto a la imagen
+  justifyContent: 'left',
+},
+llevarizquierda: {
+  marginLeft: '4%',
+  justifyContent: 'flex-start', // Usar flex-start para asegurar que el contenido se alinee a la izquierda en flex containers
+  textAlign: 'left', // Alinea el texto a la izquierda
+}
 }
 export default Sectores;
