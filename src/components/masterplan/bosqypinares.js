@@ -38,7 +38,7 @@ const Sectores = () => {
               <img src={icono2} alt="Icono 2" style={styles.icon} /> Parque del Origen
             </li>
             <li style={styles.listItem}>
-              <img src={icono3} alt="Icono 3" style={styles.icon} /> Escrituración y Entrega de Posesión Inmediata
+              <img src={icono3} alt="Icono 3" style={styles.icon} />Escrituración y Entrega de Posesión Inmediata
             </li>
             <li style={styles.listItem}>
               <img src={icono4} alt="Icono 4" style={styles.icon} /> Bosque Nativo

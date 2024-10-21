@@ -121,7 +121,7 @@ const UrbanizacionAbierta = () => {
       <div className="urbanizacion-image-container">
         <img src={foto1} alt="Urbanización Abierta" className="urbanizacion-header-image" />
         <Typography variant="h2" className="urbanizacion-overlay-text">
-          Urbanización <br/>Abierta
+      <strong>  Urbanización <br/>Abierta</strong>  
         </Typography>
       </div>
       <Box className="urbanizacion-section">
