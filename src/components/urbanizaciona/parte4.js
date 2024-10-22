@@ -1,26 +1,50 @@
 import React from 'react';
-import { Box, Grid, Typography, Card, CardContent } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import flechaIzquierda from '../../Assets/iz.png'; // Importa la flecha izquierda
 import flechaDerecha from '../../Assets/der.png'; // Importa la flecha derecha
+import flechaabajo from '../../Assets/flechaabajo.svg'; // Importa la flecha que apunta hacia abajo
+import tarjeta1 from '../../Assets/tarjeta1.svg'; // Importa tarjeta1
+import tarjeta2 from '../../Assets/tarjeta2.svg'; // Importa tarjeta2
+import tarjeta3 from '../../Assets/tarjeta3.svg'; // Importa tarjeta3
 
 const UrbanizacionAbierta = () => {
   return (
-    <Box sx={{ backgroundColor: '#357369', padding: '40px ', height: '847.15px', position: 'relative' }}>
+    <Box
+      sx={{
+        backgroundColor: '#246F74',
+        padding: '40px',
+        paddingBottom: '80px',  // Aumenta el padding inferior para extender 40px más
+        minHeight: '100vh',     // Asegura que el fondo abarque toda la pantalla
+        position: 'relative'
+      }}
+    >
       {/* Título con salto de línea */}
       <Typography
-        variant="h4"
-        sx={{
-          textAlign: 'center',
-          color: 'white',
-          marginBottom: '40px',
-          fontFamily: 'Inter',
-        }}
-      >
-        Aspectos clave de una <br />
-        <strong>Urbanización abierta</strong>
-      </Typography>
+  variant="h4"
+  sx={{
+    textAlign: 'center',
+    color: 'white',
+    //marginBottom: '5px',
+    fontFamily: 'Inter',
+    fontSize: '2.5rem', // Tamaño de letra aumentado
+  }}
+>
+  Aspectos clave de una <br />
+  <strong>Urbanización abierta</strong>
+</Typography>
 
-      {/* Flechas largas más separadas */}
+      {/* Flecha abajo más separada, entre el título y las tarjetas */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}> {/* Aquí se puede reducir el espacio */}
+        <img
+          src={flechaabajo}
+          alt="Flecha Abajo"
+          style={{
+            height: '55px',
+          }}
+        />
+      </Box>
+
+      {/* Flechas laterales */}
       <Box sx={{ position: 'relative', marginBottom: '50px' }}>
         {/* Flecha izquierda */}
         <img
@@ -28,10 +52,10 @@ const UrbanizacionAbierta = () => {
           alt="Flecha Izquierda"
           style={{
             position: 'absolute',
-            top: '-80px',
+            top: '-120px',
             left: '25%',
-            height: '100px',
-            transform: 'rotate(20deg)',
+            height: '80px',
+            transform: 'rotate(5deg)',
           }}
         />
         {/* Flecha derecha */}
@@ -40,126 +64,50 @@ const UrbanizacionAbierta = () => {
           alt="Flecha Derecha"
           style={{
             position: 'absolute',
-            top: '-80px',
+            top: '-120px',
             right: '25%',
-            height: '100px',
-            transform: 'rotate(-20deg)',
+            height: '80px',
+            transform: 'rotate(-5deg)',
           }}
         />
       </Box>
 
-      <br /><br />
-      {/* Tarjetas centradas */}
-      <Grid container spacing={4} justifyContent="center" alignItems="center" >
-        {/* Tarjeta 1 */}
+      {/* Imágenes centradas más grandes */}
+      <Grid container spacing={4} justifyContent="center" alignItems="center">
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
-          <Card
-            sx={{
-              height: '520px',
-              width: '85%',
-              borderRadius: '16px', // Bordes redondeados
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center', // Centra el contenido verticalmente
-              alignItems: 'center',   // Centra el contenido horizontalmente
+          <img
+            src={tarjeta1}
+            alt="Tarjeta 1"
+            style={{
+              height: '90%',  // Modificar el tamaño aquí
+              width: '90%',   // Modificar el tamaño aquí
+              objectFit: 'contain'
             }}
-          >
-            <CardContent
-              sx={{
-                padding: '20px ', // Ajusta el espacio interior, puedes cambiar el valor
-                flexGrow: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center', // Centra el texto verticalmente
-                alignItems: 'center', // Centra el texto horizontalmente
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px',textAlign: 'left',fontFamily:'inter'  }} // Tamaño del título más grande
-              >
-                Libertad de Decisiones
-              </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
-                Ante la inexistencia de consorcios de administración y de reglamentos internos de convivencia y construcción, cada propietario goza de total libertad en cuanto a las decisiones sobre su lote (respetando la legislación aplicable).
-              </Typography>
-            </CardContent>
-          </Card>
+          />
         </Grid>
 
-        {/* Tarjeta 2 */}
-        <Grid item xs={12} sm={4} display="flex" justifyContent="center">
-          <Card
-            sx={{
-              height: '520px',
-              width: '85%',
-              borderRadius: '16px', // Bordes redondeados
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center', // Centra el contenido verticalmente
-              alignItems: 'center',   // Centra el contenido horizontalmente
+        <Grid item xs={12} sm={4} display="flex" justifyContent="center" position="relative">
+          <img
+            src={tarjeta2}
+            alt="Tarjeta 2"
+            style={{
+              height: '90%',  // Modificar el tamaño aquí
+              width: '90%',   // Modificar el tamaño aquí
+              objectFit: 'contain'
             }}
-          >
-            <CardContent
-              sx={{
-                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
-                flexGrow: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center', // Centra el texto verticalmente
-                alignItems: 'center', // Centra el texto horizontalmente
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px',  marginTottom: '20px',color: '#357369', fontSize: '27px' ,textAlign: 'left', fontFamily:'inter' }} // Tamaño del título más grande
-              >
-                Integración al Entorno
-              </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
-                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.       <br/><br/><br/><br/>                                                      
-              </Typography>
-            </CardContent>
-          </Card>
+          />
         </Grid>
 
-        {/* Tarjeta 3 */}
         <Grid item xs={12} sm={4} display="flex" justifyContent="center">
-          <Card
-            sx={{
-              height: '520px',
-              width: '85%',
-              borderRadius: '16px', // Bordes redondeados
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center', // Centra el contenido verticalmente
-              alignItems: 'center',   // Centra el contenido horizontalmente
+          <img
+            src={tarjeta3}
+            alt="Tarjeta 3"
+            style={{
+              height: '90%',  // Modificar el tamaño aquí
+              width: '90%',   // Modificar el tamaño aquí
+              objectFit: 'contain'
             }}
-          >
-            <CardContent
-              sx={{
-                padding: '20px', // Ajusta el espacio interior, puedes cambiar el valor
-                flexGrow: 1,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center', // Centra el texto verticalmente
-                alignItems: 'center', // Centra el texto horizontalmente
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{ fontWeight: 'bold', marginBottom: '20px', color: '#357369', fontSize: '27px',textAlign: 'left' ,fontFamily:'inter' }} // Tamaño del título más grande
-              >
-                Interacción Social y Comunidad Activa
-              </Typography>
-              <Typography variant="body2" sx={{ color: '#757575', fontSize: '25px', lineHeight: 1.1,  textAlign: 'left',fontFamily:'inter' }}>
-                En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.<br/><br/>  <br/>
-              </Typography>
-            </CardContent>
-          </Card>
+          />
         </Grid>
       </Grid>
     </Box>

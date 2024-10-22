@@ -15,9 +15,13 @@ import image2c from '../../Assets/carrusel2.svg'; // Imagen 3 del segundo carrus
 // Aumentamos la altura general de las tarjetas (más grandes)
 const StyledCard = styled(Card)({
   display: 'flex',
-  boxShadow: 'none',
+  boxShadow: 'none', // Asegúrate de que no haya sombra
   border: '1px solid lightgrey',
-  height: '400px', // Ajuste de altura para hacer la tarjeta más grande
+  height: '400px',
+  transition: 'none', // Evita cualquier transición de efecto de hover
+  '&:hover': {
+    boxShadow: 'none', // Elimina cualquier sombra al hacer hover
+  },
 });
 
 // Control de tamaño del contenedor de texto

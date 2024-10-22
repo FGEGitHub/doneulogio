@@ -127,23 +127,27 @@ const UrbanizacionAbierta = () => {
       <Box className="urbanizacion-section">
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
-            <Typography
-              variant="body1"
-              paragraph
-              sx={{
-                fontFamily: 'Inter',
-                fontSize: '23px',
-                fontWeight: 400,
-                lineHeight: '38.73px',
-                textAlign: 'left',
-                marginTop: '20%',
-                marginLeft: '10%',
-                marginRight: '10%',
-              }}
-            >
-              Al desarrollar un proyecto al estilo Urbanización Abierta se busca <strong>generar un modelo de “Ciudad dentro del verde”</strong>, logrando integrar el Barrio al entorno natural que lo rodea y conformando una comunidad activa.
-            </Typography>
+          <Typography
+  variant="body1"
+  paragraph
+  sx={{
+    fontFamily: 'Inter',
+    fontSize: '23px',
+    fontWeight: 400,
+    lineHeight: '1.2', // Reducir el espacio entre líneas
+    textAlign: 'left',
+    marginTop: '20%',
+    marginLeft: '20%',
+    marginRight: '20%',
+    letterSpacing: '0.2px', // Ajusta el espaciado entre letras
+    textAlign: 'left',
+  }}
+>
+  Al desarrollar un proyecto al estilo Urbanización Abierta se busca <strong>generar un modelo de “Ciudad dentro del verde”</strong>, logrando integrar el Barrio al entorno natural que lo rodea y conformando una comunidad activa.
+</Typography>
+
           </Grid>
+
           <Grid item xs={12} md={6}>
             <img
               src={foto2}
