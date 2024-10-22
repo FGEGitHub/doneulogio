@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import mail from '../../Assets/mail.svg';
+import wasap from '../../Assets/wasap.svg';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +26,13 @@ const ContactForm = () => {
 
   return (
     <div style={styles.container}>
+     
       <form style={styles.form} onSubmit={handleSubmit}>
+      <h3    style={{ 
+     textAlign: 'left',
+      fontFamily: "Inter", 
+         fontSize: "24px"
+    }}>Completá los datos y nuestro equipo de ventas se contactara a la brevedad.</h3>
         <input
           style={styles.input}
           type="text"
@@ -67,8 +75,12 @@ const ContactForm = () => {
         <button style={styles.button} type="submit">Enviar</button>
       </form>
       <div style={styles.contactInfo}>
-        <p><span role="img" aria-label="phone">📞</span> 3794-600215 | 3794-781818</p>
-        <p><span role="img" aria-label="email">📧</span> dobled.desarrolloinmob@gmail.com</p>
+        <p>
+          <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
+        </p>
+        <p>
+          <img src={mail} alt="Correo electrónico" style={styles.icon} /> doneulogio.ua@gmail.com
+        </p>
       </div>
     </div>
   );
@@ -116,6 +128,11 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     fontSize: '16px',
+  },
+  icon: {
+    width: '24px', // Ajusta el tamaño de las imágenes
+    height: '24px',
+    marginRight: '8px',
   },
 };
 

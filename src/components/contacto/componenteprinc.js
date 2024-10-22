@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import foto1 from '../../Assets/contactanos.png';
 import foto2 from '../../Assets/mapacontactanos.png';
-import DYC from '../../Assets/dyc.png';
+import DYC from '../../Assets/dyc.svg';
 import Formulario from './formulario';
 import logo from '../../Assets/logo.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
@@ -120,7 +120,7 @@ const UrbanizacionAbierta = () => {
         <Formulario />
 
       </Container>
-      
+      <br/>    <br/>    <br/>
       <img 
         src={DYC} 
         alt="Urbanización Abierta" 
