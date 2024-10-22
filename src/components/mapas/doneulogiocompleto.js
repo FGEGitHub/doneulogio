@@ -205,7 +205,7 @@ const Arg = () => {
 <img 
         src={Redes} 
         alt="Urbanización Abierta" 
-        sx={{  height: '80%'} } 
+        sx={{  height: '90%'} } 
       />
 
       <div       style={{ height: '100vh' }} 

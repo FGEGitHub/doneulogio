@@ -9,60 +9,34 @@ import icono4 from '../../Assets/cuatro.png';
 import icono5 from '../../Assets/cinco.png';
 import icono6 from '../../Assets/seis.png';
 import icono7 from '../../Assets/siete.png';
-import pinares from '../../Assets/Pinares.svg';
-import bosques from '../../Assets/Bosques.svg';
-
+import pinares from '../../Assets/tarjetapinares.svg';
+import bosques from '../../Assets/tarjetabosques.svg';
 
 import '../mapas/config.css'
+
 const Sectores = () => {
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Nuestros sectores </h2>
-      
+
       <div style={styles.arrowsRow}>
         {/* Flechas lado a lado */}
         <img src={Flecha1} alt="Flecha 1" style={styles.arrow} />
         <img src={Flecha2} alt="Flecha 2" style={styles.arrow} />
       </div>
+      
       <div style={styles.sectorContainer}>
-        {/* Tarjeta Bosques */}
-        <div style={styles.card}>
-          <div style={styles.statusComplete}>Obra Terminada</div><br/><br/>
-          <img src={bosques} alt="Bosques" style={{ marginTop: '-10px' }} />
-
-          <ul style={styles.list}>
-            <li style={styles.listItem}>
-              <img src={icono1} alt="Icono 1" style={styles.icon} /> <b>50 Lotes Residenciales</b>
-            </li>
-            <li style={styles.listItem}>
-              <img src={icono2} alt="Icono 2" style={styles.icon} /> <b>Parque del Origen</b>
-            </li>
-            <li style={styles.listItemLongText}>
-  <img src={icono3} alt="Icono 3" style={styles.iconLargo} /><b style={styles.llevarizquierda}>Escrituración y Entrega de Posesión Inmediata</b>
-</li>
-            <li style={styles.listItem}>
-              <img src={icono4} alt="Icono 4" style={styles.icon} /><b>Bosque Nativo</b> 
-            </li>
-          </ul>
+        {/* Imagen Bosques */}
+        <div style={styles.imageContainer}>
+          <div style={styles.statusComplete}>Obra Terminada</div>
+          <img src={bosques} alt="Bosques" style={styles.sectorImage} />
         </div>
 
-        {/* Tarjeta Pinares */}
-        <div style={styles.card}>
-  <div style={styles.statusInProgress}>Obra en curso</div>
-  {/* Aquí se inserta el SVG con las medidas específicas */}<br/><br/>
-  <img src={pinares} alt="Pinares" style={{ marginTop: '-10px' }} />
-  <ul style={styles.list}>
-    <li style={styles.listItem}>
-      <img src={icono5} alt="Icono 5" style={styles.icon} /> <b>93 Lotes Residenciales</b>
-    </li>
-    <li style={styles.listItem}>
-      <img src={icono6} alt="Icono 6" style={styles.icon} /> <b>Área Comercial</b>
-    </li>
-    <li style={styles.listItem}>
-      <img src={icono7} alt="Icono 7" style={styles.icon} /> <b>Plaza Deportiva</b>
-    </li>
-  </ul>
-</div>
+        {/* Imagen Pinares */}
+        <div style={styles.imageContainer}>
+          <div style={styles.statusInProgress}>Obra en curso</div>
+          <img src={pinares} alt="Pinares" style={styles.sectorImage} />
+        </div>
       </div>
     </div>
   );
@@ -75,7 +49,7 @@ const styles = {
     alignItems: 'center',
     backgroundColor: '#226d6f', // Color de fondo general
     padding: '40px',
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'inter',
     color: '#fff',
   },
   title: {
@@ -100,21 +74,14 @@ const styles = {
     justifyContent: 'center',
     gap: '40px',
   },
-  card: {
-    backgroundColor: '#fff',
-    color: '#000',
-    borderRadius: '8px',
-    padding: '20px',
-    width: '350px',
-    height: '380px', // Aumentar la altura de las tarjetas
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    position: 'relative', // Necesario para posicionar los carteles
+  imageContainer: {
+    position: 'relative',
   },
   statusComplete: {
     backgroundColor: '#8AB933', // Verde para "Obra Terminada"
     color: '#fff',
-    borderRadius: '0 20px 20px 0', // Redondear más pronunciado en la esquina derecha
-    padding: '5px 10px',
+    borderRadius: '0 20px 20px 0',
+    padding: '5px 15px',
     position: 'absolute',
     top: '0',
     left: '0',
@@ -122,59 +89,18 @@ const styles = {
   statusInProgress: {
     backgroundColor: '#DAC714', // Amarillo para "Obra en curso"
     color: '#fff',
-    borderRadius: '0 20px 20px 0', // Redondear más pronunciado en la esquina derecha
+    borderRadius: '0 20px 20px 0',
     padding: '5px 10px',
     position: 'absolute',
     top: '0',
     left: '0',
   },
-  cardTitleImage: {
-    width: '185px',   // Ancho especificado
-    height: '73px',   // Alto especificado
-    marginBottom: '15px',
-    position: 'absolute',
-    top: '2386.17px', // Posición Top especificada
-    left: '763.09px', // Posición Left especificada
+  sectorImage: {
+    width: '350px',
+    height: '380px',
+    objectFit: 'cover',
+    borderRadius: '8px',
   },
-  list: {
-    listStyleType: 'none',
-    padding: 0,
-  },
-  listItem: {
-    fontSize: '16px',
-    marginBottom: '10px',
-    display: 'flex',
-    alignItems: 'center',
-    fontFamily: "inter", // Aplica la fuente
-    lineHeight: '1.2',
-  },
-  icon: {
-    marginRight: '10px',
-    width: '24px', // Ajuste del tamaño de los iconos
-    height: '24px',
-  },
-  iconLargo: {
-   // marginRight: '10px',
-    width: '24px', // Ajuste del tamaño de los iconos
-    height: '24px',
-  },
-  listItemLongText: {
-  fontSize: '16px',
-  marginBottom: '10px',
-  display: 'flex',
-  alignItems: 'center',
-  fontFamily: "inter",
-  lineHeight: '1.2',
-  maxWidth: '280px', // Ajusta el ancho máximo para que no se alargue demasiado
-  whiteSpace: 'normal',
-  wordBreak: 'break-word',
-  marginTop: '-5px', // Reduce el margen superior para acercar el texto a la imagen
-  justifyContent: 'left',
-},
-llevarizquierda: {
-  marginLeft: '4%',
-  justifyContent: 'flex-start', // Usar flex-start para asegurar que el contenido se alinee a la izquierda en flex containers
-  textAlign: 'left', // Alinea el texto a la izquierda
-}
-}
+};
+
 export default Sectores;

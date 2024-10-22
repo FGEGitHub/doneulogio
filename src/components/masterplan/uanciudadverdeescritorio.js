@@ -15,7 +15,7 @@ const CiudadVerde = () => {
         </p>
       </div>
       <div style={styles.imagesSection}>
-        <div style={styles.imageWrapper}>
+        <div style={styles.imageWrapperizquerda}>
           <img src={Image1} alt="Lotes" style={styles.image} />
           <p style={styles.imageText}>+500 Lotes</p>
         </div>
@@ -23,7 +23,7 @@ const CiudadVerde = () => {
           <img src={Image2} alt="Superficie promedio" style={styles.image} />
           <p style={styles.imageText}>750m² superficie promedio</p>
         </div>
-        <div style={styles.imageWrapper}>
+        <div style={styles.imageWrapperizquerda}>
           <img src={Image3} alt="Espacios comunes" style={styles.image} />
           <p style={styles.imageText}>Espacios comunes</p>
         </div>
@@ -45,47 +45,67 @@ const styles = {
     backgroundColor: '#fff',
     color: '#000',
     borderRadius: '8px',
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'inter',
     width: 'calc(80% - 40px)',
     margin: '0 auto',
     boxSizing: 'border-box',
   },
   textSection: {
     flex: '1',
-    marginRight: '30px',
+    marginRight: '35px',
+    maxWidth: '500px',
+    marginLeft: '20px',
   },
   title: {
     fontSize: '36px',
+    color: 'black',
     fontWeight: 'bold',
-    marginBottom: '20px',
+    fontFamily: 'inter',
+    marginBottom: '10px',
     textAlign: 'left',
   },
   description: {
-    fontSize: '18px',
-    lineHeight: '1.9',
+    fontSize: '21px',
+    lineHeight: '1.4',
     textAlign: 'left',
+    fontFamily: 'inter',
   },
   imagesSection: {
     flex: '1',
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)', // Ajuste de 2 columnas
-    gap: '20px',
+    gridTemplateColumns: 'repeat(2, 1fr)', // Dos columnas de igual ancho
+    columnGap: '5px', // Reducido aún más el espacio entre columnas
+        rowGap: '20px', // Puedes ajustar el espacio entre filas si lo necesitas
+     //   justifyItems: 'start', // Alinea las columnas al principio
   },
   imageWrapper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    padding: '5px',
+    marginRight:'90px'
+  },
+  imageWrapperizquerda: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '5px',
+    marginRight:'-175px'
+    
   },
   image: {
-    width: '120px', // Tamaño específico para las imágenes
-    height: '120px',
-    marginBottom: '10px',
-    objectFit: 'contain', // Evita que las imágenes se corten
+    width: '150px',
+    height: '150px',
+    marginBottom: '5px',
+    objectFit: 'contain',
   },
   imageText: {
-    fontSize: '16px',
+    fontSize: '14px',
     textAlign: 'center',
   },
 };
+
+
+
 
 export default CiudadVerde;

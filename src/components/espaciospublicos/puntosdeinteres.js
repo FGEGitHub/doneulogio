@@ -1,8 +1,8 @@
 import React from 'react';
-import foto11 from '../../Assets/foto11.png'; 
-import foto2 from '../../Assets/foto2.png';
-import foto3 from '../../Assets/foto3.png';
-import foto4 from '../../Assets/foto4.png';
+import foto11 from '../../Assets/puente.svg'; 
+import foto2 from '../../Assets/camping.svg';
+import foto3 from '../../Assets/capilla.svg';
+import foto4 from '../../Assets/sancayetano.svg';
 
 const InterestPoints = () => {
   return (
@@ -33,12 +33,15 @@ const InterestPoints = () => {
 const styles = {
   container: {
     textAlign: 'center',
-    padding: '20px',
+    padding: '10px',
+    marginLeft:'-5%'
   },
   title: {
     fontSize: '28px', // Aumentamos el tamaño del título
     fontWeight: 'bold',
-    marginBottom: '30px',
+    marginBottom: '32px',
+    fontFamily: 'inter',
+    color:'#1A393C'
   },
   grid: {
     display: 'flex',
@@ -51,16 +54,16 @@ const styles = {
     margin: '5px', // Reducimos el margen para que las imágenes estén más juntas
   },
   image: {
-    width: '115%',  // La imagen ocupará el 100% del ancho del contenedor
+    width: '135%',  // La imagen ocupará el 100% del ancho del contenedor
     height: 'auto', // Se mantiene el aspecto original de la imagen
-    borderRadius: '8px',
-    border: '2px solid #009688',
+   
   },
   caption: {
     marginTop: '12px', // Ajuste en el espaciado del texto debajo de la imagen
-    fontSize: '18px', // Tamaño de fuente mayor para el pie de imagen
+    fontSize: '26px', // Tamaño de fuente mayor para el pie de imagen
     fontWeight: 'bold',
     color: '#4CAF50',
+    fontFamily: 'inter',
   },
 };
 
