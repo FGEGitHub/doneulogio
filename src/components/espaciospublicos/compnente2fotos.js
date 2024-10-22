@@ -1,27 +1,21 @@
 import React from 'react';
-import { Box, Grid, Typography, Container, Card, CardContent } from '@mui/material';
+import { Box, Grid, Typography, Container, CardContent } from '@mui/material';
 import { styled } from '@mui/system';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importa los estilos del carrusel
 
-import image1a from '../../Assets/carrusel1.svg'; // Imagen 1 del carrusel
+import image1a from '../../Assets/carruselprincipio.svg'; // Imagen 1 del carrusel
 import image1b from '../../Assets/carrusel2.svg'; // Imagen 2 del carrusel
 import image1c from '../../Assets/carrusel1.svg'; // Imagen 3 del carrusel
 
-import image2a from '../../Assets/carrusel2.svg'; // Imagen 1 del segundo carrusel
+import image2a from '../../Assets/carruselprincipio2.svg'; // Imagen 1 del segundo carrusel
 import image2b from '../../Assets/carrusel1.svg'; // Imagen 2 del segundo carrusel
 import image2c from '../../Assets/carrusel2.svg'; // Imagen 3 del segundo carrusel
 
-// Aumentamos la altura general de las tarjetas (más grandes)
-const StyledCard = styled(Card)({
+// Modificamos el componente para eliminar bordes y fondo, y aumentar tamaño
+const StyledContainer = styled(Box)({
   display: 'flex',
-  boxShadow: 'none', // Asegúrate de que no haya sombra
-  border: '1px solid lightgrey',
-  height: '400px',
-  transition: 'none', // Evita cualquier transición de efecto de hover
-  '&:hover': {
-    boxShadow: 'none', // Elimina cualquier sombra al hacer hover
-  },
+  height: '600px', // Aumenta el tamaño del contenedor
 });
 
 // Control de tamaño del contenedor de texto
@@ -30,23 +24,25 @@ const CardText = styled(CardContent)({
   flexDirection: 'column',
   justifyContent: 'center',
   padding: '16px',
-  width: '50%', // Controla el ancho del contenedor de texto
-  height: '100%', // Hacemos que el texto ocupe toda la altura de la tarjeta
+  width: '60%', // Aumenta el ancho del contenedor de texto
+  height: '100%', // Hacemos que el texto ocupe toda la altura del contenedor
+  marginLeft: '20px', // Aumenta el margen izquierdo para separar el texto del carrusel
 });
 
 const StyledTypography = styled(Typography)({
-  fontFamily: 'Montserrat, sans-serif',
+  fontFamily: 'inter',
   color: '#000',
   marginBottom: '10px',
 });
 
 // Ajustamos el carrusel al nuevo tamaño
 const CarouselContainer = styled(Box)({
-  width: '50%', // Ajusta el ancho del carrusel aquí
+  width: '600px', // Aumenta el ancho del carrusel
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%', // El carrusel también debe ocupar toda la altura de la tarjeta
+  height: '100%', // El carrusel también debe ocupar toda la altura del contenedor
+  marginRight: '20px', // Aumenta el margen derecho para separar el carrusel del texto
 });
 
 const PublicSpaces = () => {
@@ -55,66 +51,97 @@ const PublicSpaces = () => {
       <Grid container spacing={4}>
         {/* Primer bloque: Carrusel y texto */}
         <Grid item xs={12} md={12}>
-          <StyledCard>
+          <StyledContainer>
             <CarouselContainer>
               <Carousel
-                showArrows={true}
+                showArrows={false} // Oculta las flechas del carrusel
                 infiniteLoop={true}
                 showThumbs={false}
                 autoPlay={true}
                 interval={3000}
+                transitionTime={500}
+                centerMode={true}
+                centerSlidePercentage={100} // Muestra una imagen a la vez completamente centrada
+                showStatus={false} // Oculta el texto "1 of 3"
               >
-                {/* Ajuste de tamaño para hacer las imágenes cuadradas */}
                 <div>
-                  <img src={image1a} alt="Imagen 1a" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image1a} alt="Imagen 1a" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1b} alt="Imagen 1b" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image1b} alt="Imagen 1b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1c} alt="Imagen 1c" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image1c} alt="Imagen 1c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
               </Carousel>
             </CarouselContainer>
             <CardText>
-              <StyledTypography variant="h5">Parque del Origen</StyledTypography>
-              <Typography variant="body1">
-                Es un desarrollo residencial compuesto por 93 lotes rodeados de naturaleza. El sector cuenta con dos manzanas destinadas a lotes comerciales, ofreciendo una oportunidad perfecta para negocios prósperos en un entorno en crecimiento.
+              <StyledTypography
+                variant="h5"
+                style={{
+                  textAlign: 'left', // Alineación del texto a la izquierda
+                  fontSize: '32px',  // Ajusta el tamaño de la fuente
+                  fontFamily: 'inter', // Cambia el tipo de letra
+                }}
+              >
+                <strong>Parque del Origen</strong>
+              </StyledTypography>
+              <Typography
+                variant="body1"
+                style={{
+                  textAlign: 'justify', // Justifica el texto
+                  fontSize: '24px', // Ajusta el tamaño de la fuente para el cuerpo del texto
+                  fontFamily: 'inter', // Cambia el tipo de letra si lo deseas
+                }}
+              >
+                Primer espacio público del proyecto, donde todo se originó. Ubicado a la entrada del bosque nativo del sector Bosques, cuenta con espacios para sentarse a compartir y disfrutar de un entorno sereno y natural. Ideal para quienes buscan un momento de desconexión.
               </Typography>
             </CardText>
-          </StyledCard>
+          </StyledContainer>
         </Grid>
 
         {/* Segundo bloque: Texto y luego carrusel */}
         <Grid item xs={12} md={12}>
-          <StyledCard>
+          <StyledContainer>
             <CardText>
-              <StyledTypography variant="h5">Bosque Nativo</StyledTypography>
-              <Typography variant="body1">
-                Es un desarrollo que se destaca por su conexión directa con la naturaleza. Con 50 lotes que varían en superficie y cantidad de arbolado, este sector ofrece una diversidad de opciones para adaptarse a las preferencias de cada cliente.
+              <StyledTypography variant="h5"    
+                style={{
+                  textAlign: 'left', // Alineación del texto a la izquierda
+                  fontSize: '32px',  // Ajusta el tamaño de la fuente
+                  fontFamily: 'inter', // Cambia el tipo de letra
+                }}> <strong>Bosque Nativo</strong></StyledTypography>
+              <Typography variant="body1"  style={{
+                  textAlign: 'justify', // Justifica el texto
+                  fontSize: '24px', // Ajusta el tamaño de la fuente para el cuerpo del texto
+                  fontFamily: 'inter', // Cambia el tipo de letra si lo deseas
+                }}>
+                Primer espacio público del proyecto, donde todo se originó. Ubicado a la entrada del bosque nativo del sector Bosques, cuenta con espacios para sentarse a compartir y disfrutar de un entorno sereno y natural. Ideal para quienes buscan un momento de desconexión.
               </Typography>
             </CardText>
             <CarouselContainer>
               <Carousel
-                showArrows={true}
+                showArrows={false} // Oculta las flechas del carrusel
                 infiniteLoop={true}
                 showThumbs={false}
                 autoPlay={true}
                 interval={3000}
+                transitionTime={500}
+                centerMode={true}
+                centerSlidePercentage={100} // Muestra una imagen a la vez completamente centrada
+                showStatus={false} // Oculta el texto "1 of 3"
               >
-                {/* Ajuste de tamaño para hacer las imágenes cuadradas */}
                 <div>
-                  <img src={image2a} alt="Imagen 2a" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image2a} alt="Imagen 2a" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image2b} alt="Imagen 2b" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image2b} alt="Imagen 2b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image2c} alt="Imagen 2c" style={{ height: '300px', width: '300px', objectFit: 'cover' }} /> {/* Ajusta el tamaño aquí */}
+                  <img src={image2c} alt="Imagen 2c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
               </Carousel>
             </CarouselContainer>
-          </StyledCard>
+          </StyledContainer>
         </Grid>
       </Grid>
     </Container>
