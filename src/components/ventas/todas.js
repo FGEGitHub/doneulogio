@@ -142,8 +142,7 @@ export default function VentasTable() {
                           ) : (
                             <MenuItem value="" disabled>Cargando lotes...</MenuItem>
                           )}
-                        </Select>     <Borrar
-                        id={column.id}/>x
+                        </Select>   
                       </TableCell>
                     );
                   }
