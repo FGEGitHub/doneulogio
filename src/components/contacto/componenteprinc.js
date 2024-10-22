@@ -4,7 +4,7 @@ import foto1 from '../../Assets/contactanos.png';
 import foto2 from '../../Assets/mapacontactanos.png';
 import DYC from '../../Assets/dyc.png';
 import Formulario from './formulario';
-import logo from '../../Assets/logonav2.png';
+import logo from '../../Assets/logo.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
 import { useNavigate } from "react-router-dom";
 

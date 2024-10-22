@@ -7,6 +7,8 @@ import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } 
 import { IconButton } from '@mui/material';
 import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
 import Gps from "../../Assets/svgdoncompleto.svg";
+import Redes from "../../Assets/redes.svg";
+
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
@@ -200,6 +202,12 @@ const Arg = () => {
     </div>
 <Componente1/>
 <br/><br/><br/>
+<img 
+        src={Redes} 
+        alt="Urbanización Abierta" 
+        sx={{  height: '80%'} } 
+      />
+
       <div       style={{ height: '100vh' }} 
       >
       <TransformWrapper
