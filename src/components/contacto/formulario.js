@@ -26,29 +26,31 @@ const ContactForm = () => {
 
   return (
     <div style={styles.container}>
-     
       <form style={styles.form} onSubmit={handleSubmit}>
-      <h3    style={{ 
-     textAlign: 'left',
-      fontFamily: "Inter", 
-         fontSize: "24px"
-    }}>Completá los datos y nuestro equipo de ventas se contactara a la brevedad.</h3>
-        <input
-          style={styles.input}
-          type="text"
-          name="nombre"
-          placeholder="Nombre"
-          value={formData.nombre}
-          onChange={handleChange}
-        />
-        <input
-          style={styles.input}
-          type="text"
-          name="apellido"
-          placeholder="Apellido"
-          value={formData.apellido}
-          onChange={handleChange}
-        />
+        <h3 style={styles.title}>
+          Completá los datos y nuestro equipo de ventas se contactara a la brevedad.
+        </h3>
+        
+        {/* Agrupando Nombre y Apellido en una misma fila */}
+        <div style={styles.row}>
+          <input
+            style={styles.inputHalf}
+            type="text"
+            name="nombre"
+            placeholder="Nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+          />
+          <input
+            style={styles.inputHalf}
+            type="text"
+            name="apellido"
+            placeholder="Apellido"
+            value={formData.apellido}
+            onChange={handleChange}
+          />
+        </div>
+
         <input
           style={styles.input}
           type="email"
@@ -74,11 +76,12 @@ const ContactForm = () => {
         />
         <button style={styles.button} type="submit">Enviar</button>
       </form>
+
       <div style={styles.contactInfo}>
-        <p>
+      <p  style={{  alignItems: 'left'}}>
           <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
         </p>
-        <p>
+        <p  style={{  alignItems: 'left'}}>
           <img src={mail} alt="Correo electrónico" style={styles.icon} /> doneulogio.ua@gmail.com
         </p>
       </div>
@@ -98,12 +101,31 @@ const styles = {
     flexDirection: 'column',
     width: '60%',
   },
+  title: {
+    textAlign: 'left',
+    fontFamily: "Inter",
+    fontSize: "24px",
+    marginBottom: '20px',
+  },
+  row: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
   input: {
     marginBottom: '10px',
     padding: '10px',
     fontSize: '16px',
     borderRadius: '5px',
     border: '1px solid #ccc',
+    width: '100%',
+  },
+  inputHalf: {
+    marginBottom: '10px',
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    width: '48%', // Ocupa la mitad del espacio disponible
   },
   textarea: {
     marginBottom: '10px',
@@ -130,7 +152,7 @@ const styles = {
     fontSize: '16px',
   },
   icon: {
-    width: '24px', // Ajusta el tamaño de las imágenes
+    width: '24px',
     height: '24px',
     marginRight: '8px',
   },
