@@ -112,13 +112,15 @@
   }
 }
 .svgTextpinares {
-  fill: #fff;
-  stroke: #fff;
-  font-size: 90px;
+  fill: #fff; /* Relleno blanco */
+  stroke: #fff; /* Contorno blanco */
+  fill-opacity: 1; /* Opacidad del relleno completamente sólida */
+  stroke-opacity: 1; /* Opacidad del trazo completamente sólida */
+  font-size: 110px;
   text-anchor: middle;
-  font-family: 'HumanNature';
-  cursor: pointer;
+  font-family: 'HumanNature', sans-serif;
 }
+
 .tituloStyle2 {
   color: #2a6e6e;
   font-family: 'HumanNature', sans-serif; 
