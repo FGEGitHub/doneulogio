@@ -114,11 +114,12 @@
 .svgTextpinares {
   fill: #fff; /* Relleno blanco */
   stroke: #fff; /* Contorno blanco */
-  fill-opacity: 1; /* Opacidad del relleno completamente sólida */
-  stroke-opacity: 1; /* Opacidad del trazo completamente sólida */
-  font-size: 110px;
+  fill-opacity: 1; /* Opacidad sólida */
+  stroke-opacity: 1; /* Opacidad del contorno sólida */
+  font-size: 120px;
   text-anchor: middle;
   font-family: 'HumanNature', sans-serif;
+  font-weight: normal; /* Aseguramos que no esté en negrita */
 }
 
 .tituloStyle2 {
