@@ -17,7 +17,7 @@ const MobileCarrusel = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true,
-    dotsClass: "slick-dots slick-thumb custom-dots",  // Clase personalizada para los dots
+    dotsClass: "slick-dots custom-dots",  // Clase personalizada para los dots
   };
 
   const styles = {
@@ -56,15 +56,17 @@ const MobileCarrusel = () => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '10px 0',
+      listStyleType: 'none',  // Elimina el estilo de lista de los dots
+      padding: '0',
+      margin: '0',
     },
     dot: {
-      width: '10px',
-      height: '10px',
+      width: '12px',
+      height: '12px',
       borderRadius: '50%',
       backgroundColor: 'gray',
       margin: '0 5px',
-      cursor: 'pointer',
+      transition: 'background-color 0.3s ease',  // Transición suave para los dots
     },
     activeDot: {
       backgroundColor: 'white',

@@ -4,8 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import logo from '../../Assets/logo.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
-import { IconButton } from '@mui/material';
-import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
+import SyncIcon from '@mui/icons-material/Sync';
 import Gps from "../../Assets/svgdoncompleto.svg";
 import Redes from "../../Assets/redes.svg";
 
@@ -211,7 +210,7 @@ const Arg = () => {
       <div       style={{ height: '100vh' }} 
       >
       <TransformWrapper
-       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
+      style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
@@ -222,7 +221,8 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-             {  showRestoreButton &&   <div style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
+           {/*   {  showRestoreButton &&   <div
+              style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
                <button
           onClick={() => {
             resetTransform();  // Restaurar la vista completa
@@ -233,11 +233,49 @@ const Arg = () => {
             Restaurar vista
         </button>
       </div>}
+ */}
+  {/*INICIO BOTON 2*/}
 
+  {showRestoreButton && (
+        <div style={{
+          position: 'relative',
+          bottom: '-95%',
+          left: '25%',
+          zIndex: 1000, // Asegura que esté sobre otros elementos
+        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+          padding: '10px',
+          borderRadius: '5px',
+        }}>
+          <button
+            onClick={() => {
+              resetTransform(); // Restaurar la vista completa
+              setPosicion0(true); // Activa la primera capa del SVG
+              setShowRestoreButton(false);
+            }}
+            style={{
+              padding: '10px',
+              backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
+              color: 'black', // Color del texto
+              border: '1px solid #ccc', // Borde estándar
+              borderRadius: '4px', // Bordes redondeados comunes
+              cursor: 'pointer',
+              display: 'flex', // Para alinear el ícono y el texto
+              alignItems: 'center', // Centra el contenido verticalmente
+              gap: '5px', // Espacio entre el ícono y el texto
+              width: '200px',  // Ancho del botón ajustable
+              textAlign: 'center', // Centra el texto dentro del botón
+            }}
+          >
+            <SyncIcon /> {/* Ícono de Material UI */}
+            Restaurar vista
+          </button>
+        </div>
+      )}
+  {/*FIN BOTON FIJO */}
        
               <div style={{ display: 'flex' }}>
   <div style={{ flex: 0.7 }}> {/* mover al  medio*/}
-    {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
+  
   
   {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
     </div>
