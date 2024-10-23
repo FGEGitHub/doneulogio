@@ -56,7 +56,7 @@ const Arg = () => {
   // Función para manejar el cambio de escala
   const handleMouseEnter = () => setColor("green"); // 
   const handleMouseLeave = () => setColor("#1C6A3B");  // 
-  const handleMouseEnter2 = () => setColor2("blue"); // 
+  const handleMouseEnter2 = () => setColor2("#0d47a1"); // 
   const handleMouseLeave2 = () => setColor2("#246F74");  // 
   const handleImageChange = (e) => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
