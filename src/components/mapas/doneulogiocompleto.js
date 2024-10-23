@@ -240,7 +240,7 @@ const Arg = () => {
         <div style={{
           position: 'relative',
           bottom: '-95%',
-          left: '25%',
+          left: '20%',
           zIndex: 1000, // Asegura que esté sobre otros elementos
         //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
           padding: '10px',
