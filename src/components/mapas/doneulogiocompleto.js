@@ -1155,7 +1155,7 @@ const Arg = () => {
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}         fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
 
-        {[88].map((tooltipValue) => {
+   {/*      {[88].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
@@ -1667,7 +1667,7 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(144)}    fill-rule="evenodd" vector-effect="none" d="M1749.66,5149.41 L1745.97,5232.58 L2967.2,5571.27 L2964.42,5148.95 L2731.54,5143.87 L2731.54,5163.27 L2230.67,5163.27 L2226.97,5203.94 L2142.88,5188.69 L2141.95,5154.96 L1749.66,5149.41"/></Tooltip>)})}
-
+ */}
     {/*      {[145].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
