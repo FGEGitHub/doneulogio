@@ -1,29 +1,12 @@
 import React from 'react';
 import flecha from '../../Assets/flecha.png';
-
+import tarjetas from '../../Assets/ua3tarjetas.svg';
 const MobileCards = () => {
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Aspectos clave de una<br/> <strong>Urbanización abierta</strong></h2>
       <img src={flecha} alt="Flecha" style={styles.arrow} />
-      <div style={styles.card}>
-        <h3 style={styles.cardTitle}>Libertad de Decisiones</h3>
-        <p style={styles.cardText}>
-          Ante la inexistencia de consorcios de administración y de reglamentos internos de convivencia y construcción, cada propietario goza de total libertad en cuanto a las decisiones sobre su lote (respetando la legislación aplicable).
-        </p>
-      </div>
-      <div style={styles.card}>
-        <h3 style={styles.cardTitle}>Integración al Entorno</h3>
-        <p style={styles.cardText}>
-          En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.
-        </p>
-      </div>
-      <div style={styles.card}>
-        <h3 style={styles.cardTitle}>Interacción Social y Comunidad Activa</h3>
-        <p style={styles.cardText}>
-          En este tipo de proyectos tanto las calles y avenidas, como las áreas comunes y los espacios verdes están interconectados y accesibles a toda la comunidad.
-        </p>
-      </div>
+      <img src={tarjetas} alt="Flecha" style={styles.tarjetas} />
     </div>
   );
 };
@@ -45,6 +28,11 @@ const styles = {
   arrow: {
     width: '24px',
     height: '24px',
+    marginBottom: '16px',
+  },
+  tarjetas: {
+    width: '80%',
+    height: '80%',
     marginBottom: '16px',
   },
   card: {
