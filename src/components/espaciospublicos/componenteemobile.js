@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 // Importa tus imágenes aquí
 import Image1 from '../../Assets/esppublicmobile.png';
-
+import Carrusel1 from './imagenconcarruselmobile1'
+import Carrusel2 from './imagenconcarruselmobile2'
+import Cuatroimagenes  from './4imagenesmobile'
 import Footer from '../footermobile';
 
 const CiudadVerde = () => {
@@ -32,6 +34,10 @@ const CiudadVerde = () => {
           Construimos espacios para crecer juntos
         </span>
       </div>
+      <Carrusel1/>
+      <Carrusel2/>
+      <br/>  <br/>  <br/>
+      <Cuatroimagenes/>
       <Footer />
     </div>
   );
