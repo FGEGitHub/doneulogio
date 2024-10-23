@@ -102,9 +102,9 @@ const styles = {
   contactSection: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'left',
     gap: '16px',
-    marginTop: '24px',
+    marginTop: '10px',
     marginBottom: '24px',
   },
   contactItem: {
@@ -113,12 +113,15 @@ const styles = {
     gap: '8px',
   },
   contactIcon: {
-    width: '24px',
-    height: '24px',
-       alignItems:"left"
+    width: '28px',
+    height: '28px',
+       alignItems:"left",
+       marginLeft:'18%',
+       marginTop:'-1.5%',
   },
   contactText: {
     fontSize: '16px',
+    marginLeft:'1%',
     color: '#333',
     alignItems:"left"
   },
