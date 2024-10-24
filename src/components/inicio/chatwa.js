@@ -146,7 +146,7 @@ const WhatsappChat = (props) => {
             </button>
             <button className="whatsapp-question-btn" onClick={handleOtherQuestionClick}>
               <img src={whatsappLogo} alt="WhatsApp" className="whatsapp-icon" />
-              Tengo otra pregunta
+              Quiero contactarme con un representante de venta
             </button>
           </div>
 
