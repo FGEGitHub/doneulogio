@@ -55,8 +55,20 @@ const WhatsappChat = (props) => {
             value: `$${props.preciofinanciado}`,
           },
           {
-            title: "Financiación",
-            value: `Anticipo (${props.porcentaje_anticipo}): $${anticipo.toFixed(2)}. Las ${props.cantidad_cuotas} cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
+            title: "Anticipo",
+            value: `Anticipo ${anticipo}`,
+          },
+          {
+            title: "Saldo Financiado",
+            value: `USD ${props.preciofinanciado-anticipo}`,
+          },
+          {
+            title: "Cantidad de Cuotas",
+            value: `${props.cantidad_cuotas}`,
+          },
+          {
+            title: "Valor de Cuota",
+            value: `USD ${valorCuotas}`,
           },
         ];
         break;
