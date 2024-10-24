@@ -13,7 +13,7 @@ import servicioDatos from '../../services/datos';
 import Borrar from './borrar';
 const columns = [
   { id: 'id_venta', label: 'ID Venta', minWidth: 100 },
-  { id: 'fecha_venta', label: 'Fecha de venta', minWidth: 120 },
+  { id: 'fecha', label: 'Fecha de venta', minWidth: 120 },
   { id: 'lote', label: 'Lote', minWidth: 100 },
   { id: 'nombre', label: 'Propietario', minWidth: 150 },
   { id: 'modelo_venta', label: 'Modelo de venta', minWidth: 150 },
@@ -228,7 +228,13 @@ export default function VentasTable() {
                             )}
                           </Select>
                         ) : (<>
-                        <Borrar id={row.id} />
+                        <Borrar id={row.id} 
+                        traer={async () => {
+                          const historial = await servicioDatos.traerVentas();
+                          setDatos(historial[0]);
+                          setLotes(historial[1]); // Cargar los lotes desde el servicio
+                          setPropietarios(historial[2]); // Cargar los propietarios desde el servicio
+                        }}/>
                        </> )}
                       </TableCell>
                     );
