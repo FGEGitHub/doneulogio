@@ -28,13 +28,13 @@ const Sectores = () => {
       <div style={styles.sectorContainer}>
         {/* Imagen Bosques */}
         <div style={styles.imageContainer}>
-          <div style={styles.statusComplete}>Obra Terminada</div>
+        
           <img src={bosques} alt="Bosques" style={styles.sectorImage} />
         </div>
 
         {/* Imagen Pinares */}
         <div style={styles.imageContainer}>
-          <div style={styles.statusInProgress}>Obra en curso</div>
+       
           <img src={pinares} alt="Pinares" style={styles.sectorImage} />
         </div>
       </div>
@@ -97,8 +97,8 @@ const styles = {
     left: '0',
   },
   sectorImage: {
-    width: '350px',
-    height: '380px',
+    width: '100%',
+   
     objectFit: 'cover',
     borderRadius: '8px',
   },
