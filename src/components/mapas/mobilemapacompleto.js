@@ -59,13 +59,13 @@ const Arg = () => {
         setPosicion0(false);
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-            transformWrapperRef.current.setTransform(0, 0, 2.5); // Ajusta estos valores según sea necesario
+            transformWrapperRef.current.setTransform(-150, 0, 2.5); // Ajusta estos valores según sea necesario
         }
     } else {
         setPosicion0(false);
         if (transformWrapperRef.current) {
           // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-          transformWrapperRef.current.setTransform(0, -200, 3); // Ajusta estos valores según sea necesario
+          transformWrapperRef.current.setTransform(-150, -200, 3); // Ajusta estos valores según sea necesario
       }
     }
 }; 
@@ -99,25 +99,44 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
-                <IconButton
+              <div style={{   position: 'relative', 
+                         bottom: '-60%',
+                      //   left: '2%',
+                         zIndex: 1000, // Asegura que esté sobre otros elementos
+                       //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+                         padding: '10px',
+                         borderRadius: '5px',
+            }}>
+          {/*       <IconButton
                   onClick={toggleImagenDeFondo}
                   color="primary"
                   style={{ marginBottom: "10px" }}
                 >
                   <GpsFixed />
-                </IconButton>
+                </IconButton> */}
 
-
-             
-
+            {!posicion0 &&
                 <button
-                  onClick={() => resetTransform()} // Restaurar la vista completa
+                onClick={() => {resetTransform();
+                  setPosicion0(true)}
+                } // Restaurar la vista completa
+           
+                style={{ marginBottom: "10px",
+                  width: '125px',
+                  backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
+              color: 'black', // Color del texto
+              border: '1px solid #ccc', // Borde estándar
+              borderRadius: '4px', 
+                 }}
+              >
+           Restaurar
+              </button> 
+            
+            
+            }
              
-                  style={{ marginBottom: "10px" }}
-                >
-             Restaurar Vista
-                </button>  
+
+             
               </div>
 
              
@@ -141,25 +160,7 @@ const Arg = () => {
         objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
         zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
       }}
-    /> <button
-    onClick={() => {
-      resetTransform();  // Restaurar la vista completa
-      setPosicion0(true);  // Activa la primera capa del SVG
-      setShowRestoreButton(false);
-    }}// Acción para restaurar la vista
-    color="primary"
-    style={{
-      position: 'absolute',
-      top: '70%', // Ajusta la ubicación verticalmente
-      ledt: '10px', // Ajusta la ubicación horizontalmente
-      zIndex: 1, // Asegura que esté por encima de la imagen
-
-      width: '30%', // Tamaño pequeño del botón
-      height: '30px',
-      padding: '5px',
-      boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.3)',
-    }}
-  >Restaurar</button>
+    />
    </>
   )}  {  selectedImage && <>
 
@@ -192,12 +193,12 @@ const Arg = () => {
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,1.1)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
-   <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
+   <text x="1400" y="700" style={styles.svgText} onClick={ () => cambiarsvg(1)}   >Bosques</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,1.1)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
-   <text x="1400" y="1600" style={styles.svgText}>Pinares</text>
+   <text x="1400" y="1600" onClick={ () => cambiarsvg(2)}  style={styles.svgText}>Pinares</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -1612,7 +1613,7 @@ const Arg = () => {
             </React.Fragment>
           )}
         </TransformWrapper>       
-        <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "91%"}} />
+      
    
       </div>
    
@@ -1633,7 +1634,8 @@ const Arg = () => {
       
       }>
 
-      </DialogComponent>
+      </DialogComponent> 
+       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-50%",  width: "91%", position: 'relative'}} />
       <ComponenteTarjetas/>
      
      <Footer/>
