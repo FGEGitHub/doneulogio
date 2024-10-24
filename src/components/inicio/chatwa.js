@@ -27,9 +27,14 @@ const WhatsappChat = (props) => {
       case "¿Cuáles son las formas de Pago disponibles?":
         formattedResponse = [
           {
-            title: "Formas de Pago",
+            title: "Modelo Contado",
             value:
-              "Se tienen contemplados 2 formas de pago para la adquisición de tu lote:\n• Modelo Contado: Con precios promocionales, pagaderos en dólares o en pesos.\n• Modelo Financiado: Con un sistema de entrega del 50% del valor del lote y el saldo a financiarse en hasta 6 cuotas.",
+              "Con precios promocionales, pagaderos en dólares o en pesos.",
+          },
+          {
+            title: "Modelo Financiado",
+            value:
+              "Con un sistema de anticipo + Cuotas fijas, pagaderas en dólares o en pesos.",
           },
         ];
         break;
@@ -37,7 +42,7 @@ const WhatsappChat = (props) => {
         formattedResponse = [
           {
             title: "Precio de Contado",
-            value: `$${props.precio}`, // Precio de contado desde la base de datos
+            value: `USD$${props.precio}`, // Precio de contado desde la base de datos
           },
         ];
         break;

@@ -7,7 +7,7 @@ import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } 
 import SyncIcon from '@mui/icons-material/Sync';
 import Gps from "../../Assets/svgdoncompleto.svg";
 import Redes from "../../Assets/redes.svg";
-
+import vendidos from '../../Assets/vendidos.svg'
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
@@ -234,12 +234,26 @@ const Arg = () => {
         </button>
       </div>}
  */}
+
+{showRestoreButton && (
+        <div style={{
+          position: 'relative',
+          bottom: '-15%',
+          left: '-25%',
+          zIndex: 1000, // Asegura que esté sobre otros elementos
+        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+          padding: '10px',
+          borderRadius: '5px',
+        }}>
+            <img src={vendidos} alt="Urbanización Abierta"/>
+        </div>
+      )}
   {/*INICIO BOTON 2*/}
 
   {showRestoreButton && (
         <div style={{
           position: 'relative',
-          bottom: '-95%',
+          bottom: '-90%',
           left: '20%',
           zIndex: 1000, // Asegura que esté sobre otros elementos
         //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido

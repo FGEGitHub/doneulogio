@@ -3,12 +3,12 @@ import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
-import { IconButton } from '@mui/material';
-import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
+
 import Gps from "../../Assets/svgdoncompleto.svg";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
+import vendidos from '../../Assets/vendidos.svg';
 import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
 import ComponenteTarjetas from '../masterplan/componentetarjetasmobile'
@@ -99,6 +99,22 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
+ <div style={{   position: 'relative', 
+                         bottom: '-20%',
+                        left: '-2%',
+                         zIndex: 1000, // Asegura que esté sobre otros elementos
+                       //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+                         padding: '10px',
+                         borderRadius: '5px',
+            }}>
+ {!posicion0 &&
+<img 
+        src={vendidos} 
+        alt="Urbanización Abierta" 
+       // style={styles.image} 
+      />}
+            </div>
+
               <div style={{   position: 'relative', 
                          bottom: '-60%',
                       //   left: '2%',
@@ -216,7 +232,7 @@ const Arg = () => {
 </div>
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
-      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1520 8944 12274"   baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1510 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
