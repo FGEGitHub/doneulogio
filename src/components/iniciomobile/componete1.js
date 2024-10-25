@@ -18,6 +18,7 @@ const CiudadVerde = () => {
     // Lista de todas las imágenes a cargar
     const images = [Image2, Imagemapa, Dibujoarboles, Doslogos];
     let loadedImagesCount = 0;
+    let timeoutId;
 
     // Función para manejar la carga de cada imagen
     const handleImageLoad = () => {
@@ -44,13 +45,21 @@ const CiudadVerde = () => {
     videoElement.onerror = () => {
       setVideoLoaded(true); // Si falla la carga, igual lo marcamos como cargado para evitar un bucle
     };
+
+    // Timeout para evitar que se quede cargando indefinidamente
+    timeoutId = setTimeout(() => {
+      setAllImagesLoaded(true);
+      setVideoLoaded(true);
+    }, 10000); // 10 segundos
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   // Verifica si tanto las imágenes como el video están cargados
   const contentLoaded = allImagesLoaded && videoLoaded;
 
   if (!contentLoaded) {
-    // Muestra un mensaje de carga o un spinner mientras se cargan las imágenes y el video
+    // Muestra un mensaje de carga mientras se cargan las imágenes y el video
     return <div>Cargando...</div>;
   }
 
@@ -62,6 +71,7 @@ const CiudadVerde = () => {
           autoPlay
           loop
           muted
+          crossOrigin="anonymous"
           style={styles.video}
         />
         <span style={styles.imageText}>Tu Futuro en <br />Don Eulogio</span>
@@ -71,22 +81,26 @@ const CiudadVerde = () => {
         src={Image2}
         alt="libertad"
         style={styles.imagelibertad}
+        crossOrigin="anonymous"
       />
       <Componente2 />
       <img
         src={Imagemapa}
         alt="Urbanización Abierta"
         style={styles.image}
+        crossOrigin="anonymous"
       />
       <img
         src={Dibujoarboles}
         alt="Urbanización Abierta"
         style={styles.image}
+        crossOrigin="anonymous"
       />
       <img
         src={Doslogos}
         alt="Urbanización Abierta"
         style={styles.image2}
+        crossOrigin="anonymous"
       />
       <Footer />
     </div>
