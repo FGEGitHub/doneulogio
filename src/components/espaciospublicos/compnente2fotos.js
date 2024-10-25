@@ -68,10 +68,10 @@ const PublicSpaces = () => {
                   <img src={image1a} alt="Imagen 1a" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1b} alt="Imagen 1b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
+                  <img src={image1a} alt="Imagen 1b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1c} alt="Imagen 1c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
+                  <img src={image1a} alt="Imagen 1c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
               </Carousel>
             </CarouselContainer>

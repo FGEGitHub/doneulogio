@@ -40,28 +40,7 @@ const OverlayText = styled(Typography)({
 
 const PublicSpaces = () => {
   const navigate = useNavigate();
-  const spaces = [
-    {
-      title: 'Puente Pexoa',
-      description: 'El Puente Pexoa es una estructura de hierro sobre el arroyo Riachuelo, en el llamado Paso Pexoa, en la localidad de Riachuelo, provincia de Corrientes.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Puente-pexoa-san-cayetano.jpg',
-    },
-    {
-      title: 'Camping Puente Pexoa',
-      description: 'El Camping Puente Pexoa ofrece un lugar ideal para disfrutar de la naturaleza y realizar actividades al aire libre en Corrientes.',
-      imageUrl: 'https://s1.elespanol.com/2022/09/09/actualidad/701940464_227019911_1706x960.jpg',
-    },
-    {
-      title: 'Capilla San Cayetano',
-      description: 'La Capilla San Cayetano es un importante lugar de peregrinación y devoción en la provincia de Corrientes.',
-      imageUrl: 'https://img.freepik.com/fotos-premium/complejo-deportivo-centro-minsk-canchas-deportivas-al-aire-libre-juegos-bielorrusia_217593-15308.jpg?w=996',
-    },
-    {
-      title: 'Parque Provincial San Cayetano',
-      description: 'El Parque Provincial San Cayetano es un espacio natural protegido que ofrece una variedad de flora y fauna en Corrientes.',
-      imageUrl: 'https://example.com/parque-san-cayetano.jpg',
-    },
-  ];
+  
 
   return (
     <>
@@ -193,11 +172,12 @@ const styles = {
   },
   imageText: {
     position: 'absolute',
+    fontFamily: "Inter", 
     top: '50%',
     left: '10%', // Mueve el texto más a la izquierda
     transform: 'translate(0, -50%)', // Mueve solo verticalmente para que no se afecte la posición horizontal
     color: 'white', // El color del texto
-    fontSize: '60px', // Texto más grande
+    fontSize: '65px', // Texto más grande
     fontWeight: 'bold', // Hacer el texto en negrita
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Sombra para que se lea mejor
     pointerEvents: 'none', // Para que el texto no interfiera con la imagen en términos de interacción
