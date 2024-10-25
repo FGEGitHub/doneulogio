@@ -87,7 +87,7 @@ const Arg = () => {
 <UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
-mapa png con calidad
+
 <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <TransformWrapper
     ref={transformWrapperRef}  // Asigna la referencia
