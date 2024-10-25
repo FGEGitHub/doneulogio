@@ -6,7 +6,7 @@ import "./WhatsappChat.css";
 const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(true);
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
+  const [openQuestions, setOpenQuestions] = useState({});
   const [response, setResponse] = useState([]);
   const [cuotas, setCuotas] = useState("");
   const [calculos, setCalculos] = useState(null);
@@ -20,7 +20,6 @@ const WhatsappChat = (props) => {
   };
 
   const handleQuestionClick = (question) => {
-    setSelectedQuestion(question);
     setCalculos(null);
     let formattedResponse = [];
     switch (question) {
@@ -47,12 +46,12 @@ const WhatsappChat = (props) => {
         ];
         break;
       case "¿Cuál es el precio financiado de este lote?":
-        const anticipo = props.preciofinanciado *props.porcentaje_anticipo/100;
-        const valorCuotas = (props.preciofinanciado-anticipo) / props.cantidad_cuotas;
+        const anticipo = (props.preciofinanciado * props.porcentaje_anticipo) / 100;
+        const valorCuotas = (props.preciofinanciado - anticipo) / props.cantidad_cuotas;
         formattedResponse = [
           {
             title: "Precio Financiado",
-            value: `$${props.preciofinanciado}`,
+            value: `USD ${props.preciofinanciado}`,
           },
           {
             title: "Anticipo",
@@ -60,7 +59,7 @@ const WhatsappChat = (props) => {
           },
           {
             title: "Saldo Financiado",
-            value: `USD ${props.preciofinanciado-anticipo}`,
+            value: `USD ${props.preciofinanciado - anticipo}`,
           },
           {
             title: "Cantidad de Cuotas",
@@ -91,6 +90,10 @@ const WhatsappChat = (props) => {
         ];
     }
     setResponse(formattedResponse);
+    setOpenQuestions((prev) => ({
+      ...prev,
+      [question]: !prev[question], // Alterna el estado de desplegado de la pregunta
+    }));
   };
 
   const handleOtherQuestionClick = () => {
@@ -120,49 +123,39 @@ const WhatsappChat = (props) => {
             </span>
           </div>
           <div className="whatsapp-questions">
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuáles son las formas de Pago disponibles?")}
-            >
-              ¿Cuáles son las formas de Pago disponibles?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuál es el precio de contado de este lote?")}
-            >
-              ¿Cuál es el precio de contado de este lote?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuál es el precio financiado de este lote?")}
-            >
-              ¿Cuál es el precio financiado de este lote?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿La operación incluye Comisiones Inmobiliarias?")}
-            >
-              ¿La operación incluye Comisiones Inmobiliarias?
-            </button>
+            {[
+              "¿Cuáles son las formas de Pago disponibles?",
+              "¿Cuál es el precio de contado de este lote?",
+              "¿Cuál es el precio financiado de este lote?",
+              "¿La operación incluye Comisiones Inmobiliarias?",
+            ].map((question) => (
+              <div key={question} className="whatsapp-question-item">
+                <button
+                  className="whatsapp-question-btn"
+                  onClick={() => handleQuestionClick(question)}
+                >
+                  {question}
+                </button>
+                {openQuestions[question] && (
+                  <div className="whatsapp-response">
+                    <span className="whatsapp-question">{question}</span>
+                    <div className="whatsapp-reply">
+                      {response.map((item, index) => (
+                        <div key={index} className="whatsapp-reply-item">
+                          <span className="whatsapp-reply-title">{item.title}</span>
+                          <span className="whatsapp-reply-value">{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
             <button className="whatsapp-question-btn" onClick={handleOtherQuestionClick}>
               <img src={whatsappLogo} alt="WhatsApp" className="whatsapp-icon" />
               Quiero contactarme con un representante de venta
             </button>
           </div>
-
-          {selectedQuestion && (
-            <div className="whatsapp-response">
-              <span className="whatsapp-question">{selectedQuestion}</span>
-              <div className="whatsapp-reply">
-                {response.map((item, index) => (
-                  <div key={index} className="whatsapp-reply-item">
-                    <span className="whatsapp-reply-title">{item.title}</span>
-                    <span className="whatsapp-reply-value">{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>
