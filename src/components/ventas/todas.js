@@ -190,7 +190,7 @@ export default function VentasTable() {
               </TableRow>
             )}
 
-{datos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
+            {datos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover role="checkbox" tabIndex={-1} key={row.id_venta}>
                 {columns.map((column) => {
                   const value = row[column.id];
@@ -208,6 +208,14 @@ export default function VentasTable() {
                             Modificar
                           </Button>
                         )}
+                      </TableCell>
+                    );
+                  }
+
+                  if (column.id === 'borrar') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                        <Borrar id={row.id} traer={traerDatos} />
                       </TableCell>
                     );
                   }
