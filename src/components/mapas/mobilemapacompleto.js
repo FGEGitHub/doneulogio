@@ -172,7 +172,7 @@ const Arg = () => {
         top: 0,
         left: 0,
         width: '100%', // Ajusta este tamaño según sea necesario
-        height: '70%', // Cambia este valor si es necesario para que se vea correctamente
+      //  height: '70%', // Cambia este valor si es necesario para que se vea correctamente
         objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
         zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
       }}
@@ -232,7 +232,7 @@ const Arg = () => {
 </div>
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
-      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1510 8944 12274"   baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1135 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
