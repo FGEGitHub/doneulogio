@@ -4,7 +4,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 
-import Gps from "../../Assets/svgdoncompleto.svg";
+import Gps from "../../Assets/mapaiphone.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
@@ -87,7 +87,7 @@ const Arg = () => {
 <UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
-
+mapa png con calidad
 <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <TransformWrapper
     ref={transformWrapperRef}  // Asigna la referencia
@@ -231,7 +231,7 @@ const Arg = () => {
 </svg>
 </div>
 </div>:<div>
-<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
+<div style={{ position: 'relative', zIndex: 1 }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
       <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1132 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
