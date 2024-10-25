@@ -34,36 +34,41 @@ const styles = {
   container: {
     textAlign: 'center',
     padding: '10px',
-    marginLeft:'-5%'
+    marginLeft: '-2%', // Ajuste para mover un poco hacia la izquierda
   },
   title: {
-    fontSize: '28px', // Aumentamos el tamaño del título
+    fontSize: '32px', // Aumentamos el tamaño del título
     fontWeight: 'bold',
     marginBottom: '32px',
     fontFamily: 'inter',
-    color:'#1A393C'
+    color: '#1A393C',
   },
   grid: {
     display: 'flex',
     justifyContent: 'space-around',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     flexWrap: 'wrap',
+    gap: '10px', // Mínima separación entre las imágenes
   },
   item: {
-    width: '300px', // Hacemos el contenedor más grande para imágenes más grandes
-    margin: '5px', // Reducimos el margen para que las imágenes estén más juntas
+    width: '22vw', // Aumentamos el ancho relativo al viewport para que ocupen más espacio
+    margin: '5px',
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   image: {
-    width: '135%',  // La imagen ocupará el 100% del ancho del contenedor
-    height: 'auto', // Se mantiene el aspecto original de la imagen
-   
+    width: '100%', // La imagen ocupará el ancho completo del contenedor
+    height: 'auto',
   },
   caption: {
-    marginTop: '12px', // Ajuste en el espaciado del texto debajo de la imagen
-    fontSize: '26px', // Tamaño de fuente mayor para el pie de imagen
+    marginTop: '16px', // Ajuste en el espaciado del texto debajo de la imagen
+    fontSize: '28px', // Aumentamos el tamaño de fuente
     fontWeight: 'bold',
     color: '#4CAF50',
     fontFamily: 'inter',
+    textAlign: 'center',
   },
 };
 
