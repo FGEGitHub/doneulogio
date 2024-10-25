@@ -214,7 +214,7 @@ const Arg = () => {
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,1.1)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
-   <text x="1400" y="1600" onClick={ () => cambiarsvg(2)}  style={styles.svgText}>Pinares</text>
+   <text x="1400" y="1600" onClick={ () => cambiarsvg(2)}   className="svgTextpinares">Pinares</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
