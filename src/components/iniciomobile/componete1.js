@@ -134,6 +134,8 @@ const styles = {
     height: 'auto',
     marginLeft: '-3%',
     display: 'block',
+ background: '#113F24',
+
   },
   imagelibertad: {
     width: '108%',
