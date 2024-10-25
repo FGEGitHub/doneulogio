@@ -116,7 +116,7 @@ const Arg = () => {
             </div>
 
               <div style={{   position: 'relative', 
-                         bottom: '-60%',
+                         bottom: '-55%',
                       //   left: '2%',
                          zIndex: 1000, // Asegura que esté sobre otros elementos
                        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
@@ -1651,7 +1651,7 @@ const Arg = () => {
       }>
 
       </DialogComponent> 
-       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-50%",  width: "91%", position: 'relative'}} />
+       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-40%",  width: "91%", position: 'relative'}} />
       <ComponenteTarjetas/>
      
      <Footer/>
