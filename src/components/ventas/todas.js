@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import servicioDatos from '../../services/datos';
 import Borrar from './borrar';
-
+import Modificar from './modificar'
 const columns = [
   { id: 'id_venta', label: 'ID Venta', minWidth: 100 },
   { id: 'fecha', label: 'Fecha de venta', minWidth: 120 },
@@ -27,13 +27,13 @@ const columns = [
 
 export default function VentasTable() {
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(100);
   const [datos, setDatos] = useState([]);
+  const [nuevaVenta, setNuevaVenta] = useState(false);
   const [lotes, setLotes] = useState([]);
   const [propietarios, setPropietarios] = useState([]);
-  const [editingRow, setEditingRow] = useState({});
-  const [nuevaVenta, setNuevaVenta] = useState(false);
   const [options, setOptions] = useState({ modelo_venta: [] });
+  const [editingRow, setEditingRow] = useState({ new: {} }); // Inicialización corregida
 
   useEffect(() => {
     traerDatos();
@@ -52,6 +52,13 @@ export default function VentasTable() {
     setOptions({ modelo_venta: opcionesModeloVenta });
   };
 
+  const handleInputChange = (id, field, value) => {
+    setEditingRow((prev) => ({
+      ...prev,
+      [id]: { ...prev[id], [field]: value }
+    }));
+  };
+
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -61,42 +68,14 @@ export default function VentasTable() {
     setPage(0);
   };
 
-  const handleInputChange = (id, field, value) => {
-    setEditingRow((prev) => ({
-      ...prev,
-      [id]: { ...prev[id], [field]: value }
-    }));
-  };
-
-  const handleEditClick = (rowId) => {
-    setEditingRow((prev) => ({
-      ...prev,
-      [rowId]: datos.find((row) => row.id_venta === rowId) || {},
-    }));
-  };
-
-  const handleSaveClick = async (row) => {
-    const updatedRow = { ...row, ...editingRow[row.id_venta] };
-    await servicioDatos.modificarVenta(updatedRow);
-    alert('Venta modificada');
-    setEditingRow((prev) => {
-      const newEditing = { ...prev };
-      delete newEditing[row.id_venta];
-      return newEditing;
-    });
-    await traerDatos();
-  };
-
   const handleNuevaVenta = () => {
     setNuevaVenta(true);
-    setEditingRow({ new: {} });
   };
 
   const handleGuardarNuevaVenta = async () => {
-    await servicioDatos.nuevaVenta(editingRow.new);
-    alert('Nueva venta agregada');
+    const rta = await servicioDatos.nuevaVenta(editingRow.new);
+    alert(rta);
     setNuevaVenta(false);
-    setEditingRow({});
     await traerDatos();
   };
 
@@ -189,29 +168,38 @@ export default function VentasTable() {
                 })}
               </TableRow>
             )}
-
             {datos.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
               <TableRow hover role="checkbox" tabIndex={-1} key={row.id_venta}>
                 {columns.map((column) => {
                   const value = row[column.id];
-                  const isEditing = editingRow[row.id_venta];
-
                   if (column.id === 'modificar') {
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        {isEditing ? (
-                          <Button variant="contained" onClick={() => handleSaveClick(row)}>
-                            Guardar
-                          </Button>
-                        ) : (
-                          <Button variant="outlined" onClick={() => handleEditClick(row.id_venta)}>
-                            Modificar
-                          </Button>
-                        )}
+                        {datos &&
+                           <Modificar
+                          id={row.id}
+                          id_lote={row.id_lote}
+                          manzana={row.manzana}
+                          sector={row.sector}
+                          lote={row.lote}
+                          id_cliente={row.id_cliente}
+                          observaciones={row.observaciones}
+                          modelo_venta={row.modelo_venta}
+                          fecha={row.fecha}
+                          valor_escritura={row.valor_escritura}
+                          lotes={lotes}
+                          propietario={row.nombre}
+                          propietarios={propietarios}
+                          traer={async () => {
+                            const historial = await servicioDatos.traerVentas();
+                            setDatos(historial[0]);
+                            setLotes(historial[1]);
+                            setPropietarios(historial[2]);
+                          }}
+                          />}
                       </TableCell>
                     );
                   }
-
                   if (column.id === 'borrar') {
                     return (
                       <TableCell key={column.id} align={column.align}>
@@ -219,53 +207,13 @@ export default function VentasTable() {
                       </TableCell>
                     );
                   }
-
-                  if (isEditing && (column.id === 'modelo_venta' || column.id === 'valor_escritura' || column.id === 'fecha' || column.id === 'observaciones')) {
+                  if (column.id === 'id_venta') {
                     return (
                       <TableCell key={column.id} align={column.align}>
-                        <input
-                          type="text"
-                          value={editingRow[row.id_venta][column.id] || ''}
-                          onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
-                        />
+                      {row.sector} - {row.manzana} - {row.lote}
                       </TableCell>
                     );
                   }
-
-                  if (isEditing && column.id === 'lote') {
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        <Select
-                          value={editingRow[row.id_venta][column.id] || ''}
-                          onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
-                        >
-                          {lotes.map((lote) => (
-                            <MenuItem key={lote.id} value={lote.id}>
-                              {`${lote.sector} - ${lote.manzana} - ${lote.lote}`}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </TableCell>
-                    );
-                  }
-
-                  if (isEditing && column.id === 'nombre') {
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        <Select
-                          value={editingRow[row.id_venta][column.id] || ''}
-                          onChange={(e) => handleInputChange(row.id_venta, column.id, e.target.value)}
-                        >
-                          {propietarios.map((prop) => (
-                            <MenuItem key={prop.id} value={prop.id}>
-                              {prop.nombre}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </TableCell>
-                    );
-                  }
-
                   return (
                     <TableCell key={column.id} align={column.align}>
                       {value}

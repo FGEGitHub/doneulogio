@@ -39,7 +39,7 @@ const columns = [
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [datos, setDatos] = useState([]);
-  const [rowsPerPage, setRowsPerPage] = useState(5);
+  const [rowsPerPage, setRowsPerPage] = useState(100);
   const [editingRow, setEditingRow] = useState({});
   const [modifiedRows, setModifiedRows] = useState([]);
 
