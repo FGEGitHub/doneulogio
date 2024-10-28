@@ -141,6 +141,9 @@ const DialogComponent = forwardRef((props, ref) => {
                       preciofinanciado={datos[0].preciofinanciado} 
                       porcentaje_anticipo={datos[0].porcentaje_anticipo} 
                       cantidad_cuotas={datos[0].cantidad_cuotas} 
+                      sector={datos[0].sector}
+                      manzana={datos[0].manzana}
+                      lote={datos[0].lote}
                     />
                   </div>
                 </>
