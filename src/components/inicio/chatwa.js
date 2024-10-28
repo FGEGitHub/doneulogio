@@ -7,14 +7,14 @@ const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(true);
   const [openQuestions, setOpenQuestions] = useState({});
-  const [response, setResponse] = useState([]);
+  const [responses, setResponses] = useState({}); // Cambiado a objeto
   const [cuotas, setCuotas] = useState("");
   const [calculos, setCalculos] = useState(null);
 
   const handleSendMessage = () => {
     const defaultMessage = "Hola, me gustaría obtener más información.";
     window.open(
-      `https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`,
+      `https://wa.me/5493794008721?text=${encodeURIComponent(defaultMessage)}`,
       "_blank"
     );
   };
@@ -89,10 +89,14 @@ const WhatsappChat = (props) => {
           },
         ];
     }
-    setResponse(formattedResponse);
+
+    setResponses((prevResponses) => ({
+      ...prevResponses,
+      [question]: formattedResponse,
+    }));
     setOpenQuestions((prev) => ({
       ...prev,
-      [question]: !prev[question], // Alterna el estado de desplegado de la pregunta
+      [question]: !prev[question],
     }));
   };
 
@@ -136,11 +140,11 @@ const WhatsappChat = (props) => {
                 >
                   {question}
                 </button>
-                {openQuestions[question] && (
+                {openQuestions[question] && responses[question] && (
                   <div className="whatsapp-response">
                     <span className="whatsapp-question">{question}</span>
                     <div className="whatsapp-reply">
-                      {response.map((item, index) => (
+                      {responses[question].map((item, index) => (
                         <div key={index} className="whatsapp-reply-item">
                           <span className="whatsapp-reply-title">{item.title}</span>
                           <span className="whatsapp-reply-value">{item.value}</span>

@@ -132,7 +132,7 @@ const DialogComponent = forwardRef((props, ref) => {
                     <div><b>Sector:</b> {datos[0].sector}</div>
                     <div><b>Manzana:</b> {datos[0].manzana}</div>
                     <div><b>Lote:</b> {datos[0].lote}</div>
-                    <div><b>Disponibilidad:</b> {datos[0].disponibilidad}</div>
+               
                   </p>
                   {/* Chat de WhatsApp */}
                   <div style={styles.chatContainer}>
