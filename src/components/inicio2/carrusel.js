@@ -49,42 +49,34 @@ const Carousel = ({ images, links }) => {
     </div>
   );
 };
-
 const styles = {
   carouselContainer: {
     position: "relative",
     width: "100%",
-    height: "auto",
-    overflow: "hidden"
+    minHeight: "100vh", // Ocupa toda la altura de la pantalla sin espacio en blanco
+    overflow: "hidden",
+    margin: 0,
+    padding: 0,
   },
   imageWrapper: {
     display: "flex",
     width: "100%",
-    height: "auto"
+    height: "100%",
   },
-
   imageContainer: {
     minWidth: "100%",
     height: "100%",
     position: "relative",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
-
   imageLink: {
     display: "block",
     width: "100%",
     height: "100%",
-    textDecoration: "none"
+    textDecoration: "none",
   },
-
-  // Este estilo lo movemos al archivo CSS con la clase 'carouselImage'
-  image: {
-    width: "100%",
-    height: "auto",
-    objectFit: "cover"
-  }
 };
 
 // Uso del componente
