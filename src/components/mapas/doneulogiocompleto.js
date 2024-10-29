@@ -1206,7 +1206,8 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}         fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
-
+            <path d="M904.679,1836.65 L916.878,443.868 L2032.68,456.784 L2006.58,1853.51 L904.679,1836.65"fill={'grey'}fillOpacity={0.7} transform="translate(985, 3600) scale(0.87,0.83)"  vector-effect="none" fill-rule="evenodd"/>
+            <text x="2250" y="4300" style={styles.svgTextproximamente}   >Proximamente</text>
    {/*      {[88].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
@@ -1843,6 +1844,19 @@ const styles = {
    
    cursor: 'pointer'
   },
+  svgTextproximamente: {
+    fill:' #fff', /* Relleno blanco */
+    stroke: '#fff', /* Contorno blanco */
+    fillOpacity: '1', /* Opacidad sólida */
+    //strokeOpacity: '1', /* Opacidad del contorno sólida */           // Relleno blanco para el texto
+    stroke: 'white',          // Contorno blanco para el texto
+    fontSize: '80px',
+    fontFamily: 'inter',      // Aplica la fuente
+    textAnchor: 'middle',
+    cursor: 'pointer',
+   // transform: 'rotate(-45deg)' // Rotación de 45 grados para hacer diagonal el texto
+  },
+  
 
   overlayText: {
     position: 'absolute',

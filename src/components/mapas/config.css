@@ -115,7 +115,7 @@
   fill: #fff; /* Relleno blanco */
   stroke: #fff; /* Contorno blanco */
   fill-opacity: 1; /* Opacidad sólida */
-  stroke-opacity: 1; /* Opacidad del contorno sólida */
+  /* stroke-opacity: 1; Opacidad del contorno sólida */
   font-size: 110px;
   text-anchor: middle;
   font-family: 'HumanNature', sans-serif;
