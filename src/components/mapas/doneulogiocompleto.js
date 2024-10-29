@@ -898,7 +898,7 @@ const Arg = () => {
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            <Tooltip title={'Area Comercial'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(53)}         fill-rule="evenodd" vector-effect="none" d="M1796.33,2802.81 L2174.85,2805.77 L2167.95,3332.15 L1789.43,3327.22 L1796.33,2802.81"/></Tooltip>)})}
 
         {[54].map((tooltipValue) => {
@@ -907,8 +907,8 @@ const Arg = () => {
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
+    <Tooltip title={'Area Comercial'}>
+                <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
 
         {[55].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
