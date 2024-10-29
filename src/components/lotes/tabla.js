@@ -143,16 +143,7 @@ export default function StickyHeadTable() {
                       value = row['id_cliente'] ? 'Vendido' : 'Disponible';
                     }
 
-                    if (['precio', 'preciofinanciado', 'porcentaje_anticipo', 'adrema'].includes(column.id)) {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          <input
-                            value={isEditing ? editingRow[row.lote][column.id] : value}
-                            onChange={(e) => handleInputChange(row.lote, column.id, e.target.value)}
-                          />
-                        </TableCell>
-                      );
-                    }
+            
 
                     if (column.id === 'saldo_financiado') {
                       return (
@@ -197,24 +188,7 @@ export default function StickyHeadTable() {
                       );
                     }
 
-                    if (column.id === 'cantidad_cuotas') {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          <IconButton onClick={() => handleInputChange(row.lote, 'cantidad_cuotas', (isEditing ? parseInt(editingRow[row.lote].cantidad_cuotas) : parseInt(value)) - 1)}>
-                            <RemoveIcon />
-                          </IconButton>
-                          <input
-                            type="number"
-                            value={isEditing ? editingRow[row.lote].cantidad_cuotas : value}
-                            onChange={(e) => handleInputChange(row.lote, 'cantidad_cuotas', e.target.value)}
-                            style={{ width: '40px', textAlign: 'center' }}
-                          />
-                          <IconButton onClick={() => handleInputChange(row.lote, 'cantidad_cuotas', (isEditing ? parseInt(editingRow[row.lote].cantidad_cuotas) : parseInt(value)) + 1)}>
-                            <AddIcon />
-                          </IconButton>
-                        </TableCell>
-                      );
-                    }
+            
 
                     if (column.id === 'modificar') {
                       return (
