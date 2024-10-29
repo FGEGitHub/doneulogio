@@ -14,6 +14,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import WarningIcon from '@mui/icons-material/Warning';
 import Borrar from './modalborrar'
+import Modificar from './modificar'
 const columns = [
   { id: 'sector', label: 'Sector', minWidth: 100 },
   { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' },
@@ -28,7 +29,7 @@ const columns = [
   { id: 'anticipo', label: 'Anticipo', minWidth: 150, align: 'right' },
   { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 150, align: 'right' },
   { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 150, align: 'center' },
-  { id: 'valor_cuota', label: 'Calor Cuota', minWidth: 150, align: 'center' },
+  { id: 'valor_cuota', label: 'Valor Cuota', minWidth: 150, align: 'center' },
   { id: 'posecion', label: 'Posesión', minWidth: 100, align: 'center' },
   { id: 'escritura', label: 'Escritura', minWidth: 100, align: 'center' },
   { id: 'construccion', label: 'Construcción', minWidth: 100, align: 'center' },
@@ -188,8 +189,9 @@ export default function StickyHeadTable() {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           <Checkbox
-                            checked={isEditing ? editingRow[row.lote][column.id] === 1 : row[column.id] === 1}
-                            onChange={(e) => handleInputChange(row.lote, column.id, e.target.checked ? 1 : 0)}
+                            checked={isEditing ? editingRow[row.lote][column.id] === "Si" : row[column.id] === "Si"}
+                           // onChange={(e) => handleInputChange(row.lote, column.id, e.target.checked ? 1 : 0)}
+                           disabled
                           />
                         </TableCell>
                       );
@@ -217,9 +219,13 @@ export default function StickyHeadTable() {
                     if (column.id === 'modificar') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {isModified && <WarningIcon color="error" />}
-                          <button onClick={() => handleSubmit(row)}>Modificar</button>
-                       
+                             
+                          <Modificar
+                          lotemodificar={row}
+                          traer={async () => {
+                            const historial = await servicioDatos.traerlotes();
+                            setDatos(historial);
+                          }}/>
                         </TableCell>
                       );
                     }
