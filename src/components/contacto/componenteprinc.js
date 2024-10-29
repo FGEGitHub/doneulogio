@@ -127,10 +127,9 @@ const UrbanizacionAbierta = () => {
         alt="Urbanización Abierta" 
         style={styles.imagealt} 
       />
+        <br/>    <br/>    <br/>
       
-      
-      <Leaft/>
-      
+     
       <Footer/>
     </React.Fragment>
   );
