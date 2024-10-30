@@ -8,7 +8,7 @@ const SectoresComponent = () => {
     <Box sx={{ textAlign: 'center', padding: '60px 0' }}> {/* Aumenté el padding para más espacio arriba y abajo */}
       <Typography 
         variant="h2" 
-        sx={{ fontFamily: 'Inter, sans-serif', marginBottom: '40x', fontSize: '2.5rem' ,color: '#000000'        }} // Aumenté el marginBottom y el tamaño de la fuente
+        sx={{ fontFamily: 'Inter, sans-serif', marginBottom: '40x', fontSize: '2.5rem' ,color: '#000000'  , fontSize:'46px'      }} // Aumenté el marginBottom y el tamaño de la fuente
       >
         Nuestros sectores
       </Typography>
@@ -18,8 +18,8 @@ const SectoresComponent = () => {
         <Grid item>
           <Box
             sx={{
-              width: '300px', // Aumenté el ancho
-              height: '150px', // Aumenté la altura
+              width: '250px', // Aumenté el ancho
+              height: '100px', // Aumenté la altura
               backgroundImage: `url(${bosques})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -39,8 +39,8 @@ const SectoresComponent = () => {
         <Grid item>
           <Box
             sx={{
-              width: '300px', // Aumenté el ancho
-              height: '150px', // Aumenté la altura
+              width: '250px', // Aumenté el ancho
+              height: '100px', // Aumenté la altura
               backgroundImage: `url(${pinares})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',

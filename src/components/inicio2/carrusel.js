@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Image from "./Image"; // Importamos el componente 'Image'
 import foto1 from "../../Assets/uaimagen.svg";
 import foto2 from "../../Assets/masterp.png";
 import foto3 from "../../Assets/uaimagen.svg";
@@ -45,7 +44,7 @@ const Carousel = ({ images, links }) => {
         ))}
       </div>
       {/* Aquí usamos el componente 'Image' */}
-      <Image />
+   
     </div>
   );
 };
@@ -53,7 +52,7 @@ const styles = {
   carouselContainer: {
     position: "relative",
     width: "100%",
-    minHeight: "100vh", // Ocupa toda la altura de la pantalla sin espacio en blanco
+    minHeight: "60vh", // Ocupa toda la altura de la pantalla sin espacio en blanco
     overflow: "hidden",
     margin: 0,
     padding: 0,
