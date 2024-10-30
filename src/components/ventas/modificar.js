@@ -55,13 +55,17 @@ function Modificar({id_cliente,id, traer, propietario,lote, idVenta, fecha, id_l
         <DialogTitle>Modificar Venta {`${sector} - ${manzana} - ${lote}`}<br/>
         {propietario}</DialogTitle>
         <DialogContent>
-          <TextField
-            label="Fecha"
-            value={venta.fecha}
-            onChange={(e) => handleInputChange('fecha', e.target.value)}
-            fullWidth
-            margin="normal"
-          />
+        <TextField
+  label="Fecha"
+  type="date"                      // Cambia el tipo a "date" para activar el selector de fecha
+  value={venta.fecha}
+  onChange={(e) => handleInputChange('fecha', e.target.value)}
+  fullWidth
+  margin="normal"
+  InputLabelProps={{
+    shrink: true,                  // Asegura que el label no interfiera con el formato de fecha
+  }}
+/>
           Lote
           <Select
             label="Lote"
