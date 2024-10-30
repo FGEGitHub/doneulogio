@@ -196,7 +196,7 @@ alert(nov)
                                 </option>
                                 <option value={'Masculino'}>Masculino</option>
                                 <option value={'Femenino'}>Femenino</option>
-                  
+                                <option value={'Pareja'}>Pareja</option>
                    
                             </NativeSelect> 
 <TextField
