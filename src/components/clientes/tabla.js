@@ -60,7 +60,7 @@ export default function StickyHeadTable() {
 
   return (
     <>
-     <Paper sx={{   /*width: '100%',*/  overflow: 'visible', backgroundColor: '#f5f5f5', marginTop: '1200px' }}>
+     <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
         <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
           <TableContainer sx={{ maxHeight: '100%' }}>
             <Table stickyHeader aria-label="sticky table">

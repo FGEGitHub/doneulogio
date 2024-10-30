@@ -80,7 +80,7 @@ export default function VentasTable() {
   };
 
   return (
-    <Paper sx={{ width: '90%', overflow: 'hidden', margin: 'auto', height: '90vh', marginTop: '50px' }}>
+    <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
       <Button variant="contained" onClick={handleNuevaVenta} disabled={nuevaVenta}>
         Nueva Venta
       </Button>
