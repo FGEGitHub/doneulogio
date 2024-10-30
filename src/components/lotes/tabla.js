@@ -26,17 +26,18 @@ const columns = [
   { id: 'precio', label: 'P. Contado', minWidth: 100, align: 'right' },
   { id: 'preciofinanciado', label: 'P. Financiado', minWidth: 100, align: 'right' },
   { id: 'porcentaje_anticipo', label: 'Porcentaje Anticipo', minWidth: 150, align: 'right' },
-  { id: 'anticipo', label: 'Anticipo', minWidth: 150, align: 'right' },
-  { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 150, align: 'right' },
-  { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 150, align: 'center' },
-  { id: 'valor_cuota', label: 'Valor Cuota', minWidth: 150, align: 'center' },
+  { id: 'anticipo', label: 'Anticipo', minWidth: 100, align: 'right' },
+  { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 100, align: 'right' },
+  { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 100, align: 'center' },
+  { id: 'valor_cuota', label: 'Valor Cuota', minWidth: 100, align: 'center' },
   { id: 'posecion', label: 'Posesión', minWidth: 100, align: 'center' },
   { id: 'escritura', label: 'Escritura', minWidth: 100, align: 'center' },
   { id: 'construccion', label: 'Construcción', minWidth: 100, align: 'center' },
   { id: 'modificar', label: 'modificar', minWidth: 100, align: 'center' },
   { id: 'borrar', label: 'borrar', minWidth: 100, align: 'center' },
 ];
-
+const formatCurrency = (value) => 
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [datos, setDatos] = useState([]);
@@ -148,11 +149,33 @@ export default function StickyHeadTable() {
                     if (column.id === 'saldo_financiado') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {isEditing ? editingRow[row.lote].saldo_financiado : (row.preciofinanciado - (row.porcentaje_anticipo * row.preciofinanciado / 100))}
+                          {formatCurrency(isEditing ? editingRow[row.lote].saldo_financiado : (row.preciofinanciado - (row.porcentaje_anticipo * row.preciofinanciado / 100)))}
                         </TableCell>
                       );
                     }
 
+                    if (column.id === 'preciofinanciado' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {formatCurrency(row.preciofinanciado)}
+                        </TableCell>
+                      );
+                    }
+                    if (column.id === 'precio' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {formatCurrency(row.precio)}
+                        </TableCell>
+                      );
+                    }
+                    if (column.id === 'porcentaje_anticipo' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {row.porcentaje_anticipo}%
+                        </TableCell>
+                      );
+                    }
+                    
                     if (column.id === 'valor_cuota') {
                       const porcentajeAnticipo = parseFloat(editingRow[row.lote]?.porcentaje_anticipo || row.porcentaje_anticipo || 0);
                       const precioFinanciado = parseFloat(editingRow[row.lote]?.preciofinanciado || row.preciofinanciado || 0);
@@ -164,14 +187,14 @@ export default function StickyHeadTable() {
                     
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {valorCuota.toFixed(2)}
+                        { formatCurrency(valorCuota.toFixed(2)) }
                         </TableCell>
                       );
                     }
                     if (column.id === 'anticipo') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {isEditing ? ((editingRow[row.lote].porcentaje_anticipo ? editingRow[row.lote].porcentaje_anticipo : row.porcentaje_anticipo) * (editingRow[row.lote].preciofinanciado ? editingRow[row.lote].preciofinanciado : row.preciofinanciado) / 100) : (row.porcentaje_anticipo * row.preciofinanciado / 100)}
+                          {  formatCurrency( isEditing ? ((editingRow[row.lote].porcentaje_anticipo ? editingRow[row.lote].porcentaje_anticipo : row.porcentaje_anticipo) * (editingRow[row.lote].preciofinanciado ? editingRow[row.lote].preciofinanciado : row.preciofinanciado) / 100) : (row.porcentaje_anticipo * row.preciofinanciado / 100))}
                         </TableCell>
                       );
                     }

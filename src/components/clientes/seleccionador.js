@@ -65,17 +65,17 @@ const Seleccion = () => {
 
             {/* Mostrar contenido basado en la selección */}
             <div style={{ 
-                display: 'flex', 
+               // display: 'flex', 
                 justifyContent: 'center', 
                 alignItems: 'center', 
-                flex: 1,
+              
                 width: '100%',
                 height: '100%',
-                backgroundColor: '#214138', // Aplica el fondo al contenedor
+               backgroundColor: '#214138', // Aplica el fondo al contenedor
             }}>
-                {mapa === "1" ? <Clientes style={{ width: '100%', height: '100%' }} /> : null}
-                {mapa === "2" ? <Lotes style={{ width: '100%', height: '100%' }} /> : null}
-                {mapa === "3" ? <Ventas style={{ width: '100%', height: '100%' }} /> : null}
+                {mapa === "1" ? <Clientes  /> : null}
+                {mapa === "2" ? <Lotes  /> : null}
+                {mapa === "3" ? <Ventas  /> : null}
                 {!mapa && <p>Sin selección</p>}
             </div>
 
