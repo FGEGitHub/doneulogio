@@ -60,143 +60,120 @@ export default function StickyHeadTable() {
 
   return (
     <>
-   
-      <Paper sx={{ width: '100%', overflow: 'visible', backgroundColor: '#f5f5f5', marginTop: '1200px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
-                <TableContainer sx={{ maxHeight: '100%', overflow: 'auto' }}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                {columns.map((column) => (
-                  <TableCell
-                    key={column.id}
-                    align={column.align}
-                    style={{ minWidth: column.minWidth, fontWeight: 'bold', color: '#333' }}
-                  >
-                    {column.label}
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {datos.map((row) => (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.id_cliente}>
-                  {columns.map((column) => {
-                    const value = row[column.id];
-                    if (column.id === 'id_cliente') {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          CLI-{row.id}
-                        </TableCell>
-                      );
-                    }
-                    if (editingRow === row.id_cliente) {
-                      if (column.id === 'estado_civil' || column.id === 'provincia') {
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            <Select
-                              value={modifiedData[column.id] || ''}
-                              onChange={(e) => handleChange(column.id, e.target.value)}
-                              displayEmpty
-                              style={{ width: '100%' }}
-                            >
-                              <MenuItem value="">Elegir</MenuItem>
-                              {column.id === 'estado_civil' ? (
-                                <>
-                                  <MenuItem value="Soltero">Soltero</MenuItem>
-                                  <MenuItem value="Pareja">Pareja</MenuItem>
-                                  <MenuItem value="Desconocido">Desconocido</MenuItem>
-                                </>
-                              ) : (
-                                <>
-                                  <MenuItem value="Buenos Aires">Buenos Aires</MenuItem>
-                                  <MenuItem value="Catamarca">Catamarca</MenuItem>
-                                  <MenuItem value="Chaco">Chaco</MenuItem>
-                                  <MenuItem value="Chubut">Chubut</MenuItem>
-                                  <MenuItem value="Córdoba">Córdoba</MenuItem>
-                                  <MenuItem value="Corrientes">Corrientes</MenuItem>
-                                  <MenuItem value="Entre Ríos">Entre Ríos</MenuItem>
-                                  <MenuItem value="Formosa">Formosa</MenuItem>
-                                  <MenuItem value="Jujuy">Jujuy</MenuItem>
-                                  <MenuItem value="La Pampa">La Pampa</MenuItem>
-                                  <MenuItem value="La Rioja">La Rioja</MenuItem>
-                                  <MenuItem value="Mendoza">Mendoza</MenuItem>
-                                  <MenuItem value="Misiones">Misiones</MenuItem>
-                                  <MenuItem value="Neuquén">Neuquén</MenuItem>
-                                  <MenuItem value="Río Negro">Río Negro</MenuItem>
-                                  <MenuItem value="Salta">Salta</MenuItem>
-                                  <MenuItem value="San Juan">San Juan</MenuItem>
-                                  <MenuItem value="San Luis">San Luis</MenuItem>
-                                  <MenuItem value="Santa Cruz">Santa Cruz</MenuItem>
-                                  <MenuItem value="Santa Fe">Santa Fe</MenuItem>
-                                  <MenuItem value="Santiago del Estero">Santiago del Estero</MenuItem>
-                                  <MenuItem value="Tierra del Fuego">Tierra del Fuego</MenuItem>
-                                  <MenuItem value="Tucumán">Tucumán</MenuItem>
-                                </>
-                              )}
-                            </Select>
-                          </TableCell>
-                        );
-                      }
-                      if (column.id === 'modificar') {
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            <Button
-                              variant="contained"
-                              color="success"
-                              size="small"
-                              onClick={() => handleSave(row.id_cliente)}
-                            >
-                              Guardar
-                            </Button>
-                            <Button
-                              variant="outlined"
-                              color="secondary"
-                              size="small"
-                              onClick={handleCancel}
-                              style={{ marginLeft: '10px' }}
-                            >
-                              No Guardar
-                            </Button>
-                          </TableCell>
-                        );
-                      }
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {column.format && typeof value === 'number'
-                            ? column.format(modifiedData[column.id])
-                            : modifiedData[column.id] || value}
-                        </TableCell>
-                      );
-                    } else {
-                      if (column.id === 'modificar') {
-                        return (
-                          <TableCell key={column.id} align={column.align}>
-                            <Button
-                              variant="contained"
-                              color="primary"
-                              size="small"
-                              onClick={() => handleEdit(row.id_cliente)}
-                            >
-                              Modificar
-                            </Button>
-                          </TableCell>
-                        );
-                      }
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          {value}
-                        </TableCell>
-                      );
-                    }
-                  })}
+     <Paper sx={{   /*width: '100%',*/  overflow: 'visible', backgroundColor: '#f5f5f5', marginTop: '1200px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
+          <TableContainer sx={{ maxHeight: '100%' }}>
+            <Table stickyHeader aria-label="sticky table">
+              <TableHead>
+                <TableRow>
+                  {columns.map((column) => (
+                    <TableCell
+                      key={column.id}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth, fontWeight: 'bold', color: '#333' }}
+                    >
+                      {column.label}
+                    </TableCell>
+                  ))}
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-       
-        </TableContainer>  
-         </div>
+              </TableHead>
+              <TableBody>
+                {datos.map((row) => (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id_cliente}>
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      if (column.id === 'id_cliente') {
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            CLI-{row.id}
+                          </TableCell>
+                        );
+                      }
+                      if (editingRow === row.id_cliente) {
+                        if (column.id === 'estado_civil' || column.id === 'provincia') {
+                          return (
+                            <TableCell key={column.id} align={column.align}>
+                              <Select
+                                value={modifiedData[column.id] || ''}
+                                onChange={(e) => handleChange(column.id, e.target.value)}
+                                displayEmpty
+                                style={{ width: '100%' }}
+                              >
+                                <MenuItem value="">Elegir</MenuItem>
+                                {column.id === 'estado_civil' ? (
+                                  <>
+                                    <MenuItem value="Soltero">Soltero</MenuItem>
+                                    <MenuItem value="Pareja">Pareja</MenuItem>
+                                    <MenuItem value="Desconocido">Desconocido</MenuItem>
+                                  </>
+                                ) : (
+                                  <>
+                                    <MenuItem value="Buenos Aires">Buenos Aires</MenuItem>
+                                    {/* Add other provinces as MenuItems */}
+                                  </>
+                                )}
+                              </Select>
+                            </TableCell>
+                          );
+                        }
+                        if (column.id === 'modificar') {
+                          return (
+                            <TableCell key={column.id} align={column.align}>
+                              <Button
+                                variant="contained"
+                                color="success"
+                                size="small"
+                                onClick={() => handleSave(row.id_cliente)}
+                              >
+                                Guardar
+                              </Button>
+                              <Button
+                                variant="outlined"
+                                color="secondary"
+                                size="small"
+                                onClick={handleCancel}
+                                style={{ marginLeft: '10px' }}
+                              >
+                                No Guardar
+                              </Button>
+                            </TableCell>
+                          );
+                        }
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            {column.format && typeof value === 'number'
+                              ? column.format(modifiedData[column.id])
+                              : modifiedData[column.id] || value}
+                          </TableCell>
+                        );
+                      } else {
+                        if (column.id === 'modificar') {
+                          return (
+                            <TableCell key={column.id} align={column.align}>
+                              <Button
+                                variant="contained"
+                                color="primary"
+                                size="small"
+                                onClick={() => handleEdit(row.id_cliente)}
+                              >
+                                Modificar
+                              </Button>
+                            </TableCell>
+                          );
+                        }
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            {value}
+                          </TableCell>
+                        );
+                      }
+                    })}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       </Paper>
     </>
   );

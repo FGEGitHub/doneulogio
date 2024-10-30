@@ -112,8 +112,8 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '90%', overflow: 'hidden', margin: 'auto', height: '90vh', marginTop: '150px' }}>
-      <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)', overflowX: 'auto' }}>
+    <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
+      <TableContainer sx={{  height: '100%',overflowX: 'auto' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>

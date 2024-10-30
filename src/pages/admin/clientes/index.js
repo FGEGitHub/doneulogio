@@ -1,60 +1,38 @@
-
-
-
-
-
-import { useNavigate, useParams } from "react-router-dom";
-
-import React, { useEffect, useState } from "react";
-import Nav from '../../../components/navbar'
-
-import Clientes from '../../../components/clientes/seleccionador'
+import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import Nav from '../../../components/navbar';
+import Clientes from '../../../components/clientes/seleccionador';
 
 export default function Paginas() {
   const navigate = useNavigate();
-  /*   const theme = useTheme();
-    const classes = useStyles();
-    const [loginVisible, setLoginvisible] = useState(false)
-    const isMatch = useMediaQuery(theme.breakpoints.down("md")); */
+
   useEffect(() => {
-      
-    const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
-    console.log(loggedUserJSON) 
-        if (loggedUserJSON) {
-          const user = JSON.parse(loggedUserJSON)
-          console.log(user)
-          switch (user.nivel) {
-            case 100:
-             break;
-           //   navigate('/')
-           
-           
-            default:
-            console.log('defaul')
-                window.localStorage.removeItem('loggedNoteAppUser')
-                navigate("/login")
-              break;
-          }
-        }else{
-          console.log('else')
-          //navigate('/login')
-            //  window.localStorage.removeItem('loggedNoteAppUser')
-              //alert('usuario no autorizado')
-        }
-       
-      }, [])
+    const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser');
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      if (user.nivel !== 100) {
+        console.log('Usuario no autorizado');
+        window.localStorage.removeItem('loggedNoteAppUser');
+        navigate("/login");
+      }
+    } else {
+      console.log('Usuario no autenticado');
+    }
+  }, [navigate]);
 
-
-return (
-  <>
-  <div style={{ backgroundColor: '#1A393C' }}>
-  <Nav/>
-  <br/> <br/> <br/>
-  <Clientes/>
-  <br/> <br/> <br/> <br/>
-  </div>
-  </>
-
-);
-
+  return (
+    <div style={{ 
+      backgroundColor: '#1A393C', 
+      minHeight: '100vh', // Ocupa toda la altura de la ventana
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center', // Opcional, alinea al centro el contenido horizontalmente
+    }}>
+      <Nav />
+      <div style={{ flex: 1, width: '100%' }}> {/* Flex 1 para asegurar que Clientes ocupe el espacio restante */}
+        <Clientes />
+      </div>
+      <br /><br /><br /><br />
+    </div>
+  );
 }
