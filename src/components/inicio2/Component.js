@@ -111,7 +111,7 @@ const UrbanizacionAbierta = () => {
 </nav>
 
         {/* Video Section */}
-        <Box sx={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden' }}>
+        <Box sx={{ position: 'relative', width: '100%', height: '450px', overflow: 'hidden' }}>
   <video 
     src={video} 
     autoPlay 

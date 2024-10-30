@@ -121,7 +121,7 @@ const DialogComponent = forwardRef((props, ref) => {
   variant="contained"
   color="success"
   startIcon={<WhatsAppIcon />}
-  href={`https://wa.me/5493794781818?text=${encodeURIComponent(
+  href={`https://wa.me/5493794008721?text=${encodeURIComponent(
     `Hola, me gustaría recibir información sobre los lotes comerciales .`
   )}`}
   target="_blank"

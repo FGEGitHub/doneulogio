@@ -8,9 +8,9 @@ const SectoresComponent = () => {
     <Box sx={{ textAlign: 'center', padding: '60px 0' }}> {/* Aumenté el padding para más espacio arriba y abajo */}
       <Typography 
         variant="h2" 
-        sx={{ fontFamily: 'Inter, sans-serif', marginBottom: '40x', fontSize: '2.5rem' ,color: '#000000'  , fontSize:'46px'      }} // Aumenté el marginBottom y el tamaño de la fuente
+        sx={{ fontFamily: 'Inter, sans-serif', marginBottom: '40x', fontSize: '2.5rem' ,color: '#000000'  , fontSize:'40px'      }} // Aumenté el marginBottom y el tamaño de la fuente
       >
-        Nuestros sectores
+       <strong>Nuestros sectores</strong> 
       </Typography>
       <br/>    <br/>    <br/>
       <Grid container spacing={8} justifyContent="center"> {/* Cambié spacing de 6 a 8 para mayor separación */}

@@ -104,7 +104,7 @@ const WhatsappChat = (props) => {
     const defaultMessage =
       "Hola, tengo una pregunta específica sobre el lote   "+props.sector+ "-"+ props.manzana+ "-"+ props.lote;
     window.open(
-      `https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`,
+      `https://wa.me/5493794008721?text=${encodeURIComponent(defaultMessage)}`,
       "_blank"
     );
   };
