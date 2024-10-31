@@ -21,9 +21,7 @@
   display: block; /* Elimina cualquier espacio adicional por debajo de la imagen */
 }
 
-.mi-path {
-  transition: fill 0.3s ease, fill-opacity 0.3s ease;
-}
+
 
 .mi-path:hover {
   fill: grey !important; /* Forzamos que se mantenga gris en el hover */
