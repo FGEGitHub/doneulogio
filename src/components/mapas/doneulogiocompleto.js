@@ -210,7 +210,7 @@ const Arg = () => {
 <img 
         src={Redes} 
         alt="Urbanización Abierta" 
-        sx={{  height: '90%'} } 
+        sx={{  width: '500%'} } 
       />
 
       <div       style={{ height: '100vh' }} 
@@ -218,7 +218,7 @@ const Arg = () => {
          <br/><br/><br/>
             <h2  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h2>
     <p  style={styles.infomapaint}  >
-        Para conocer disponibilidades, dimensiones y precios hace click en el sector de lote que te interese
+        Para conocer disponibilidades, dimensiones y precios hace click <br/>en el sector de lote que te interese
     </p>
       <TransformWrapper
       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 

@@ -1,5 +1,5 @@
 import React from 'react';
-import MapComponent from '../ubicacion/ubi'; // Importa el componente del mapa
+import MapComponent from '../../Assets/map.png'; // Importa el componente del mapa
 
 const LocationInfo = () => {
     return (
@@ -24,7 +24,10 @@ const LocationInfo = () => {
                
             </div>
             <div style={{ width: '45%' }}>
-                <MapComponent /> {/* Muestra el componente del mapa */}
+            <img src={MapComponent} alt="Logo"    style={{ 
+     width:"90%" // Cambia el cursor al pasar el mouse
+    }} />
+          
             </div>
         </div>
     );
