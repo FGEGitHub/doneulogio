@@ -203,15 +203,12 @@ const Arg = () => {
     </div>
 <Componente1/>
 <br/><br/><br/>
-<div style={{ textAlign: 'center', marginTop: '20px' }}>
-      <Typography variant="h5" style={{ fontWeight: 'bold', marginBottom: '10px' }}>
-        Mapa interactivo
-      </Typography>
-      <Typography variant="body1">
-        Para conocer disponibilidades, dimensiones y precios hace click
-        en el sector de lote que te interese
-      </Typography>
-    </div>
+<div style="font-family: 'Inter', sans-serif; text-align: left; max-width: 600px; margin: 0 auto;">
+    <h2 style="font-weight: bold; margin-bottom: 8px;">Mapa interactivo</h2>
+    <p style="font-weight: normal; text-align: left;">
+        Para conocer disponibilidades, dimensiones y precios hace click en el sector de lote que te interese
+    </p>
+</div>
     <br/><br/><br/>
 <img 
         src={Redes} 
