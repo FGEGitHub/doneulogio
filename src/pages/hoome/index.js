@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'; // Agregamos useEffect
 import { Box, Typography, IconButton, Grid } from '@mui/material';
 import logo from '../../Assets/logo_svg.svg';
 import Video from '../../Assets/video.mp4';
-import Comercializa from "../../Assets/Group1364.svg";
+//import Comercializa from "../../Assets/Group1364.svg";
 import rectangulo from "../../Assets/rectangolo_verde.svg";
 import Footer from "../../Assets/footer.svg";
 import map from "../../Assets/mapa_svg.svg";
@@ -10,11 +10,11 @@ import bosques from "../../Assets/Group 97.svg";
 import pinares from "../../Assets/Group 98.svg"
 
 // Importa las imágenes del carrusel
-import img1 from '../../Assets/libertad.svg';
-import img2 from '../../Assets/comunidad.svg';
-import img3 from '../../Assets/naturaleza.svg';
-import img4 from '../../Assets/inversion.svg';
-import img5 from '../../Assets/bienestar.svg';
+import img1 from '../../Assets/libertad.png';
+import img2 from '../../Assets/Comunidad.png';
+import img3 from '../../Assets/Naturaleza.png';
+import img4 from '../../Assets/Inversion.png';
+import img5 from '../../Assets/Bienestar.png';
 
 export const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -362,9 +362,9 @@ export const Home = () => {
 
 <Grid container justifyContent="center" alignItems="center" sx={{ mt: 5 }}>
   <Grid item xs={12} sm={6} md={4}>
-    <Box
+  <Box
       component="img"
-      src={Comercializa}
+      src={require('../../Assets/carrusel4.svg').default}
       alt="Comercializa"
       sx={{
         width: '488.77px',
