@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Agregamos useEffect
+/* import React, { useState, useEffect } from 'react'; // Agregamos useEffect
 import { Box, Typography, IconButton, Grid ,CssBaseline,Toolbar} from '@mui/material';
 import logo from '../../Assets/logo_svg.svg';
 import Video from '../../Assets/video.mp4';
@@ -46,7 +46,7 @@ export const Home = () => {
 
   return (
     <Box sx={{ width: '100%', overflow: 'hidden' }}>
-      {/* Navbar */}
+    
 
       <CssBaseline />
       <Toolbar className="urbanizacion-toolbar">
@@ -144,7 +144,7 @@ export const Home = () => {
 </nav>
 
 
-      {/* Video Background */}
+   
       <Box sx={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden' }}>
         <video
           src={Video}
@@ -176,7 +176,7 @@ export const Home = () => {
         </Typography>
       </Box>
 
-      {/* Sección "Nuestros Sectores" */}
+   
       <Box sx={{ textAlign: 'center', mt: '50px', mb: '30px' }}>
         <Typography
           sx={{
@@ -190,7 +190,6 @@ export const Home = () => {
         </Typography>
       </Box>
 
-      {/* Sección de Imágenes con SVG predefinidos */}
       <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', mb: '60px' }}>
         <Box
           component="img"
@@ -215,7 +214,6 @@ export const Home = () => {
         />
       </Box>
 
-{/* Carousel Section */}
 <Box sx={{ position: 'relative', height: '400px', width: '100%', overflow: 'hidden' }}>
   <Box
     component="img"
@@ -229,7 +227,6 @@ export const Home = () => {
     }}
   />
 
-  {/* Indicadores de diapositivas */}
   <Box
     sx={{
       position: 'absolute',
@@ -255,7 +252,6 @@ export const Home = () => {
   </Box>
 </Box>
 
-      {/* Rest of the components... */}
       <Box
         sx={{
           display: 'flex',
@@ -266,7 +262,6 @@ export const Home = () => {
      
       </Box>
   
-  {/* componente de mapa y donde estamos */}
   <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '60px' }}>
   <Box sx={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
     <Box>
@@ -370,15 +365,7 @@ export const Home = () => {
 
 <Grid container justifyContent="center" alignItems="center" sx={{ mt: 5 }}>
   <Grid item xs={12} sm={6} md={4}>
-{/*   <Box
-      component="img"
-      src={require('../../Assets/Group1364.svg').default}
-      alt="Comercializa"
-      sx={{
-        width: '488.77px',
-        height: '106.44px',
-      }}
-    /> */}
+
   </Grid>
 </Grid>
 
@@ -394,4 +381,4 @@ export const Home = () => {
 />
     </Box>
   );
-};
+}; */
