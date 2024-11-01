@@ -68,10 +68,10 @@ const PublicSpaces = () => {
                   <img src={image1a} alt="Imagen 1a" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1b} alt="Imagen 1b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
+                  <img src={image1a} alt="Imagen 1b" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
                 <div>
-                  <img src={image1c} alt="Imagen 1c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
+                  <img src={image1a} alt="Imagen 1c" style={{ height: '400px', width: '400px', objectFit: 'cover' }} />
                 </div>
               </Carousel>
             </CarouselContainer>
@@ -90,7 +90,7 @@ const PublicSpaces = () => {
                 variant="body1"
                 style={{
                   textAlign: 'justify', // Justifica el texto
-                  fontSize: '24px', // Ajusta el tamaño de la fuente para el cuerpo del texto
+                  fontSize: '22px', // Ajusta el tamaño de la fuente para el cuerpo del texto
                   fontFamily: 'inter', // Cambia el tipo de letra si lo deseas
                 }}
               >
@@ -112,10 +112,10 @@ const PublicSpaces = () => {
                 }}> <strong>Bosque Nativo</strong></StyledTypography>
               <Typography variant="body1"  style={{
                   textAlign: 'justify', // Justifica el texto
-                  fontSize: '24px', // Ajusta el tamaño de la fuente para el cuerpo del texto
+                  fontSize: '22px', // Ajusta el tamaño de la fuente para el cuerpo del texto
                   fontFamily: 'inter', // Cambia el tipo de letra si lo deseas
                 }}>
-                Primer espacio público del proyecto, donde todo se originó. Ubicado a la entrada del bosque nativo del sector Bosques, cuenta con espacios para sentarse a compartir y disfrutar de un entorno sereno y natural. Ideal para quienes buscan un momento de desconexión.
+               En Don Eulogio existe una Reserva Natural, la cual abarca un aproximado de 7.200 m²  de bosques nativos con senderos naturales, siendo un espacio ideal para experimentar la naturaleza y compartir momentos junto a familia y amigos.
               </Typography>
             </CardText>
             <CarouselContainer>

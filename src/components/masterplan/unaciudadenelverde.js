@@ -106,8 +106,8 @@ const styles = {
     alignItems: 'center',
   },
   image: {
-    width: '80px',
-    height: '80px',
+    width: '85px',
+    height: '85px',
     marginBottom: '10px',
     objectFit: 'cover',
     // Estilos para pantallas pequeñas

@@ -91,9 +91,9 @@ alert(nov)
                     padding: '10px 20px', 
                     border: 'none', 
                     borderRadius: '5px', 
-                    cursor: 'pointer' 
+                    cursor: 'pointer'
                 }}>
-      Nuevo
+      Nuevo Cliente
     </button>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
@@ -196,7 +196,7 @@ alert(nov)
                                 </option>
                                 <option value={'Masculino'}>Masculino</option>
                                 <option value={'Femenino'}>Femenino</option>
-                  
+                                <option value={'Pareja'}>Pareja</option>
                    
                             </NativeSelect> 
 <TextField

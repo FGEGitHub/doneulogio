@@ -6,30 +6,34 @@ import "./WhatsappChat.css";
 const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(true);
-  const [selectedQuestion, setSelectedQuestion] = useState(null);
-  const [response, setResponse] = useState([]);
+  const [openQuestions, setOpenQuestions] = useState({});
+  const [responses, setResponses] = useState({}); // Cambiado a objeto
   const [cuotas, setCuotas] = useState("");
   const [calculos, setCalculos] = useState(null);
 
   const handleSendMessage = () => {
     const defaultMessage = "Hola, me gustaría obtener más información.";
     window.open(
-      `https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`,
+      `https://wa.me/5493794008721?text=${encodeURIComponent(defaultMessage)}`,
       "_blank"
     );
   };
 
   const handleQuestionClick = (question) => {
-    setSelectedQuestion(question);
     setCalculos(null);
     let formattedResponse = [];
     switch (question) {
       case "¿Cuáles son las formas de Pago disponibles?":
         formattedResponse = [
           {
-            title: "Formas de Pago",
+            title: "Modelo Contado",
             value:
-              "Se tienen contemplados 2 formas de pago para la adquisición de tu lote:\n• Modelo Contado: Con precios promocionales, pagaderos en dólares o en pesos.\n• Modelo Financiado: Con un sistema de entrega del 50% del valor del lote y el saldo a financiarse en hasta 6 cuotas.",
+              "Con precios promocionales, pagaderos en dólares o en pesos.",
+          },
+          {
+            title: "Modelo Financiado",
+            value:
+              "Con un sistema de anticipo + Cuotas fijas, pagaderas en dólares o en pesos.",
           },
         ];
         break;
@@ -37,21 +41,33 @@ const WhatsappChat = (props) => {
         formattedResponse = [
           {
             title: "Precio de Contado",
-            value: `$${props.precio}`, // Precio de contado desde la base de datos
+            value: `USD$${props.precio}`, // Precio de contado desde la base de datos
           },
         ];
         break;
       case "¿Cuál es el precio financiado de este lote?":
-        const anticipo = props.preciofinanciado *props.porcentaje_anticipo/100;
-        const valorCuotas = (props.preciofinanciado-anticipo) / props.cantidad_cuotas;
+        const anticipo = (props.preciofinanciado * props.porcentaje_anticipo) / 100;
+        const valorCuotas = (props.preciofinanciado - anticipo) / props.cantidad_cuotas;
         formattedResponse = [
           {
             title: "Precio Financiado",
-            value: `$${props.preciofinanciado}`,
+            value: `USD ${props.preciofinanciado}`,
           },
           {
-            title: "Financiación",
-            value: `Anticipo (${props.porcentaje_anticipo}): $${anticipo.toFixed(2)}. Las ${props.cantidad_cuotas} cuotas serán de $${valorCuotas.toFixed(2)} cada una.`,
+            title: `Anticipo ${props.porcentaje_anticipo}%`,
+            value: `USD ${anticipo}`,
+          },
+          {
+            title: "Saldo Financiado",
+            value: `USD ${props.preciofinanciado - anticipo}`,
+          },
+          {
+            title: "Cantidad de Cuotas",
+            value: `${props.cantidad_cuotas}`,
+          },
+          {
+            title: "Valor de Cuota",
+            value: `USD ${valorCuotas}`,
           },
         ];
         break;
@@ -73,14 +89,22 @@ const WhatsappChat = (props) => {
           },
         ];
     }
-    setResponse(formattedResponse);
+
+    setResponses((prevResponses) => ({
+      ...prevResponses,
+      [question]: formattedResponse,
+    }));
+    setOpenQuestions((prev) => ({
+      ...prev,
+      [question]: !prev[question],
+    }));
   };
 
   const handleOtherQuestionClick = () => {
     const defaultMessage =
-      "Hola, tengo una pregunta específica sobre los lotes.";
+      "Hola, tengo una pregunta específica sobre el lote   "+props.sector+ "-"+ props.manzana+ "-"+ props.lote;
     window.open(
-      `https://wa.me/5493794781818?text=${encodeURIComponent(defaultMessage)}`,
+      `https://wa.me/5493794008721?text=${encodeURIComponent(defaultMessage)}`,
       "_blank"
     );
   };
@@ -103,49 +127,39 @@ const WhatsappChat = (props) => {
             </span>
           </div>
           <div className="whatsapp-questions">
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuáles son las formas de Pago disponibles?")}
-            >
-              ¿Cuáles son las formas de Pago disponibles?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuál es el precio de contado de este lote?")}
-            >
-              ¿Cuál es el precio de contado de este lote?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿Cuál es el precio financiado de este lote?")}
-            >
-              ¿Cuál es el precio financiado de este lote?
-            </button>
-            <button
-              className="whatsapp-question-btn"
-              onClick={() => handleQuestionClick("¿La operación incluye Comisiones Inmobiliarias?")}
-            >
-              ¿La operación incluye Comisiones Inmobiliarias?
-            </button>
+            {[
+              "¿Cuáles son las formas de Pago disponibles?",
+              "¿Cuál es el precio de contado de este lote?",
+              "¿Cuál es el precio financiado de este lote?",
+              "¿La operación incluye Comisiones Inmobiliarias?",
+            ].map((question) => (
+              <div key={question} className="whatsapp-question-item">
+                <button
+                  className="whatsapp-question-btn"
+                  onClick={() => handleQuestionClick(question)}
+                >
+                  {question}
+                </button>
+                {openQuestions[question] && responses[question] && (
+                  <div className="whatsapp-response">
+                    <span className="whatsapp-question">{question}</span>
+                    <div className="whatsapp-reply">
+                      {responses[question].map((item, index) => (
+                        <div key={index} className="whatsapp-reply-item">
+                          <span className="whatsapp-reply-title">{item.title}</span>
+                          <span className="whatsapp-reply-value">{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
             <button className="whatsapp-question-btn" onClick={handleOtherQuestionClick}>
               <img src={whatsappLogo} alt="WhatsApp" className="whatsapp-icon" />
-              Tengo otra pregunta
+              Quiero contactarme con un representante de venta
             </button>
           </div>
-
-          {selectedQuestion && (
-            <div className="whatsapp-response">
-              <span className="whatsapp-question">{selectedQuestion}</span>
-              <div className="whatsapp-reply">
-                {response.map((item, index) => (
-                  <div key={index} className="whatsapp-reply-item">
-                    <span className="whatsapp-reply-title">{item.title}</span>
-                    <span className="whatsapp-reply-value">{item.value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       )}
     </div>

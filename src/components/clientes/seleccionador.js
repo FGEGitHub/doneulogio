@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Clientes from "./tabla";
 import Lotes from "../lotes/tabla";
-import Nuevo from './nuevo'
-import Ventas from '../ventas/todas'
+import Nuevo from './nuevo';
+import Ventas from '../ventas/todas';
 import * as React from 'react';
 
 const Seleccion = () => {
@@ -17,7 +17,7 @@ const Seleccion = () => {
             display: 'flex', 
             flexDirection: 'column', 
             height: '100vh', 
-            backgroundColor: '#214138',
+            backgroundColor: '#214138', // Asegura el color de fondo
             color: 'white',
             position: 'relative'
         }}>
@@ -68,11 +68,14 @@ const Seleccion = () => {
                 display: 'flex', 
                 justifyContent: 'center', 
                 alignItems: 'center', 
-                flex: 1 
+              
+                width: '100%',
+                height: '100%',
+               backgroundColor: '#214138', // Aplica el fondo al contenedor
             }}>
-                {mapa === "1" ? <Clientes /> : null}
-                {mapa === "2" ? <Lotes /> : null}
-                {mapa === "3" ? <Ventas /> : null}
+                {mapa === "1" ? <Clientes  /> : null}
+                {mapa === "2" ? <Lotes  /> : null}
+                {mapa === "3" ? <Ventas  /> : null}
                 {!mapa && <p>Sin selección</p>}
             </div>
 
@@ -84,6 +87,7 @@ const Seleccion = () => {
                 top: '20px', 
                 right: '20px' 
             }}>
+                <Nuevo/>
                 <button style={{ 
                     backgroundColor: '#2E7D32', 
                     color: 'white', 
@@ -113,7 +117,7 @@ const Seleccion = () => {
                 bottom: '20px', 
                 right: '20px' 
             }}>
-               <Nuevo/>
+                {/* Aquí podrías añadir otro botón o componente */}
             </div>
         </div>
     );

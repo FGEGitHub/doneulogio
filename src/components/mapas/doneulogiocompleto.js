@@ -3,12 +3,12 @@ import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
 import logo from '../../Assets/logo.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
-import { IconButton } from '@mui/material';
-import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
+import {  CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
+import SyncIcon from '@mui/icons-material/Sync';
 import Gps from "../../Assets/svgdoncompleto.svg";
 import Redes from "../../Assets/redes.svg";
-
+import nex from"../../Assets/netx.png";
+import vendidos from '../../Assets/vendidos.svg'
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/masterp.png';
@@ -56,7 +56,7 @@ const Arg = () => {
   // Función para manejar el cambio de escala
   const handleMouseEnter = () => setColor("green"); // 
   const handleMouseLeave = () => setColor("#1C6A3B");  // 
-  const handleMouseEnter2 = () => setColor2("blue"); // 
+  const handleMouseEnter2 = () => setColor2("#0d47a1"); // 
   const handleMouseLeave2 = () => setColor2("#246F74");  // 
   const handleImageChange = (e) => {
     setSelectedImage(e.target.value); // Actualiza la imagen seleccionada
@@ -74,7 +74,7 @@ const Arg = () => {
         setPosicion0(false);
         if (transformWrapperRef.current) {
           // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-          transformWrapperRef.current.setTransform(-200, -400, 3); // Ajusta estos valores según sea necesario
+          transformWrapperRef.current.setTransform(-400, -700, 2.5); // Ajusta estos valores según sea necesario
       }
     }
 };
@@ -211,7 +211,7 @@ const Arg = () => {
       <div       style={{ height: '100vh' }} 
       >
       <TransformWrapper
-       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
+      style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
@@ -222,7 +222,8 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-             {  showRestoreButton &&   <div style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
+           {/*   {  showRestoreButton &&   <div
+              style={{ position: 'fixed', bottom: 20, zIndex: 2, display: 'flex', flexDirection: 'column', }}>
                <button
           onClick={() => {
             resetTransform();  // Restaurar la vista completa
@@ -233,11 +234,65 @@ const Arg = () => {
             Restaurar vista
         </button>
       </div>}
+ */}
 
+{showRestoreButton && (
+        <div style={{
+          position: 'relative',
+          bottom: '-20%',
+          left: '-25%',
+          zIndex: 1000, // Asegura que esté sobre otros elementos
+        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+          padding: '10px',
+          borderRadius: '5px',
+        }}>
+            <img src={vendidos} alt="Urbanización Abierta"/>
+        </div>
+      )}
+
+
+  {/*INICIO BOTON 2*/}
+
+  {showRestoreButton && (
+        <div style={{
+          position: 'relative',
+          bottom: '-90%',
+          left: '20%',
+          zIndex: 1000, // Asegura que esté sobre otros elementos
+        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+          padding: '10px',
+          borderRadius: '5px',
+        }}>
+          <button
+            onClick={() => {
+              resetTransform(); // Restaurar la vista completa
+              setPosicion0(true); // Activa la primera capa del SVG
+              setShowRestoreButton(false);
+            }}
+            style={{
+              padding: '10px',
+              backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
+              color: 'black', // Color del texto
+              border: '1px solid #ccc', // Borde estándar
+              borderRadius: '4px', // Bordes redondeados comunes
+              cursor: 'pointer',
+              display: 'flex', // Para alinear el ícono y el texto
+              alignItems: 'center', // Centra el contenido verticalmente
+              gap: '5px', // Espacio entre el ícono y el texto
+              width: '200px',  // Ancho del botón ajustable
+              textAlign: 'center', // Centra el texto dentro del botón
+            }}
+          >
+            <SyncIcon /> {/* Ícono de Material UI */}
+            Restaurar vista
+          </button>
+        </div>
+      )}
+  {/*FIN BOTON FIJO */}
        
               <div style={{ display: 'flex' }}>
   <div style={{ flex: 0.7 }}> {/* mover al  medio*/}
-    {/* Aquí puedes agregar el texto que quieres mostrar a la izquierda */}
+  
   
   {/*   <img src={foto3} alt="Urbanización Abierta" className="urbanizacion-header-image" /> */}
     </div>
@@ -332,13 +387,13 @@ const Arg = () => {
 </div>:<div>
 <div style={{ position: 'relative', zIndex: 1,   width: 'auto', height: '100vh'}}>     
 
-      <svg xmlns="http://www.w3.org/2000/svg"   width="auto"  height="100vh"  viewBox="-716 1075 12874 9834"  baseProfile="tiny" version="1.2">
+      <svg xmlns="http://www.w3.org/2000/svg"   width="auto"  height="100vh"  viewBox="-712 1075 12874 9834"  baseProfile="tiny" version="1.2">
                           <defs />
- <g transform="scale(1.192,1.1959)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+ <g transform="scale(1.193,1.1959)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
         {[0].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -352,11 +407,11 @@ const Arg = () => {
 
          
         
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="1"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#ffffff" font-weight="400" stroke="none">
 
         {[1].map((tooltipValue) => {
@@ -374,12 +429,12 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
   <g fill-opacity="0"  font-family="MS Shell Dlg 2" font-style="normal" font-size="108.333" fill="#000000" font-weight="400" stroke="none">
    <rect x="0" width="7988" y="0" height="7977"/>
   </g>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="10.2362" fill-opacity="0.127001"  font-family="MS Shell Dlg 2" stroke-opacity="0.127001" stroke-linecap="square" font-style="normal" font-size="108.333" fill="#e4e7d6" stroke-linejoin="bevel" font-weight="400" stroke="#232323">
 
         {[2].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -829,7 +884,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(51)}         fill-rule="evenodd" vector-effect="none" d="M2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2320.74,2500.19 L2383.83,2503.64"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(51)}         fill-rule="evenodd" vector-effect="none" d="M2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2350.74,2500.19 L2383.83,2503.64"/></Tooltip>)})}
 
         {[52].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -846,7 +901,7 @@ const Arg = () => {
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            <Tooltip title={'Area Comercial'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(53)}         fill-rule="evenodd" vector-effect="none" d="M1796.33,2802.81 L2174.85,2805.77 L2167.95,3332.15 L1789.43,3327.22 L1796.33,2802.81"/></Tooltip>)})}
 
         {[54].map((tooltipValue) => {
@@ -855,8 +910,8 @@ const Arg = () => {
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
-            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
+    <Tooltip title={'Area Comercial'}>
+                <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(54)}         fill-rule="evenodd" vector-effect="none" d="M2258.64,2811.69 L2605.62,2841.26 L2568.16,2988.13 L2565.2,3334.12 L2251.74,3338.07 L2258.64,2811.69"/></Tooltip>)})}
 
         {[55].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1154,8 +1209,61 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}         fill-rule="evenodd" vector-effect="none" d="M1783.52,3966.72 L1874.7,3967.7 L1872.23,4094.86 L1784.5,4093.88 L1783.52,3966.72"/></Tooltip>)})}
+            <path d="M904.679,1836.65 L916.878,443.868 L2032.68,456.784 L2006.58,1853.51 L904.679,1836.65"fill={'#5D7237B2'}fillOpacity={0.7} transform="translate(985, 3600) scale(0.87,0.83)"  vector-effect="none" fill-rule="evenodd"/>
+            <image href={nex} x="2150" y="4310" width="115" height="115" />
+            <text x="2240" y="4550"style={styles.svgTextproximamente}   >Próximamente</text>
 
-        {[88].map((tooltipValue) => {
+{/*   lotes agregados  */}
+
+{[150].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 :1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            
+            <path   stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"     transform="translate(-348, 1615) scale(1.92,1.92)"  d="M1455.67,929.329 L1493.8,929.007 L1492.68,1061.81 L1453.45,1061.85 L1455.67,929.329" fill-rule="evenodd" vector-effect="none"className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}    />
+            </Tooltip>)})}
+            {[151].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 : 1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            
+            <path stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"   transform="translate(-348, 1617) scale(1.92,1.92)" className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}     d="M1453.53,1061.64 L1492.66,1061.81 L1489.79,1194.1 L1453.38,1194.38 L1453.53,1061.64" fill-rule="evenodd" vector-effect="none"/>
+
+            </Tooltip>)})}
+            {/* {[152].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            
+            <path transform="translate(-350, 1617) scale(1.92,1.92)" className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}     d="M1450.54,1227.23 L1489.57,1227.23 L1489.72,1361.44 L1450.47,1361.44 L1450.54,1227.23" fill-rule="evenodd" vector-effect="none"/>
+
+            </Tooltip>)})}
+            {[153].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+               <path transform="translate(-350, 1617) scale(1.92,1.92)"  className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}      d="M1489.71,1361.56 L1450.47,1361.44 L1450.43,1492.6 L1488.18,1492.43 L1489.71,1361.56" fill-rule="evenodd" vector-effect="none"/>
+
+            
+            </Tooltip>)})} */}
+
+
+            
+
+
+   {/*      {[88].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
@@ -1667,7 +1775,7 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(144)}    fill-rule="evenodd" vector-effect="none" d="M1749.66,5149.41 L1745.97,5232.58 L2967.2,5571.27 L2964.42,5148.95 L2731.54,5143.87 L2731.54,5163.27 L2230.67,5163.27 L2226.97,5203.94 L2142.88,5188.69 L2141.95,5154.96 L1749.66,5149.41"/></Tooltip>)})}
-
+ */}
     {/*      {[145].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
@@ -1707,15 +1815,15 @@ const Arg = () => {
             </Tooltip>
           ))}
         
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
-  <g transform="scale(1.192,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
+  <g transform="scale(1.193,1.1959)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
  </g>
 
 </svg>
@@ -1791,6 +1899,22 @@ const styles = {
    
    cursor: 'pointer'
   },
+  svgTextproximamente: {
+    fill:' #fff', /* Relleno blanco */
+    stroke: '#fff', /* Contorno blanco */
+    fillOpacity: '1', /* Opacidad sólida */
+  //  strokeOpacity: '1', /* Opacidad del contorno sólida */           // Relleno blanco para el texto
+    stroke: 'white',          // Contorno blanco para el texto
+    color:' #fff',
+    fontSize: '100px',
+    fontFamily: 'inter',      // Aplica la fuente
+    textAnchor: 'middle',
+    cursor: 'pointer',
+    fontStyle:"italic"
+    
+   // transform: 'rotate(-45deg)' // Rotación de 45 grados para hacer diagonal el texto
+  },
+  
 
   overlayText: {
     position: 'absolute',

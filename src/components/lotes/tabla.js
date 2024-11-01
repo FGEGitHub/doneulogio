@@ -13,30 +13,35 @@ import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import WarningIcon from '@mui/icons-material/Warning';
-
+import Borrar from './modalborrar'
+import Modificar from './modificar'
 const columns = [
   { id: 'sector', label: 'Sector', minWidth: 100 },
   { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' },
   { id: 'lote', label: 'Lote', minWidth: 100, align: 'right' },
   { id: 'superficie', label: 'Superficie', minWidth: 100, align: 'right' },
+  { id: 'adrema', label: 'Adrema', minWidth: 100, align: 'right' }, // Adrema editable
+  { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
+  { id: 'nombre', label: 'Propietario', minWidth: 100, align: 'right' },
   { id: 'precio', label: 'P. Contado', minWidth: 100, align: 'right' },
   { id: 'preciofinanciado', label: 'P. Financiado', minWidth: 100, align: 'right' },
   { id: 'porcentaje_anticipo', label: 'Porcentaje Anticipo', minWidth: 150, align: 'right' },
-  { id: 'anticipo', label: 'Anticipo', minWidth: 150, align: 'right' },
-  { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 150, align: 'right' },
-  { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 150, align: 'center' },
-  { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
-  { id: 'nombre', label: 'Propietario', minWidth: 100, align: 'right' },
+  { id: 'anticipo', label: 'Anticipo', minWidth: 100, align: 'right' },
+  { id: 'saldo_financiado', label: 'Saldo Financiado', minWidth: 100, align: 'right' },
+  { id: 'cantidad_cuotas', label: 'Cantidad de Cuotas', minWidth: 100, align: 'center' },
+  { id: 'valor_cuota', label: 'Valor Cuota', minWidth: 100, align: 'center' },
   { id: 'posecion', label: 'Posesión', minWidth: 100, align: 'center' },
   { id: 'escritura', label: 'Escritura', minWidth: 100, align: 'center' },
   { id: 'construccion', label: 'Construcción', minWidth: 100, align: 'center' },
-  { id: 'modificar', label: 'Acciones', minWidth: 100, align: 'center' },
+  { id: 'modificar', label: 'modificar', minWidth: 100, align: 'center' },
+  { id: 'borrar', label: 'borrar', minWidth: 100, align: 'center' },
 ];
-
+const formatCurrency = (value) => 
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [datos, setDatos] = useState([]);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(100);
   const [editingRow, setEditingRow] = useState({});
   const [modifiedRows, setModifiedRows] = useState([]);
 
@@ -64,9 +69,9 @@ export default function StickyHeadTable() {
         ...prev[id],
         [field]: value,
       };
-console.log(updatedRow)
+
       // Calcular anticipo y saldo financiado cuando porcentaje_anticipo o preciofinanciado cambian
-      if (field === 'porcentaje_anticipo' || field === 'preciofinanciado' ||  field === 'porcentaje_anticipo' ) {
+      if (field === 'porcentaje_anticipo' || field === 'preciofinanciado') {
         const porcentajeAnticipo = parseFloat(updatedRow.porcentaje_anticipo || 0);
         const precioFinanciado = parseFloat(updatedRow.preciofinanciado || 0);
         
@@ -89,37 +94,14 @@ console.log(updatedRow)
     }
   };
 
-  const handleQuantityChange = (id, delta) => {
-    setEditingRow((prev) => {
-      const currentValue = prev[id]?.cantidad_cuotas || datos.find((row) => row.lote === id).cantidad_cuotas;
-      const newValue = Math.max(currentValue + delta, 0);
-      return {
-        ...prev,
-        [id]: { ...prev[id], cantidad_cuotas: newValue },
-      };
-    });
-    if (!modifiedRows.includes(id)) {
-      setModifiedRows((prev) => [...prev, id]);
-    }
-  };
-
-  const handleCheckboxChange = (id, field, checked) => {
-    setEditingRow((prev) => ({
-      ...prev,
-      [id]: { ...prev[id], [field]: checked ? 'Si' : 'No' },
-    }));
-    if (!modifiedRows.includes(id)) {
-      setModifiedRows((prev) => [...prev, id]);
-    }
-  };
-
   const handleSubmit = async (row) => {
     const updatedRow = {
       ...row,
-      ...editingRow[row.lote],
+      ...editingRow[row.lote], // Incluir adrema y otros campos modificados
     };
-    console.log(updatedRow)
-    await servicioDatos.enviarformlotes(updatedRow);
+
+    console.log(updatedRow); // Verificar los datos enviados
+    await servicioDatos.enviarformlotes(updatedRow); // Enviar los datos al backend
     alert('Realizado');
     setEditingRow((prev) => {
       const newEditing = { ...prev };
@@ -131,13 +113,13 @@ console.log(updatedRow)
   };
 
   return (
-    <Paper sx={{ width: '90%', overflow: 'hidden', margin: 'auto', height: '90vh', marginTop: '150px' }}>
-      <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)' }}>
-        <Table stickyHeader aria-label="sticky table">
+    <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
+      <TableContainer sx={{  height: '100vh',overflowX: 'auto' }} stickyHeader>
+        <Table  stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               {columns.map((column) => (
-                <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth }}>
+                <TableCell key={column.id} align={column.align} style={{ minWidth: column.minWidth ,fontWeight: 'bold' }}>
                   {column.label}
                 </TableCell>
               ))}
@@ -162,67 +144,101 @@ console.log(updatedRow)
                       value = row['id_cliente'] ? 'Vendido' : 'Disponible';
                     }
 
-                    if (column.id === 'precio' || column.id === 'preciofinanciado' || column.id === 'porcentaje_anticipo') {
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          <input
-                            value={isEditing ? editingRow[row.lote][column.id] : value}
-                            onChange={(e) => handleInputChange(row.lote, column.id, e.target.value)}
-                          />
-                        </TableCell>
-                      );
-                    }
+            
+
                     if (column.id === 'saldo_financiado') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {isEditing ? editingRow[row.lote].saldo_financiado : row.preciofinanciado-(row.porcentaje_anticipo*row.preciofinanciado/100)}
+                          {formatCurrency(isEditing ? editingRow[row.lote].saldo_financiado : (row.preciofinanciado - (row.porcentaje_anticipo * row.preciofinanciado / 100)))}
+                        </TableCell>
+                      );
+                    }
+
+                    if (column.id === 'preciofinanciado' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {formatCurrency(row.preciofinanciado)}
+                        </TableCell>
+                      );
+                    }
+                    if (column.id === 'precio' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {formatCurrency(row.precio)}
+                        </TableCell>
+                      );
+                    }
+                    if (column.id === 'porcentaje_anticipo' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {row.porcentaje_anticipo}%
+                        </TableCell>
+                      );
+                    }
+                    
+                    if (column.id === 'valor_cuota') {
+                      const porcentajeAnticipo = parseFloat(editingRow[row.lote]?.porcentaje_anticipo || row.porcentaje_anticipo || 0);
+                      const precioFinanciado = parseFloat(editingRow[row.lote]?.preciofinanciado || row.preciofinanciado || 0);
+                      const cantidadCuotas = parseInt(editingRow[row.lote]?.cantidad_cuotas || row.cantidad_cuotas || 1);
+                    
+                      const anticipo = (porcentajeAnticipo * precioFinanciado) / 100;
+                      const saldoFinanciado = precioFinanciado - anticipo;
+                      const valorCuota = cantidadCuotas > 0 ? saldoFinanciado / cantidadCuotas : 0;
+                    
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                        { formatCurrency(valorCuota.toFixed(2)) }
                         </TableCell>
                       );
                     }
                     if (column.id === 'anticipo') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          {isEditing ? ((editingRow[row.lote].porcentaje_anticipo ?editingRow[row.lote].porcentaje_anticipo : row.porcentaje_anticipo) *  (editingRow[row.lote].preciofinanciado ?  editingRow[row.lote].preciofinanciado: row.preciofinanciado)    /100  ) : (row.porcentaje_anticipo*row.preciofinanciado/100)}
+                          {  formatCurrency( isEditing ? ((editingRow[row.lote].porcentaje_anticipo ? editingRow[row.lote].porcentaje_anticipo : row.porcentaje_anticipo) * (editingRow[row.lote].preciofinanciado ? editingRow[row.lote].preciofinanciado : row.preciofinanciado) / 100) : (row.porcentaje_anticipo * row.preciofinanciado / 100))}
                         </TableCell>
                       );
                     }
+
                     if (column.id === 'posecion' || column.id === 'escritura' || column.id === 'construccion') {
                       return (
                         <TableCell key={column.id} align={column.align}>
                           <Checkbox
-                            checked={isEditing ? editingRow[row.lote][column.id] === 'Si' : value === 'Si'}
-                            onChange={(e) => handleCheckboxChange(row.lote, column.id, e.target.checked)}
+                            checked={isEditing ? editingRow[row.lote][column.id] === "Si" : row[column.id] === "Si"}
+                           // onChange={(e) => handleInputChange(row.lote, column.id, e.target.checked ? 1 : 0)}
+                           disabled
                           />
                         </TableCell>
                       );
                     }
 
-                    if (column.id === 'cantidad_cuotas') {
-                      const cuotasValue = isEditing
-                        ? editingRow[row.lote][column.id]
-                        : value || 0;
-                      return (
-                        <TableCell key={column.id} align={column.align}>
-                          <IconButton onClick={() => handleQuantityChange(row.lote, -1)}>
-                            <RemoveIcon />
-                          </IconButton>
-                          {cuotasValue}
-                          <IconButton onClick={() => handleQuantityChange(row.lote, 1)}>
-                            <AddIcon />
-                          </IconButton>
-                          {isModified && <WarningIcon style={{ marginLeft: '8px', color: 'red' }} />}
-                        </TableCell>
-                      );
-                    }
+            
 
                     if (column.id === 'modificar') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                          <button onClick={() => handleSubmit(row)}>Modificar</button>
+                             
+                          <Modificar
+                          lotemodificar={row}
+                          traer={async () => {
+                            const historial = await servicioDatos.traerlotes();
+                            setDatos(historial);
+                          }}/>
                         </TableCell>
                       );
                     }
-
+                    if (column.id === 'borrar') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {isModified && <WarningIcon color="error" />}
+                          <Borrar id={row.id}
+                          traer={async () => {
+                            const historial = await servicioDatos.traerlotes();
+                            setDatos(historial);
+                          }} />
+                      
+                        </TableCell>
+                      );
+                    }
                     return (
                       <TableCell key={column.id} align={column.align}>
                         {value}
@@ -236,7 +252,7 @@ console.log(updatedRow)
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[5, 10, 25, 100]}
         component="div"
         count={datos.length}
         rowsPerPage={rowsPerPage}

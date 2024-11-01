@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Nav from '../../components/inicio/nav';
 import fondoMaster from "../../Assets/fondomaster.png"; // Importa la imagen de fondo
 import General from '../../components/inicio2/Component';
 

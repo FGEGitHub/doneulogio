@@ -23,7 +23,7 @@ const styles = {
   description: {
     fontSize: '16px',
     lineHeight: '1.5',
-    textAlign: 'justify', // Alineación justificada
+    // textAlign: 'justify', Alineación justificada
     fontFamily: 'inter',
     marginBottom: '16px',
     '@media (max-width: 768px)': {
@@ -31,6 +31,8 @@ const styles = {
     },
   },
   image: {
+    marginTop: '5%',
+    marginBottom: '5%',
     width: '100%',
     maxWidth: '400px', // Ancho máximo para controlar el tamaño en pantallas más grandes
     borderRadius: '8px', // Bordes redondeados para un estilo más moderno

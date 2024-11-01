@@ -27,9 +27,9 @@ const ContactForm = () => {
   return (
     <div style={styles.container}>
       <form style={styles.form} onSubmit={handleSubmit}>
-        <h3 style={styles.title}>
+        <p style={styles.title}>
           Completá los datos y nuestro equipo de ventas se contactara a la brevedad.
-        </h3>
+        </p>
         
         {/* Agrupando Nombre y Apellido en una misma fila */}
         <div style={styles.row}>
@@ -78,17 +78,16 @@ const ContactForm = () => {
       </form>
 
       <div style={styles.contactInfo}>
-      <p  style={{  alignItems: 'left'}}>
-          <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
-        </p>
-        <p  style={{  alignItems: 'left'}}>
-          <img src={mail} alt="Correo electrónico" style={styles.icon} /> doneulogio.ua@gmail.com
-        </p>
-      </div>
+  <div style={styles.contactItem}>
+    <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
+  </div>
+  <div style={styles.contactItem}>
+    <img src={mail} alt="Correo electrónico" style={styles.icon} /><span>doneulogio.ua@gmail.com</span> 
+  </div>
+</div>
     </div>
   );
 };
-
 const styles = {
   container: {
     display: 'flex',
@@ -106,6 +105,7 @@ const styles = {
     fontFamily: "Inter",
     fontSize: "24px",
     marginBottom: '20px',
+    color:'#373737'
   },
   row: {
     display: 'flex',
@@ -125,7 +125,7 @@ const styles = {
     fontSize: '16px',
     borderRadius: '5px',
     border: '1px solid #ccc',
-    width: '48%', // Ocupa la mitad del espacio disponible
+    width: '48%',
   },
   textarea: {
     marginBottom: '10px',
@@ -149,13 +149,28 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    fontSize: '16px',
+    alignItems: 'flex-start',
+    fontSize: '21.5px',
+    color: '#373737',
+    lineHeight: '1.8', // Ajusta el interlineado aquí si es necesario
+   
   },
+  
   icon: {
-    width: '24px',
-    height: '24px',
+    width: '100%',
+    height: '100%',
     marginRight: '8px',
   },
+  contactItem: {
+    display: 'flex',
+   // marginTop:'-5%',
+    marginLeft:'-10%',
+    alignItems: 'center',
+   // marginBottom: '5px', // Reducido para acercar los elementos
+    marginBottom: '15px',
+  }
+  
 };
+
 
 export default ContactForm;

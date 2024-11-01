@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import nex from"../../Assets/netx.png";
 
-import { IconButton } from '@mui/material';
-import { GpsFixed, ZoomIn, ZoomOut, Restore } from '@mui/icons-material';
-import Gps from "../../Assets/svgdoncompleto.svg";
+
+import Gps from "../../Assets/mapaiphone.png";
 import servicioDatos from '../../services/datos';
 import './config.css';
 import foto1 from '../../Assets/cuadradamaster.png';
+import vendidos from '../../Assets/vendidos.svg';
 import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
 import ComponenteTarjetas from '../masterplan/componentetarjetasmobile'
@@ -59,13 +60,13 @@ const Arg = () => {
         setPosicion0(false);
         if (transformWrapperRef.current) {
             // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-            transformWrapperRef.current.setTransform(0, 0, 2.5); // Ajusta estos valores según sea necesario
+            transformWrapperRef.current.setTransform(-150, 0, 2.5); // Ajusta estos valores según sea necesario
         }
     } else {
         setPosicion0(false);
         if (transformWrapperRef.current) {
           // Ajusta los valores para mover un poco hacia el centro y hacia abajo
-          transformWrapperRef.current.setTransform(0, -200, 3); // Ajusta estos valores según sea necesario
+          transformWrapperRef.current.setTransform(-150, -300, 3); // Ajusta estos valores según sea necesario
       }
     }
 }; 
@@ -99,25 +100,60 @@ const Arg = () => {
 >
           {({ zoomIn, zoomOut, setTransform, resetTransform, ...rest }) => (
             <React.Fragment>
-              <div style={{ position: 'fixed', bottom: 20, left: 10, zIndex: 2, display: 'flex', flexDirection: 'column'}}>
-                <IconButton
+ <div style={{   position: 'relative', 
+                         bottom: '-20%',
+                        left: '-2%',
+                         zIndex: 1000, // Asegura que esté sobre otros elementos
+                       //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+                         padding: '10px',
+                         borderRadius: '5px',
+            }}>
+ {!posicion0 &&
+<img 
+        src={vendidos} 
+        alt="Urbanización Abierta" 
+       // style={styles.image} 
+      />}
+            </div>
+
+              <div style={{   position: 'relative', 
+                         bottom: '-55%',
+                      //   left: '2%',
+                         zIndex: 1000, // Asegura que esté sobre otros elementos
+                       //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
+                         padding: '10px',
+                         borderRadius: '5px',
+            }}>
+          {/*       <IconButton
                   onClick={toggleImagenDeFondo}
                   color="primary"
                   style={{ marginBottom: "10px" }}
                 >
                   <GpsFixed />
-                </IconButton>
+                </IconButton> */}
 
-
-             
-
+            {!posicion0 &&
                 <button
-                  onClick={() => resetTransform()} // Restaurar la vista completa
+                onClick={() => {resetTransform();
+                  setPosicion0(true)}
+                } // Restaurar la vista completa
+           
+                style={{ marginBottom: "10px",
+                  width: '125px',
+                  backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
+              color: 'black', // Color del texto
+              border: '1px solid #ccc', // Borde estándar
+              borderRadius: '4px', 
+                 }}
+              >
+           Restaurar
+              </button> 
+            
+            
+            }
              
-                  style={{ marginBottom: "10px" }}
-                >
-             Restaurar Vista
-                </button>  
+
+             
               </div>
 
              
@@ -137,29 +173,11 @@ const Arg = () => {
         top: 0,
         left: 0,
         width: '100%', // Ajusta este tamaño según sea necesario
-        height: '70%', // Cambia este valor si es necesario para que se vea correctamente
+      //  height: '70%', // Cambia este valor si es necesario para que se vea correctamente
         objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
         zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
       }}
-    /> <button
-    onClick={() => {
-      resetTransform();  // Restaurar la vista completa
-      setPosicion0(true);  // Activa la primera capa del SVG
-      setShowRestoreButton(false);
-    }}// Acción para restaurar la vista
-    color="primary"
-    style={{
-      position: 'absolute',
-      top: '70%', // Ajusta la ubicación verticalmente
-      ledt: '10px', // Ajusta la ubicación horizontalmente
-      zIndex: 1, // Asegura que esté por encima de la imagen
-
-      width: '30%', // Tamaño pequeño del botón
-      height: '30px',
-      padding: '5px',
-      boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.3)',
-    }}
-  >Restaurar</button>
+    />
    </>
   )}  {  selectedImage && <>
 
@@ -192,12 +210,12 @@ const Arg = () => {
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.652995" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.652995" font-family="MS Shell Dlg 2" font-weight="400" fill="#1c6a3b">
    <path vector-effect="none" style={{ cursor: 'important' }} transform="scale(1.1,1.1)"onClick={ () => cambiarsvg(1)}   d="M1037.69,899.526 L1222.96,904.069 L1248.21,904.574 L1413.29,919.214 L1526.75,485.432 L1042.61,443.909 L1037.69,899.526" fill-rule="evenodd"/>
-   <text x="1400" y="700" style={styles.svgText}   >Bosques</text>
+   <text x="1400" y="700" style={styles.svgText} onClick={ () => cambiarsvg(1)}   >Bosques</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal" stroke="#232323" stroke-width="3.22087" fill-opacity="0.484993" stroke-linejoin="bevel" font-size="32.5" stroke-linecap="square" stroke-opacity="0.484993" font-family="MS Shell Dlg 2" font-weight="400" fill="#246f74">
    <path  transform="scale(1.1,1.1)" onClick={ () => cambiarsvg(2)}  vector-effect="none" d="M1053.65,948.684 L1216.72,946.16 L1403,963.325 L1377.76,1023.4 L1379.78,1171.82 L1459.04,1172.33 L1449.7,1899.55 L1545.37,1899.04 L1548.4,2082.05 L1038,1943.85 L1053.65,948.684" fill-rule="evenodd"/>
-   <text x="1400" y="1600" style={styles.svgText}>Pinares</text>
+   <text x="1400" y="1600" onClick={ () => cambiarsvg(2)}   className="svgTextpinares">Pinares</text>
    </g>
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
   <g font-style="normal"  transform="scale(0.9,0.9)"  stroke="#000000" stroke-width="1" stroke-linejoin="bevel" fill='none' font-size="32.5" stroke-linecap="square" stroke-opacity="1" font-family="MS Shell Dlg 2" font-weight="400" />
@@ -214,8 +232,8 @@ const Arg = () => {
 </svg>
 </div>
 </div>:<div>
-<div style={{ position: 'relative', zIndex: 1, width: '140%', height: '150%' }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
-      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1520 8944 12274"   baseProfile="tiny" version="1.2">
+<div style={{ position: 'relative', zIndex: 1 }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
+      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1132 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
@@ -1047,8 +1065,39 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(88)}         fill-rule="evenodd" vector-effect="none" d="M1878.15,3969.18 L1961.93,3969.18 L1962.92,4095.85 L1872.225,4097.33 L1878.15,3969.18"/></Tooltip>)})}
+            <path d="M904.679,1836.65 L916.878,443.868 L2032.68,456.784 L2006.58,1853.51 L904.679,1836.65"fill={'#5D7237B2'}fillOpacity={0.7} transform="translate(985, 3600) scale(0.87,0.83)"  vector-effect="none" fill-rule="evenodd"/>
+            <image href={nex} x="2150" y="4310" width="115" height="115" />
+            <text x="2240" y="4550"style={styles.svgTextproximamente}   >Próximamente</text>
 
-        {[89].map((tooltipValue) => {
+
+            
+{/*   lotes agregados  */}
+
+{[150].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 :1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            
+            <path   stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"     transform="translate(-348, 1619) scale(1.92,1.92)"  d="M1455.67,929.329 L1493.8,929.007 L1492.68,1061.81 L1453.45,1061.85 L1455.67,929.329" fill-rule="evenodd" vector-effect="none"className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}    />
+            </Tooltip>)})}
+            {[151].map((tooltipValue) => {
+          const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
+
+  const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 : 1;
+          return (
+            <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
+            
+            <path stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"   transform="translate(-348, 1621) scale(1.92,1.92)" className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(87)}     d="M1453.53,1061.64 L1492.66,1061.81 L1489.79,1194.1 L1453.38,1194.38 L1453.53,1061.64" fill-rule="evenodd" vector-effect="none"/>
+
+            </Tooltip>)})}
+
+
+
+     {/*    {[89].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
@@ -1551,7 +1600,7 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(144)}    fill-rule="evenodd" vector-effect="none" d="M1749.66,5149.41 L1745.97,5232.58 L2967.2,5571.27 L2964.42,5148.95 L2731.54,5143.87 L2731.54,5163.27 L2230.67,5163.27 L2226.97,5203.94 L2142.88,5188.69 L2141.95,5154.96 L1749.66,5149.41"/></Tooltip>)})}
-
+ */}
 {/*         {[145].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
@@ -1612,7 +1661,7 @@ const Arg = () => {
             </React.Fragment>
           )}
         </TransformWrapper>       
-        <img src={Grupo6} alt="Urbanización Abierta" style={{  width: "91%"}} />
+      
    
       </div>
    
@@ -1633,7 +1682,8 @@ const Arg = () => {
       
       }>
 
-      </DialogComponent>
+      </DialogComponent> 
+       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-40%",  width: "91%", position: 'relative'}} />
       <ComponenteTarjetas/>
      
      <Footer/>
@@ -1675,6 +1725,21 @@ const styles = {
     fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
     textAnchor: 'middle',
     fontFamily: 'Christian Sunday',
+  },
+  svgTextproximamente: {
+    fill:' #fff', /* Relleno blanco */
+    stroke: '#fff', /* Contorno blanco */
+    fillOpacity: '1', /* Opacidad sólida */
+  //  strokeOpacity: '1', /* Opacidad del contorno sólida */           // Relleno blanco para el texto
+    stroke: 'white',          // Contorno blanco para el texto
+    color:' #fff',
+    fontSize: '100px',
+    fontFamily: 'inter',      // Aplica la fuente
+    textAnchor: 'middle',
+    cursor: 'pointer',
+    fontStyle:"italic"
+    
+   // transform: 'rotate(-45deg)' // Rotación de 45 grados para hacer diagonal el texto
   },
   
 };

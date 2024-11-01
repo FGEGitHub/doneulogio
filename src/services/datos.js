@@ -162,4 +162,22 @@ const asignarventa= async  (datos) => {
             
             return data
             } 
- export default {borrarlaventa,nuevaVenta,traerVentas,enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}
+            
+
+            const borrarlote= async  (datos) => {
+
+              console.log(datos)
+                const {data } = await axios.post(baseUrl+"borrarlote",datos)
+              
+              return data
+              } 
+
+              
+              const modificarventa= async  (datos) => {
+
+                console.log(datos)
+                  const {data } = await axios.post(baseUrl+"modificarventa",datos)
+                
+                return data
+                } 
+ export default {modificarventa,borrarlote,borrarlaventa,nuevaVenta,traerVentas,enviarformlotes,modificarlotee,modificarcliente,nuevocliente,traerloteslogin,clickgenerallote,actualizarventa,traerventa,asignarventa,determinarmapa1bosques, traer,enviar,traerlotes,traerclientes}

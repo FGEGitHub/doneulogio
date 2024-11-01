@@ -7,7 +7,8 @@ import Formulario from './formulario';
 import logo from '../../Assets/logo.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
 import { useNavigate } from "react-router-dom";
-
+import Leaft from '../ubicacion/ubi'
+import Footer from '../footer'
 const UrbanizacionAbierta = () => {
   const navigate = useNavigate();
 
@@ -126,14 +127,10 @@ const UrbanizacionAbierta = () => {
         alt="Urbanización Abierta" 
         style={styles.imagealt} 
       />
-      <img 
-        src={foto2} 
-        alt="Urbanización Abierta" 
-        style={styles.image} 
-      />
-      <Box className="urbanizacion-footer">
-        <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
-      </Box>
+        <br/>    <br/>    <br/>
+      
+     
+      <Footer/>
     </React.Fragment>
   );
 };
