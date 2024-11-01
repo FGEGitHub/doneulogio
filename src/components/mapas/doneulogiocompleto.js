@@ -203,9 +203,9 @@ const Arg = () => {
     </div>
 <Componente1/>
 <br/><br/><br/>
-<div style="font-family: 'Inter', sans-serif; text-align: left; max-width: 600px; margin: 0 auto;">
-    <h2 style="font-weight: bold; margin-bottom: 8px;">Mapa interactivo</h2>
-    <p style="font-weight: normal; text-align: left;">
+<div sx="font-family: 'Inter', sans-serif; text-align: left; max-width: 600px; margin: 0 auto;">
+    <h2 sx="font-weight: bold; margin-bottom: 8px;">Mapa interactivo</h2>
+    <p sx="font-weight: normal; text-align: left;">
         Para conocer disponibilidades, dimensiones y precios hace click en el sector de lote que te interese
     </p>
 </div>
