@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Agregamos useEffect
-import { Box, Typography, IconButton, Grid } from '@mui/material';
+import { Box, Typography, IconButton, Grid ,CssBaseline,Toolbar} from '@mui/material';
 import logo from '../../Assets/logo_svg.svg';
 import Video from '../../Assets/video.mp4';
 //import Comercializa from "../../Assets/Group1364.svg";
@@ -8,6 +8,7 @@ import Footer from "../../Assets/footer.svg";
 import map from "../../Assets/mapa_svg.svg";
 import bosques from "../../Assets/Group 97.svg";
 import pinares from "../../Assets/Group 98.svg"
+import { useNavigate } from "react-router-dom";
 
 // Importa las imágenes del carrusel
 import img1 from '../../Assets/libertad.png';
@@ -19,7 +20,7 @@ import img5 from '../../Assets/Bienestar.png';
 export const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  
+  const navigate = useNavigate();
   // Array con las imágenes del carrusel
   const carouselImages = [img1, img2, img3, img4, img5];
 
@@ -46,95 +47,102 @@ export const Home = () => {
   return (
     <Box sx={{ width: '100%', overflow: 'hidden' }}>
       {/* Navbar */}
-      <Box
-  sx={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '40px 0',
-    boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1)',
-  }}
->
-  <img src={logo} alt="Logo" style={{ height: '89.81px',
-  width: "142.79px",
-  marginBottom: '20px',
-  display: 'block' }} />
 
-        <Box sx={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-    <Typography
-      variant="body1"
-      sx={{
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '18.69px', // Nuevo tamaño de fuente
-        fontFamily: 'Inter', // Nueva familia de fuente
-        fontWeight: 400, // Nuevo peso de fuente
-        lineHeight: '22.62px', // Nueva altura de línea
-        color: 'rgba(36, 111, 116, 1)', 
+      <CssBaseline />
+      <Toolbar className="urbanizacion-toolbar">
+          <img src={logo} alt="Logo" className="urbanizacion-logo" />
+        </Toolbar>
+   
+   
+      
+        <nav className="urbanizacion-nav">
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "28px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
+    onClick={() => navigate('/')}
+  >
+    Home
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
+    onClick={() => navigate('/urbanizacion-abierta')}
+  >
+    Urbanización Abierta
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
+    onClick={() => navigate('/masterplan')}
+  >
+    MasterPlan
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
+    onClick={() => navigate('/espacios-publicos')}
+  >
+    Espacios públicos
+  </div>
+  <div
+    variant="button"
+    color="primary"
+    href="#"
+    className="urbanizacion-navlink"
+    style={{ 
+      color: "#246F74", 
+      marginRight: "25px", 
+      fontSize: "24px", 
+      fontFamily: "Inter", 
+      fontWeight: 400,
+      cursor: "pointer"  // Cambia el cursor al pasar el mouse
+    }}
+    onClick={() => navigate('/contacto')}
+  >
+    Contacto
+  </div>
+</nav>
 
-       
-      }}
-    >
-      Home
-    </Typography>
-    <Typography
-      variant="body1"
-      sx={{
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '18.69px',
-        fontFamily: 'Inter',
-        fontWeight: 400,
-        lineHeight: '22.62px',
-        color: 'rgba(36, 111, 116, 1)', 
-      }}
-    >
-      Urbanización Abierta
-    </Typography>
-    <Typography
-      variant="body1"
-      sx={{
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '18.69px',
-        fontFamily: 'Inter',
-        fontWeight: 400,
-        lineHeight: '22.62px',
-        color: 'rgba(36, 111, 116, 1)', 
-      }}
-    >
-      MasterPlan
-    </Typography>
-    <Typography
-      variant="body1"
-      sx={{
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '18.69px',
-        fontFamily: 'Inter',
-        fontWeight: 400,
-        lineHeight: '22.62px',
-        color: 'rgba(36, 111, 116, 1)', 
-      }}
-    >
-      Espacios públicos
-    </Typography>
-    <Typography
-      variant="body1"
-      sx={{
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        fontSize: '18.69px',
-        fontFamily: 'Inter',
-        fontWeight: 400,
-        lineHeight: '22.62px',
-        color: 'rgba(36, 111, 116, 1)', 
-      }}
-    >
-      Contacto
-    </Typography>
-  </Box>
-</Box>
 
       {/* Video Background */}
       <Box sx={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden' }}>
@@ -364,7 +372,7 @@ export const Home = () => {
   <Grid item xs={12} sm={6} md={4}>
   <Box
       component="img"
-      src={require('../../Assets/carrusel4.svg').default}
+      src={require('../../Assets/Group1364.svg').default}
       alt="Comercializa"
       sx={{
         width: '488.77px',
