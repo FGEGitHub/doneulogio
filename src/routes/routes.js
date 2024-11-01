@@ -9,13 +9,13 @@ import Masterplan from '../pages/masterplan';
 import Urbanizacion from '../pages/urbanizacion';
 import Espacios from '../pages/espaciospublicos';
 import Ubicacion from '../pages/ubicacion';
-import { Home } from '../pages/hoome';
+//import { Home } from '../pages/hoome';
 import Home2 from '../pages/menu'
 const Rutas = [
 
-	{ path: '/', element: <Home/> },
+	{ path: '/', element: <Home2/> },
 
-	{ path: '/home', element: <Home/> },
+	{ path: '/home', element: <Home2/> },
 	{ path: '/home2', element: <Home2/> },
 	{ path: '/login', element: <Login/> },
 	{ path: '/admin/lotes', element: <Menuadmin/> },
