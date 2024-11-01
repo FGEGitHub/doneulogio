@@ -1,172 +1,389 @@
-import React, { useState, useEffect } from 'react';
-import "./style.css";
-import logo from '../../Assets/logo.png';
-import video from '../../Assets/videodron.mp4';
-import img from "../../Assets/image 30.png";
-import img2 from "../../Assets/image 31.png";
-import rectangulo from "../../Assets/rectanguloverde.png"
-import Footer from "../../Assets/footer.png"
-import map from "../../Assets/MapaDon Eulogio.png"
-import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react'; // Agregamos useEffect
+import { Box, Typography, IconButton, Grid } from '@mui/material';
+import logo from '../../Assets/logo_svg.svg';
+import Video from '../../Assets/video.mp4';
+import Comercializa from "../../Assets/Group1364.svg";
+import rectangulo from "../../Assets/rectangolo_verde.svg";
+import Footer from "../../Assets/footer.svg";
+import map from "../../Assets/mapa_svg.svg";
+import bosques from "../../Assets/Group 97.svg";
+import pinares from "../../Assets/Group 98.svg"
 
-// Importa todas las imágenes del carrusel
-import libertad from '../../Assets/93.png';
-import comunidad from '../../Assets/Comunidad.png';
-import naturaleza from '../../Assets/Naturaleza.png';
-import inversion from '../../Assets/Inversion.png';
-import bienestar from '../../Assets/Bienestar.png';
+// Importa las imágenes del carrusel
+import img1 from '../../Assets/carrusel0.svg';
+import img2 from '../../Assets/carrusel1.svg';
+import img3 from '../../Assets/carrusel2.svg';
+import img4 from '../../Assets/carrusel3.svg';
+import img5 from '../../Assets/carrusel4.svg';
 
-import MobileComponent from '../../components/iniciomobile/componete1'; // Componente para móvil
-
-import Nav from '../../components/inicio/nav';
 export const Home = () => {
-    const navigate = useNavigate();
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-      // Función que verifica si el ancho de la pantalla es menor o igual a 768px
-      const handleResize = () => {
-        setIsMobile(window.matchMedia("(max-width: 768px)").matches);
-      };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   
-      // Llamamos a la función al montar el componente y cada vez que la ventana cambia de tamaño
-      handleResize();
-      window.addEventListener('resize', handleResize);
+  // Array con las imágenes del carrusel
+  const carouselImages = [img1, img2, img3, img4, img5];
+
+  // Manejadores de eventos mejorados
+
+  // Efecto para el autoplay
+  useEffect(() => {
+    let interval;
+    
+    if (isAutoPlaying) {
+      interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+      }, 3000); // Cambia cada 3 segundos
+    }
+
+    // Limpieza del intervalo cuando el componente se desmonta o cambia isAutoPlaying
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  }, [isAutoPlaying, carouselImages.length]);
+
+  return (
+    <Box sx={{ width: '100%', overflow: 'hidden' }}>
+      {/* Navbar */}
+      <Box
+  sx={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '40px 0',
+    boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1)',
+  }}
+>
+  <img src={logo} alt="Logo" style={{ height: '89.81px',
+  width: "142.79px",
+  marginBottom: '20px',
+  display: 'block' }} />
+
+        <Box sx={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <Typography
+      variant="body1"
+      sx={{
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '18.69px', // Nuevo tamaño de fuente
+        fontFamily: 'Inter', // Nueva familia de fuente
+        fontWeight: 400, // Nuevo peso de fuente
+        lineHeight: '22.62px', // Nueva altura de línea
+        color: 'rgba(36, 111, 116, 1)', 
+
+       
+      }}
+    >
+      Home
+    </Typography>
+    <Typography
+      variant="body1"
+      sx={{
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '18.69px',
+        fontFamily: 'Inter',
+        fontWeight: 400,
+        lineHeight: '22.62px',
+        color: 'rgba(36, 111, 116, 1)', 
+      }}
+    >
+      Urbanización Abierta
+    </Typography>
+    <Typography
+      variant="body1"
+      sx={{
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '18.69px',
+        fontFamily: 'Inter',
+        fontWeight: 400,
+        lineHeight: '22.62px',
+        color: 'rgba(36, 111, 116, 1)', 
+      }}
+    >
+      MasterPlan
+    </Typography>
+    <Typography
+      variant="body1"
+      sx={{
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '18.69px',
+        fontFamily: 'Inter',
+        fontWeight: 400,
+        lineHeight: '22.62px',
+        color: 'rgba(36, 111, 116, 1)', 
+      }}
+    >
+      Espacios públicos
+    </Typography>
+    <Typography
+      variant="body1"
+      sx={{
+        cursor: 'pointer',
+        fontWeight: 'bold',
+        fontSize: '18.69px',
+        fontFamily: 'Inter',
+        fontWeight: 400,
+        lineHeight: '22.62px',
+        color: 'rgba(36, 111, 116, 1)', 
+      }}
+    >
+      Contacto
+    </Typography>
+  </Box>
+</Box>
+
+      {/* Video Background */}
+      <Box sx={{ position: 'relative', width: '100%', height: '500px', overflow: 'hidden' }}>
+        <video
+          src={Video}
+          autoPlay
+          loop
+          muted
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
+        <Typography
+          variant="h3"
+          component="div"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: { xs: '48px', sm: '64px', md: '96px' },
+            textAlign: 'center',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          Tu futuro<br />en Don Eulogio
+        </Typography>
+      </Box>
+
+      {/* Sección "Nuestros Sectores" */}
+      <Box sx={{ textAlign: 'center', mt: '50px', mb: '30px' }}>
+        <Typography
+          sx={{
+            color: '#000000',
+            fontFamily: '"Inter-SemiBold", Helvetica',
+            fontSize: '40.1px',
+            fontWeight: 600,
+          }}
+        >
+          Nuestros Sectores
+        </Typography>
+      </Box>
+
+      {/* Sección de Imágenes con SVG predefinidos */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px', mb: '60px' }}>
+        <Box
+          component="img"
+          src={pinares}
+          alt="Pinares"
+          sx={{
+            width: '247px',
+            height: '104px',
+            borderRadius: '52.21px',
+          }}
+        />
+
+        <Box
+          component="img"
+          src={bosques}
+          alt="Bosques"
+          sx={{
+            width: '247px',
+            height: '104px',
+            borderRadius: '52.21px',
+          }}
+        />
+      </Box>
+
+{/* Carousel Section */}
+<Box sx={{ position: 'relative', height: '400px', width: '100%', overflow: 'hidden' }}>
+  <Box
+    component="img"
+    src={carouselImages[currentSlide]}
+    alt={`Slide ${currentSlide + 1}`}
+    sx={{
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      transition: 'opacity 0.5s ease-in-out',
+    }}
+  />
+
+  {/* Indicadores de diapositivas */}
+  <Box
+    sx={{
+      position: 'absolute',
+      bottom: 20,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      display: 'flex',
+      gap: 1,
+    }}
+  >
+    {carouselImages.map((_, index) => (
+      <Box
+        key={index}
+        sx={{
+          width: 8,
+          height: 8,
+          borderRadius: '50%',
+          backgroundColor: index === currentSlide ? 'white' : 'rgba(255, 255, 255, 0.5)',
+          transition: 'background-color 0.3s',
+        }}
+      />
+    ))}
+  </Box>
+</Box>
+
+      {/* Rest of the components... */}
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          marginTop: '40px',
+        }}
+      >
+     
+      </Box>
   
-      // Cleanup: eliminamos el event listener al desmontar el componente
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }, []);
-    // Array de imágenes con sus textos correspondientes
-    const images = [
-        { src: libertad, alt: 'Libertad', text: 'Libertad' },
-        { src: comunidad, alt: 'Comunidad', text: 'Comunidad' },
-        { src: naturaleza, alt: 'Naturaleza', text: 'Naturaleza' },
-        { src: inversion, alt: 'Inversión', text: 'Inversión' },
-        { src: bienestar, alt: 'Bienestar', text: 'Bienestar' },
-    ];
+  {/* componente de mapa y donde estamos */}
+  <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px', marginTop: '60px' }}>
+  <Box sx={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+    <Box>
+      <Typography
+        sx={{
+          color: 'rgba(28, 106, 59, 1)',
+          fontFamily: 'Inter',
+          fontSize: '24.16px',
+          fontWeight: 800,
+          lineHeight: '29.24px',
+          textAlign: 'left',
+          width: '215px',
+          height: '29px',
+          position: 'relative',
+          left: '103.92px',
+        }}
+      >
+        ¿Dónde estamos?
+      </Typography>
+      <Typography
+        sx={{
+          color: 'rgba(55, 55, 55, 1)',
+          fontFamily: 'Inter',
+          fontSize: '19.33px',
+          fontWeight: 500,
+          lineHeight: '23.39px',
+          textAlign: 'left',
+          width: '301.01px',
+          height: '96.44px',
+          position: 'relative',
+          left: '103.92px',
+          mt: 2,
+        }}
+      >
+        Don Eulogio se ubica en el camino de acceso principal al Pueblo de San Cayetano (Ruta Prov. Nº 08)
+      </Typography>
+      <Typography
+        sx={{
+          color: 'rgba(55, 55, 55, 1)',
+          fontFamily: 'Inter',
+          fontSize: '19.33px',
+          fontWeight: 500,
+          lineHeight: '23.39px',
+          textAlign: 'left',
+          width: '301.01px',
+          height: '96.44px',
+          position: 'relative',
+          left: '103.92px',
+          mt: 2,
+        }}
+      >
+        Esta situado a 1,5 Km. de la Ruta Nac. Nº 12 y a 12 Km. de la Rotonda de la Virgen
+      </Typography>
+      <Typography
+        sx={{
+          color: "rgba(97, 169, 221, 1)",
+          fontFamily: 'Inter',
+          fontSize: '19.33px',
+          fontWeight: 500,
+          lineHeight: '23.39px',
+          textAlign: 'left',
+          width: '301.01px',
+          height: '96.44px',
+          position: 'relative',
+          left: '103.92px',
+          mt: 2,
+        }}
+      >
+        Hace click para verlo en Google Maps
+      </Typography>
+    </Box>
+    <Box
+      component="img"
+      src={map}
+      alt="Mapa Don Eulogio"
+      sx={{
+        width: '650px',
+        height: '553.38px',
+        objectFit: 'cover',
+        position: 'relative',
+        left: '603.92px',
+      }}
+    />
+  </Box>
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  <Box
+    component="img"
+    src={rectangulo}
+    alt="Rectángulo Verde"
+    sx={{
+      width: '100%',
+      height: 'auto',
+      marginTop: '0',
+      position: 'relative',
+      display: 'block', // Agrega esto para asegurarnos de que el SVG se renderice correctamente
 
-    // Efecto para cambiar la imagen automáticamente cada 3 segundos
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 3000); // 3000 ms = 3 segundos
+      
+    }}
+  />
+</Box>
 
-        // Limpieza del intervalo al desmontar el componente
-        return () => clearInterval(interval);
-    }, [images.length]);
+<Grid container justifyContent="center" alignItems="center" sx={{ mt: 5 }}>
+  <Grid item xs={12} sm={6} md={4}>
+    <Box
+      component="img"
+      src={Comercializa}
+      alt="Comercializa"
+      sx={{
+        width: '488.77px',
+        height: '106.44px',
+      }}
+    />
+  </Grid>
+</Grid>
 
-    // Funciones para navegar manualmente
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    };
-
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
-
-    return (
-<>
-{isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><MobileComponent /></div> :       <div >
-    
-    
-    
- 
-    <>
-        <div className="home">
-            <div className="div-2">
-                <div className="overlap">
-                    {/* Insertamos el video en lugar de una imagen de fondo */}
-                    <video src={video} autoPlay loop muted />
-                    <div className="rectangle" />
-                    <p className="tu-futuro-en-don">
-                        Tu futuro en <br />
-                        Don Eulogio
-                    </p>
-                </div>
-                <div className="navbar">
-                    <div className="text-wrapper-4"  onClick={() => navigate('/')}>Home</div>
-                    <div className="text-wrapper-5"     onClick={() => navigate('/urbanizacion-abierta')}                    >Urbanización Abierta</div>
-                    <div className="text-wrapper-6"   onClick={() => navigate('/espacios-publicos')}>Espacios públicos</div>
-                    <div className="text-wrapper-7" onClick={() => navigate('/contacto')}>Contacto</div>
-                    <div className="group-3">
-                        <div className="text-wrapper-4"  onClick={() => navigate('/masterplan')}>MasterPlan</div>
-                    </div>
-                </div>
-                <img className="recurso-x" alt="Recurso" src={logo} />
-                <p className="don-eulogio-se-ubica">
-                    Don Eulogio se ubica en el camino de acceso principal
-                    <br />
-                    al Pueblo de San Cayetano (Ruta Prov. Nº 08)
-                </p>
-                <div className="text-wrapper-8">¿Dónde estamos?</div>
-                <p className="p">Está situado a 1,5 Km. de la Ruta Nac. Nº 12 y a 12 Km. de la Rotonda de la Virgen</p>
-                <p className="text-wrapper-9">Hace click para verlo en Google Maps</p>
-                
-                {/* Carrusel de Imágenes */}
-                <div className="overlap-group-wrapper">
-                    <div className="overlap-group-2">
-                        <div className="rectangle-2" />
-                        <div className="carousel-content">
-                            <img
-                                className="carousel-image"
-                                src={images[currentImageIndex].src}
-                                alt={images[currentImageIndex].alt}
-                            />
-                            <div className="text-wrapper-10">{images[currentImageIndex].text}</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div className="overlap-wrapper">
-                    <div className="overlap-2">
-                        <img className="mask-group" alt="Mask group" src={rectangulo} />
-                        <p className="la-tranquilidad-de">
-                            <span className="span"></span>
-                            <span className="text-wrapper-11"></span>
-                        </p>
-                    </div>
-                </div>
-                <div className="group-4">
-                    <div className="overlap-3">
-                        <div className="text-wrapper-12"></div>
-                    </div>
-                </div>
-                <div className="group-5">
-                    <div className="overlap-4">
-                        <div className="text-wrapper-13"></div>
-                    </div>
-                </div>
-                <div className="group-6">
-                <div className="group-7">
-        <img className="image" alt="Image" src={img} />
-        <img className="image-2" alt="Image" src={img2} />
-    </div>
-    <div className="desarrolla-y">
-        Desarrolla <br />y Comercializa..
-    </div>
-</div>
-
-                <div className="text-wrapper-14">Nuestros sectores</div>
-                <img className="mapa-don-eulogio" alt="Mapa don eulogio" src={map} />
-
-
-
-            
-            </div>
-        <div className="footer">
-            <img className="footer-image" alt="Footer" src={Footer} />
-        </div>
-
-
-        </div>
-   </> 
- </div>}
-
-   </>
-);
-}
+<Box
+  component="img"
+  src={Footer}
+  alt="Footer"
+  sx={{
+    width: '100%',
+    height: 'auto',
+    mt: 5,
+  }}
+/>
+    </Box>
+  );
+};
