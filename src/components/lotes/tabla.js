@@ -18,7 +18,6 @@ import Modificar from './modificar'
 const columns = [
   { id: 'sector', label: 'Sector', minWidth: 100 },
   { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' },
-  { id: 'lote', label: 'Lote', minWidth: 100, align: 'right' },
   { id: 'superficie', label: 'Superficie', minWidth: 100, align: 'right' },
   { id: 'adrema', label: 'Adrema', minWidth: 100, align: 'right' }, // Adrema editable
   { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
