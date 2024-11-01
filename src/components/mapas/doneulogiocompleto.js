@@ -203,13 +203,10 @@ const Arg = () => {
     </div>
 <Componente1/>
 <br/><br/><br/>
-<div sx="font-family: 'Inter', sans-serif; text-align: left; max-width: 600px; margin: 0 auto;">
-    <h2 sx="font-weight: bold; margin-bottom: 8px;">Mapa interactivo</h2>
-    <p sx="font-weight: normal; text-align: left;">
-        Para conocer disponibilidades, dimensiones y precios hace click en el sector de lote que te interese
-    </p>
-</div>
-    <br/><br/><br/>
+
+
+
+   
 <img 
         src={Redes} 
         alt="Urbanización Abierta" 
@@ -218,6 +215,11 @@ const Arg = () => {
 
       <div       style={{ height: '100vh' }} 
       >
+         <br/><br/><br/>
+            <h2  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h2>
+    <p  style={styles.infomapaint}  >
+        Para conocer disponibilidades, dimensiones y precios hace click en el sector de lote que te interese
+    </p>
       <TransformWrapper
       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
     ref={transformWrapperRef}  // Asigna la referencia
@@ -1904,8 +1906,22 @@ const styles = {
     fontSize: '80px',
     fontFamily: "'Christian Sunday', sans-serif", // Aplica la fuente
     textAnchor: 'middle',
-   
+    textAlign:'left',
    cursor: 'pointer'
+  },
+  infomapaint: {
+textAlign:'left',
+    fontSize: '26px',
+    fontFamily: "'inter', sans-serif", // Aplica la fuente
+   cursor: 'pointer',
+   marginLeft:'13%'
+  },
+  infomapainttitulo: {
+    textAlign:'left',
+    fontSize: '26x',
+    fontFamily: "'inter', sans-serif", // Aplica la fuente
+   cursor: 'pointer',
+   marginLeft:'13%'
   },
   svgTextproximamente: {
     fill:' #fff', /* Relleno blanco */
