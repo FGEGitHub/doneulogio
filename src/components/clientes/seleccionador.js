@@ -65,7 +65,7 @@ const Seleccion = () => {
 
             {/* Mostrar contenido basado en la selección */}
             <div style={{ 
-               // display: 'flex', 
+                display: 'flex', 
                 justifyContent: 'center', 
                 alignItems: 'center', 
               
