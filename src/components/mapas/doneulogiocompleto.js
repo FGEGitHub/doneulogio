@@ -5,7 +5,7 @@ import logo from '../../Assets/logo.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import {  CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 import SyncIcon from '@mui/icons-material/Sync';
-import Gps from "../../Assets/svgdoncompleto.svg";
+import Gps from "../../Assets/mapaiphone.png";
 import Redes from "../../Assets/redes.svg";
 import nex from"../../Assets/netx.png";
 import vendidos from '../../Assets/vendidos.svg'

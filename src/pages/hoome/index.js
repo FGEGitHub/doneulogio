@@ -3,11 +3,11 @@ import { Box, Typography, IconButton, Grid ,CssBaseline,Toolbar} from '@mui/mate
 import logo from '../../Assets/logo_svg.svg';
 import Video from '../../Assets/video.mp4';
 //import Comercializa from "../../Assets/Group1364.svg";
-import rectangulo from "../../Assets/rectangolo_verde.svg";
+import rectangulo from "../../Assets/rectanguloverde.png"
 import Footer from "../../Assets/footer.svg";
 import map from "../../Assets/mapa_svg.svg";
-import bosques from "../../Assets/Group 97.svg";
-import pinares from "../../Assets/Group 98.svg"
+import bosques from "../../Assets/bosques.png";
+import pinares from "../../Assets/pinar.png"
 import { useNavigate } from "react-router-dom";
 
 // Importa las imágenes del carrusel
