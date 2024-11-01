@@ -114,8 +114,8 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
-      <TableContainer sx={{  height: '100vh',overflowX: 'auto' }} stickyHeader>
-        <Table  stickyHeader aria-label="sticky table">
+      <TableContainer sx={{  height: '100%',overflowX: 'auto' }}>
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               {columns.map((column) => (
