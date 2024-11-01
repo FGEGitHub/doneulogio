@@ -370,7 +370,7 @@ export const Home = () => {
 
 <Grid container justifyContent="center" alignItems="center" sx={{ mt: 5 }}>
   <Grid item xs={12} sm={6} md={4}>
-  <Box
+{/*   <Box
       component="img"
       src={require('../../Assets/Group1364.svg').default}
       alt="Comercializa"
@@ -378,7 +378,7 @@ export const Home = () => {
         width: '488.77px',
         height: '106.44px',
       }}
-    />
+    /> */}
   </Grid>
 </Grid>
 
