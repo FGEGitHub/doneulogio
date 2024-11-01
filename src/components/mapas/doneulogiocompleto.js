@@ -1229,7 +1229,7 @@ const Arg = () => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
-  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 :1;
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.000001 :0.000001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             
@@ -1239,7 +1239,7 @@ const Arg = () => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
 
   const fillColor = objetoEncontrado && objetoEncontrado.id_lote !== null ? '#F18310' : 'white';
-  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 1 : 1;
+  const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ?  0.000001 :0.000001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             
