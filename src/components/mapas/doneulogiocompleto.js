@@ -17,6 +17,7 @@ import Componente1 from "../masterplan/uanciudadverdeescritorio"
 import Componentevs from "../masterplan/bosqypinares"
 import { useNavigate } from "react-router-dom";
 import Footer from "../footer"
+import Typography from '@mui/material/Typography';
 //import './Christian Sunday.ttf'
 import './config.css'
 const Arg = () => {
@@ -202,6 +203,16 @@ const Arg = () => {
     </div>
 <Componente1/>
 <br/><br/><br/>
+<div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Typography variant="h5" style={{ fontWeight: 'bold', marginBottom: '10px' }}>
+        Mapa interactivo
+      </Typography>
+      <Typography variant="body1">
+        Para conocer disponibilidades, dimensiones y precios hace click
+        en el sector de lote que te interese
+      </Typography>
+    </div>
+    <br/><br/><br/>
 <img 
         src={Redes} 
         alt="Urbanización Abierta" 

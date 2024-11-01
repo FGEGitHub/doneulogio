@@ -10,11 +10,11 @@ import bosques from "../../Assets/Group 97.svg";
 import pinares from "../../Assets/Group 98.svg"
 
 // Importa las imágenes del carrusel
-import img1 from '../../Assets/carrusel0.svg';
-import img2 from '../../Assets/carrusel1.svg';
-import img3 from '../../Assets/carrusel2.svg';
-import img4 from '../../Assets/carrusel3.svg';
-import img5 from '../../Assets/carrusel4.svg';
+import img1 from '../../Assets/libertad.svg';
+import img2 from '../../Assets/comunidad.svg';
+import img3 from '../../Assets/naturaleza.svg';
+import img4 from '../../Assets/inversion.svg';
+import img5 from '../../Assets/bienestar.svg';
 
 export const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
