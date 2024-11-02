@@ -67,7 +67,7 @@ const WhatsappChat = (props) => {
           },
           {
             title: "Valor de Cuota",
-            value: `USD ${valorCuotas}`,
+            value: `USD ${(valorCuotas).toFixed(2)}`,
           },
         ];
         break;

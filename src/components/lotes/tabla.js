@@ -113,7 +113,8 @@ export default function StickyHeadTable() {
 
   return (
     <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
-      <TableContainer sx={{  height: '100%',overflowX: 'auto' }}>
+    <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
+      <TableContainer sx={{ maxHeight: '100%' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -249,16 +250,10 @@ export default function StickyHeadTable() {
             })}
           </TableBody>
         </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 25, 100]}
-        component="div"
-        count={datos.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+       
+      </TableContainer> 
+      </div>
+   
     </Paper>
   );
 }
