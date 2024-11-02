@@ -1,5 +1,5 @@
 import React from 'react';
-import MapComponent from '../../Assets/map.png'; // Importa el componente del mapa
+import MapComponent from '../../Assets/map.jpg'; // Importa el componente del mapa
 
 const LocationInfo = () => {
     return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // Importa tus imágenes y video aquí
 import Image2 from '../../Assets/libertad.png';
-import Imagemapa from '../../Assets/imagenmappa.png';
+import Imagemapa from '../../Assets/map.jpg';
 import Dibujoarboles from '../../Assets/dibujoarboles.png';
 import Doslogos from '../../Assets/doslogos.png';
 import VideoDron from '../../Assets/videodron.mp4';
@@ -90,12 +90,22 @@ const CiudadVerde = () => {
         style={styles.image}
         crossOrigin="anonymous"
       />
-      <img
-        src={Dibujoarboles}
-        alt="Urbanización Abierta"
-        style={styles.image}
-        crossOrigin="anonymous"
-      />
+   <div style={styles.container}>
+    <img
+      src={Dibujoarboles}
+      alt="Urbanización Abierta"
+      style={styles.image}
+      crossOrigin="anonymous"
+    />
+    <div style={styles.textOverlay}>
+      <p style={styles.singleLine}>
+        La <span style={styles.bold}>tranquilidad</span> de la naturaleza
+      </p>
+      <p style={styles.singleLine}>
+        La <span style={styles.bold}>comodidad</span> de la ciudad
+      </p>
+    </div>
+  </div>
       <img
         src={Doslogos}
         alt="Urbanización Abierta"
@@ -156,6 +166,30 @@ const styles = {
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
     pointerEvents: 'none',
   },
+  container: {
+    position: 'relative',
+    display: 'inline-block',
+  },
+
+  textOverlay: {
+    position: 'absolute',
+    top: '50%',       // Ajusta la posición del texto
+ textAlign:'center',
+ left:'50%',
+    transform: 'translate(-50%, -50%)',
+    color: 'white',   // Color del texto
+    fontWeight: 'bold',
+    padding: '10px 20px',
+    borderRadius: '8px',
+    textAlign: 'center',
+  },
+  singleLine: {
+    whiteSpace: 'nowrap', // Fuerza el texto a estar en una sola línea
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
 };
 
 export default CiudadVerde;
+
