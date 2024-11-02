@@ -99,10 +99,9 @@ const CiudadVerde = () => {
     />
     <div style={styles.textOverlay}>
       <p style={styles.singleLine}>
-        La <span style={styles.bold}>tranquilidad</span> de la naturaleza
-      </p>
-      <p style={styles.singleLine}>
-        La <span style={styles.bold}>comodidad</span> de la ciudad
+        La <strong >tranquilidad</strong> de la naturaleza
+    <br/>
+        La <strong >comodidad</strong> de la ciudad
       </p>
     </div>
   </div>
@@ -144,7 +143,7 @@ const styles = {
     height: 'auto',
     marginLeft: '-3%',
     display: 'block',
- background: '#2e7d32',
+ background: '#1C6A3B',
 
   },
   imagelibertad: {
@@ -172,6 +171,8 @@ const styles = {
   },
 
   textOverlay: {
+    fontFamily: 'Inter, sans-serif',
+    fontSize: '20px', // Aumenta el tamaño de la fuente
     position: 'absolute',
     top: '50%',       // Ajusta la posición del texto
  textAlign:'center',
@@ -181,7 +182,7 @@ const styles = {
     fontWeight: 'bold',
     padding: '10px 20px',
     borderRadius: '8px',
-    textAlign: 'center',
+    lineHeight: '1.1',
   },
   singleLine: {
     whiteSpace: 'nowrap', // Fuerza el texto a estar en una sola línea
