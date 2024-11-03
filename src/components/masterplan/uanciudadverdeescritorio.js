@@ -46,7 +46,7 @@ const styles = {
     color: '#000',
     borderRadius: '8px',
     fontFamily: 'inter',
-    width: 'calc(80% - 40px)',
+    width: 'calc(85% - 40px)',
     margin: '0 auto',
     boxSizing: 'border-box',
   },
@@ -74,7 +74,7 @@ const styles = {
     flex: '1',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)', // Dos columnas de igual ancho
-    columnGap: '5px', // Reducido aún más el espacio entre columnas
+    columnGap: '1px', // Reducido aún más el espacio entre columnas
         rowGap: '20px', // Puedes ajustar el espacio entre filas si lo necesitas
      //   justifyItems: 'start', // Alinea las columnas al principio
   },

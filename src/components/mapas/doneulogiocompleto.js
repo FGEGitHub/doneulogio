@@ -200,23 +200,23 @@ const Arg = () => {
         style={styles.image} 
       />
       <span style={styles.imageText}>MasterPlan</span>
-    </div>
+ 
+    </div>     <br/><br/>     <br/><br/>
 <Componente1/>
 <br/><br/><br/>
 
 
 
-   
 <img 
         src={Redes} 
         alt="Urbanización Abierta" 
-        sx={{  width: '500%'} } 
+      width= '70%'
       />
 
       <div       style={{ height: '100vh' }} 
       >
          <br/><br/><br/>
-            <h2  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h2>
+            <h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
     <p  style={styles.infomapaint}  >
         Para conocer disponibilidades, dimensiones y precios hace click <br/>en el sector de lote que te interese
     </p>
@@ -1914,14 +1914,14 @@ textAlign:'left',
     fontSize: '26px',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'19%'
+   marginLeft:'13%'
   },
   infomapainttitulo: {
     textAlign:'left',
-    fontSize: '26x',
+    fontSize: '36x',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'19%'
+   marginLeft:'13%'
   },
   svgTextproximamente: {
     fill:' #fff', /* Relleno blanco */
