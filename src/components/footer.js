@@ -54,10 +54,10 @@ const Footer = () => {
       </nav>
 
       <div style={socialStyle}>
-        <a href="https://www.instagram.com/doneulogio.ua/" target="_blank" rel="noreferrer">
+        <a href="https://www.facebook.com/share/JhUwD6qmGXXzT4pE/?mibextid=kFxxJD" target="_blank" rel="noreferrer">
           <img src={Face} alt="Instagram" style={iconStyle} />
         </a>
-        <a href="https://www.facebook.com/share/JhUwD6qmGXXzT4pE/?mibextid=kFxxJD" target="_blank" rel="noreferrer">
+        <a href="https://www.instagram.com/doneulogio.ua/" target="_blank" rel="noreferrer">
           <img src={Inst} alt="Facebook" style={iconStyle} />
         </a>
       </div>
