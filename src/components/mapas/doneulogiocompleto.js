@@ -266,7 +266,7 @@ const Arg = () => {
   {showRestoreButton && (
         <div style={{
           position: 'relative',
-          bottom: '-90%',
+          bottom: '-80%',
           left: '20%',
           zIndex: 1000, // Asegura que esté sobre otros elementos
         //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
@@ -1914,14 +1914,14 @@ textAlign:'left',
     fontSize: '26px',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'13%'
+   marginLeft:'19%'
   },
   infomapainttitulo: {
     textAlign:'left',
     fontSize: '26x',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'13%'
+   marginLeft:'19%'
   },
   svgTextproximamente: {
     fill:' #fff', /* Relleno blanco */
