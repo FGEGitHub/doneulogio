@@ -1,8 +1,8 @@
 import React from 'react';
 import Slider from 'react-slick';
-import carrusel1 from '../../Assets/carruselprincipio2.svg';
-import carrusel2 from '../../Assets/carrusel2.svg';
-import carrusel3 from '../../Assets/carrusel1.svg';
+import carrusel1 from '../../Assets/libertad.png';
+import carrusel2 from '../../Assets/Comunidad.png';
+import carrusel3 from '../../Assets/naturaleza.svg';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
