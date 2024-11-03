@@ -4,13 +4,13 @@ import { styled } from '@mui/system';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Importa los estilos del carrusel
 
-import image1a from '../../Assets/carrusel1.png'; // Imagen 1 del carrusel
+import image1a from '../../Assets/carrusel2.png'; // Imagen 1 del carrusel
 //import image1b from '../../Assets/carrusel2.svg'; // Imagen 2 del carrusel
 //import image1c from '../../Assets/carrusel1.svg'; // Imagen 3 del carrusel
 
-import image2a from '../../Assets/carrusel2.png'; // Imagen 1 del segundo carrusel
-import image2b from '../../Assets/carrusel1.png'; // Imagen 2 del segundo carrusel
-import image2c from '../../Assets/carrusel2.png'; // Imagen 3 del segundo carrusel
+import image2a from '../../Assets/carrusel1.png'; // Imagen 1 del segundo carrusel
+import image2b from '../../Assets/2b.png'; // Imagen 2 del segundo carrusel
+import image2c from '../../Assets/2c.png'; // Imagen 3 del segundo carrusel
 
 // Modificamos el componente para eliminar bordes y fondo, y aumentar tamaño
 const StyledContainer = styled(Box)({
