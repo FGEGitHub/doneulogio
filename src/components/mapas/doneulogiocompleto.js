@@ -1233,7 +1233,7 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             
-            <path   stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"     transform="translate(-348, 1615) scale(1.92,1.92)"  d="M1455.67,929.329 L1493.8,929.007 L1492.68,1061.81 L1453.45,1061.85 L1455.67,929.329" fill-rule="evenodd" vector-effect="none"className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(150)}    />
+            <path   stroke="#566573" stroke-opacity="0.9" stroke-width="3.8"     transform="translate(-348, 1615) scale(1.92,1.92)"  d="M1455.67,929.329 L1493.8,929.007 L1492.68,1061.81 L1453.45,1061.85 L1455.67,929.329" fill-rule="evenodd" vector-effect="none"className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(150)}    />
             </Tooltip>)})}
             {[151].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
@@ -1243,7 +1243,7 @@ const Arg = () => {
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
             
-            <path stroke="#566573" stroke-opacity="0.9" stroke-width="1.8"   transform="translate(-348, 1617) scale(1.92,1.92)" className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(151)}     d="M1453.53,1061.64 L1492.66,1061.81 L1489.79,1194.1 L1453.38,1194.38 L1453.53,1061.64" fill-rule="evenodd" vector-effect="none"/>
+            <path stroke="#566573" stroke-opacity="0.9" stroke-width="3.8"   transform="translate(-348, 1617) scale(1.92,1.92)" className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}   onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(151)}     d="M1453.53,1061.64 L1492.66,1061.81 L1489.79,1194.1 L1453.38,1194.38 L1453.53,1061.64" fill-rule="evenodd" vector-effect="none"/>
 
             </Tooltip>)})}
             {/* {[152].map((tooltipValue) => {
