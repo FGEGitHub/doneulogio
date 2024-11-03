@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Grid, Box, CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
 
 import video from '../../Assets/videodron.mp4';
-import logo from '../../Assets/logonav2.png';
+import logo from '../../Assets/logo.png';
 import imagenverde from '../../Assets/imagenverde.svg';
 import doslogos from'../../Assets/doslogos.png';
 import '../urbanizaciona/UrbanizacionAbierta.css';
@@ -15,100 +15,101 @@ const UrbanizacionAbierta = () => {
   const navigate = useNavigate();
   return (
     <React.Fragment>
-      <CssBaseline />
-      <Toolbar className="urbanizacion-toolbar">
-          <img src={logo} alt="Logo" className="urbanizacion-logo" />
-        </Toolbar>
+ <CssBaseline />
    
-   
-      
-        <nav className="urbanizacion-nav">
-  <div
-    variant="button"
-    color="primary"
-    href="#"
-    className="urbanizacion-navlink"
-    style={{ 
-      color: "#246F74", 
-      marginRight: "25px", 
-      fontSize: "28px", 
-      fontFamily: "Inter", 
-      fontWeight: 400,
-      cursor: "pointer"  // Cambia el cursor al pasar el mouse
-    }}
-    onClick={() => navigate('/')}
-  >
-    Home
-  </div>
-  <div
-    variant="button"
-    color="primary"
-    href="#"
-    className="urbanizacion-navlink"
-    style={{ 
-      color: "#246F74", 
-      marginRight: "25px", 
-      fontSize: "24px", 
-      fontFamily: "Inter", 
-      fontWeight: 400,
-      cursor: "pointer"  // Cambia el cursor al pasar el mouse
-    }}
-    onClick={() => navigate('/urbanizacion-abierta')}
-  >
-    Urbanización Abierta
-  </div>
-  <div
-    variant="button"
-    color="primary"
-    href="#"
-    className="urbanizacion-navlink"
-    style={{ 
-      color: "#246F74", 
-      marginRight: "25px", 
-      fontSize: "24px", 
-      fontFamily: "Inter", 
-      fontWeight: 400,
-      cursor: "pointer"  // Cambia el cursor al pasar el mouse
-    }}
-    onClick={() => navigate('/masterplan')}
-  >
-    MasterPlan
-  </div>
-  <div
-    variant="button"
-    color="primary"
-    href="#"
-    className="urbanizacion-navlink"
-    style={{ 
-      color: "#246F74", 
-      marginRight: "25px", 
-      fontSize: "24px", 
-      fontFamily: "Inter", 
-      fontWeight: 400,
-      cursor: "pointer"  // Cambia el cursor al pasar el mouse
-    }}
-    onClick={() => navigate('/espacios-publicos')}
-  >
-    Espacios públicos
-  </div>
-  <div
-    variant="button"
-    color="primary"
-    href="#"
-    className="urbanizacion-navlink"
-    style={{ 
-      color: "#246F74", 
-      marginRight: "25px", 
-      fontSize: "24px", 
-      fontFamily: "Inter", 
-      fontWeight: 400,
-      cursor: "pointer"  // Cambia el cursor al pasar el mouse
-    }}
-    onClick={() => navigate('/contacto')}
-  >
-    Contacto
-  </div>
+   <Toolbar className="urbanizacion-toolbar">
+     <img src={logo} alt="Logo" className="urbanizacion-logo" />
+   </Toolbar>
+
+ 
+   <nav className="urbanizacion-nav">
+<div
+variant="button"
+color="primary"
+href="#"
+className="urbanizacion-navlink"
+style={{ 
+ color: "#246F74", 
+ marginRight: "25px", 
+ fontSize: "24px", 
+ fontFamily: "Inter", 
+ fontWeight: 400,
+ cursor: "pointer"  // Cambia el cursor al pasar el mouse
+}}
+onClick={() => navigate('/')}
+>
+Home
+</div>
+<div
+variant="button"
+color="primary"
+href="#"
+className="urbanizacion-navlink"
+style={{ 
+ color: "#246F74", 
+ marginRight: "25px", 
+ fontSize: "24px", 
+ fontFamily: "Inter", 
+ fontWeight: 400,
+ cursor: "pointer"  // Cambia el cursor al pasar el mouse
+}}
+onClick={() => navigate('/urbanizacion-abierta')}
+>
+Urbanización Abierta
+</div>
+<div
+variant="button"
+color="primary"
+href="#"
+className="urbanizacion-navlink"
+style={{ 
+ color: "#246F74", 
+ marginRight: "25px", 
+ fontSize: "24px", 
+ fontFamily: "Inter", 
+ fontWeight: 400,
+ cursor: "pointer"  // Cambia el cursor al pasar el mouse
+}}
+onClick={() => navigate('/masterplan')}
+>
+MasterPlan
+</div>
+<div
+variant="button"
+color="primary"
+href="#"
+className="urbanizacion-navlink"
+style={{ 
+ color: "#246F74", 
+ marginRight: "25px", 
+ fontSize: "24px", 
+ fontFamily: "Inter", 
+ fontWeight: 400,
+ cursor: "pointer"  // Cambia el cursor al pasar el mouse
+}}
+onClick={() => navigate('/espacios-publicos')}
+>
+Espacios públicos
+</div>
+<div
+variant="button"
+color="primary"
+href="#"
+className="urbanizacion-navlink"
+style={{ 
+ color: "#246F74", 
+ marginRight: "25px", 
+ fontSize: "24px", 
+ fontFamily: "Inter", 
+ fontWeight: 400,
+ cursor: "pointer"  // Cambia el cursor al pasar el mouse
+}}
+onClick={() => navigate('/contacto')}
+>
+Contacto
+</div>
 </nav>
+
 
         {/* Video Section */}
         <Box sx={{ position: 'relative', width: '100%', height: '450px', overflow: 'hidden' }}>
