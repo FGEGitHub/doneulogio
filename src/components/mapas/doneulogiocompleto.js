@@ -218,7 +218,8 @@ const Arg = () => {
          <br/><br/><br/>
             <h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
     <p  style={styles.infomapaint}  >
-        Para conocer disponibilidades, dimensiones y precios hace click <br/>en el sector de lote que te interese
+    Para conocer disponibilidades, dimensiones y precios hacer click en el sector y lote de interés. <br/>
+    Para volver a la vista general tocar en el botón Restaurar.
     </p>
       <TransformWrapper
       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
