@@ -5,7 +5,7 @@ import Imagemapa from '../../Assets/map.jpg';
 import Dibujoarboles from '../../Assets/dibujoarboles.png';
 import Doslogos from '../../Assets/doslogos.png';
 import VideoDron from '../../Assets/videodron.mp4';
-
+import Carrus from './carrusel'
 import Componete1 from './componente2';
 import Componente2 from './componente3';
 import Footer from '../footermobile';
@@ -78,12 +78,7 @@ const CiudadVerde = () => {
         <span style={styles.imageText}>Tu Futuro en <br />Don Eulogio</span>
       </div>
       <Componete1 />
-      <img
-        src={Image2}
-        alt="libertad"
-        style={styles.imagelibertad}
-        crossOrigin="anonymous"
-      />
+      <Carrus/>
       <Componente2 />
       <img
         src={Imagemapa}
