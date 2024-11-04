@@ -115,19 +115,6 @@ alert(nov)
               variant="standard"
             />
 
-<TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              
-              label="Dni"
-              name="dni"
-              onChange={handleChange}
-              fullWidth
-              variant="standard"
-            />
-          
-            <br/>
             <TextField
 
               onChange={handleChange}
@@ -221,17 +208,40 @@ alert(nov)
               fullWidth
               variant="standard"
             />
-            <TextField
-              autoFocus
-              margin="dense"
-              id="dni"
-              
-              label="Provincia"
-              name="provincia"
-              onChange={handleChange}
-              fullWidth
-              variant="standard"
-            />
+        <NativeSelect
+  defaultValue="Sin determinar"
+  onChange={handleChange}
+  inputProps={{
+    name: 'provincia',
+    id: 'uncontrolled-native',
+  }}
+  sx={{ width: '250px' }}
+>
+  <option value="Sin determinar">Sin determinar</option>
+  <option value="Buenos Aires">Buenos Aires</option>
+  <option value="Catamarca">Catamarca</option>
+  <option value="Chaco">Chaco</option>
+  <option value="Chubut">Chubut</option>
+  <option value="Cordoba">Córdoba</option>
+  <option value="Corrientes">Corrientes</option>
+  <option value="Entre Rios">Entre Ríos</option>
+  <option value="Formosa">Formosa</option>
+  <option value="Jujuy">Jujuy</option>
+  <option value="La Pampa">La Pampa</option>
+  <option value="La Rioja">La Rioja</option>
+  <option value="Mendoza">Mendoza</option>
+  <option value="Misiones">Misiones</option>
+  <option value="Neuquen">Neuquén</option>
+  <option value="Rio Negro">Río Negro</option>
+  <option value="Salta">Salta</option>
+  <option value="San Juan">San Juan</option>
+  <option value="San Luis">San Luis</option>
+  <option value="Santa Cruz">Santa Cruz</option>
+  <option value="Santa Fe">Santa Fe</option>
+  <option value="Santiago del Estero">Santiago del Estero</option>
+  <option value="Tierra del Fuego">Tierra del Fuego</option>
+  <option value="Tucuman">Tucumán</option>
+</NativeSelect>
             
           
             <DialogActions>
