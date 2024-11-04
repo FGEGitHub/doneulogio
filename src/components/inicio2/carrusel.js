@@ -3,7 +3,7 @@ import foto1 from "../../Assets/libertad2.png";
 import foto2 from "../../Assets/comunidad2.png";
 import foto3 from "../../Assets/naturaleza.png";
 import foto4 from "../../Assets/inversion.png";
-import foto5 from "../../Assets/bienestar.png";
+import foto5 from "../../Assets/bienestarr.png";
 import "./carrusel.css";
 
 const Carousel = ({ images, links }) => {
