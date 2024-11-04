@@ -1687,7 +1687,7 @@ const Arg = () => {
       }>
 
       </DialogComponent> 
-       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-40%",  width: "91%", position: 'relative'}} />
+       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-40%",  width: "85%", position: 'relative'}} />
       <ComponenteTarjetas/>
      
      <Footer/>
