@@ -59,11 +59,7 @@ const CiudadVerde = () => {
           <span style={styles.contactText}>doneulogio.ua@gmail.com</span>
         </div>
       </div>
-        <img
-          src={Gpscontacto}
-          alt="Urbanización Abierta"
-          style={styles.image}
-        />
+ 
       <Footer />
     </div>
   );
