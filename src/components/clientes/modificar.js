@@ -105,7 +105,7 @@ alert(nov)
             autoComplete="off"
         >
             < Tooltip title="Nueva Clase">
-                <Button variant="outlined" onClick={handleClickOpen}> Modificar usuario  </Button>
+                <Button variant="outlined" onClick={handleClickOpen}> Modificar  </Button>
 
             </Tooltip>
             <Dialog open={open} onClose={handleClose}>

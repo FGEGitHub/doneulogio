@@ -10,6 +10,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import servicioDatos from '../../services/datos';
+import Modificar from './modificar'
 
 const columns = [
   { id: 'id_cliente', label: 'ID Clientes', minWidth: 100, align: 'left' },
@@ -150,14 +151,26 @@ export default function StickyHeadTable() {
                         if (column.id === 'modificar') {
                           return (
                             <TableCell key={column.id} align={column.align}>
-                              <Button
-                                variant="contained"
-                                color="primary"
-                                size="small"
-                                onClick={() => handleEdit(row.id_cliente)}
-                              >
-                                Modificar
-                              </Button>
+                             <Modificar
+   id={ row.id}
+     
+   fecha_nac= {row.fecha_nac}
+   observaciones= {row.observaciones}
+  
+   nombre= {row.nombre}
+ 
+   dni={ row.dni}
+   correo= {row.correo}
+
+   telefono={ row.telefono}
+   provincia= {row.provincia}
+   sexo= {row.sexo}
+   estado_civil= {row.estado_civil}
+                             traer={async () => {
+                              const historial = await servicioDatos.traerclientes();
+                              setDatos(historial);
+                            }}
+                             />
                             </TableCell>
                           );
                         }
