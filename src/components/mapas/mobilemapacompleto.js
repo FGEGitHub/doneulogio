@@ -232,8 +232,8 @@ const Arg = () => {
 </svg>
 </div>
 </div>:<div>
-<div style={{ position: 'relative', zIndex: 1 }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
-      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="1795 1132 8944 12274"   baseProfile="tiny" version="1.2">
+<div style={{ position: 'relative', zIndex: 1 , }}> {/* view  priemr numero mas alto mueve izqierda el segundo mas alto sube     */}
+      <svg xmlns="http://www.w3.org/2000/svg"  width="110mm"  height="100mm"  viewBox="250 1395 8944 12274"   baseProfile="tiny" version="1.2">
                           <defs />
  <g transform="scale(1.22,1.225)" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" fill="none" stroke-linejoin="bevel" stroke="black">
   <g transform="scale(1.22,1.225)" stroke-width="1"  font-family="MS Shell Dlg 2" stroke-opacity="1" stroke-linecap="square" font-style="normal" font-size="108.333" fill="none" stroke-linejoin="bevel" font-weight="400" stroke="#000000"/>
