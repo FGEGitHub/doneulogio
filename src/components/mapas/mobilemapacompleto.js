@@ -70,6 +70,30 @@ const Arg = () => {
       }
     }
 }; 
+
+/* const cambiarsvg = (e) => {
+  setShowRestoreButton(true);
+
+  if (transformWrapperRef.current) {
+    // Solo ajusta la escala (zoom) sin modificar las coordenadas X e Y
+    const newScale = e === 1 ? 2.5 : 3; // Ajusta estos valores de zoom según lo necesites
+
+    // Mantén la posición central sin mover la imagen hacia los lados
+    const currentPositionX = 0; // X en el centro
+    const currentPositionY = 0; // Y en el centro
+    
+    transformWrapperRef.current.setTransform(currentPositionX, currentPositionY, newScale);
+  }
+} */
+
+
+
+
+
+
+
+
+
   return (
     <>
    
@@ -89,14 +113,16 @@ const Arg = () => {
 
 <>
 
-<div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+<div style={{ width: 'auto', height: '80vh', overflow: 'auto', }}>
       <TransformWrapper
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
     defaultScale={1}
-    minScale={1} // Evita que el zoom reduzca el tamaño por debajo del original
-    limitToBounds={true} // Limita el zoom a los límites del contenido
+    minScale={1}         // Zoom mínimo al 100% del tamaño original
+    maxScale={2.5}       // Evita que la imagen se haga demasiado grande
+    limitToBounds={true} // Mantiene la imagen dentro de los límites del contenedor
+    centerOnInit={true}  // Limita el zoom a los límites del contenido
     zoomAnimation={{ disabled: true }} // Desactiva la animación de zoom para más control
  
     wheel={{ disabled: posicion0 }} // Deshabilita el zoom cuando posicion0 es true
@@ -142,7 +168,7 @@ const Arg = () => {
                   setPosicion0(true)}
                 } // Restaurar la vista completa
            
-                style={{ marginBottom: "10px",
+                style={{ marginBottom: "15px",
                   width: '125px',
                   backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
               color: 'black', // Color del texto
@@ -1687,8 +1713,15 @@ const Arg = () => {
       }>
 
       </DialogComponent> 
-       <img src={Grupo6} alt="Urbanización Abierta" style={{marginTop:"-40%",  width: "85%", position: 'relative'}} />
-      <ComponenteTarjetas/>
+      <img
+  src={Grupo6}
+  alt="Urbanización Abierta"
+  style={{
+    marginTop: posicion0 ? "-70%" : "-30%",  // Condicional para marginTop
+    position: 'relative',                    // Propiedad position
+    marginLeft: posicion0 ? "8%" : "5%", 
+  }}
+/>      <ComponenteTarjetas/>
      
      <Footer/>
       </>
