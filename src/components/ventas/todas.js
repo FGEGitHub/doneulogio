@@ -24,7 +24,8 @@ const columns = [
   { id: 'modificar', label: 'Modificar', minWidth: 100 },
   { id: 'borrar', label: 'Borrar', minWidth: 100 },
 ];
-
+const formatCurrency = (value) => 
+  new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
 export default function VentasTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(100);
@@ -207,6 +208,13 @@ export default function VentasTable() {
                       </TableCell>
                     );
                   }
+                  if (column.id === 'valor_escritura') {
+                    return (
+                      <TableCell key={column.id} align={column.align}>
+                      {formatCurrency(row.valor_escritura)}
+                      </TableCell>
+                    );
+                  }
                   if (column.id === 'id_venta') {
                     return (
                       <TableCell key={column.id} align={column.align}>
@@ -214,6 +222,8 @@ export default function VentasTable() {
                       </TableCell>
                     );
                   }
+
+                  
                   return (
                     <TableCell key={column.id} align={column.align}>
                       {value}

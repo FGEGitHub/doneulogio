@@ -181,6 +181,13 @@ export default function StickyHeadTable() {
                         </TableCell>
                       );
                     }
+                    if (column.id === 'superficie' ) {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {row.superficie} m²
+                        </TableCell>
+                      );
+                    }
                     
                     if (column.id === 'valor_cuota') {
                       const porcentajeAnticipo = parseFloat(editingRow[row.lote]?.porcentaje_anticipo || row.porcentaje_anticipo || 0);
