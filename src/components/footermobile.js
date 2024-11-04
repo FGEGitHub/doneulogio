@@ -17,8 +17,12 @@ const Footer = () => {
         <li>Contacto</li>
       </ul>
       <div style={styles.socialContainer}>
-        <img src={facebookIcon} alt="Facebook" style={styles.socialIcon} />
-        <img src={instagramIcon} alt="Instagram" style={styles.socialIcon} />
+      <a href="https://www.facebook.com/share/JhUwD6qmGXXzT4pE/?mibextid=kFxxJD" target="_blank" rel="noopener noreferrer">
+  <img src={facebookIcon} alt="Facebook" style={styles.socialIcon} />
+</a>
+<a href="https://www.instagram.com/doneulogio.ua/" target="_blank" rel="noopener noreferrer">
+  <img src={instagramIcon} alt="Instagram" style={styles.socialIcon} />
+</a>
       </div>
     </footer>
   );
