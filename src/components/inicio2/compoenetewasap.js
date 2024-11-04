@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import whatsappIcon from '../../Assets/wasap.svg'; // Asegúrate de que la ruta sea correcta
+import whatsappIcon from '../../Assets/logosolidowasap.png'; // Asegúrate de que la ruta sea correcta
 import { Box, keyframes } from '@mui/material';
 
 const slideIn = keyframes`
