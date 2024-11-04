@@ -1717,7 +1717,7 @@ const Arg = () => {
   src={Grupo6}
   alt="Urbanización Abierta"
   style={{
-    marginTop: posicion0 ? "-70%" : "-30%",  // Condicional para marginTop
+    marginTop: posicion0 ? "-50%" : "-20%",  // Condicional para marginTop
     position: 'relative',                    // Propiedad position
     marginLeft: posicion0 ? "8%" : "5%", 
   }}
