@@ -3,6 +3,7 @@ import Clientes from "./tabla";
 import Lotes from "../lotes/tabla";
 import Nuevo from './nuevo';
 import Ventas from '../ventas/todas';
+import Nuevaventa from '../ventas/nuevocli'
 import * as React from 'react';
 
 const Seleccion = () => {
@@ -86,7 +87,7 @@ const Seleccion = () => {
                 position: 'absolute', 
                 top: '20px', 
                 right: '20px' 
-            }}>
+            }}><Nuevaventa/>
                 <Nuevo/>
                 <button style={{ 
                     backgroundColor: '#2E7D32', 

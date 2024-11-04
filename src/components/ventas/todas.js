@@ -84,7 +84,7 @@ export default function VentasTable() {
       <Button variant="contained" onClick={handleNuevaVenta} disabled={nuevaVenta}>
         Nueva Venta
       </Button>
-      <TableContainer sx={{ maxHeight:' 100% ' }}>
+      <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
