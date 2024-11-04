@@ -23,12 +23,12 @@ const styles = {
     fontSize: '18px',
     color: '#ffffff',
     textAlign: 'center',
-    marginBottom: '16px',
+    marginBottom: '10px',
   },
   arrow: {
     width: '24px',
     height: '24px',
-    marginBottom: '16px',
+    marginBottom: '10px',
   },
   tarjetas: {
     width: '80%',

@@ -10,7 +10,7 @@ const Ubicacion = () => {
       <p style={styles.text}>
         Está situado a 1,5 Km. de la Ruta Nac. N° 12 y a 12 Km. de la Rotonda de la Virgen
       </p>
-      <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" style={styles.link}>
+      <a href="https://maps.app.goo.gl/g9rJEsdkJ4MspAQw5" target="_blank" rel="noopener noreferrer" style={styles.link}>
         Hace click para verlo en Google Maps
       </a>
     </div>
