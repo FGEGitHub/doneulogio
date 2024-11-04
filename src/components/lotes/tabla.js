@@ -16,8 +16,9 @@ import WarningIcon from '@mui/icons-material/Warning';
 import Borrar from './modalborrar'
 import Modificar from './modificar'
 const columns = [
-  { id: 'sector', label: 'Sector', minWidth: 100 },
-  { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' },
+  { id: 'id', label: 'id', minWidth: 100 },
+  /* { id: 'sector', label: 'Sector', minWidth: 100 },
+  { id: 'manzana', label: 'Manzana', minWidth: 60, align: 'right' }, */
   { id: 'superficie', label: 'Superficie', minWidth: 100, align: 'right' },
   { id: 'adrema', label: 'Adrema', minWidth: 100, align: 'right' }, // Adrema editable
   { id: 'estado', label: 'Estado', minWidth: 100, align: 'right' },
@@ -147,7 +148,9 @@ export default function StickyHeadTable() {
                       value = row['id_cliente'] ? 'Vendido' : 'Disponible';
                     }
 
-            
+                    if (column.id === 'id') {
+                      value =<>id- {row.sector}-{row.manzana}-{row.lote}</>
+                    }
 
                     if (column.id === 'saldo_financiado') {
                       return (

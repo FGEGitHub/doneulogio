@@ -895,7 +895,8 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}  stroke="#000000" stroke-opacity="1" stroke-width="5.8"  onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(51)}         fill-rule="evenodd" vector-effect="none" d="M2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2350.74,2500.19 L2383.83,2503.64"/></Tooltip>)})}
+          <path className="mi-path" fill={fillColor} fillOpacity={fillOpacityValue} stroke="#000000" stroke-opacity="1" stroke-width="5.8" onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(51)} fill-rule="evenodd" vector-effect="none" d="M2318.28,2500.19 L2383.83,2503.64 L2384.32,2673.19 L2318.28,2669.74 L2318.28,2500.19 Z"/>
+          </Tooltip>)})}
 
         {[52].map((tooltipValue) => {
           const objetoEncontrado = lotes.find(item => item.mapa1 == tooltipValue);
