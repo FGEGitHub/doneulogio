@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import whatsappIcon from '../../Assets/what.png'; // Asegúrate de que la ruta sea correcta
+import whatsappIcon from '../../Assets/wasap.svg'; // Asegúrate de que la ruta sea correcta
 import { Box, keyframes } from '@mui/material';
 
 const slideIn = keyframes`
@@ -26,11 +26,11 @@ const WhatsAppButton = () => {
 
   return (
     <Box
-      onClick={() => window.open('https://wa.me/3794008721', '_blank')} // Cambia '1234567890' por el número deseado
+      onClick={() => window.open('https://wa.me/3794008721?text=Hola%20tengo%20una%20consulta%20sobre%20la%20web%20Don%20Eulogio', '_blank')}
       sx={{
         position: 'fixed',
         bottom: 16,
-        right: 50, // Ajusta el valor de "right" para moverlo más hacia afuera de la pantalla
+        right: 50,
         zIndex: 1000,
         display: 'flex',
         flexDirection: 'column',
@@ -40,7 +40,7 @@ const WhatsAppButton = () => {
         animation: `${slideIn} 0.5s ease-out`,
       }}
     >
-      <img src={whatsappIcon} alt="WhatsApp" style={{ width: 80, height: 80 }} />
+      <img src={whatsappIcon} alt="WhatsApp" style={{ width: 100, height: 100 }} />
       <Box sx={{ mt: 1, fontSize: 14, color: '#25D366' }}>Contactar</Box>
     </Box>
   );

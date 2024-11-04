@@ -16,7 +16,7 @@ import Modificar from './modificar'
 const columns = [
   { id: 'id_venta', label: 'ID Venta', minWidth: 100 },
   { id: 'fecha', label: 'Fecha de venta', minWidth: 120 },
-  { id: 'lote', label: 'Lote', minWidth: 100 },
+
   { id: 'nombre', label: 'Propietario', minWidth: 150 },
   { id: 'modelo_venta', label: 'Modelo de venta', minWidth: 150 },
   { id: 'valor_escritura', label: 'Valor escritura', minWidth: 100, align: 'right' },
