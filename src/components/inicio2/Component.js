@@ -11,6 +11,7 @@ import Carrusel from './carrusel';
 import Footer from '../footer'
 import Mapacomp from './mapacomponente';
 import { useNavigate } from "react-router-dom";
+import Whatsapcomponente from './compoenetewasap'
 const UrbanizacionAbierta = () => {
   const navigate = useNavigate();
   return (
@@ -157,6 +158,7 @@ Contacto
       <Box className="urbanizacion-footer">
         <Typography variant="body1">&copy; Don Eulogio - Todos los derechos reservados</Typography>
       </Box>
+      <Whatsapcomponente/>
     </React.Fragment>
   );
 };

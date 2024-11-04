@@ -72,6 +72,7 @@ const CiudadVerde = () => {
           loop
           muted
           crossOrigin="anonymous"
+          playsInline 
           style={styles.video}
         />
         <span style={styles.imageText}>Tu Futuro en <br />Don Eulogio</span>
