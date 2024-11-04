@@ -84,7 +84,7 @@ export default function VentasTable() {
       <Button variant="contained" onClick={handleNuevaVenta} disabled={nuevaVenta}>
         Nueva Venta
       </Button>
-      <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)' }}>
+      <TableContainer sx={{ maxHeight:' 100% ' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -225,15 +225,7 @@ export default function VentasTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={datos.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
+ 
     </Paper>
   );
 }

@@ -114,9 +114,9 @@ export default function StickyHeadTable() {
 
   return (
     <>
-    <Paper sx={{  overflow: 'auto', margin: 'auto', marginTop: '150px' }}>
+    <Paper sx={{  overflow: 'auto', margin: 'auto', marginTop: '150px', display: 'flex', flexDirection: 'column-reverse', }}>
   
-    <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
+ 
    
       <TableContainer sx={{ maxHeight: '100%' }}>     <BArramover>
         <Table stickyHeader aria-label="sticky table">
@@ -258,7 +258,7 @@ export default function StickyHeadTable() {
         </Table>
         </BArramover>
       </TableContainer> 
-      </div>
+      
      
     </Paper>
     </>
