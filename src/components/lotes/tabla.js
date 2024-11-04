@@ -11,7 +11,7 @@ import Checkbox from '@mui/material/Checkbox';
 import servicioDatos from '../../services/datos';
 import { IconButton } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+import BArramover from './barramover'
 import WarningIcon from '@mui/icons-material/Warning';
 import Borrar from './modalborrar'
 import Modificar from './modificar'
@@ -112,9 +112,12 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
+    <>
+    <Paper sx={{  overflow: 'auto', margin: 'auto', marginTop: '150px' }}>
+  
     <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
-      <TableContainer sx={{ maxHeight: '100%' }}>
+   
+      <TableContainer sx={{ maxHeight: '100%' }}>     <BArramover>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -250,10 +253,11 @@ export default function StickyHeadTable() {
             })}
           </TableBody>
         </Table>
-       
+        </BArramover>
       </TableContainer> 
       </div>
-   
+     
     </Paper>
+    </>
   );
 }
