@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import servicioDatos from '../../services/datos';
-import Modificar from './modificar'
+import Modificar from './modificar';
 
 const columns = [
   { id: 'id_cliente', label: 'ID Clientes', minWidth: 100, align: 'left' },
@@ -24,6 +24,18 @@ const columns = [
   { id: 'provincia', label: 'Provincia', minWidth: 150, align: 'center' },
   { id: 'modificar', label: 'Modificar', minWidth: 100, align: 'center' },
 ];
+
+// Función para calcular la edad a partir de la fecha de nacimiento
+const calcularEdad = (fechaNacimiento) => {
+  const hoy = new Date();
+  const fechaNac = new Date(fechaNacimiento);
+  let edad = hoy.getFullYear() - fechaNac.getFullYear();
+  const mes = hoy.getMonth() - fechaNac.getMonth();
+  if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNac.getDate())) {
+    edad--;
+  }
+  return edad;
+};
 
 export default function StickyHeadTable() {
   const [datos, setDatos] = useState([]);
@@ -61,9 +73,9 @@ export default function StickyHeadTable() {
 
   return (
     <>
-     <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
+      <Paper sx={{ overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
         <div style={{ display: 'flex', flexDirection: 'column-reverse', overflowX: 'auto' }}>
-          <TableContainer sx={{ maxHeight: '100%' }}>
+          <TableContainer sx={{ maxHeight: 'calc(120vh - 150px)' }}>
             <Table stickyHeader aria-label="sticky table">
               <TableHead>
                 <TableRow>
@@ -87,6 +99,13 @@ export default function StickyHeadTable() {
                         return (
                           <TableCell key={column.id} align={column.align}>
                             CLI-{row.id}
+                          </TableCell>
+                        );
+                      }
+                      if (column.id === 'edad') {
+                        return (
+                          <TableCell key={column.id} align={column.align}>
+                            {calcularEdad(row.fecha_nac)}
                           </TableCell>
                         );
                       }
@@ -151,26 +170,22 @@ export default function StickyHeadTable() {
                         if (column.id === 'modificar') {
                           return (
                             <TableCell key={column.id} align={column.align}>
-                             <Modificar
-   id={ row.id}
-     
-   fecha_nac= {row.fecha_nac}
-   observaciones= {row.observaciones}
-  
-   nombre= {row.nombre}
- 
-   dni={ row.dni}
-   correo= {row.correo}
-
-   telefono={ row.telefono}
-   provincia= {row.provincia}
-   sexo= {row.sexo}
-   estado_civil= {row.estado_civil}
-                             traer={async () => {
-                              const historial = await servicioDatos.traerclientes();
-                              setDatos(historial);
-                            }}
-                             />
+                              <Modificar
+                                id={row.id}
+                                fecha_nac={row.fecha_nac}
+                                observaciones={row.observaciones}
+                                nombre={row.nombre}
+                                dni={row.dni}
+                                correo={row.correo}
+                                telefono={row.telefono}
+                                provincia={row.provincia}
+                                sexo={row.sexo}
+                                estado_civil={row.estado_civil}
+                                traer={async () => {
+                                  const historial = await servicioDatos.traerclientes();
+                                  setDatos(historial);
+                                }}
+                              />
                             </TableCell>
                           );
                         }
