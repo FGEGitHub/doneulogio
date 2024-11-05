@@ -1717,9 +1717,9 @@ const Arg = () => {
   src={Grupo6}
   alt="Urbanización Abierta"
   style={{
-    marginTop: posicion0 ? "-50%" : "-20%",  // Condicional para marginTop
+    marginTop: posicion0 ? "-50%" : "-30%",  // Condicional para marginTop
     position: 'relative',                    // Propiedad position
-    marginLeft: posicion0 ? "5%" : "3%", 
+    marginLeft: posicion0 ? "3%" : "3%", 
   }}
 />      <ComponenteTarjetas/>
      
