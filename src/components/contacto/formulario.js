@@ -95,7 +95,7 @@ const ContactForm = () => {
           onChange={handleChange}
         />
         <button style={styles.button} type="submit" disabled={loading}>
-          {loading ? 'Cargando...' : 'Enviar'}
+          {loading ? 'Enviando consulta...' : 'Enviar'}
         </button>
       </form>
 
