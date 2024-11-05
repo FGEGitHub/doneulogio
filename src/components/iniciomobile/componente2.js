@@ -24,7 +24,7 @@ const styles = {
     padding: '20px',
   },
   title: {
-    fontSize: '18px',
+    fontSize: '22px',
     marginBottom: '20px',
     fontWeight: 'bold',
   },
