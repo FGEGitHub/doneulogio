@@ -109,7 +109,8 @@ const Arg = () => {
 
 
     <br/>   <br/>   <br/>
-<UNaciudad/>{     <img src={foto1} alt="Urbanización Abierta"  style={{ border: '2px solid black', boxSizing: 'border-box', overflow: 'hidden'}} /> &&
+<UNaciudad/>
+{<img src={foto1} alt="Urbanización Abierta"  style={{ boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
 
@@ -168,7 +169,7 @@ const Arg = () => {
                   setPosicion0(true)}
                 } // Restaurar la vista completa
            
-                style={{ marginBottom: "15px",
+                style={{ marginBottom: "10px",
                   width: '125px',
                   backgroundColor: '#f0f0f0', // Fondo predeterminado de un botón común
               color: 'black', // Color del texto
@@ -204,7 +205,7 @@ const Arg = () => {
         left: 0,
         width: '100%', // Ajusta este tamaño según sea necesario
       //  height: '70%', // Cambia este valor si es necesario para que se vea correctamente
-        objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
+       // objectFit: 'cover', // Mantiene la proporción de la imagen dentro del espacio asignado
         zIndex: 0, // Asegúrate de que la imagen esté detrás del SVG
       }}
     />
