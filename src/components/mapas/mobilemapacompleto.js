@@ -113,6 +113,11 @@ const Arg = () => {
 {<img src={foto1} alt="Urbanización Abierta"  style={{ boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
+<h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
+    <p  style={styles.infomapaint}  >
+    Para conocer disponibilidades, dimensiones y precios hacer click en el sector y lote de interés. <br/>
+    Para volver a la vista general tocar en el botón Restaurar.
+    </p>
 
 <div style={{ width: 'auto', height: '80vh', overflow: 'auto', }}>
       <TransformWrapper
@@ -137,7 +142,7 @@ const Arg = () => {
                          zIndex: 1000, // Asegura que esté sobre otros elementos
                        //  backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semi-transparente para que no tape contenido
                          padding: '10px',
-                         borderRadius: '5px',
+                        
             }}>
  {!posicion0 &&
 <img 
@@ -1779,7 +1784,21 @@ const styles = {
     
    // transform: 'rotate(-45deg)' // Rotación de 45 grados para hacer diagonal el texto
   },
-  
+  infomapaint: {
+    textAlign:'left',
+        fontSize: '16px',
+        fontFamily: "'inter', sans-serif", // Aplica la fuente
+       cursor: 'pointer',
+       marginLeft:'13%',
+        marginLeft:'10%'
+      },
+      infomapainttitulo: {
+        textAlign:'left',
+        fontSize: '30x',
+        fontFamily: "'inter', sans-serif", // Aplica la fuente
+       cursor: 'pointer',
+       marginLeft:'13%'
+      },
 };
 
 export default Arg;
