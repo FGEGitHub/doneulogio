@@ -11,6 +11,7 @@ const ContactForm = () => {
     telefono: '',
     mensaje: '',
   });
+  const [loading, setLoading] = useState(false); // Estado para la carga
 
   const handleChange = (e) => {
     setFormData({
@@ -21,14 +22,25 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Activar la carga
     try {
       // Enviar los datos al servicio
       const response = await serviciodatos.enviarconsulta(formData);
       console.log('Formulario enviado:', response);
-      // Opcional: Mostrar un mensaje de éxito
+      alert('Consulta enviada con éxito'); // Alerta de éxito
+      // Limpiar el formulario
+      setFormData({
+        nombre: '',
+        apellido: '',
+        email: '',
+        telefono: '',
+        mensaje: '',
+      });
     } catch (error) {
       console.error('Error al enviar el formulario:', error);
-      // Opcional: Mostrar un mensaje de error
+      alert('Error al enviar la consulta, por favor intente de nuevo'); // Alerta de error
+    } finally {
+      setLoading(false); // Desactivar la carga
     }
   };
 
@@ -36,7 +48,7 @@ const ContactForm = () => {
     <div style={styles.container}>
       <form style={styles.form} onSubmit={handleSubmit}>
         <p style={styles.title}>
-          Completá los datos y nuestro equipo de ventas se contactara a la brevedad.
+          Completá los datos y nuestro equipo de ventas se contactará a la brevedad.
         </p>
 
         {/* Agrupando Nombre y Apellido en una misma fila */}
@@ -82,7 +94,9 @@ const ContactForm = () => {
           value={formData.mensaje}
           onChange={handleChange}
         />
-        <button style={styles.button} type="submit">Enviar</button>
+        <button style={styles.button} type="submit" disabled={loading}>
+          {loading ? 'Cargando...' : 'Enviar'}
+        </button>
       </form>
 
       <div style={styles.contactInfo}>
@@ -97,6 +111,7 @@ const ContactForm = () => {
     </div>
   );
 };
+
 const styles = {
   container: {
     display: 'flex',
@@ -114,7 +129,7 @@ const styles = {
     fontFamily: "Inter",
     fontSize: "24px",
     marginBottom: '20px',
-    color:'#373737'
+    color: '#373737'
   },
   row: {
     display: 'flex',
@@ -161,10 +176,8 @@ const styles = {
     alignItems: 'flex-start',
     fontSize: '21.5px',
     color: '#373737',
-    lineHeight: '1.8', // Ajusta el interlineado aquí si es necesario
-   
+    lineHeight: '1.8',
   },
-  
   icon: {
     width: '100%',
     height: '100%',
@@ -172,13 +185,10 @@ const styles = {
   },
   contactItem: {
     display: 'flex',
-   // marginTop:'-5%',
-    marginLeft:'-10%',
+    marginLeft: '-10%',
     alignItems: 'center',
-   // marginBottom: '5px', // Reducido para acercar los elementos
     marginBottom: '15px',
   }
-  
 };
 
 export default ContactForm;
