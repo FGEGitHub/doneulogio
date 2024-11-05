@@ -82,9 +82,7 @@ export default function VentasTable() {
 
   return (
     <Paper sx={{  overflow: 'visible', margin: 'auto', marginTop: '150px' }}>
-      <Button variant="contained" onClick={handleNuevaVenta} disabled={nuevaVenta}>
-        Nueva Venta
-      </Button>
+      
       <TableContainer sx={{ maxHeight: 'calc(100vh - 150px)' }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>

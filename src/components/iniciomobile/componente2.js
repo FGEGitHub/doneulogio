@@ -5,7 +5,7 @@ import pinarImage from '../../Assets/pinar.png';
 const Sectores = () => {
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Nuestros sectores</h2>
+      <h2 style={styles.title}>Conocé nuestro MasterPlan</h2>
       <div style={styles.buttonContainer}>
         <div style={{ ...styles.button, backgroundImage: `url(${bosqueImage})` }}>
         

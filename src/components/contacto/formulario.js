@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import mail from '../../Assets/mail.svg';
 import wasap from '../../Assets/wasap.svg';
+import serviciodatos from '../../services/datos'; // Importar el servicio que usas
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -18,10 +19,17 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Lógica para manejar el envío del formulario
-    console.log('Formulario enviado:', formData);
+    try {
+      // Enviar los datos al servicio
+      const response = await serviciodatos.enviarconsulta(formData);
+      console.log('Formulario enviado:', response);
+      // Opcional: Mostrar un mensaje de éxito
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      // Opcional: Mostrar un mensaje de error
+    }
   };
 
   return (
@@ -30,7 +38,7 @@ const ContactForm = () => {
         <p style={styles.title}>
           Completá los datos y nuestro equipo de ventas se contactara a la brevedad.
         </p>
-        
+
         {/* Agrupando Nombre y Apellido en una misma fila */}
         <div style={styles.row}>
           <input
@@ -78,13 +86,14 @@ const ContactForm = () => {
       </form>
 
       <div style={styles.contactInfo}>
-  <div style={styles.contactItem}>
-    <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
-  </div>
-  <div style={styles.contactItem}>
-    <img src={mail} alt="Correo electrónico" style={styles.icon} /><span>doneulogio.ua@gmail.com</span> 
-  </div>
-</div>
+        <div style={styles.contactItem}>
+          <img src={wasap} alt="Teléfono" style={styles.icon} /> 3794008721
+        </div>
+        <div style={styles.contactItem}>
+          <img src={mail} alt="Correo electrónico" style={styles.icon} />
+          <span>doneulogio.ua@gmail.com</span>
+        </div>
+      </div>
     </div>
   );
 };
@@ -171,6 +180,5 @@ const styles = {
   }
   
 };
-
 
 export default ContactForm;
