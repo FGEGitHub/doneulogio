@@ -39,24 +39,27 @@ export default function NavBar() {
   return (
     <>
       <AppBar
-        position="static"
+        position="sticky" // Cambiado a sticky para que el nav sea siempre visible
         style={{
           backgroundColor: '#ffffff',
           boxShadow: 'none',
           padding: '0',
-          marginLeft: '-45%', // Ajusta el AppBar
-          width: 'calc(100% + 10px)', // Expande el ancho para cubrir el margen negativo
+          // Ajusta el AppBar
+          width: '100%', // Expande el ancho para cubrir el margen negativo
         }}
       >
+
         <Toolbar
           style={{
             padding: '0',
             margin: '0',
             width: '100%',
-            height: '80px', // Ajusta la altura del Toolbar
+            height: '100px', // Ajusta la altura del Toolbar
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            marginLeft: '-45%',
+            marginTop:'1%'
           }}
         >
           <IconButton
@@ -86,7 +89,9 @@ export default function NavBar() {
             <img
               src={imagen}
               alt="Logo Don Eulogio"
+              onClick={() => navigate('/')} // Redirige a la raíz al hacer clic
               style={{
+                cursor: 'pointer', // Cambia el cursor para indicar que es clickeable
                 height: '45px',
                 width: 'auto',
                 margin: '0',
