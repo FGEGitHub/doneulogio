@@ -94,13 +94,13 @@ const CiudadVerde = () => {
       style={styles.image}
       crossOrigin="anonymous"
     />
-    <div style={styles.textOverlay}>
-      <p style={styles.singleLine}>
-        La <strong >tranquilidad</strong> de la naturaleza
-    <br/>
-        La <strong >comodidad</strong> de la ciudad
-      </p>
-    </div>
+<div style={styles.textOverlay}> 
+  <p style={styles.singleLine}>
+    La <strong style={{ fontWeight: 'bold' }}>tranquilidad</strong> de la naturaleza
+    <br />
+    La <strong style={{ fontWeight: 'bold' }}>comodidad</strong> de la ciudad 
+  </p>
+</div>
   </div>
       <img
         src={Doslogos}
@@ -176,7 +176,7 @@ const styles = {
  left:'50%',
     transform: 'translate(-50%, -50%)',
     color: 'white',   // Color del texto
-    fontWeight: 'bold',
+   // fontWeight: 'bold',
     padding: '10px 20px',
     borderRadius: '8px',
     lineHeight: '1.1',
