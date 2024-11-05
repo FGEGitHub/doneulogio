@@ -1726,7 +1726,7 @@ const Arg = () => {
   style={{
     marginTop: posicion0 ? "-40%" : "10%",  // Condicional para marginTop
     position: 'relative',                    // Propiedad position
-    marginLeft: posicion0 ? "3%" : "3%", 
+    marginLeft: posicion0 ? "1%" : "1%", 
     background:'white'
   }}
 />      <ComponenteTarjetas/>
