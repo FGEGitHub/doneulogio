@@ -9,7 +9,7 @@ import Carrus from './carrusel'
 import Componete1 from './componente2';
 import Componente2 from './componente3';
 import Footer from '../footermobile';
-
+import Whatemergente from '../inicio2/compoenetewasap'
 const CiudadVerde = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -80,6 +80,7 @@ const CiudadVerde = () => {
       <Componete1 />
       <Carrus/>
       <Componente2 />
+      <Whatemergente/>
       <img
         src={Imagemapa}
         alt="Urbanización Abierta"
