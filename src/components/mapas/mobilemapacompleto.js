@@ -119,11 +119,12 @@ const Arg = () => {
     Para volver a la vista general tocar en el botón Restaurar.
     </p>
 
-<div style={{ width: 'auto', height: '80vh', overflow: 'auto', }}>
+<div style={{ width: 'auto', height: '80vh', overflow: 'hidden' }}>
       <TransformWrapper
     ref={transformWrapperRef}  // Asigna la referencia
     defaultPositionX={0}
     defaultPositionY={0}
+    height= '50vh'
     defaultScale={1}
     minScale={1}         // Zoom mínimo al 100% del tamaño original
     maxScale={2.5}       // Evita que la imagen se haga demasiado grande
@@ -1726,6 +1727,7 @@ const Arg = () => {
     marginTop: posicion0 ? "-40%" : "10%",  // Condicional para marginTop
     position: 'relative',                    // Propiedad position
     marginLeft: posicion0 ? "3%" : "3%", 
+    background:'white'
   }}
 />      <ComponenteTarjetas/>
      
