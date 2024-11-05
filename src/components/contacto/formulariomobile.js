@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography } from '@mui/material';
+import { TextField, Button, Box, Typography, CircularProgress } from '@mui/material';
+import serviciodatos from '../../services/datos'; // Importar el servicio que usas
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const ContactForm = () => {
     telefono: '',
     mensaje: '',
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -17,10 +19,29 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes manejar el envío del formulario, por ejemplo, enviando los datos a un servidor
-    console.log('Datos del formulario:', formData);
+    setLoading(true); // Activar la animación de carga
+
+    try {
+      // Enviar los datos al servicio
+      const response = await serviciodatos.enviarconsulta(formData);
+      console.log('Formulario enviado:', response);
+      alert('Consulta enviada exitosamente.'); // Mostrar el mensaje de éxito
+      // Limpiar el formulario
+      setFormData({
+        nombre: '',
+        apellido: '',
+        email: '',
+        telefono: '',
+        mensaje: '',
+      });
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      alert('Error al enviar la consulta.'); // Mostrar el mensaje de error
+    } finally {
+      setLoading(false); // Desactivar la animación de carga
+    }
   };
 
   return (
@@ -86,6 +107,7 @@ const ContactForm = () => {
         variant="contained" 
         color="success" 
         fullWidth
+        disabled={loading} // Deshabilitar botón mientras se carga
         sx={{
           backgroundColor: '#2e7d32', 
           '&:hover': {
@@ -93,7 +115,7 @@ const ContactForm = () => {
           }
         }}
       >
-        Enviar
+        {loading ? <CircularProgress size={24} color="inherit" /> : 'Enviar'}
       </Button>
     </Box>
   );
