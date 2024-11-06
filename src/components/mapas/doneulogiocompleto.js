@@ -1871,11 +1871,11 @@ const Arg = () => {
       }>
 
       </DialogComponent>
-{!posicion0 &&     <p
+{!posicion0 &&     <h2
   style={{
     position: 'absolute',
     marginTop: '18%',
-    marginLeft: '40%',
+    marginLeft: '33%',
     zIndex: 1000,
     animation: 'fade 1.5s infinite',
     animationName: 'fade',
@@ -1888,8 +1888,8 @@ const Arg = () => {
     }
   }}
 >
-  -Hacé click en el lote para ver el detalle.
-</p>
+ <b> -Hacé click en el lote para ver el detalle.</b>
+</h2>
 }
 <br/><br/>
 

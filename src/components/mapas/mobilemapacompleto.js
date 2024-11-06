@@ -1730,7 +1730,7 @@ const Arg = () => {
     }
   }}
 >
-  -Hacé click en el lote para ver el detalle.
+<b> -Hacé click en el lote para ver el detalle.</b>
 </p>
 }
       <img
