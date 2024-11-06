@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box, Typography, CircularProgress } from '@mui/material';
-import serviciodatos from '../../services/datos'; // Importar el servicio que usas
+import serviciodatos from '../../services/datos';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -57,9 +57,15 @@ const ContactForm = () => {
         gap: '16px' 
       }}
     >
-      <Typography variant="body1" align="center" gutterBottom>
+      <Typography 
+        variant="body1" 
+        align="center" 
+        gutterBottom
+        style={{ fontFamily: 'Inter, sans-serif' }}
+      >
         Completá los datos y nuestro equipo de ventas se contactará a la brevedad.
       </Typography>
+
       <TextField
         label="Nombre"
         name="nombre"
@@ -67,6 +73,12 @@ const ContactForm = () => {
         onChange={handleChange}
         fullWidth
         required
+        InputProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
+        InputLabelProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
       />
       <TextField
         label="Apellido"
@@ -75,6 +87,12 @@ const ContactForm = () => {
         onChange={handleChange}
         fullWidth
         required
+        InputProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
+        InputLabelProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
       />
       <TextField
         label="Email"
@@ -84,6 +102,12 @@ const ContactForm = () => {
         onChange={handleChange}
         fullWidth
         required
+        InputProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
+        InputLabelProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
       />
       <TextField
         label="Teléfono"
@@ -92,6 +116,12 @@ const ContactForm = () => {
         onChange={handleChange}
         fullWidth
         required
+        InputProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
+        InputLabelProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
       />
       <TextField
         label="Mensaje"
@@ -101,6 +131,12 @@ const ContactForm = () => {
         fullWidth
         multiline
         rows={4}
+        InputProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
+        InputLabelProps={{
+          style: { fontFamily: 'Inter, sans-serif' }
+        }}
       />
       <Button 
         type="submit" 
@@ -112,7 +148,8 @@ const ContactForm = () => {
           backgroundColor: '#2e7d32', 
           '&:hover': {
             backgroundColor: '#1b5e20'
-          }
+          },
+          fontFamily: 'Inter, sans-serif'
         }}
       >
         {loading ? <CircularProgress size={24} color="inherit" /> : 'Enviar'}

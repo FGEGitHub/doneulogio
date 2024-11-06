@@ -54,7 +54,7 @@ const ContactForm = () => {
         {/* Agrupando Nombre y Apellido en una misma fila */}
         <div style={styles.row}>
           <input
-            style={styles.inputHalf}
+            style={{ ...styles.inputHalf, fontFamily: 'Inter, sans-serif' }}
             type="text"
             name="nombre"
             placeholder="Nombre"
@@ -62,7 +62,7 @@ const ContactForm = () => {
             onChange={handleChange}
           />
           <input
-            style={styles.inputHalf}
+            style={{ ...styles.inputHalf, fontFamily: 'Inter, sans-serif' }}
             type="text"
             name="apellido"
             placeholder="Apellido"
@@ -72,7 +72,7 @@ const ContactForm = () => {
         </div>
 
         <input
-          style={styles.input}
+          style={{ ...styles.input, fontFamily: 'Inter, sans-serif' }}
           type="email"
           name="email"
           placeholder="Email"
@@ -80,7 +80,7 @@ const ContactForm = () => {
           onChange={handleChange}
         />
         <input
-          style={styles.input}
+          style={{ ...styles.input, fontFamily: 'Inter, sans-serif' }}
           type="tel"
           name="telefono"
           placeholder="Teléfono"
@@ -88,7 +88,7 @@ const ContactForm = () => {
           onChange={handleChange}
         />
         <textarea
-          style={styles.textarea}
+          style={{ ...styles.textarea, fontFamily: 'Inter, sans-serif' }}
           name="mensaje"
           placeholder="Mensaje"
           value={formData.mensaje}
@@ -118,15 +118,17 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     padding: '20px',
+    fontFamily: 'Inter, sans-serif',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
+    fontFamily: 'Inter, sans-serif',
     width: '60%',
   },
   title: {
     textAlign: 'left',
-    fontFamily: "Inter",
+    fontFamily: 'Inter, sans-serif',
     fontSize: "24px",
     marginBottom: '20px',
     color: '#373737'
