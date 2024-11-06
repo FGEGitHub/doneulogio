@@ -274,6 +274,8 @@ const Arg = () => {
           padding: '10px',
           borderRadius: '5px',
         }}>
+         
+     
           <button
             onClick={() => {
               resetTransform(); // Restaurar la vista completa
@@ -1869,6 +1871,28 @@ const Arg = () => {
       }>
 
       </DialogComponent>
+{!posicion0 &&     <p
+  style={{
+    position: 'absolute',
+    marginTop: '18%',
+    marginLeft: '40%',
+    zIndex: 1000,
+    animation: 'fade 1.5s infinite',
+    animationName: 'fade',
+    animationDuration: '1.5s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    '@keyframes fade': {
+      '0%, 100%': { opacity: 1 },
+      '50%': { opacity: 0 }
+    }
+  }}
+>
+  -Hacé click en el lote para ver el detalle.
+</p>
+}
+<br/><br/>
+
       <Componentevs/>
       <Footer/>
       </>
