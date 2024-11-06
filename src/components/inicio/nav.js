@@ -46,6 +46,7 @@ export default function NavBar() {
           padding: '0',
           // Ajusta el AppBar
           width: '100%', // Expande el ancho para cubrir el margen negativo
+          height:'50%'
         }}
       >
 
