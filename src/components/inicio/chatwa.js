@@ -12,12 +12,16 @@ const WhatsappChat = (props) => {
   const [calculos, setCalculos] = useState(null);
 
   // Función para formatear los valores en USD
-  const formatCurrency = (value) => {
-    return `USD ${new Intl.NumberFormat("en-US", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(value)}`;
-  };
+// Función para formatear los valores en USD
+// Función para formatear los valores en USD
+const formatCurrency = (value) => {
+  return `USD ${new Intl.NumberFormat("es-ES", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value)}`;
+};
+
+
 
   const handleSendMessage = () => {
     const defaultMessage = "Hola, me gustaría obtener más información.";
