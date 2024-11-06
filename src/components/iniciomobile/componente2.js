@@ -1,18 +1,27 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import bosqueImage from '../../Assets/bosques.png';
 import pinarImage from '../../Assets/pinar.png';
 
 const Sectores = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/masterplan');
+  };
+
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Conocé nuestro MasterPlan</h2>
       <div style={styles.buttonContainer}>
-        <div style={{ ...styles.button, backgroundImage: `url(${bosqueImage})` }}>
-        
-        </div>
-        <div style={{ ...styles.button, backgroundImage: `url(${pinarImage})` }}>
-         
-        </div>
+        <div 
+          style={{ ...styles.button, backgroundImage: `url(${bosqueImage})` }}
+          onClick={handleClick}
+        />
+        <div 
+          style={{ ...styles.button, backgroundImage: `url(${pinarImage})` }}
+          onClick={handleClick}
+        />
       </div>
     </div>
   );
@@ -43,6 +52,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    cursor: 'pointer', // Cambiar el cursor al pasar sobre el botón
   },
   text: {
     color: 'white',

@@ -59,7 +59,7 @@ export default function NavBar() {
             alignItems: 'center',
             justifyContent: 'space-between',
             marginLeft: '-45%',
-            marginTop:'1%'
+           
           }}
         >
           <IconButton
