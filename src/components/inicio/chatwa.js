@@ -13,11 +13,10 @@ const WhatsappChat = (props) => {
 
   // Función para formatear los valores en USD
   const formatCurrency = (value) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
+    return `USD ${new Intl.NumberFormat("en-US", {
       minimumFractionDigits: 2,
-    }).format(value);
+      maximumFractionDigits: 2,
+    }).format(value)}`;
   };
 
   const handleSendMessage = () => {
