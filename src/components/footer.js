@@ -47,7 +47,7 @@ const Footer = () => {
 
       <nav style={navStyle}>
         <a href="/" style={{ textDecoration: 'none', color: 'white' }}>Home</a>
-        <a href="/urbanizacion" style={{ textDecoration: 'none', color: 'white' }}>Urbanización Abierta</a>
+        <a href="/urbanizacion-abierta" style={{ textDecoration: 'none', color: 'white' }}>Urbanización Abierta</a>
         <a href="/masterplan" style={{ textDecoration: 'none', color: 'white' }}>MasterPlan</a>
         <a href="/espacios-publicos" style={{ textDecoration: 'none', color: 'white' }}>Espacios Públicos</a>
         <a href="/contacto" style={{ textDecoration: 'none', color: 'white' }}>Contacto</a>

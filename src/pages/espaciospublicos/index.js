@@ -49,7 +49,7 @@ export default function Paginas() {
      
              
                     {/* Agrega aquí el resto de tu contenido */}
-                    {isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><Mobile /></div> :       <div style={{  padding: '10px', textAlign: 'center' }}><General />  </div>}
+                    {isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><Mobile /></div> :       <div style={{  padding: '10px', textAlign: 'center',overflowX: 'hidden'  }}><General />  </div>}
 
          
         </>

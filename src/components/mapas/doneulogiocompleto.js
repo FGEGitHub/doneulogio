@@ -218,8 +218,8 @@ const Arg = () => {
          <br/><br/><br/>
             <h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
     <p  style={styles.infomapaint}  >
-    Para conocer disponibilidades, dimensiones y precios hacer click en el sector y lote de interés. <br/>
-    Para volver a la vista general tocar en el botón Restaurar.
+    Para conocer disponibilidades, dimensiones y precios <b>hacer click </b> en el sector y lote de interés. <br/>
+    Para volver a la vista general <b>tocar</b> en el botón Restaurar.
     </p>
       <TransformWrapper
       style={{ marginBottom: '0px' , left: '-20%',height: '100vh' }} 
@@ -413,7 +413,7 @@ const Arg = () => {
   const fillOpacityValue = objetoEncontrado && objetoEncontrado.id_lote !== null ? 0.7 : 0.00001;
           return (
             <Tooltip title={objetoEncontrado ? "Manzana "+objetoEncontrado.manzana+" Lote "+objetoEncontrado.lote : 'Sin datos'}>
-            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}  stroke="#000000" stroke-opacity="1" stroke-width="5.8"  onClick={objetoEncontrado && objetoEncontrado.id_lote !== null ? null : () => handleOpenDialog(0)}           fill-rule="evenodd" vector-effect="none" d="M-2,-2 L7877,-2 L7877,7877 L-2,7877 L-2,-2"/></Tooltip>)})}
+            <path className="mi-path" fill={fillColor}     fillOpacity={fillOpacityValue}         fill-rule="evenodd" vector-effect="none" d="M-2,-2 L7877,-2 L7877,7877 L-2,7877 L-2,-2"/></Tooltip>)})}
   </g>
 
          
