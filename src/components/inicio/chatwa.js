@@ -7,9 +7,18 @@ const WhatsappChat = (props) => {
   const [message, setMessage] = useState("");
   const [chatOpen, setChatOpen] = useState(true);
   const [openQuestions, setOpenQuestions] = useState({});
-  const [responses, setResponses] = useState({}); // Cambiado a objeto
+  const [responses, setResponses] = useState({});
   const [cuotas, setCuotas] = useState("");
   const [calculos, setCalculos] = useState(null);
+
+  // Función para formatear los valores en USD
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+    }).format(value);
+  };
 
   const handleSendMessage = () => {
     const defaultMessage = "Hola, me gustaría obtener más información.";
@@ -27,13 +36,11 @@ const WhatsappChat = (props) => {
         formattedResponse = [
           {
             title: "Modelo Contado",
-            value:
-              "Con precios promocionales, pagaderos en dólares o en pesos.",
+            value: "Con precios promocionales, pagaderos en dólares o en pesos.",
           },
           {
             title: "Modelo Financiado",
-            value:
-              "Con un sistema de anticipo + Cuotas fijas, pagaderas en dólares o en pesos.",
+            value: "Con un sistema de anticipo + Cuotas fijas, pagaderas en dólares o en pesos.",
           },
         ];
         break;
@@ -41,7 +48,7 @@ const WhatsappChat = (props) => {
         formattedResponse = [
           {
             title: "Precio de Contado",
-            value: `USD$${props.precio}`, // Precio de contado desde la base de datos
+            value: formatCurrency(props.precio), // Precio formateado
           },
         ];
         break;
@@ -51,15 +58,15 @@ const WhatsappChat = (props) => {
         formattedResponse = [
           {
             title: "Precio Financiado",
-            value: `USD ${props.preciofinanciado}`,
+            value: formatCurrency(props.preciofinanciado),
           },
           {
             title: `Anticipo ${props.porcentaje_anticipo}%`,
-            value: `USD ${anticipo}`,
+            value: formatCurrency(anticipo),
           },
           {
             title: "Saldo Financiado",
-            value: `USD ${props.preciofinanciado - anticipo}`,
+            value: formatCurrency(props.preciofinanciado - anticipo),
           },
           {
             title: "Cantidad de Cuotas",
@@ -67,7 +74,7 @@ const WhatsappChat = (props) => {
           },
           {
             title: "Valor de Cuota",
-            value: `USD ${(valorCuotas).toFixed(2)}`,
+            value: formatCurrency(valorCuotas),
           },
         ];
         break;
@@ -102,7 +109,7 @@ const WhatsappChat = (props) => {
 
   const handleOtherQuestionClick = () => {
     const defaultMessage =
-      "Hola, tengo una pregunta específica sobre el lote   "+props.sector+ "-"+ props.manzana+ "-"+ props.lote;
+      "Hola, tengo una pregunta específica sobre el lote " + props.sector + "-" + props.manzana + "-" + props.lote;
     window.open(
       `https://wa.me/5493794008721?text=${encodeURIComponent(defaultMessage)}`,
       "_blank"
