@@ -40,7 +40,8 @@ const WhatsAppButton = () => {
         animation: `${slideIn} 0.5s ease-out`,
       }}
     >
-      <img src={whatsappIcon} alt="WhatsApp" style={{ width: 100, height: 100 }} />
+   <img src={whatsappIcon} alt="WhatsApp" style={{ width: 60, height: 60 }} />
+
       <Box sx={{ mt: 1, fontSize: 14, color: '#25D366' }}>Contactar</Box>
     </Box>
   );
