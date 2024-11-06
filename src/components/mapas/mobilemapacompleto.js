@@ -1713,6 +1713,26 @@ const Arg = () => {
       }>
 
       </DialogComponent> 
+      {!posicion0 &&     <p
+  style={{
+    position: 'absolute',
+    marginTop: '-10%',
+    marginLeft: '10%',
+    zIndex: 1000,
+    animation: 'fade 1.5s infinite',
+    animationName: 'fade',
+    animationDuration: '1.5s',
+    animationTimingFunction: 'ease-in-out',
+    animationIterationCount: 'infinite',
+    '@keyframes fade': {
+      '0%, 100%': { opacity: 1 },
+      '50%': { opacity: 0 }
+    }
+  }}
+>
+  -Hacé click en el lote para ver el detalle.
+</p>
+}
       <img
   src={Grupo6}
   alt="Urbanización Abierta"
