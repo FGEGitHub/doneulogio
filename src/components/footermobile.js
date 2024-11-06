@@ -2,19 +2,26 @@ import React from 'react';
 import logo from '../Assets/Recursofooter.png';
 import facebookIcon from '../Assets/face.png';
 import instagramIcon from '../Assets/inst.png';
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <footer style={styles.footerContainer}>
       <div style={styles.logoContainer}>
         <img src={logo} alt="Don Eulogio" style={styles.logo} />
       </div>
       <ul style={styles.menuList}>
-        <li>Home</li>
-        <li>Urbanización abierta</li>
-        <li>MasterPlan</li>
-        <li>Espacios públicos</li>
-        <li>Contacto</li>
+        <li     onClick={() => navigate('/')}
+        >Home</li>
+        <li onClick={() => navigate('/urbanizacion-abierta')}>Urbanización abierta</li>
+        <li     onClick={() => navigate('/masterplan')}
+        >MasterPlan</li>
+        <li     onClick={() => navigate('/espacios-publicos')}
+        >Espacios públicos</li>
+        <li     onClick={() => navigate('/contacto')}
+        >Contacto</li>
       </ul>
       <div style={styles.socialContainer}>
       <a href="https://www.facebook.com/share/JhUwD6qmGXXzT4pE/?mibextid=kFxxJD" target="_blank" rel="noopener noreferrer">
