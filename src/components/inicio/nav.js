@@ -55,7 +55,7 @@ export default function NavBar() {
             padding: '0',
             margin: '0',
             width: '100%',
-            height: '60px', // Ajusta la altura del Toolbar
+            height: '65px', // Ajusta la altura del Toolbar
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
