@@ -46,7 +46,7 @@ export default function NavBar() {
           padding: '0',
           // Ajusta el AppBar
           width: '100%', // Expande el ancho para cubrir el margen negativo
-          height:'50%'
+          
         }}
       >
 
@@ -55,7 +55,7 @@ export default function NavBar() {
             padding: '0',
             margin: '0',
             width: '100%',
-            height: '100px', // Ajusta la altura del Toolbar
+            height: '60px', // Ajusta la altura del Toolbar
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
