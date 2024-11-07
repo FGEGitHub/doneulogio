@@ -1,6 +1,6 @@
 import React from 'react';
 import flecha from '../../Assets/flecha.png';
-import tarjetas from '../../Assets/ua3tarjetas.svg';
+import tarjetas from '../../Assets/ua3tarjetas.png';
 const MobileCards = () => {
   return (
     <div style={styles.container}>

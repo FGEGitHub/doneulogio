@@ -11,7 +11,7 @@ const UrbanizacionAbierta = () => {
       <div style={styles.videoContainer}>
         <video style={styles.video} controls>
           <source src={videoSrc} type="video/mp4" />
-          Your browser does not support the video tag.
+          Video
         </video>
       </div>
     </div>
