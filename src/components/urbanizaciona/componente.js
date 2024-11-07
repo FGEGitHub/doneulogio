@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Grid, Box, CssBaseline, Toolbar } from '@mui/material';
+import { Container, Typography, Grid, Box, CssBaseline, Toolbar ,CircularProgress} from '@mui/material';
 import foto1 from '../../Assets/uaimagen.svg';
 import foto2 from '../../Assets/uapng.png';
 import logo from '../../Assets/logo.png';
@@ -37,7 +37,10 @@ const UrbanizacionAbierta = () => {
 
   if (!imagesLoaded) {
     // Muestra un mensaje de carga o un spinner mientras se cargan las imágenes
-    return <div>Cargando...</div>;
+    return <div> <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
+    <img src={logo} alt="Logo" style={{ width: '200px', marginBottom: '20px' }} />
+    <CircularProgress color="success" />
+  </Box></div>;
   }
 
   return (

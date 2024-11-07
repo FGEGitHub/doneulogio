@@ -3,7 +3,7 @@ import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
 import logo from '../../Assets/logo.png';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import {  CssBaseline, AppBar, Toolbar, Link } from '@mui/material';
+import {  CssBaseline,  Box, Toolbar, Link } from '@mui/material';
 import SyncIcon from '@mui/icons-material/Sync';
 import Gps from "../../Assets/mapaiphone.png";
 import Redes from "../../Assets/redes.svg";
@@ -86,11 +86,10 @@ const Arg = () => {
     <>
      {loading ? (
         <div className="loading-screen">
-          {/* Aquí puedes personalizar la pantalla de carga */}
-          <img src={logo} alt="Logo" className="urbanizacion-logo" />
-
-         
-          <p>Cargando ... <CircularProgress /></p>
+        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
+    <img src={logo} alt="Logo" style={{ width: '200px', marginBottom: '20px' }} />
+    <CircularProgress color="success" />
+  </Box>
         </div>
       ) : (<>
     <CssBaseline />

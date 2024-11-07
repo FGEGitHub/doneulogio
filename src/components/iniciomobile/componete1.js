@@ -9,6 +9,8 @@ import Carrus from './carrusel'
 import Componete1 from './componente2';
 import Componente2 from './componente3';
 import Footer from '../footermobile';
+import {  Box,  CircularProgress } from '@mui/material';
+import logo from '../../Assets/logo.png';
 import Whatemergente from '../inicio2/compoenetewasap'
 const CiudadVerde = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
@@ -60,7 +62,10 @@ const CiudadVerde = () => {
 
   if (!contentLoaded) {
     // Muestra un mensaje de carga mientras se cargan las imágenes y el video
-    return <div>Cargando...</div>;
+    return <div> <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
+    <img src={logo} alt="Logo" style={{ width: '200px', marginBottom: '20px' }} />
+    <CircularProgress color="success" />
+  </Box></div>;
   }
 
   return (
