@@ -3,7 +3,7 @@ import DialogComponent from './modalusur';
 import Tooltip from '@mui/material/Tooltip';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 import nex from"../../Assets/netx.png";
-
+import logo from '../../Assets/logo.png';
 
 import Gps from "../../Assets/mapaiphone.png";
 import servicioDatos from '../../services/datos';
@@ -13,7 +13,7 @@ import vendidos from '../../Assets/vendidos.svg';
 import Grupo6 from '../../Assets/Groupo6.png';
 import UNaciudad from '../masterplan/unaciudadenelverde'
 import ComponenteTarjetas from '../masterplan/componentetarjetasmobile'
-
+import { Box, CircularProgress } from '@mui/material';
 import Footer from '../footermobile'
 const Arg = () => {
   const dialogRef = useRef();
@@ -25,13 +25,30 @@ const Arg = () => {
   const [selectedImage, setSelectedImage] = useState(Gps); // Estado para la imagen seleccionada
   const [posicion0, setPosicion0] = useState(true);
   const [showRestoreButton, setShowRestoreButton] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   const getClients = async () => {
     const lotess = await servicioDatos.traerlotes();
     setLotes(lotess);
   };
 
   useEffect(() => {
+    const handleImageLoad = () => {
+      setLoading(false);
+    };
+
+    // Carga todas las imágenes y cambia el estado de carga a false cuando están cargadas
+    const images = [foto1, vendidos, Grupo6, Gps];
+    const imagePromises = images.map((src) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve;
+      });
+    });
+
+    Promise.all(imagePromises).then(handleImageLoad);
+
+    // Carga los datos de los lotes
     getClients();
   }, []);
 
@@ -96,7 +113,13 @@ const Arg = () => {
 
   return (
     <>
-   
+      {loading ? (
+        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
+          <img src={logo} alt="Logo" style={{ width: '200px', marginBottom: '20px' }} />
+          <CircularProgress color="success" />
+        </Box>
+      ) : (
+        <>
     <div style={styles.imageContainer}>
       <img 
         src={foto1} 
@@ -1747,7 +1770,8 @@ const Arg = () => {
      <Footer/>
       </>
     }
-  
+  </>
+      )}
     </>
 
 
