@@ -33,6 +33,7 @@ const columns = [
   { id: 'posecion', label: 'Posesión', minWidth: 100, align: 'center' },
   { id: 'escritura', label: 'Escritura', minWidth: 100, align: 'center' },
   { id: 'construccion', label: 'Construcción', minWidth: 100, align: 'center' },
+  { id: 'clicks', label: 'Cant. Clicks', minWidth: 100, align: 'center' },
   { id: 'modificar', label: 'modificar', minWidth: 100, align: 'center' },
   { id: 'borrar', label: 'borrar', minWidth: 100, align: 'center' },
 ];
