@@ -55,14 +55,7 @@ export default function StickyHeadTable() {
     setDatos(historial);
   };
 
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
 
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
 
   const handleInputChange = (id, field, value) => {
     setEditingRow((prev) => {

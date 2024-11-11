@@ -3,8 +3,10 @@ import Clientes from "./tabla";
 import Lotes from "../lotes/tabla";
 import Nuevo from './nuevo';
 import Ventas from '../ventas/todas';
-import Nuevaventa from '../ventas/nuevocli'
+import Nuevaventa from '../ventas/nuevocli';
 import * as React from 'react';
+import servicioDatos from "../../services/datos"; // Asegúrate de importar tu servicio de datos
+import * as XLSX from "xlsx";
 
 const Seleccion = () => {
     const [mapa, setMapa] = useState("");
@@ -13,16 +15,33 @@ const Seleccion = () => {
         setMapa(value);
     };
 
+    // Función para descargar datos de lotes en Excel
+    const descargarLotesExcel = async () => {
+        const lotesData = await servicioDatos.traerlotes();
+        const ws = XLSX.utils.json_to_sheet(lotesData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Lotes");
+        XLSX.writeFile(wb, "Lotes.xlsx");
+    };
+
+    // Función para descargar datos de clientes en Excel
+    const descargarClientesExcel = async () => {
+        const clientesData = await servicioDatos.traerclientes();
+        const ws = XLSX.utils.json_to_sheet(clientesData);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, "Clientes");
+        XLSX.writeFile(wb, "Clientes.xlsx");
+    };
+
     return (
         <div style={{ 
             display: 'flex', 
             flexDirection: 'column', 
             height: '100vh', 
-            backgroundColor: '#214138', // Asegura el color de fondo
+            backgroundColor: '#214138', 
             color: 'white',
             position: 'relative'
         }}>
-            {/* Textos seleccionables en la parte superior izquierda */}
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'flex-start', 
@@ -64,55 +83,58 @@ const Seleccion = () => {
                 </span>
             </div>
 
-            {/* Mostrar contenido basado en la selección */}
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'center', 
                 alignItems: 'center', 
-              
                 width: '100%',
                 height: '100%',
-               backgroundColor: '#214138', // Aplica el fondo al contenedor
+                backgroundColor: '#214138', 
             }}>
-                {mapa === "1" ? <Clientes  /> : null}
-                {mapa === "2" ? <Lotes  /> : null}
-                {mapa === "3" ? <Ventas  /> : null}
+                {mapa === "1" ? <Clientes /> : null}
+                {mapa === "2" ? <Lotes /> : null}
+                {mapa === "3" ? <Ventas /> : null}
                 {!mapa && <p>Sin selección</p>}
             </div>
 
-            {/* Botones de descarga en la parte superior derecha */}
             <div style={{ 
                 display: 'flex', 
                 justifyContent: 'flex-end', 
                 position: 'absolute', 
                 top: '20px', 
                 right: '20px' 
-            }}><Nuevaventa/>
-                <Nuevo/>
-                <button style={{ 
-                    backgroundColor: '#2E7D32', 
-                    color: 'white', 
-                    padding: '10px 20px', 
-                    border: 'none', 
-                    borderRadius: '5px', 
-                    cursor: 'pointer', 
-                    marginRight: '10px'
-                }}>
-                    Descargar en EXCEL
+            }}>
+                <Nuevaventa />
+                <Nuevo />
+                <button 
+                    onClick={descargarLotesExcel}
+                    style={{ 
+                        backgroundColor: '#2E7D32', 
+                        color: 'white', 
+                        padding: '10px 20px', 
+                        border: 'none', 
+                        borderRadius: '5px', 
+                        cursor: 'pointer', 
+                        marginRight: '10px'
+                    }}
+                >
+                    Descargar Lotes en Excel
                 </button>
-                <button style={{ 
-                    backgroundColor: '#2E7D32', 
-                    color: 'white', 
-                    padding: '10px 20px', 
-                    border: 'none', 
-                    borderRadius: '5px', 
-                    cursor: 'pointer' 
-                }}>
-                    Descargar en PDF
+                <button 
+                    onClick={descargarClientesExcel}
+                    style={{ 
+                        backgroundColor: '#2E7D32', 
+                        color: 'white', 
+                        padding: '10px 20px', 
+                        border: 'none', 
+                        borderRadius: '5px', 
+                        cursor: 'pointer' 
+                    }}
+                >
+                    Descargar Clientes en Excel
                 </button>
             </div>
 
-            {/* Botón en la parte inferior derecha */}
             <div style={{ 
                 position: 'absolute', 
                 bottom: '20px', 

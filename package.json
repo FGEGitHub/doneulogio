@@ -30,7 +30,8 @@
     "recharts": "^2.12.7",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.9",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",

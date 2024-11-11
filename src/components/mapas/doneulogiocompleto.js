@@ -1873,22 +1873,22 @@ const Arg = () => {
 {!posicion0 &&     <h2
   style={{
     position: 'absolute',
-    marginTop: '25%',
     marginLeft: '33%',
     zIndex: 1000,
-    animation: 'fade 1.5s infinite',
-    animationName: 'fade',
-    animationDuration: '1.5s',
-    animationTimingFunction: 'ease-in-out',
-    animationIterationCount: 'infinite',
+    animation: 'fade 1.5s infinite ease-in-out',
+    marginTop: '25%', // Valor por defecto
+    '@media (min-width: 1920px)': {
+      marginTop: '15%', // Ajuste para pantallas más grandes
+    },
     '@keyframes fade': {
       '0%, 100%': { opacity: 1 },
-      '50%': { opacity: 0 }
+      '50%': { opacity: 0 },
     }
   }}
 >
- <b> -Hacé click en el lote para ver el detalle.</b>
+  <b>- Hacé click en el lote para ver el detalle.</b>
 </h2>
+
 }
 <br/><br/>
 

@@ -74,7 +74,7 @@ const styles = {
     flex: '1',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)', // Dos columnas de igual ancho
-    gap: '20px', // Espacio uniforme entre columnas y filas
+    gap: '15px', // Espacio uniforme entre columnas y filas
   },
   imageWrapper: {
     display: 'flex',
