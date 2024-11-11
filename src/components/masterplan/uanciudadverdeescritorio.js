@@ -15,7 +15,7 @@ const CiudadVerde = () => {
         </p>
       </div>
       <div style={styles.imagesSection}>
-        <div style={styles.imageWrapperizquerda}>
+        <div style={styles.imageWrapper}>
           <img src={Image1} alt="Lotes" style={styles.image} />
           <p style={styles.imageText}>+500 Lotes</p>
         </div>
@@ -23,7 +23,7 @@ const CiudadVerde = () => {
           <img src={Image2} alt="Superficie promedio" style={styles.image} />
           <p style={styles.imageText}>750m² superficie promedio</p>
         </div>
-        <div style={styles.imageWrapperizquerda}>
+        <div style={styles.imageWrapper}>
           <img src={Image3} alt="Espacios comunes" style={styles.image} />
           <p style={styles.imageText}>Espacios comunes</p>
         </div>
@@ -45,7 +45,7 @@ const styles = {
     backgroundColor: '#fff',
     color: '#000',
     borderRadius: '8px',
-    fontFamily: 'inter',
+    fontFamily: 'Inter',
     width: 'calc(85% - 40px)',
     margin: '0 auto',
     boxSizing: 'border-box',
@@ -60,7 +60,7 @@ const styles = {
     fontSize: '36px',
     color: 'black',
     fontWeight: 'bold',
-    fontFamily: 'inter',
+    fontFamily: 'Inter',
     marginBottom: '10px',
     textAlign: 'left',
   },
@@ -68,30 +68,19 @@ const styles = {
     fontSize: '21px',
     lineHeight: '1.4',
     textAlign: 'left',
-    fontFamily: 'inter',
+    fontFamily: 'Inter',
   },
   imagesSection: {
     flex: '1',
     display: 'grid',
     gridTemplateColumns: 'repeat(2, 1fr)', // Dos columnas de igual ancho
-    columnGap: '1px', // Reducido aún más el espacio entre columnas
-        rowGap: '20px', // Puedes ajustar el espacio entre filas si lo necesitas
-     //   justifyItems: 'start', // Alinea las columnas al principio
+    gap: '20px', // Espacio uniforme entre columnas y filas
   },
   imageWrapper: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: '5px',
-    marginRight:'90px'
-  },
-  imageWrapperizquerda: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '5px',
-    marginRight:'-175px'
-    
   },
   image: {
     width: '150px',
@@ -104,8 +93,5 @@ const styles = {
     textAlign: 'center',
   },
 };
-
-
-
 
 export default CiudadVerde;
