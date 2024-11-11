@@ -1873,7 +1873,7 @@ const Arg = () => {
 {!posicion0 &&     <h2
   style={{
     position: 'absolute',
-    marginTop: '18%',
+    marginTop: '25%',
     marginLeft: '33%',
     zIndex: 1000,
     animation: 'fade 1.5s infinite',

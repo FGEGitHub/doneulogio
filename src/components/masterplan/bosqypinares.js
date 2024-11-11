@@ -44,7 +44,7 @@ const Sectores = () => {
 
 const styles = {
   container: {
-    marginTop:'20%',
+    marginTop:'25%',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
