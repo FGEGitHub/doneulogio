@@ -56,7 +56,7 @@ export default function NavBar() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-          
+            marginLeft: '-2%',
           }}
         >
           <Box
@@ -78,6 +78,7 @@ export default function NavBar() {
               <MenuIcon />
             </IconButton>
             <Typography
+             onClick={() => toggleDrawer(true)}
               variant="body1"
               sx={{ fontFamily: 'Inter, sans-serif', color: '#1f3c3d', marginLeft: '5px' }}
             >
@@ -100,7 +101,7 @@ export default function NavBar() {
               alt="Logo Don Eulogio"
               onClick={() => navigate('/')}
               style={{
-                marginLeft: '9%',
+                marginLeft: '10%',
                 cursor: 'pointer',
                 height: '45px',
                 width: 'auto',
