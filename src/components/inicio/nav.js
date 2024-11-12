@@ -80,7 +80,7 @@ export default function NavBar() {
             <Typography
              onClick={() => toggleDrawer(true)}
               variant="body1"
-              sx={{ fontFamily: 'Inter, sans-serif', color: '#1f3c3d', marginLeft: '5px' }}
+              sx={{ fontFamily: 'Inter, sans-serif', color: '#1f3c3d' }}
             >
               Menu
             </Typography>
