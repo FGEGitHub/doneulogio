@@ -4,7 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -14,7 +13,7 @@ import imagen from "../../Assets/logo.png";
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Hook para navegar
 
   const toggleDrawer = (open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -23,6 +22,7 @@ export default function NavBar() {
     setDrawerOpen(open);
   };
 
+  // Mapeo de nombres del menú a sus rutas correspondientes
   const menuItems = [
     { text: 'Home', path: '/' },
     { text: 'Urbanización Abierta', path: '/urbanizacion-abierta' },
@@ -33,58 +33,49 @@ export default function NavBar() {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setDrawerOpen(false);
+    setDrawerOpen(false); // Cierra el drawer después de la navegación
   };
 
   return (
     <>
       <AppBar
-        position="sticky"
+        position="sticky" // Cambiado a sticky para que el nav sea siempre visible
         style={{
           backgroundColor: '#ffffff',
           boxShadow: 'none',
           padding: '0',
-          width: '100%',
+          // Ajusta el AppBar
+          width: '100%', // Expande el ancho para cubrir el margen negativo
+          
         }}
       >
+
         <Toolbar
           style={{
             padding: '0',
             margin: '0',
             width: '100%',
-            height: '65px',
+            height: '65px', // Ajusta la altura del Toolbar
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginLeft: '-2%',
+            marginLeft: '-45%',
+           
           }}
         >
-          <Box
-            display="flex"
-            alignItems="center"
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
             onClick={toggleDrawer(true)}
-            style={{ cursor: 'pointer' }}
+            style={{
+              color: '#1f3c3d',
+              margin: '0',
+              padding: '0',
+            }}
           >
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              style={{
-                color: '#1f3c3d',
-                margin: '0',
-                padding: '0',
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-             onClick={() => toggleDrawer(true)}
-              variant="body1"
-              sx={{ fontFamily: 'Inter, sans-serif', color: '#1f3c3d' }}
-            >
-              Menu
-            </Typography>
-          </Box>
+            <MenuIcon />
+          </IconButton>
           <Box
             sx={{ flexGrow: 1 }}
             style={{
@@ -99,10 +90,9 @@ export default function NavBar() {
             <img
               src={imagen}
               alt="Logo Don Eulogio"
-              onClick={() => navigate('/')}
+              onClick={() => navigate('/')} // Redirige a la raíz al hacer clic
               style={{
-                marginLeft: '10%',
-                cursor: 'pointer',
+                cursor: 'pointer', // Cambia el cursor para indicar que es clickeable
                 height: '45px',
                 width: 'auto',
                 margin: '0',
