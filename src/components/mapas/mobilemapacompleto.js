@@ -136,7 +136,7 @@ const Arg = () => {
 {<img src={foto1} alt="Urbanización Abierta"  style={{ boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
-(
+
     <div
       style={{
         backgroundColor: "#2f7032", // Fondo verde
@@ -144,6 +144,7 @@ const Arg = () => {
         padding: "20px",
         width: "100%", // Abarca todo el ancho de la pantalla
         textAlign: "center",
+        marginLeft:'-5%',
         fontFamily: "'Inter', sans-serif", // Fuente Inter
       }}
     >
