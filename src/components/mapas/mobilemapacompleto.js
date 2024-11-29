@@ -136,11 +136,26 @@ const Arg = () => {
 {<img src={foto1} alt="Urbanización Abierta"  style={{ boxSizing: 'border-box', overflow: 'hidden'}} /> &&
 
 <>
-<h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
-    <p  style={styles.infomapaint}  >
-    Para conocer disponibilidades, dimensiones y precios <b>hacer click </b> en el sector y lote de interés. <br/>
-    Para volver a la vista general <b>tocar</b> en el botón Restaurar.
-    </p>
+(
+    <div
+      style={{
+        backgroundColor: "#2f7032", // Fondo verde
+        color: "white", // Texto blanco
+        padding: "20px",
+        width: "100%", // Abarca todo el ancho de la pantalla
+        textAlign: "center",
+        fontFamily: "'Inter', sans-serif", // Fuente Inter
+      }}
+    >
+      <h1 style={styles.infomapainttitulo} >
+        Mapa interactivo
+      </h1>
+      <p style={styles.infomapaint} >
+        Para conocer disponibilidades, dimensiones y precios,{" "}
+        <b>hacer clicken el sector y en el lote</b>  de interés. <br />
+        Para volver a la vista general, <b>tocar</b> en el botón Restaurar.
+      </p>
+    </div>
 
 <div style={{ width: 'auto', height: '80vh', overflow: 'hidden' }}>
       <TransformWrapper

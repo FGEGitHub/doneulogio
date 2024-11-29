@@ -1,6 +1,10 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const MapaInteractivo = () => {
+    const navigate = useNavigate();
   const styles = {
     container: {
       display: "flex",
@@ -32,7 +36,9 @@ const MapaInteractivo = () => {
       backgroundColor: "#7cb342", // Color del botón al pasar el mouse
     },
   };
-
+  const handleClick = () => {
+    navigate('/masterplan');
+  };
   return (
     <div style={styles.container}>
       {/* Título */}
@@ -41,6 +47,7 @@ const MapaInteractivo = () => {
       </h2>
       {/* Botón */}
       <button
+        onClick={handleClick}
         style={styles.button}
         onMouseEnter={(e) => (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)}
         onMouseLeave={(e) => (e.target.style.backgroundColor = styles.button.backgroundColor)}
