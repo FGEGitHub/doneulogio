@@ -12,6 +12,7 @@ import Footer from '../footermobile';
 import {  Box,  CircularProgress } from '@mui/material';
 import logo from '../../Assets/logo.png';
 import Whatemergente from '../inicio2/compoenetewasap'
+import Nuevocomponente from './nuevocomponente'
 const CiudadVerde = () => {
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -83,6 +84,7 @@ const CiudadVerde = () => {
         <span style={styles.imageText}>Tu Futuro en <br />Don Eulogio</span>
       </div>
       <Componete1 />
+      <Nuevocomponente/>
       <Carrus/>
       <Componente2 />
       <Whatemergente/>
