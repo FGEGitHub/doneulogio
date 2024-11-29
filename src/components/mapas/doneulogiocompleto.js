@@ -212,12 +212,12 @@ const Arg = () => {
       width= '60%'
       />
 
-      <div       style={{ height: '100vh' }} 
+      <div       style={{  backgroundColor: "#2f7032" }} 
       >
          <br/><br/><br/>
             <h1  style={styles.infomapainttitulo}  ><b>Mapa interactivo</b></h1>
     <p  style={styles.infomapaint}  >
-    Para conocer disponibilidades, dimensiones y precios <b>hacer click </b> en el sector y lote de interés. <br/>
+    Para conocer disponibilidades, dimensiones y precios <b>hacer clicken el sector y lote  </b> de interés. <br/>
     Para volver a la vista general <b>tocar</b> en el botón Restaurar.
     </p>
       <TransformWrapper
@@ -1939,14 +1939,16 @@ textAlign:'left',
     fontSize: '26px',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'13%'
+   marginLeft:'13%',
+    color:'white'
   },
   infomapainttitulo: {
     textAlign:'left',
     fontSize: '36x',
     fontFamily: "'inter', sans-serif", // Aplica la fuente
    cursor: 'pointer',
-   marginLeft:'13%'
+   marginLeft:'13%',
+   color:'white'
   },
   svgTextproximamente: {
     fill:' #fff', /* Relleno blanco */
