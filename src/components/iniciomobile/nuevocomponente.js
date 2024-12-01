@@ -10,11 +10,11 @@ const MapaInteractivo = () => {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      marginLeft:'-5%',
+     // marginLeft:'-5%',
       justifyContent: "center",
       backgroundColor: "#2f7032", // Color de fondo verde
       padding: "20px",
-      width: "100%", // Abarcar todo el ancho
+      width: "90%", // Abarcar todo el ancho
       textAlign: "center",
       fontFamily: "'Inter', sans-serif", // Fuente Inter
     },
