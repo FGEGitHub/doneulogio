@@ -143,7 +143,7 @@ const styles = {
     display: 'block',
   },
   image: {
-    width: '108%',
+    width: '105%',
     height: 'auto',
     marginLeft: '-3%',
     display: 'block',
