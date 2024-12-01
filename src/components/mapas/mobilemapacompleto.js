@@ -153,7 +153,7 @@ const Arg = () => {
       </h1>
       <p style={styles.infomapaint} >
         Para conocer disponibilidades, dimensiones y precios,{" "}
-        <b>hacer clicken el sector y en el lote</b>  de interés. <br />
+        <b>hacer click en el sector y en el lote</b>  de interés. <br />
         Para volver a la vista general, <b>tocar</b> en el botón Restaurar.
       </p>
     </div>
