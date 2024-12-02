@@ -78,7 +78,7 @@ export default function Paginas() {
          
             {/* Contenido principal */}
         
-            {isMobile ? <div style={{  padding: '-10px', textAlign: 'left' }}><Nav/><Mobile /></div> :       <div style={{  padding: '10px', textAlign: 'center',overflowX: 'hidden' }}><General />  </div>}
+            {isMobile ? <div style={{  padding: '0px', textAlign: 'left' }}><Nav/><Mobile /></div> :       <div style={{  padding: '10px', textAlign: 'center',overflowX: 'hidden' }}><General />  </div>}
               
                 
              
