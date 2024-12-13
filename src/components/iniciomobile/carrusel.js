@@ -61,7 +61,7 @@ const styles = {
   carouselContainer: {
     position: 'relative',
     overflow: 'hidden',
-    width: '95.5vw',
+    width: '100vw',
     height: '100vw',
   },
   imageWrapper: {
